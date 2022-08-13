@@ -71,6 +71,9 @@ const Dashboard = () => {
                             <li>
                                 <Link to="taskForwarding">Task Forwarding</Link>
                             </li>
+                            <li>
+                                <a>Log Out</a>
+                            </li>
                         </>
 
                     </ul>
