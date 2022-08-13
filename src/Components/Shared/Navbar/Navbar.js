@@ -11,9 +11,9 @@ const Navbar = () => {
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal p-0">
-            <li><Link className="nav-button mr-5 btn btn-primary" to="/adminLogin">Admin Login</Link></li>
+            <li><Link className="nav-button mr-3 btn btn-primary" to="/adminLogin">Admin Login</Link></li>
 
-            <li><Link className="nav-button mr-5 btn btn-primary" to="/employeeLogin">Employee Login</Link></li>
+            <li><Link className="nav-button mr-3 btn btn-primary" to="/employeeLogin">Employee Login</Link></li>
           </ul>
         </div>
       </div>
