@@ -2,7 +2,6 @@ import React from 'react';
 
 const AdminLogin = () => {
     return (
-        <div>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse bg-gradient-to-t from-pink-500 to-orange-400 w-full rounded-xl p-10">
                     <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-white p-7">
@@ -41,7 +40,6 @@ const AdminLogin = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 
