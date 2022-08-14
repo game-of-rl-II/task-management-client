@@ -1,5 +1,9 @@
 import React from 'react';
 import {  Outlet } from 'react-router-dom';
+import AssignedTasks from './MemberDashboardItems/AssignedTasks';
+import CompletedTask from './MemberDashboardItems/CompletedTask';
+import TaskForwarding from './MemberDashboardItems/TaskForwarding';
+import UncompletedTask from './MemberDashboardItems/UncompletedTask';
 
 const Dashboard = () => {
     return (
