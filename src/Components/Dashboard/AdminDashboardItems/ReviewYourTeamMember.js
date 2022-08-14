@@ -2,9 +2,7 @@ import React from 'react';
 
 const ReviewYourTeamMember = () => {
     return (
-        <div>
-            hello review
-        </div>
+        <div>Hollo</div>
     );
 };
 
