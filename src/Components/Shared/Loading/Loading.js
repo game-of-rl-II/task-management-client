@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdminLogin = () => {
+const Loading = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const AdminLogin = () => {
     );
 };
 
-export default AdminLogin;
+export default Loading;
