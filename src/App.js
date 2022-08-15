@@ -15,6 +15,9 @@ import AssignedTasks from './Components/Dashboard/MemberDashboardItems/AssignedT
 import CompletedTask from './Components/Dashboard/MemberDashboardItems/CompletedTask';
 import UncompletedTask from './Components/Dashboard/MemberDashboardItems/UncompletedTask';
 import TaskForwarding from './Components/Dashboard/MemberDashboardItems/TaskForwarding';
+import Register from './Components/Entry/Register';
+import EmployeeLogin from './Components/Entry/EmployeeLogin';
+import AdminLogin from './Components/Entry/AdminLogin';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
     <Routes>
       <Route path='/home' element={<Home></Home>}></Route>
       <Route path='/' element={<Home></Home>}></Route>
+      <Route path='/register' element={<Register></Register>}></Route>
+      <Route path='/employeeLogin' element={<EmployeeLogin></EmployeeLogin>}></Route>
+      <Route path='/adminLogin' element={<AdminLogin></AdminLogin>}></Route>
       <Route path="/dashboard" element={<Dashboard></Dashboard>}>
         <Route index element={<MyProfile></MyProfile>}></Route>
         <Route path="addMember" element={<AddMember></AddMember>}></Route>
