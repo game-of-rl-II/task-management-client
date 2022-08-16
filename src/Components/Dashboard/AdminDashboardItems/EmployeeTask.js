@@ -37,9 +37,9 @@ const EmployeeTask = () => {
   ];
     return (
       <div>
-        <div class="hero min-h-screen ">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-          <img src="https://placeimg.com/260/400/arch" class="max-w-sm lg:ml-32 rounded-lg shadow-2xl" alt="" />
+        <div className="hero min-h-screen ">
+        <div className="hero-content flex-col lg:flex-row-reverse">
+          <img src="https://placeimg.com/260/400/arch" className="max-w-sm lg:ml-32 rounded-lg shadow-2xl" alt="" />
           <div>
           <DayPicker 
           mode="single"
@@ -73,14 +73,14 @@ const EmployeeTask = () => {
 
                 </th>
                 <td>
-                  <div class="flex items-center space-x-3">
-                    <div class="avatar">
-                      <div class="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                      <div className="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img src={member.image} alt="" />
                       </div>
                     </div>
                     <div>
-                      <div class="font-bold">{member.name}</div>
+                      <div className="font-bold">{member.name}</div>
                       
                     </div>
                   </div>

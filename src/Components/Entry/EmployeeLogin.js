@@ -3,23 +3,23 @@ import React from 'react';
 const EmployeeLogin = () => {
     return (
             <div className="hero min-h-screen">
-                <div className="hero-content flex-col lg:flex-row-reverse bg-gradient-to-t from-pink-500 to-orange-400 w-full rounded-xl p-10">
+                <div className="hero-content flex-col lg:flex-row-reverse bg-gradient-to-t from-pink-500 to-orange-400 w-[90%] rounded-xl p-10">
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-indigo-500">
                         <div className="card-body">
                             <div className="form-control">
-                                <h1 className="text-2xl font-bold text-black">Employee Login Login</h1>
+                                <h1 className="text-2xl font-bold text-black">Member Login</h1>
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text">Member Id</span>
                                 </label>
-                                <input type="text" placeholder="email" className="input input-bordered" />
+                                <input type="text" placeholder="Enter Member Id" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text">Member Password</span>
                                 </label>
-                                <input type="text" placeholder="password" className="input input-bordered" />
+                                <input type="text" placeholder="Enter Member Password" className="input input-bordered" />
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    <a href="#" className="label-text-alt link link-hover" >Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
@@ -28,8 +28,8 @@ const EmployeeLogin = () => {
                         </div>
                     </div>
                     <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-white p-7">
-                        <h1 className="text-2xl font-bold text-black text-center">Employee Login Login</h1>
-                        <p className="py-6 text-center">Hello Employee, You Have To Login First. We Give All Of Our Employee An Employee ID Addreess And Password. Enter Your Employee ID And Password For Login.</p>
+                        <h1 className="text-2xl font-bold text-indigo-600 text-center">Member Login</h1>
+                        <p className="py-6 text-center">Hello Member, You Have To Login First. We Give All Of Our Member An Member ID Addreess And Password. Enter Your Employee ID And Password For Login.</p>
                         <hr className='pb-4' />
                         <div>
                             <p className='text-center p-5'>
