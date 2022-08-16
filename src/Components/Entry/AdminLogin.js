@@ -34,7 +34,7 @@ const AdminLogin = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
