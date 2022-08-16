@@ -49,14 +49,14 @@ const TaskForwarding = () => {
                 <tr key={employee._id}>
                   <th>{index + 1}</th>
                   <td>
-                    <div class="flex items-center space-x-3">
-                      <div class="avatar">
-                        <div class="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <div className="flex items-center space-x-3">
+                      <div className="avatar">
+                        <div className="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                           <img src={employee.image} alt="" />
                         </div>
                       </div>
                       <div>
-                        <div class="font-bold">{employee.name}</div>
+                        <div className="font-bold">{employee.name}</div>
                       </div>
                     </div>
                   </td>

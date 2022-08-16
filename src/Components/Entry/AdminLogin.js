@@ -2,6 +2,7 @@ import React from 'react';
 
 const AdminLogin = () => {
     return (
+
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse bg-gradient-to-t from-pink-500 to-orange-400 w-full rounded-xl p-10">
                 <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-white p-7">
@@ -33,9 +34,7 @@ const AdminLogin = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
-                        <div className="form-control mt-6">
-                            <button className="btn bg-gradient-to-r from-pink-400 to-orange-500 border-0 ">Login</button>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
