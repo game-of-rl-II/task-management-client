@@ -1,5 +1,8 @@
 // import React, { useEffect, useState } from 'react';
 
+import AssignTaskModal from "./AssignTaskModal";
+import EmployeeDeleteModal from "./EmployeeDeleteModal";
+
 const ManageEmployee = () => {
   const members = [
     {
@@ -74,14 +77,13 @@ const ManageEmployee = () => {
                 <td className="text-xs font-bold">{member._id}</td>
 
                 <th>
-                  <button className="btn btn-outline btn-success btn-sm">
-                    Assign
-                  </button>
+                  <label for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">Assign</label>
+                  <AssignTaskModal />
                 </th>
                 <th>
-                  <button className="btn btn-outline btn-error  btn-sm ">
-                    Delete
-                  </button>
+                  
+                  <label for="EmployeeDelete-modal" class="btn modal-button btn-outline btn-error  btn-sm">Delete</label>
+                  <EmployeeDeleteModal />
                 </th>
               </tr>
             ))}
