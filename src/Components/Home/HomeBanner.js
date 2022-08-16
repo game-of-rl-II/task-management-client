@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import Banner2 from "../../Images/banner-2.jpg";
 import Banner3 from "../../Images/banner-3.jpg";
 import Banner4 from "../../Images/Banner-5.jpg";
+import React from "react";
 
 const HomeBanner = () => {
   return (
@@ -9,7 +9,6 @@ const HomeBanner = () => {
       <div className="carousel w-full">
         <div className="carousel w-full h-screen max-h-[80vh]">
           <div id="item1" className="carousel-item w-full">
-
             <img src={Banner3} className="w-full" />
           </div>
           <div id="item2" className="carousel-item w-full">
@@ -34,6 +33,7 @@ const HomeBanner = () => {
         </div> */}
       </div>
     </div>
+
   );
 };
 
