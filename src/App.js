@@ -18,6 +18,7 @@ import TaskForwarding from './Components/Dashboard/MemberDashboardItems/TaskForw
 import Register from './Components/Entry/Register';
 import EmployeeLogin from './Components/Entry/EmployeeLogin';
 import AdminLogin from './Components/Entry/AdminLogin';
+import TaskModal from './Components/Dashboard/MemberDashboardItems/TaskModal';
 
 function App() {
   return (
