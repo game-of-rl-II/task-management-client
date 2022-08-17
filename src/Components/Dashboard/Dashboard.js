@@ -1,17 +1,33 @@
 import React from 'react';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { auth } from '../../Firebase/firebase.init';
+import { useAuthState, } from 'react-firebase-hooks/auth';
+
+
 import useMember from '../hooks/useMember';
+import { signOut } from 'firebase/auth';
 
 
 const Dashboard = () => {
+    const [admin, adminLoading, adminError] = useAuthState(auth);
+
     const member = localStorage.getItem('member')
     const navigate = useNavigate()
-    const handleMemberSignOut = () => {
-        localStorage.removeItem('member')
-        navigate('/home')
+    const handleSignOut = () => {
+        if (admin) {
+            signOut(auth);
+            navigate('/home')
+        }
+        else {
+            localStorage.removeItem('member')
+            navigate('/home')
+        }
 
     }
-    console.log(member)
+    if (adminLoading) {
+        return <p>loading...</p>
+    }
+
     return (
         <>
             <div className="drawer">
@@ -38,56 +54,71 @@ const Dashboard = () => {
                 <div className="drawer-side">
                     <label htmlFor="my-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+                        {
 
-                        <li>
-                            <Link to="/dashboard">My Profile</Link>
-                        </li>
-
-                        <>
-                            <li>
-                                <Link to="addMember">Add New Member</Link>
+                            (admin || member) && <li>
+                                <Link to="/dashboard">My Profile</Link>
                             </li>
-                            <li>
-                                <Link to="attendanceReports">Attendance Reports</Link>
-                            </li>
-                            <li>
-                                <Link to="employeeTask">Members Tasks</Link>
-                            </li>
-
-                            <li>
-                                <Link to="manageAttendance">Manage Attendance</Link>
-                            </li>
-                        </>
+                        }
 
 
-                        <>
-                            <li>
-                                <Link to="manageEmployee">Manage Members</Link>
-                            </li>
-                            <li>
-                                <Link to="reviewYourTeamMember">Review A Member</Link>
-                            </li>
 
-                            <li>
-                                <Link to="assignedTasks">
-                                    Assigned Tasks
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="completedTask">Completed Tasks</Link>
-                            </li>
-                            <li>
-                                <Link to="uncompletedTask">Uncompleted Tasks</Link>
-                            </li>
-                            {member && <li>
-                                <Link to="taskForwarding">Task Forwarding</Link>
-                            </li>
-                            }
+                        {
+                            admin?.uid && <>
+                                <li>
+                                    <Link to="addMember">Add New Member</Link>
+                                </li>
+                                <li>
+                                    <Link to="manageEmployee">Manage Members</Link>
+                                </li>
+                                <li>
+                                    <Link to="employeeTask">Members Tasks</Link>
+                                </li>
+                                <li>
+                                    <Link to="manageAttendance">Manage Attendance</Link>
+                                </li>
+                                <li>
+                                    <Link to="attendanceReports">Attendance Reports</Link>
+                                </li>
+                                <li>
+                                    <Link to="reviewYourTeamMember">Review A Member</Link>
+                                </li>
+                                <li>
+                                    <a onClick={handleSignOut}>Sign Out</a>
+                                </li>
+                            </>
+                        }
 
-                            <li>
-                                <a onClick={handleMemberSignOut}>Log Out</a>
-                            </li>
-                        </>
+                        {
+                            member && <>
+                                <li>
+                                    <Link to="assignedTasks">
+                                        Assigned Tasks
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="completedTask">Completed Tasks</Link>
+                                </li>
+                                <li>
+                                    <Link to="uncompletedTask">Uncompleted Tasks</Link>
+                                </li>
+                                <li>
+                                    <Link to="taskForwarding">Task Forwarding</Link>
+                                </li>
+
+
+                                <li>
+                                    <a onClick={handleSignOut}>Log Out</a>
+                                </li>
+
+                            </>
+                        }
+
+
+
+
+
+
 
                     </ul>
                 </div>
