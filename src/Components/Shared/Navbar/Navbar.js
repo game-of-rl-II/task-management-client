@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div className="">
+    <div className="max-w-7xl mx-auto">
       <div className="navbar relative z-50 top-5">
         <div className="flex-1">
           <Link to="/" className="text-3xl text-primary">
