@@ -1,4 +1,5 @@
 import React from 'react';
+import UncompletedTaskModal from './UncompletedTaskModal';
 
 const UncompletedTask = () => {
     const members = [
@@ -64,14 +65,18 @@ const UncompletedTask = () => {
                   <td className="text-xs font-bold">{employee._id}</td>
 
                   <th>
-                    <button className="btn btn-outline btn-warning btn-sm">
+                    <h2 className=" bg-warning w-32 text-center px-2 py-1 rounded text-white my-8 font-bold">
                       INCOMPLETED
-                    </button>
+                    </h2>
                   </th>
                   <th>
-                    <button className="btn btn-outline btn-success btn-sm">
+                    <label
+                      for="my-modal-6"
+                      class="btn modal-button btn-outline btn-success btn-sm"
+                    >
                       DETAILS
-                    </button>
+                    </label>
+                    <UncompletedTaskModal />
                   </th>
                 </tr>
               ))}
