@@ -18,33 +18,37 @@ import TaskForwarding from './Components/Dashboard/MemberDashboardItems/TaskForw
 import Register from './Components/Entry/Register';
 import EmployeeLogin from './Components/Entry/EmployeeLogin';
 import AdminLogin from './Components/Entry/AdminLogin';
+import TaskModal from './Components/Dashboard/MemberDashboardItems/TaskModal';
+import NotFound from './Components/ErroPages/NotFound';
+import Denied from './Components/ErroPages/Denied';
 
 function App() {
   return (
     <>
-    <Navbar></Navbar>
-    <Routes>
-      <Route path='/home' element={<Home></Home>}></Route>
-      <Route path='/' element={<Home></Home>}></Route>
-      <Route path='/register' element={<Register></Register>}></Route>
-      <Route path='/employeeLogin' element={<EmployeeLogin></EmployeeLogin>}></Route>
-      <Route path='/adminLogin' element={<AdminLogin></AdminLogin>}></Route>
-      <Route path="/dashboard" element={<Dashboard></Dashboard>}>
-        <Route index element={<MyProfile></MyProfile>}></Route>
-        <Route path="addMember" element={<AddMember></AddMember>}></Route>
-        <Route path="attendanceReports" element={<AttendanceReports></AttendanceReports>}></Route>
-        <Route path="employeeTask" element={<EmployeeTask></EmployeeTask>}></Route>
-        <Route path="manageAttendance" element={<ManageAttendance></ManageAttendance>}></Route>
-        <Route path="manageEmployee" element={<ManageEmployee></ManageEmployee>}></Route>
-        <Route path="reviewYourTeamMember" element={<ReviewYourTeamMember></ReviewYourTeamMember>}></Route>
-        <Route path="assignedTasks" element={<AssignedTasks></AssignedTasks>}></Route>
-        <Route path="completedTask" element={<CompletedTask></CompletedTask>}></Route>
-        <Route path="uncompletedTask" element={<UncompletedTask></UncompletedTask>}></Route>
-        <Route path="taskForwarding" element={<TaskForwarding></TaskForwarding>}></Route>
-      </Route>
-        
-    </Routes>
-    <Footer></Footer>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="/employeeLogin" element={<EmployeeLogin></EmployeeLogin>}></Route>
+        <Route path="/adminLogin" element={<AdminLogin></AdminLogin>}></Route>
+        <Route path="/dashboard" element={<Dashboard></Dashboard>}>
+          <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route path="addMember" element={<AddMember></AddMember>}></Route>
+          <Route path="attendanceReports" element={<AttendanceReports></AttendanceReports>}></Route>
+          <Route path="employeeTask" element={<EmployeeTask></EmployeeTask>}></Route>
+          <Route path="manageAttendance" element={<ManageAttendance></ManageAttendance>}></Route>
+          <Route path="manageEmployee" element={<ManageEmployee></ManageEmployee>}></Route>
+          <Route path="reviewYourTeamMember" element={<ReviewYourTeamMember></ReviewYourTeamMember>}></Route>
+          <Route path="assignedTasks" element={<AssignedTasks></AssignedTasks>}></Route>
+          <Route path="completedTask" element={<CompletedTask></CompletedTask>}></Route>
+          <Route path="uncompletedTask" element={<UncompletedTask></UncompletedTask>}></Route>
+          <Route path="taskForwarding" element={<TaskForwarding></TaskForwarding>}></Route>
+        </Route>
+        <Route path="*" element={<NotFound />} />
+        <Route path="/denied" element={<Denied />} />
+      </Routes>
+      <Footer></Footer>
     </>
   );
 }
