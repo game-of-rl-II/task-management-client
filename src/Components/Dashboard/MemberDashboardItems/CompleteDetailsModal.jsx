@@ -13,12 +13,7 @@ const CompleteDetailsModal = ({ detailsModal }) => {
           </label>
           <h1 className="mt-5 text-gray-800 leading-10 text-sm md:text-xl font-bold">Task Deadline: {deadline}</h1>
           <h1 className=" text-gray-800 lg:leading-10 text-sm md:text-xl font-bold">
-            Task Status:{" "}
-            {status === "completed" ? (
-              <span className="uppercase text-success">{status}</span>
-            ) : (
-              <span className="uppercase text-warning">Incompleted</span>
-            )}
+            Task Status: <span className="uppercase text-success">{status}</span>
           </h1>
           <h1 className="mt-2 text-gray-800 lg:leading-10 text-sm md:text-xl font-bold">Assigned Task: {task}</h1>
         </div>
