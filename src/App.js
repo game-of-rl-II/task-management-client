@@ -1,5 +1,5 @@
 import './App.css';
-import {  Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Dashboard from './Components/Dashboard/Dashboard';
 import MyProfile from './Components/Dashboard/MyProfile';
 import AddMember from './Components/Dashboard/AdminDashboardItems/AddMember';
@@ -21,6 +21,8 @@ import AdminLogin from './Components/Entry/AdminLogin';
 import TaskModal from './Components/Dashboard/MemberDashboardItems/TaskModal';
 import NotFound from './Components/ErroPages/NotFound';
 import Denied from './Components/ErroPages/Denied';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -49,6 +51,7 @@ function App() {
         <Route path="/denied" element={<Denied />} />
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </>
   );
 }
