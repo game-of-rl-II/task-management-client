@@ -1,8 +1,17 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+import useMember from '../hooks/useMember';
 
 
 const Dashboard = () => {
+    const member = localStorage.getItem('member')
+    const navigate = useNavigate()
+    const handleMemberSignOut = () => {
+        localStorage.removeItem('member')
+        navigate('/home')
+
+    }
+    console.log(member)
     return (
         <>
             <div className="drawer">
@@ -58,6 +67,7 @@ const Dashboard = () => {
                             <li>
                                 <Link to="reviewYourTeamMember">Review A Member</Link>
                             </li>
+
                             <li>
                                 <Link to="assignedTasks">
                                     Assigned Tasks
@@ -69,11 +79,13 @@ const Dashboard = () => {
                             <li>
                                 <Link to="uncompletedTask">Uncompleted Tasks</Link>
                             </li>
-                            <li>
+                            {member && <li>
                                 <Link to="taskForwarding">Task Forwarding</Link>
                             </li>
+                            }
+
                             <li>
-                                <a>Log Out</a>
+                                <a onClick={handleMemberSignOut}>Log Out</a>
                             </li>
                         </>
 
