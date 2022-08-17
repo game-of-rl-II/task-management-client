@@ -30,7 +30,7 @@ const AssignedTasks = () => {
     ];
     return (
       <div>
-        <h1 className=" bg-slate-900 w-48 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
+        <h1 className=" bg-slate-900 w-40 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
           Assigned Task
         </h1>
         <div className="w-full ">
@@ -50,14 +50,14 @@ const AssignedTasks = () => {
                 <tr key={employee._id}>
                   <th>{index + 1}</th>
                   <td>
-                    <div class="flex items-center space-x-3">
-                      <div class="avatar">
-                        <div class="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <div className="flex items-center space-x-3">
+                      <div className="avatar">
+                        <div className="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                           <img src={employee.image} alt="" />
                         </div>
                       </div>
                       <div>
-                        <div class="font-bold">{employee.name}</div>
+                        <div className="font-bold">{employee.name}</div>
                       </div>
                     </div>
                   </td>
@@ -65,9 +65,9 @@ const AssignedTasks = () => {
                   <td className="text-xs font-bold">{employee._id}</td>
 
                   <th>
-                    <button className="btn btn-outline btn-warning btn-sm">
-                      INCOMPLETE
-                    </button>
+                  <h1 className=" bg-yellow-500 w-28  py-1 rounded  text-center text-white my-8 font-bold">
+                       INCOMPLETE
+                </h1>
                   </th>
                   <th>
                     <button className="btn btn-outline btn-success btn-sm">
@@ -75,7 +75,7 @@ const AssignedTasks = () => {
                     </button>
                   </th>
                   <th>
-                    <button className="btn btn-outline btn-success btn-sm">
+                    <button className="btn btn-outline btn-info btn-sm">
                       DETAILS
                     </button>
                   </th>

@@ -19,6 +19,7 @@ import Register from "./Components/Entry/Register";
 import EmployeeLogin from "./Components/Entry/EmployeeLogin";
 import AdminLogin from "./Components/Entry/AdminLogin";
 import NotFound from "./Components/ErroPages/NotFound";
+import Denied from "./Components/ErroPages/Denied";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="taskForwarding" element={<TaskForwarding></TaskForwarding>}></Route>
         </Route>
         <Route path="*" element={<NotFound />} />
+        <Route path="/denied" element={<Denied />} />
       </Routes>
       <Footer></Footer>
     </>

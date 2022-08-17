@@ -1,7 +1,15 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import useMember from "../hooks/useMember";
 
 const Dashboard = () => {
+  const member = localStorage.getItem("member");
+  const navigate = useNavigate();
+  const handleMemberSignOut = () => {
+    localStorage.removeItem("member");
+    navigate("/home");
+  };
+  console.log(member);
   return (
     <>
       <div className="drawer">
@@ -16,7 +24,7 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-64 bg-base-100 text-base-content">
+          <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
             <li>
               <Link to="/dashboard">My Profile</Link>
             </li>
@@ -44,6 +52,7 @@ const Dashboard = () => {
               <li>
                 <Link to="reviewYourTeamMember">Review A Member</Link>
               </li>
+
               <li>
                 <Link to="assignedTasks">Assigned Tasks</Link>
               </li>
@@ -53,11 +62,14 @@ const Dashboard = () => {
               <li>
                 <Link to="uncompletedTask">Uncompleted Tasks</Link>
               </li>
+              {member && (
+                <li>
+                  <Link to="taskForwarding">Task Forwarding</Link>
+                </li>
+              )}
+
               <li>
-                <Link to="taskForwarding">Task Forwarding</Link>
-              </li>
-              <li>
-                <a>Log Out</a>
+                <button onClick={handleMemberSignOut}>Log Out</button>
               </li>
             </>
           </ul>
