@@ -1,9 +1,13 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../../Firebase/firebase.init';
 import './AddMember.css'
 
 const AddMember = () => {
+  const [admin, adminLoading, adminError] = useAuthState(auth);
   const handleSubmit = (e) => {
     e.preventDefault();
+    const adminEmail = admin?.email
     const name = e.target.name.value;
     const nickName = e.target.nickName.value;
     const id = e.target.id.value;
@@ -13,7 +17,7 @@ const AddMember = () => {
     const description = e.target.description.value;
 
     const data = {
-       name, nickName, id, password, phone, position, description
+      adminEmail, name, nickName, id, password, phone, position, description
     }
     console.log(data)
     if (data) {
@@ -31,6 +35,10 @@ const AddMember = () => {
             alert('member successfully added!')
           }
         })
+    }
+
+    if(adminLoading){
+      return <p>Loading...</p>
     }
   }
   return (

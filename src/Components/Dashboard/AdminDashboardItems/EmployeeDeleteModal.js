@@ -5,7 +5,7 @@ const EmployeeDeleteModal = ({ deleteMember }) => {
     const { _id } = deleteMember;
 
     const handleDeleteMember = (id) => {
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(`http://localhost:5000/member/${id}`, {
             method: 'DELETE',
 
         }).then(res => res.json())

@@ -1,13 +1,18 @@
 import AssignTaskModal from "./AssignTaskModal";
 import EmployeeDeleteModal from "./EmployeeDeleteModal";
 import useTask from '../../hooks/useTask';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ManageEmployee = () => {
   const [deleteMember, setDeleteMember] = useState(null);
   const [assignTaskMember, setAssignTaskMember] = useState(null);
-  // console.log(assignTaskMember);
-  const [tasks] = useTask();
+  const [members, setMembers] = useState([])
+  useEffect(() => {
+    fetch('http://localhost:5000/members')
+      .then(res => res.json())
+      .then(data => setMembers(data))
+  }, [members])
+
 
   return (
     <div>
@@ -26,7 +31,7 @@ const ManageEmployee = () => {
             </tr>
           </thead>
           <tbody>
-            {tasks.map((member, index) => (
+            {members.map((member, index) => (
               <tr key={member._id}>
                 <th>
                   {index + 1}
