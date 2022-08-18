@@ -7,9 +7,7 @@ const AssignedTasks = () => {
   const [tasks] = useTask();
   return (
     <div>
-      <h1 className=" bg-slate-900 w-40 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
-        Assigned Task
-      </h1>
+      <h1 className=" bg-slate-900 w-40 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Assigned Task</h1>
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>
@@ -44,27 +42,17 @@ const AssignedTasks = () => {
                 <th>
                   <h1 className=" text-gray-800 lg:leading-10 text-xs  ">
                     {task.status ? (
-                      <span className=" uppercase bg-yellow-500 text-white p-1 rounded">
-                        {task.status}
-                      </span>
+                      <span className=" uppercase bg-yellow-500 text-white p-1 rounded">{task.status}</span>
                     ) : (
-                      <span className="uppercase bg-lime-500 text-white p-1 rounded">
-                        Completed
-                      </span>
+                      <span className="uppercase bg-lime-500 text-white p-1 rounded">Completed</span>
                     )}
                   </h1>
                 </th>
                 <th>
-                  <button className="btn btn-outline btn-success btn-sm">
-                    UPDATE
-                  </button>
+                  <button className="btn btn-outline btn-success btn-sm">UPDATE</button>
                 </th>
                 <th>
-                  <label
-                    onClick={() => setModalData(task)}
-                    for="my-modal-3"
-                    class="btn btn-outline btn-info btn-sm modal-button"
-                  >
+                  <label onClick={() => setModalData(task)} for="my-modal-3" class="btn btn-outline btn-info btn-sm modal-button">
                     DETAILS
                   </label>
                 </th>
@@ -73,9 +61,7 @@ const AssignedTasks = () => {
           </tbody>
         </table>
       </div>
-      {modalData && (
-        <TaskModal modalData={modalData} setModalData={setModalData} />
-      )}
+      {modalData && <TaskModal modalData={modalData} setModalData={setModalData} />}
     </div>
   );
 };

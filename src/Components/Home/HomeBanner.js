@@ -1,39 +1,27 @@
-import Banner2 from "../../Images/banner-2.jpg";
-import Banner3 from "../../Images/banner-3.jpg";
-import Banner4 from "../../Images/Banner-5.jpg";
 import React from "react";
+import Banner from "../../Images/banner-2.2.jpg";
 
 const HomeBanner = () => {
   return (
-    <div>
-      <div className="carousel w-full">
-        <div className="carousel w-full h-screen max-h-[80vh]">
-          <div id="item1" className="carousel-item w-full">
-            <img src={Banner3} className="w-full" />
-          </div>
-          <div id="item2" className="carousel-item w-full">
-            <img src={Banner2} className="w-full" />
-          </div>
-          <div id="item3" className="carousel-item w-full">
-            <img src={Banner4} className="w-full " alt="" />
-          </div>
-          <div id="item4" className="carousel-item w-full">
-            <img src="https://placeimg.com/800/200/arch" className="w-full" />
-            <a href="#item4" className="btn btn-xs btn-primary ">
-              4
-            </a>
+    <div className="w-full absolute top-0">
+      <div
+        class="hero w-ful min-h-screen bg-no-repeat
+      bg-right-bottom"
+        style={{ background: `url(${Banner}` }}
+      >
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-md mt-28">
+            <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+            <p class="mb-5">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+              a id nisi.
+            </p>
+            <button class="btn btn-primary">Get Started</button>
           </div>
         </div>
-        {/* <div className="flex justify-center w-full py-2 gap-2">
-          <a href="#item1" className="badge badge-xs"></a>
-
-          <a href="#item2" className="badge badge-xs"></a>
-
-          <a href="#item3" className="badge badge-xs"></a>
-        </div> */}
       </div>
     </div>
-
   );
 };
 

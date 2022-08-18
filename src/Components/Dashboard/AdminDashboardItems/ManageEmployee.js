@@ -1,24 +1,21 @@
 import AssignTaskModal from "./AssignTaskModal";
 import EmployeeDeleteModal from "./EmployeeDeleteModal";
-import useTask from '../../hooks/useTask';
+import useTask from "../../hooks/useTask";
 import { useEffect, useState } from "react";
 
 const ManageEmployee = () => {
   const [deleteMember, setDeleteMember] = useState(null);
   const [assignTaskMember, setAssignTaskMember] = useState(null);
-  const [members, setMembers] = useState([])
+  const [members, setMembers] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/members')
-      .then(res => res.json())
-      .then(data => setMembers(data))
-  }, [members])
-
+    fetch("http://localhost:5000/members")
+      .then((res) => res.json())
+      .then((data) => setMembers(data));
+  }, [members]);
 
   return (
     <div>
-      <h1 className=" bg-slate-900 w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
-        MANAGE ALL MEMBER
-      </h1>
+      <h1 className=" bg-slate-900 w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">MANAGE ALL MEMBER</h1>
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>
@@ -33,10 +30,7 @@ const ManageEmployee = () => {
           <tbody>
             {members.map((member, index) => (
               <tr key={member._id}>
-                <th>
-                  {index + 1}
-
-                </th>
+                <th>{index + 1}</th>
                 <td>
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
@@ -46,7 +40,6 @@ const ManageEmployee = () => {
                     </div>
                     <div>
                       <div className="font-bold">{member.name}</div>
-
                     </div>
                   </div>
                 </td>
@@ -54,18 +47,16 @@ const ManageEmployee = () => {
                 <td className="text-xs font-bold">{member._id}</td>
 
                 <th>
-                  <label onClick={() => setAssignTaskMember(member)} for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">Assign</label>
-                  {assignTaskMember && (
-                    <AssignTaskModal assignTaskMember={assignTaskMember}
-                      setAssignTaskMember={setAssignTaskMember}
-                    />
-                  )}
+                  <label onClick={() => setAssignTaskMember(member)} for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">
+                    Assign
+                  </label>
+                  {assignTaskMember && <AssignTaskModal assignTaskMember={assignTaskMember} setAssignTaskMember={setAssignTaskMember} />}
                 </th>
                 <th>
-                  <label onClick={() => setDeleteMember(member)} for="EmployeeDelete-modal" class="btn modal-button btn-outline btn-error  btn-sm">Delete</label>
-                  {deleteMember &&
-                    <EmployeeDeleteModal deleteMember={deleteMember} />
-                  }
+                  <label onClick={() => setDeleteMember(member)} for="EmployeeDelete-modal" class="btn modal-button btn-outline btn-error  btn-sm">
+                    Delete
+                  </label>
+                  {deleteMember && <EmployeeDeleteModal deleteMember={deleteMember} />}
                 </th>
               </tr>
             ))}
