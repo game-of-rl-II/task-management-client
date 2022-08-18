@@ -62,5 +62,3 @@ const CompletedTask = () => {
 };
 
 export default CompletedTask;
-
-//

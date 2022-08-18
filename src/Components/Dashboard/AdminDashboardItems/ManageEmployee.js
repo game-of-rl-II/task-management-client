@@ -1,44 +1,21 @@
-// import React, { useEffect, useState } from 'react';
+import AssignTaskModal from "./AssignTaskModal";
+import EmployeeDeleteModal from "./EmployeeDeleteModal";
+import useTask from "../../hooks/useTask";
+import { useEffect, useState } from "react";
 
 const ManageEmployee = () => {
-  const members = [
-    {
-      _id: "546",
-      name: "Haider Nayeem",
-      image: "https://placeimg.com/192/192/people",
-    },
-    {
-      _id: "462",
-      name: "Mahmudul Hasan",
-      image: "https://placeimg.com/192/192/people",
-    },
-    {
-      _id: "646",
-      name: "Jobair Sarkar",
-      image: "https://placeimg.com/192/192/people",
-    },
-    {
-      _id: "985",
-      name: "Shahid Islam",
-      image: "https://placeimg.com/192/192/people",
-    },
-    {
-      _id: "975",
-      name: "Saif Emon",
-      image: "https://placeimg.com/192/192/people",
-    },
-  ];
-  // const [employees, setEmployees] = useState([]);
-  // useEffect(() => {
-  //     fetch('employee.json')
-  //     .then(res => res.json())
-  //     .then(data => setEmployees(data))
-  // }, [])
+  const [deleteMember, setDeleteMember] = useState(null);
+  const [assignTaskMember, setAssignTaskMember] = useState(null);
+  const [members, setMembers] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/members")
+      .then((res) => res.json())
+      .then((data) => setMembers(data));
+  }, [members]);
+
   return (
     <div>
-      <h1 className=" bg-slate-900 w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
-        MANAGE ALL MEMBER
-      </h1>
+      <h1 className=" bg-slate-900 w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">MANAGE ALL MEMBER</h1>
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>
@@ -51,12 +28,9 @@ const ManageEmployee = () => {
             </tr>
           </thead>
           <tbody>
-            {members.map((member , index) => (
+            {members.map((member, index) => (
               <tr key={member._id}>
-                <th>
-                  {index + 1}
-
-                </th>
+                <th>{index + 1}</th>
                 <td>
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
@@ -66,7 +40,6 @@ const ManageEmployee = () => {
                     </div>
                     <div>
                       <div className="font-bold">{member.name}</div>
-                      
                     </div>
                   </div>
                 </td>
@@ -74,14 +47,16 @@ const ManageEmployee = () => {
                 <td className="text-xs font-bold">{member._id}</td>
 
                 <th>
-                  <button className="btn btn-outline btn-success btn-sm">
+                  <label onClick={() => setAssignTaskMember(member)} for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">
                     Assign
-                  </button>
+                  </label>
+                  {assignTaskMember && <AssignTaskModal assignTaskMember={assignTaskMember} setAssignTaskMember={setAssignTaskMember} />}
                 </th>
                 <th>
-                  <button className="btn btn-outline btn-error  btn-sm ">
+                  <label onClick={() => setDeleteMember(member)} for="EmployeeDelete-modal" class="btn modal-button btn-outline btn-error  btn-sm">
                     Delete
-                  </button>
+                  </label>
+                  {deleteMember && <EmployeeDeleteModal deleteMember={deleteMember} />}
                 </th>
               </tr>
             ))}
