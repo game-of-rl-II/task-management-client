@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useTask from "../../hooks/useTask";
 import TaskModal from "./TaskModal";
 
 const AssignedTasks = () => {
   const [modalData, setModalData] = useState(null);
-  const [tasks] = useTask();
+  const [tasks] = useTask()
+
+  const handleUpdateTaskStatus = (id) => {
+      fetch(`http://localhost:5000/task-member/${id}`,{
+        method: 'PUT'
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.acknowledged){
+          alert('successfully update')
+        }
+      })
+  }
+  
+
   return (
     <div>
       <h1 className=" bg-slate-900 w-40 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Assigned Task</h1>
@@ -37,19 +51,19 @@ const AssignedTasks = () => {
                   </div>
                 </td>
 
-                <td className="text-xs font-bold">{task._id}</td>
+                <td className="text-xs font-bold">{task.memberId}</td>
 
                 <th>
                   <h1 className=" text-gray-800 lg:leading-10 text-xs  ">
-                    {task.status ? (
-                      <span className=" uppercase bg-yellow-500 text-white p-1 rounded">{task.status}</span>
+                    {task.taskCompletion ? (
+                      <span className=" uppercase bg-lime-500 text-white p-1 rounded">Completed</span>
                     ) : (
-                      <span className="uppercase bg-lime-500 text-white p-1 rounded">Completed</span>
+                      <span className="uppercase bg-yellow-500 text-white p-1 rounded">Pending</span>
                     )}
                   </h1>
                 </th>
                 <th>
-                  <button className="btn btn-outline btn-success btn-sm">UPDATE</button>
+                  <button onClick={()=>handleUpdateTaskStatus(task._id)} disabled={task.taskCompletion === true} className="btn btn-outline btn-success btn-sm">UPDATE</button>
                 </th>
                 <th>
                   <label onClick={() => setModalData(task)} for="my-modal-3" class="btn btn-outline btn-info btn-sm modal-button">

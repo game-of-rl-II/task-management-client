@@ -5,7 +5,7 @@ import UncompletedTaskModal from "./UncompletedTaskModal";
 
 const UncompletedTask = () => {
   const [taskData, setTaskData] = useState(null);
-  console.log(taskData);
+  
   const [tasks] = useTask();
   return (
     <div>
