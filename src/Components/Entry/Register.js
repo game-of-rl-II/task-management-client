@@ -13,14 +13,29 @@ const Register = () => {
         adminLoading,
         adminError,
     ] = useCreateUserWithEmailAndPassword(auth);
-    const handleRegister = () => {
+    const handleRegister = async () => {
+
         if (!(/\S+@\S+\.\S+/.test(email))) {
             return alert('please enter a valid email address')
         }
         if (password <= 7) {
             return alert('password must be 8 characters or longer')
         }
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password)
+        fetch('http://localhost:5000/new-admin', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+
+                    navigate('/home')
+                }
+            })
 
 
     }
@@ -30,9 +45,7 @@ const Register = () => {
     if (adminLoading) {
         return <p>Loading...</p>
     }
-    if (admin) {
-        navigate('/')
-    }
+
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse bg-gradient-to-t from-pink-500 to-orange-400 w-[80%] rounded-xl p-10">
