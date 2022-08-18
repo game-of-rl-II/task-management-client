@@ -23,8 +23,8 @@ const Dashboard = () => {
           <Outlet></Outlet>
         </div>
         <div className="drawer-side">
-          <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+          <label htmlFor="my-drawer" className="drawer-overlay bg-base-100"></label>
+          <ul className="menu p-4 overflow-y-auto w-64 bg-base-100 text-base-content">
             <li>
               <Link to="/dashboard">My Profile</Link>
             </li>
