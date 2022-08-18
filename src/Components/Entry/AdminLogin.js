@@ -1,6 +1,38 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom'
+import { auth } from '../../Firebase/firebase.init';
 const AdminLogin = () => {
+    const navigate = useNavigate()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [
+        signInWithEmailAndPassword,
+        admin,
+        adminLoading,
+        adminError,
+    ] = useSignInWithEmailAndPassword(auth);
+    const handleRegister = () => {
+        if (!(/\S+@\S+\.\S+/.test(email))) {
+            return alert('please enter a valid email address')
+        }
+        if (password <= 7) {
+            return alert('password must be 8 characters or longer')
+        }
+        signInWithEmailAndPassword(email, password)
+
+
+    }
+    if (adminError) {
+        return alert(`${adminError.message}`)
+    }
+    if (adminLoading) {
+        return <p>Loading...</p>
+    }
+    if (admin) {
+        navigate('/')
+    }
+
     return (
 
         <div className="hero min-h-screen">
@@ -25,16 +57,20 @@ const AdminLogin = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="text" placeholder="email" className="input input-bordered" />
+                                    <input
+                                    onChange={e=>setEmail(e.target.value)} type="text" placeholder="email" className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="text" placeholder="password" className="input input-bordered" />
+                                    <input onChange={e=>setPassword(e.target.value)} type="text" placeholder="password" className="input input-bordered" />
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>
+                                </div>
+                                <div className="form-control mt-6">
+                                    <button onClick={handleRegister} className="btn bg-gradient-to-r from-pink-400 to-orange-500 border-0 ">Login</button>
                                 </div>
 
                             </div>
