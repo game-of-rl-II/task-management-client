@@ -25,7 +25,6 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <div>
       <Routes>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/' element={<Home></Home>}></Route>
@@ -47,8 +46,6 @@ function App() {
         </Route>
 
       </Routes>
-      </div>
-      
       <Footer></Footer>
       <ToastContainer></ToastContainer>
     </>

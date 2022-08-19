@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../Firebase/firebase.init";
 import './HomeBanner.css'
 // import Banner from "../../Images/task-tool.png";
+import login2 from "../../Images/login2.png";
 
 const HomeBanner = () => {
   const navigate = useNavigate()
@@ -37,12 +38,15 @@ const HomeBanner = () => {
 
       </div>
       <div className="banner-right-side">
+
         {
           (!admin?.uid && !member) &&
           <div className="w-full">
             <div>
 
-
+              <div className="banner-image">
+                <img src={login2} alt=""/>
+              </div>
               <button onClick={() => (navigate('/register'))} className=" btn btn-primary btn-block">Register with email</button></div>
             <div><p className='text-center'>or</p></div>
             <div><button className=" btn btn-neutral btn-block btn-outline">Continue with google</button></div>
