@@ -30,7 +30,7 @@ const AdminLogin = () => {
         return <p>Loading...</p>
     }
     if (admin) {
-        navigate('/')
+        navigate('/dashboard')
     }
 
     return (
