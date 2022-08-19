@@ -5,7 +5,7 @@ const MyProfile = () => {
   const [openUpdateModal, setOpenUpdateModal] = useState(null);
   return (
     <>
-      <div className="min-h-fit md:m-16 m-4">
+      <div className="min-h-screen md:m-16 m-4">
         <div className="flex-1  flex flex-col">
           <div className=" p-6 rounded-2xl  shadow">
             <div className="divider before:bg-secondary after:bg-secondary">
