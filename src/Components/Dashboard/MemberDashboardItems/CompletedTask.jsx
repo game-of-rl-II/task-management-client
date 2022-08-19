@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from "react";
+import useTask from "../../hooks/useTask";
 import CompleteDetailsModal from "./CompleteDetailsModal";
 
 const CompletedTask = () => {
   const [members, setMembers] = useState([]);
   const [detailsModal, setDetailsModal] = useState(null);
-  useEffect(() => {
-    fetch("http://localhost:5000/complete-task")
-      .then((res) => res.json())
-      .then((data) => setMembers(data));
-  }, []);
-
+  const [tasks] = useTask()
+  console.log(tasks)
   return (
     <div>
       <h1 className=" bg-slate-900 w-48 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Completed Task</h1>
-      <div className="w-full ">
+      {/* <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>
             <tr>
@@ -56,7 +53,7 @@ const CompletedTask = () => {
             {detailsModal && <CompleteDetailsModal detailsModal={detailsModal} />}
           </tbody>
         </table>
-      </div>
+      </div> */}
     </div>
   );
 };

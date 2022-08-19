@@ -38,7 +38,7 @@ const ManageEmployee = () => {
           </thead>
           <tbody>
             {members.map((member, index) => (
-              <tr key={member._id}>
+              <tr key={member.id}>
                 <th>{index + 1}</th>
                 <td>
                   <div className="flex items-center space-x-3">
