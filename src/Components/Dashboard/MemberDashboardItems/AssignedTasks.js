@@ -1,16 +1,23 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import useTask from "../../hooks/useTask";
 import TaskModal from "./TaskModal";
 
 const AssignedTasks = () => {
   const [modalData, setModalData] = useState(null);
   const [tasks] = useTask();
-  // const navigate = useNavigate();
-  // const navigateToTaskDetails = (id) => {
-  //   navigate(`taskModal/${id}`)
-  // }
+const handleUpdateTask = (id) => {
 
+        const url = `http://localhost:5000/task/${id}`
+        fetch(url ,{
+          method: 'PUT',
+        
+      })
+      .then(res => res.json())
+      .then(data => {
+          console.log(data); 
+         
+      })
+      };
   return (
     <div>
       <h1 className=" bg-slate-900 w-40 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
@@ -49,20 +56,20 @@ const AssignedTasks = () => {
 
                 <th>
                 <h1 className=" text-gray-800 lg:leading-10 text-xs  ">
-                        
-                        {task.status ? (
+                
+                        {task.status === 'incompleted'  ? (
                             <span className=" uppercase bg-yellow-500 text-white p-1 rounded">
                                 {task.status}
                             </span>
                         ) : (
                             <span className="uppercase bg-lime-500 text-white p-1 rounded">
-                                Completed
+                               {task.status}
                             </span>
                         )}
                     </h1>
                 </th>
                 <th>
-                  <button className="btn btn-outline btn-success btn-sm">
+                  <button onClick={() =>handleUpdateTask(task._id) } className="btn btn-outline btn-success btn-sm">
                     UPDATE
                   </button>
                 </th>

@@ -1,6 +1,32 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const ReviewYourTeamMember = () => {
+    const handleReview = (event) => {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const description = event.target.description.value;
+        const rating = event.target.rating.value;
+        const review ={name, description, rating}
+        console.log(review);
+    
+        const url ='http://localhost:5000/review'
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(review)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+         if(data) {
+           toast.success('Your review has been done successfully')
+         }
+        })
+    
+      };
     return (
         <div className="m-9 lg:px-12 text-charcoal min-h-screen font-sans leading-normal overflow-x-hidden lg:overflow-auto bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-indigo-500 w-auto rounded-xl p-10">
                 <div className="flex-1 md:p-0 lg:pt-8 lg:pb-8  mx-auto flex flex-col rounded-xl">
@@ -10,13 +36,13 @@ const ReviewYourTeamMember = () => {
                                 Add A New Rivew
                             </h2>
                         </div>
-                        <form>
+                        <form onSubmit={handleReview}>
                             <div className="mb-8">
                                 <div className="md:flex-1 mt-2 mb:mt-0 ">
                                     <label className="block uppercase tracking-wide text-charcoal-darker text-xs font-bold p-2">
                                         Who gave the review
                                     </label>
-                                    <input  className="w-full shadow-inner p-4 border-0 rounded-xl" placeholder="Enter the name"
+                                    <input  name="name" className="w-full shadow-inner p-4 border-0 rounded-xl" placeholder="Enter the name"
                                     ></input>
                                   
                                 </div>
@@ -24,7 +50,7 @@ const ReviewYourTeamMember = () => {
                                     <label className="block uppercase tracking-wide text-charcoal-darker text-xs font-bold p-2">
                                         New Rivew
                                     </label>
-                                    <textarea className="w-full shadow-inner p-4 border-0 rounded-xl" placeholder="Enter your rivew here..."
+                                    <textarea name="description" className="w-full shadow-inner p-4 border-0 rounded-xl" placeholder="Enter your rivew here..."
                                        
                                     ></textarea>
                                 </div>
@@ -35,7 +61,7 @@ const ReviewYourTeamMember = () => {
                                                 Rivew Rating
                                             </label>
 
-                                            <select className="select  w-full max-w-xs"
+                                            <select name="rating" className="select  w-full max-w-xs"
                                             >
                                                 <option>5</option>
                                                 <option>4</option>
@@ -60,6 +86,7 @@ const ReviewYourTeamMember = () => {
                         </form>
                     </section>
                 </div>
+               
             </div>
     );
 };
