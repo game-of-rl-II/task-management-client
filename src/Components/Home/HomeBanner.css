@@ -1,0 +1,22 @@
+.home-banner-parent{
+    display:  grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 100px;
+    grid-column-gap: 50px;
+}
+.list-banner{
+    display: flex;
+    align-items: center;
+    
+    
+}
+.banner-right-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
