@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../../Firebase/firebase.init';
@@ -6,6 +6,9 @@ const AdminLogin = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    useEffect(() => {
+        document.getElementById("footer").style.display = "none"
+    })
     const [
         signInWithEmailAndPassword,
         admin,
