@@ -10,7 +10,7 @@ const UncompletedTaskModal = ({ taskData, setTaskData }) => {
 
           <h3 class="text-lg mt-4 font-bold">Task Assigned: {taskData.name}</h3>
           <p class="text-lg font-bold">Deadline: {taskData.deadline}</p>
-          <p class="text-lg font-bold">Status: {taskData.status}</p>
+          <p class="text-lg font-bold">Status: Pending</p>
           <p class="text-lg font-bold">Task Description: {taskData.task}</p>
           <div className="flex gap-5 justify-end mt-5">
             <button
