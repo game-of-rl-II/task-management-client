@@ -4,7 +4,7 @@ const About = () => {
   return (
     <>
       {/* map section  */}
-      <div className="mt-[95vh]">
+      <div>
         <h1 className="text-center text-gray-600 text-2xl md:text-5xl font-semibold py-10 md:pt-20 ">Our Support</h1>
         <div className="container md:pt-14 pb-20 md:pb-28 px-6 mx-auto">
           <section className=" text-gray-800">

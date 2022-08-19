@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useMember from "../hooks/useMember";
 import {Link, useNavigate} from "react-router-dom"
 
@@ -6,6 +6,10 @@ const EmployeeLogin = () => {
   const navigate = useNavigate()
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
+
+  useEffect(() => {
+    document.getElementById("footer").style.display = "none"
+})
   
   const handleLogin = () => {
     

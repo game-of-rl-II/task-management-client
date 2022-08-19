@@ -6,6 +6,7 @@
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 100px;
+    margin-bottom: 50px;
     grid-column-gap: 50px;
 }
 .list-banner{
@@ -19,4 +20,10 @@
     justify-content: center;
     align-items: center;
 
+}
+.banner-image{
+    width: 90%;
+    margin-top: -70px;
+    margin-left: 5%;
+    margin-right: 5%;
 }

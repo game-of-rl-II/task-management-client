@@ -49,7 +49,7 @@ const AddMember = () => {
     }
   };
   return (
-    <div className="addMember-form">
+    <div className="addMember-form min-h-screen">
       <form onSubmit={handleSubmit}>
         <div className="my-10 addMember-form-top">
           <div className="form-control">
