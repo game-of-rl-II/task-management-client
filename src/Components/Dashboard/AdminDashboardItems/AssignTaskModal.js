@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
+
+    const datee = (new Date().getUTCDate());
+    const [date, setDate] = useState(new Date());
 
     const handleAssignTask = (event) => {
         event.preventDefault();
@@ -36,7 +39,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
             <input type="checkbox" id="my-modal-6" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-indigo-500">
-                    <p class="py-4">Employee Name: {assignTaskMember.name}</p>
+                    <p class="py-4">Employee Name: {datee} {assignTaskMember.name}</p>
                     <p class="py-4">Employee ID: {assignTaskMember._id}</p>
                     <form onSubmit={handleAssignTask}>
                         <div className="mb-8">
