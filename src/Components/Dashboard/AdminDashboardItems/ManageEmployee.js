@@ -12,7 +12,7 @@ const ManageEmployee = () => {
   const [members, setMembers] = useState([]);
   useEffect(() => {
     if (email) {
-      console.log(email)
+      // console.log(email)
       fetch(`http://localhost:5000/members?email=${email}`)
         .then((res) => res.json())
         .then((data) => setMembers(data));
@@ -56,13 +56,13 @@ const ManageEmployee = () => {
                 <td className="text-xs font-bold">{member._id}</td>
 
                 <th>
-                  <label onClick={() => setAssignTaskMember(member)} for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">
+                  <label onClick={() => setAssignTaskMember(member)} for="my-modal-6" className="btn modal-button btn-outline btn-success btn-sm">
                     Assign
                   </label>
                   {assignTaskMember && <AssignTaskModal assignTaskMember={assignTaskMember} setAssignTaskMember={setAssignTaskMember} />}
                 </th>
                 <th>
-                  <label onClick={() => setDeleteMember(member)} for="EmployeeDelete-modal" class="btn modal-button btn-outline btn-error  btn-sm">
+                  <label onClick={() => setDeleteMember(member)} for="EmployeeDelete-modal" className="btn modal-button btn-outline btn-error  btn-sm">
                     Delete
                   </label>
                   {deleteMember && <EmployeeDeleteModal deleteMember={deleteMember} />}

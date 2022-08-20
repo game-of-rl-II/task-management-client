@@ -45,7 +45,7 @@ const UncompletedTask = () => {
                   <h2 className="uppercase bg-warning w-32 text-center px-2 py-1 rounded text-white my-8 font-bold">Pending</h2>
                 </th>
                 <th>
-                  <label onClick={() => setTaskData(task)} for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">
+                  <label onClick={() => setTaskData(task)} for="my-modal-6" className="btn modal-button btn-outline btn-success btn-sm">
                     DETAILS
                   </label>
                 </th>

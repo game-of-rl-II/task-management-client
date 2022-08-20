@@ -40,14 +40,14 @@ const AssignedTasks = () => {
               <tr key={task._id} >
                 <th>{index + 1}</th>
                 <td>
-                  <div class="flex items-center space-x-3">
-                    <div class="avatar">
-                      <div class="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                      <div className="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img src={task.image} alt="" />
                       </div>
                     </div>
                     <div>
-                      <div class="font-bold">{task.name}</div>
+                      <div className="font-bold">{task.name}</div>
                     </div>
                   </div>
                 </td>
@@ -67,7 +67,7 @@ const AssignedTasks = () => {
                   <button onClick={()=>handleUpdateTaskStatus(task._id)} disabled={task.taskCompletion === true} className="btn btn-outline btn-success btn-sm">UPDATE</button>
                 </th>
                 <th>
-                  <label onClick={() => setModalData(task)} for="my-modal-3" class="btn btn-outline btn-info btn-sm modal-button">
+                  <label onClick={() => setModalData(task)} for="my-modal-3" className="btn btn-outline btn-info btn-sm modal-button">
                     DETAILS
                   </label>
                 </th>

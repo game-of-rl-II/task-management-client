@@ -1,10 +1,12 @@
+import { format } from 'date-fns';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
 
-    const datee = (new Date().getUTCDate());
     const [date, setDate] = useState(new Date());
+    const newDate = <>{format(date, 'PP')}</>
+    const exactDate = newDate.props.children;
 
     const handleAssignTask = (event) => {
         event.preventDefault();
@@ -15,7 +17,8 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
 
 
         const taskCompletion = false
-        const assignTask = { name, memberId, task, deadline, taskCompletion }
+        const assignTask = { name, memberId, task, deadline,taskCompletion, exactDate};
+        // console.log(assignTask);
 
         const url = 'http://localhost:5000/assign-task'
         fetch(url, {
@@ -38,11 +41,12 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
 
     return (
         <div>
-            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-indigo-500">
-                    <p class="py-4">Employee Name: {datee} {assignTaskMember.name}</p>
-                    <p class="py-4">Employee ID: {assignTaskMember._id}</p>
+            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-indigo-500">
+                    <p className="py-4">Employee Name: {assignTaskMember.name}</p>
+                    <p className="py-4">Employee ID: {assignTaskMember._id}</p>
+                    <p className="py-4">Day: {newDate}</p>
                     <form onSubmit={handleAssignTask}>
                         <div className="mb-8">
                             <div className="md:flex-1 mt-2 mb:mt-0 ">
@@ -72,9 +76,9 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-action">
-                            <label for="my-modal-6" class="btn btn-warning btn-sm px-5">CANCEL</label>
-                            <button for="my-modal-6" type="submit"  class="btn btn-success btn-sm px-5">Assign</button>
+                        <div className="modal-action">
+                            <label for="my-modal-6" className="btn btn-warning btn-sm px-5">CANCEL</label>
+                            <button for="my-modal-6" type="submit"  className="btn btn-success btn-sm px-5">Assign</button>
                         </div>
                     </form>
                 </div>
