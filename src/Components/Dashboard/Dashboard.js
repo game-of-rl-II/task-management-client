@@ -66,7 +66,7 @@ const Dashboard = () => {
                   <Link to="reviewYourTeamMember">Review A Member</Link>
                 </li>
                 <li>
-                  <a onClick={handleSignOut}>Sign Out</a>
+                  <button onClick={handleSignOut}>Sign Out</button>
                 </li>
               </>
             )}
@@ -87,7 +87,7 @@ const Dashboard = () => {
                 </li>
 
                 <li>
-                  <a onClick={handleSignOut}>Log Out</a>
+                  <button onClick={handleSignOut}>Log Out</button>
                 </li>
               </>
             )}

@@ -22,7 +22,7 @@ const EmployeeDeleteModal = ({ deleteMember }) => {
       <input type="checkbox" id="EmployeeDelete-modal" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">
         <div class="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-white">
-          <h3 class="font-bold text-lg">Are you sure? You want to Delete?</h3>
+          <h3 class="font-bold text-lg">Are you sure? Do you want to delete this member?</h3>
           <p class="py-4"></p>
           <div class="modal-action">
             <label for="EmployeeDelete-modal" class="btn btn-success btn-sm px-5">

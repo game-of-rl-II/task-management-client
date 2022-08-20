@@ -3,6 +3,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../../Firebase/firebase.init";
+import Notification from "../../Dashboard/MemberDashboardItems/Notification";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -57,21 +58,22 @@ const Navbar = () => {
               </>
             ) : (
               <>
+              <Notification/>
                 <li>
                   <Link
-                    className="nav-button mr-3 btn btn-primary"
+                    className="nav-button mr-3 btn btn-primary text-white"
                     to="/dashboard"
                   >
                     Dashboard
                   </Link>
                 </li>
                 <li>
-                  <a
+                  <button
                     onClick={handleLogOut}
-                    className="nav-button mr-3 btn btn-primary"
+                    className="nav-button mr-3 btn btn-primary text-white"
                   >
                     Log out
-                  </a>
+                  </button>
                 </li>
               </>
             )}

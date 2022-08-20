@@ -14,9 +14,7 @@ const TaskModal = ({modalData, setModalData}) => {
                       <p class="text-lg font-bold">
                        Deadline: {modalData.deadline}
                       </p>
-                      <p class="text-lg font-bold">
-                        Status: {modalData.status}
-                      </p>
+                     
                       <p class="text-lg font-bold">
                        Task Description: {modalData.task}
                       </p>

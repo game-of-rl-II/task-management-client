@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import useTask from "../../hooks/useTask";
+import Notification from "./Notification";
 import TaskModal from "./TaskModal";
 
 const AssignedTasks = () => {
   const [modalData, setModalData] = useState(null);
-  const [tasks] = useTask()
+  const [tasks] = useTask();
 
   const handleUpdateTaskStatus = (id) => {
       fetch(`http://localhost:5000/task-member/${id}`,{
@@ -21,7 +22,7 @@ const AssignedTasks = () => {
 
   return (
     <div>
-      <h1 className=" bg-slate-900 w-40 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Assigned Task</h1>
+      <h1 className=" bg-slate-900 w-36 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Assigned Task</h1>
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>
@@ -36,7 +37,7 @@ const AssignedTasks = () => {
           </thead>
           <tbody>
             {tasks.map((task, index) => (
-              <tr key={task._id}>
+              <tr key={task._id} >
                 <th>{index + 1}</th>
                 <td>
                   <div class="flex items-center space-x-3">
@@ -76,6 +77,7 @@ const AssignedTasks = () => {
         </table>
       </div>
       {modalData && <TaskModal modalData={modalData} setModalData={setModalData} />}
+    
     </div>
   );
 };
