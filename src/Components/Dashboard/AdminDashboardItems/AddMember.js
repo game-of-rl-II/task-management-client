@@ -49,9 +49,9 @@ const AddMember = () => {
     }
   };
   return (
-    <div className="addMember-form min-h-screen">
+    <div className="addMember-form">
       <form onSubmit={handleSubmit}>
-        <div className="my-10 addMember-form-top">
+        <div className="addMember-form-top">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -103,7 +103,7 @@ const AddMember = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn text-white btn-primary">
               Submit
             </button>
           </div>
