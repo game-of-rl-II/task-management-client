@@ -1,7 +1,7 @@
-.home-banner-parent{
-    display:  grid;
+.home-banner-parent {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
+
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
@@ -9,18 +9,21 @@
     margin-bottom: 50px;
     grid-column-gap: 50px;
 }
-.list-banner{
+
+.list-banner {
     display: flex;
     align-items: center;
-    
+
 }
-.banner-right-side{
+
+.banner-right-side {
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
-.banner-image{
+
+.banner-image {
     width: 90%;
     margin-top: -70px;
     margin-left: 5%;
