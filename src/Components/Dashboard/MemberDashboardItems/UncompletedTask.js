@@ -5,8 +5,9 @@ import UncompletedTaskModal from "./UncompletedTaskModal";
 
 const UncompletedTask = () => {
   const [taskData, setTaskData] = useState(null);
-  console.log(taskData);
-  const [tasks] = useTask();
+  const [tasks] = useTask()
+  const unCompletedTasks = tasks.filter(task => task.taskCompletion !== true)
+  
   return (
     <div>
       <h1 className=" bg-slate-900 w-48 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Incompleted Task</h1>
@@ -22,7 +23,7 @@ const UncompletedTask = () => {
             </tr>
           </thead>
           <tbody>
-            {tasks.map((task, index) => (
+            {unCompletedTasks.map((task, index) => (
               <tr key={task._id}>
                 <th>{index + 1}</th>
                 <td>
@@ -38,10 +39,10 @@ const UncompletedTask = () => {
                   </div>
                 </td>
 
-                <td className="text-xs font-bold">{task._id}</td>
+                <td className="text-xs font-bold">{task.memberId}</td>
 
                 <th>
-                  <h2 className="uppercase bg-warning w-32 text-center px-2 py-1 rounded text-white my-8 font-bold">{task.status}</h2>
+                  <h2 className="uppercase bg-warning w-32 text-center px-2 py-1 rounded text-white my-8 font-bold">Pending</h2>
                 </th>
                 <th>
                   <label onClick={() => setTaskData(task)} for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">

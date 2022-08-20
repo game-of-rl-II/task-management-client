@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
+import useTask from "../../hooks/useTask";
 import CompleteDetailsModal from "./CompleteDetailsModal";
 
 const CompletedTask = () => {
   const [members, setMembers] = useState([]);
   const [detailsModal, setDetailsModal] = useState(null);
-  useEffect(() => {
-    fetch("http://localhost:5000/complete-task")
-      .then((res) => res.json())
-      .then((data) => setMembers(data));
-  }, []);
+  const [tasks] = useTask()
+  const completedTasks = tasks.filter(task => task.taskCompletion === true)
 
   return (
     <div>
@@ -20,34 +18,33 @@ const CompletedTask = () => {
               <th></th>
               <th className="text-sm font-bold">MEMBER NAME</th>
               <th className="text-sm font-bold">MEMBER Id</th>
-              <th className="text-sm font-bold">TASK STATUS </th>
               <th className="text-sm font-bold">TASK</th>
             </tr>
           </thead>
           <tbody>
-            {members.map((employee, index) => (
-              <tr key={employee._id}>
+            {completedTasks.map((task, index) => (
+              <tr key={task._id}>
                 <th>{index + 1}</th>
                 <td>
                   <div class="flex items-center space-x-3">
                     <div class="avatar">
                       <div class="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src={employee.image} alt="" />
+                        {/* <img src={employee.image} alt="" /> */}
                       </div>
                     </div>
                     <div>
-                      <div class="font-bold">{employee.name}</div>
+                      <div class="font-bold">{task.name}</div>
                     </div>
                   </div>
                 </td>
 
-                <td className="text-xs font-bold">{employee._id}</td>
+                <td className="text-xs font-bold">{task.memberId}</td>
 
-                <th>
+                {/* <th>
                   <button className="btn btn-outline btn-warning btn-sm">COMPLETED</button>
-                </th>
+                </th> */}
                 <th>
-                  <label for="details-modal" class="btn modal-button btn-outline btn-success btn-sm" onClick={() => setDetailsModal(employee)}>
+                  <label for="details-modal" class="btn modal-button btn-outline btn-success btn-sm" onClick={() => setDetailsModal(task)}>
                     DETAILS
                   </label>
                 </th>

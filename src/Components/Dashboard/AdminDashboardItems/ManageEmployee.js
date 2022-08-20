@@ -1,18 +1,27 @@
 import AssignTaskModal from "./AssignTaskModal";
 import EmployeeDeleteModal from "./EmployeeDeleteModal";
-import useTask from "../../hooks/useTask";
 import { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../Firebase/firebase.init";
 
 const ManageEmployee = () => {
+  const [admin, adminLoading, adminError] = useAuthState(auth);
+  const email = admin?.email;
   const [deleteMember, setDeleteMember] = useState(null);
   const [assignTaskMember, setAssignTaskMember] = useState(null);
   const [members, setMembers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/members")
-      .then((res) => res.json())
-      .then((data) => setMembers(data));
-  }, [members]);
+    if (email) {
+      console.log(email)
+      fetch(`http://localhost:5000/members?email=${email}`)
+        .then((res) => res.json())
+        .then((data) => setMembers(data));
+    }
 
+  }, [members]);
+  if (adminLoading) {
+    return <p>Loading...</p>;
+  }
   return (
     <div>
       <h1 className=" bg-slate-900 w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">MANAGE ALL MEMBER</h1>
@@ -29,7 +38,7 @@ const ManageEmployee = () => {
           </thead>
           <tbody>
             {members.map((member, index) => (
-              <tr key={member._id}>
+              <tr key={member.id}>
                 <th>{index + 1}</th>
                 <td>
                   <div className="flex items-center space-x-3">

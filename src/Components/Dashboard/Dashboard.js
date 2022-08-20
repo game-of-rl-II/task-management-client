@@ -56,12 +56,12 @@ const Dashboard = () => {
                 <li>
                   <Link to="employeeTask">Members Tasks</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="manageAttendance">Manage Attendance</Link>
                 </li>
                 <li>
                   <Link to="attendanceReports">Attendance Reports</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="reviewYourTeamMember">Review A Member</Link>
                 </li>

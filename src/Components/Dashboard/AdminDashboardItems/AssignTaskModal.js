@@ -10,7 +10,8 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
         const task = event.target.task.value;
         const deadline = event.target.deadline.value;
 
-        const taskCompletion = true
+
+        const taskCompletion = false
         const assignTask = { name, memberId, task, deadline, taskCompletion }
 
         const url = 'http://localhost:5000/assign-task'
