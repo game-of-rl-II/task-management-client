@@ -22,9 +22,9 @@ const AddMember = () => {
       password,
 
     };
-    console.log(data);
+    // console.log(data);
     if (data) {
-      fetch("https://warm-dawn-94442.herokuapp.com/add-new-member", {
+      fetch("http://localhost:5000/add-new-member", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -33,9 +33,13 @@ const AddMember = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data)
           if (data.acknowledged) {
             // console.log(data)
             alert("member successfully added!");
+          }
+          else{
+            alert(`${data.message}`)
           }
         });
     }
