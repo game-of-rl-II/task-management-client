@@ -18,10 +18,7 @@ import TaskForwarding from './Components/Dashboard/MemberDashboardItems/TaskForw
 import Register from './Components/Entry/Register';
 import EmployeeLogin from './Components/Entry/EmployeeLogin';
 import AdminLogin from './Components/Entry/AdminLogin';
-import TaskModal from './Components/Dashboard/MemberDashboardItems/TaskModal';
-import NotFound from './Components/ErroPages/NotFound';
-import Denied from './Components/ErroPages/Denied';
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
@@ -29,11 +26,11 @@ function App() {
     <>
       <Navbar></Navbar>
       <Routes>
-        <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/register" element={<Register></Register>}></Route>
-        <Route path="/employeeLogin" element={<EmployeeLogin></EmployeeLogin>}></Route>
-        <Route path="/adminLogin" element={<AdminLogin></AdminLogin>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/employeeLogin' element={<EmployeeLogin></EmployeeLogin>}></Route>
+        <Route path='/adminLogin' element={<AdminLogin></AdminLogin>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="addMember" element={<AddMember></AddMember>}></Route>
@@ -47,11 +44,10 @@ function App() {
           <Route path="uncompletedTask" element={<UncompletedTask></UncompletedTask>}></Route>
           <Route path="taskForwarding" element={<TaskForwarding></TaskForwarding>}></Route>
         </Route>
-        <Route path="*" element={<NotFound />} />
-        <Route path="/denied" element={<Denied />} />
+
       </Routes>
       <Footer></Footer>
-      <ToastContainer />
+      <ToastContainer></ToastContainer>
     </>
   );
 }

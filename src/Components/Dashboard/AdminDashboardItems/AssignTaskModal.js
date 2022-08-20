@@ -9,12 +9,13 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
     const handleAssignTask = (event) => {
         event.preventDefault();
         const name = assignTaskMember.name;
-        const memberId = assignTaskMember._id;
+        const memberId = assignTaskMember.id;
         const task = event.target.task.value;
         const deadline = event.target.deadline.value;
 
-        const assignTask = { name, memberId, task, deadline }
-        console.log(assignTask);
+
+        const taskCompletion = false
+        const assignTask = { name, memberId, task, deadline, taskCompletion }
 
         const url = 'http://localhost:5000/assign-task'
         fetch(url, {
@@ -28,8 +29,9 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
             .then(data => {
                 console.log(data)
                 if (data) {
-                    toast.success('Assign Task has been done successfully');
+                    toast.success('Task assigned successfully');
                 }
+                setAssignTaskMember(null)
             })
 
     };
@@ -47,7 +49,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
                                 <label className="block uppercase tracking-wide text-charcoal-darker text-xs font-bold p-2">
                                     ASSIGNED TASK DETAILS
                                 </label>
-                                <textarea name="task" className="w-full shadow-inner p-4 border-0 rounded-xl" placeholder=" Enter Assign Task Details..."
+                                <textarea required name="task" className="w-full shadow-inner p-4 border-0 rounded-xl" placeholder=" Enter Assign Task Details..."
 
                                 ></textarea>
                             </div>
@@ -72,7 +74,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
                         </div>
                         <div class="modal-action">
                             <label for="my-modal-6" class="btn btn-warning btn-sm px-5">CANCEL</label>
-                            <button for="my-modal-6" type="submit" class="btn btn-success btn-sm px-5">Assign</button>
+                            <button for="my-modal-6" type="submit"  class="btn btn-success btn-sm px-5">Assign</button>
                         </div>
                     </form>
                 </div>

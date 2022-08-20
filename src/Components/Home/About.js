@@ -5,12 +5,12 @@ const About = () => {
     <>
       {/* map section  */}
       <div>
-        <h1 className="text-center text-gray-600 text-2xl md:text-5xl font-semibold py-10 md:pt-20 ">Our Location & Support</h1>
+        <h1 className="text-center text-gray-600 text-2xl md:text-5xl font-semibold py-10 md:pt-20 ">Our Support</h1>
         <div className="container md:pt-14 pb-20 md:pb-28 px-6 mx-auto">
           <section className=" text-gray-800">
             <div className="block rounded-lg shadow-lg bg-white">
               <div className="flex flex-wrap items-center">
-                <div className="grow-0 shrink-0 basis-auto block w-full lg:flex lg:w-6/12 xl:w-4/12">
+                {/* <div className="grow-0 shrink-0 basis-auto block w-full lg:flex lg:w-6/12 xl:w-4/12">
                   <div className="map-container-2 h-[500px] w-full">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20548.21909891231!2d90.70578010000001!3d23.34504805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sbn!2sbd!4v1651755721835!5m2!1sbn!2sbd"
@@ -22,7 +22,7 @@ const About = () => {
                       referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                   </div>
-                </div>
+                </div> */}
                 <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
                   <div className="flex flex-wrap pt-12 lg:pt-0">
                     <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 lg:w-full xl:w-6/12 px-3 md:px-6 xl:px-12">
