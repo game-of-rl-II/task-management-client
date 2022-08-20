@@ -14,7 +14,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
         const taskCompletion = false
         const assignTask = { name, memberId, task, deadline, taskCompletion }
 
-        const url = 'http://localhost:5000/assign-task'
+        const url = 'https://warm-dawn-94442.herokuapp.com/assign-task'
         fetch(url, {
             method: 'POST',
             headers: {

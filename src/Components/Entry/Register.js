@@ -25,7 +25,7 @@ const Register = () => {
             return alert('password must be 8 characters or longer')
         }
         await createUserWithEmailAndPassword(email, password)
-        fetch('http://localhost:5000/new-admin', {
+        fetch('https://warm-dawn-94442.herokuapp.com/new-admin', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

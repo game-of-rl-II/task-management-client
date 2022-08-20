@@ -13,7 +13,7 @@ const ManageEmployee = () => {
   useEffect(() => {
     if (email) {
       console.log(email)
-      fetch(`http://localhost:5000/members?email=${email}`)
+      fetch(`https://warm-dawn-94442.herokuapp.com/members?email=${email}`)
         .then((res) => res.json())
         .then((data) => setMembers(data));
     }

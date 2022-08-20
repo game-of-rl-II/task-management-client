@@ -6,23 +6,31 @@ import { auth } from "../../../Firebase/firebase.init";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const navigate = useNavigate('')
+  const navigate = useNavigate()
   const [admin, adminLoading, adminError] = useAuthState(auth);
   const member = localStorage.getItem('member')
   const handleLogOut = () => {
+
     if (admin) {
-      signOut(auth)
-      navigate('/')
+      signOut(auth).then(() => {
+        // Sign-out successful.
+
+        navigate('/home')
+      }).catch((error) => {
+        // An error happened.
+      });
     }
     else {
       localStorage.removeItem('member')
-      navigate('/')
+      navigate('/home')
+
     }
   }
 
   if (adminLoading) {
     return <p>loading...</p>;
   }
+
   return (
     <div className="max-w-7xl mx-auto">
       <div className="navbar relative z-50 top-5">
@@ -31,7 +39,10 @@ const Navbar = () => {
             <span className="p-2 rounded text-2xl font-bold text-white bg-primary">
               TMT
             </span>{" "}
-            Task Mangement Tool
+            <span style={{display: "none"}}>
+
+              Task Mangement Tool
+            </span>
           </Link>
         </div>
         <div className="flex-none">

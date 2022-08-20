@@ -28,7 +28,7 @@ const AddMember = () => {
     };
     console.log(data);
     if (data) {
-      fetch("http://localhost:5000/add-new-member", {
+      fetch("https://warm-dawn-94442.herokuapp.com/add-new-member", {
         method: "POST",
         headers: {
           "content-type": "application/json",

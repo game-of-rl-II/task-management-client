@@ -30,3 +30,10 @@
     margin-left: 5%;
     margin-right: 5%;
 }
+
+@media only screen and (max-width: 570px){
+    .home-banner-parent{
+    grid-template-columns: repeat(1, 1fr);
+
+    }
+}
