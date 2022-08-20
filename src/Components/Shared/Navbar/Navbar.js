@@ -39,7 +39,7 @@ const Navbar = () => {
             <span className="p-2 rounded text-2xl font-bold text-white bg-primary">
               TMT
             </span>{" "}
-            <span style={{display: "none"}}>
+            <span className='logo'>
 
               Task Mangement Tool
             </span>

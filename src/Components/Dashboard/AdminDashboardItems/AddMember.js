@@ -12,9 +12,7 @@ const AddMember = () => {
     const nickName = e.target.nickName.value;
     const id = e.target.id.value;
     const password = e.target.password.value;
-    const phone = e.target.phone.value;
-    const position = e.target.position.value;
-    const description = e.target.description.value;
+
 
     const data = {
       adminEmail,
@@ -22,9 +20,7 @@ const AddMember = () => {
       nickName,
       id,
       password,
-      phone,
-      position,
-      description,
+
     };
     console.log(data);
     if (data) {
@@ -51,7 +47,7 @@ const AddMember = () => {
   return (
     <div className="addMember-form">
       <form onSubmit={handleSubmit}>
-        <div className="addMember-form-top">
+        <div className="my-10 addMember-form-top">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -69,6 +65,7 @@ const AddMember = () => {
               <span className="label-text">ID</span>
             </label>
             <input required type="number" placeholder="ID" className="input input-bordered input-addMember-form" name="id" />
+            <button type='button' className="btn btn-primary text-white mt-3">Generate an ID</button>
           </div>
           <div className="form-control">
             <label className="label">
@@ -76,34 +73,13 @@ const AddMember = () => {
             </label>
             <input required type="text" placeholder="Password" className="input input-bordered input-addMember-form" name="password" />
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Position (optional)</span>
-            </label>
-            <input type="text" placeholder="Position" className="input input-bordered input-addMember-form" name="position" />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Phone</span>
-            </label>
-            <input required type="number" placeholder="Phone" className="input input-bordered input-addMember-form" name="phone" />
-          </div>
+
+
         </div>
         <div className="addMember-form-bottom">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Short Description (optional)</span>
-            </label>
-            <textarea
-              required
-              type="text"
-              placeholder="Add a short description"
-              className="input input-bordered textarea-addMember-form"
-              name="description"
-            />
-          </div>
+
           <div className="form-control mt-6">
-            <button type="submit" className="btn text-white btn-primary">
+            <button type="submit" className="btn btn-primary">
               Submit
             </button>
           </div>
