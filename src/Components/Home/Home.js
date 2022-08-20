@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="">
       <HomeBanner />
-      <About />
+      {/* <About /> */}
       {/* <FAQ /> */}
     </div>
   );
