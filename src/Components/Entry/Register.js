@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { auth } from '../../Firebase/firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from "react-toastify";
 
 const Register = () => {
     const navigate = useNavigate()
@@ -19,10 +20,10 @@ const Register = () => {
     const handleRegister = async () => {
 
         if (!(/\S+@\S+\.\S+/.test(email))) {
-            return alert('please enter a valid email address')
+            return toast.error('please enter a valid email address')
         }
         if (password <= 7) {
-            return alert('password must be 8 characters or longer')
+            return toast.error('password must be 8 characters or longer')
         }
         await createUserWithEmailAndPassword(email, password)
         fetch('http://localhost:5000/new-admin', {
@@ -43,7 +44,7 @@ const Register = () => {
 
     }
     if (adminError) {
-        return alert(`${adminError.message}`)
+        return toast.error(`${adminError.message}`)
     }
     if (adminLoading) {
         return <p>Loading...</p>

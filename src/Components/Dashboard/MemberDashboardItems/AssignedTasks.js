@@ -1,7 +1,7 @@
 import React, {  useState } from "react";
 import useTask from "../../hooks/useTask";
 import TaskModal from "./TaskModal";
-
+import { toast } from "react-toastify";
 const AssignedTasks = () => {
   const [modalData, setModalData] = useState(null);
   const [tasks] = useTask();
@@ -13,7 +13,7 @@ const AssignedTasks = () => {
       .then(res => res.json())
       .then(data => {
         if(data.acknowledged){
-          alert('successfully update')
+          toast.success('successfully update')
         }
       })
   }

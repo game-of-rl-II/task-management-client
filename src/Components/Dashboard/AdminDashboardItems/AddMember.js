@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 import { auth } from "../../../Firebase/firebase.init";
 import "./AddMember.css";
 
@@ -39,9 +40,11 @@ const AddMember = () => {
         .then((data) => {
           if (data.acknowledged) {
             // console.log(data)
-            alert("member successfully added!");
+            toast.success("Member added successfully!");
           }
+         
         });
+       
     }
 
     if (adminLoading) {

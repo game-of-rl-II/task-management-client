@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useMember from "../hooks/useMember";
 import {Link, useNavigate} from "react-router-dom"
-
+import { toast } from "react-toastify";
 const EmployeeLogin = () => {
   const navigate = useNavigate()
   const [id, setId] = useState('');
@@ -27,11 +27,11 @@ const EmployeeLogin = () => {
               navigate('/dashboard')
             }
             else{
-              alert('password did not match')
+              toast.error('password did not match')
             }
           }
           else{
-            alert('user not found')
+            toast.error('user not found')
           }
         })
     }
