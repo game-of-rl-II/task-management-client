@@ -13,9 +13,6 @@ const AddMember = () => {
     const nickName = e.target.nickName.value;
     const id = e.target.id.value;
     const password = e.target.password.value;
-    const phone = e.target.phone.value;
-    const position = e.target.position.value;
-    const description = e.target.description.value;
 
     const data = {
       adminEmail,
@@ -23,13 +20,10 @@ const AddMember = () => {
       nickName,
       id,
       password,
-      phone,
-      position,
-      description,
     };
-    console.log(data);
+    // console.log(data);
     if (data) {
-      fetch("https://sheltered-wave-69822.herokuapp.com/add-new-member", {
+      fetch("http://localhost:5000/add-new-member", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -38,9 +32,12 @@ const AddMember = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           if (data.acknowledged) {
             // console.log(data)
             alert("member successfully added!");
+          } else {
+            alert(`${data.message}`);
           }
         });
     }
@@ -49,13 +46,36 @@ const AddMember = () => {
       return <p>Loading...</p>;
     }
   };
+
+  // handle id check al alamin arif start
+  const handleIdCheck = (randomId) => {
+    fetch("http://localhost:5000/random-id-check", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ randomId }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.id) {
+          setGenerateID(data.id);
+        } else if (data.message) {
+          handleIdCheck(randomId);
+        }
+      });
+  };
   const handleGenerate = () => {
-    setGenerateID(Math.floor(100000 + Math.random() * 900000));
+    const randomId = Math.floor(1 + Math.random() * 9);
+    handleIdCheck(randomId);
   };
-  const handleIdChange = (e) => {
-    const setId = e.target.value;
-    setGenerateID(setId);
-  };
+
+  // const handleIdChange = (e) => {
+  //   const setId = e.target.value;
+  //   setGenerateID(setId);
+  // };
+  // handle id check al alamin arif end
   return (
     <div className="addMember-form">
       <form onSubmit={handleSubmit}>
@@ -81,15 +101,13 @@ const AddMember = () => {
               type="number"
               placeholder="ID"
               className="input input-bordered input-addMember-form"
-              onChange={handleIdChange}
-              value={generateID}
+              defaultValue={generateID}
               name="id"
             />
-            <div className="">
-              <p className=" btn btn-primary mt-6" onClick={handleGenerate}>
-                Generate ID
-              </p>
-            </div>
+
+            <button type="button" onClick={handleGenerate} className="btn btn-primary text-white mt-3">
+              Generate an ID
+            </button>
           </div>
           <div className="form-control">
             <label className="label">
@@ -97,32 +115,8 @@ const AddMember = () => {
             </label>
             <input required type="text" placeholder="Password" className="input input-bordered input-addMember-form" name="password" />
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Position (optional)</span>
-            </label>
-            <input type="text" placeholder="Position" className="input input-bordered input-addMember-form" name="position" />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Phone</span>
-            </label>
-            <input required type="number" placeholder="Phone" className="input input-bordered input-addMember-form" name="phone" />
-          </div>
         </div>
         <div className="addMember-form-bottom">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Short Description (optional)</span>
-            </label>
-            <textarea
-              required
-              type="text"
-              placeholder="Add a short description"
-              className="input input-bordered textarea-addMember-form"
-              name="description"
-            />
-          </div>
           <div className="form-control mt-6">
             <button type="submit" className="btn btn-primary">
               Submit

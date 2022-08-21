@@ -18,7 +18,7 @@ const ManageAttendance = () => {
   }
 
   const handlePresent = (id) => {
-    fetch(`https://sheltered-wave-69822.herokuapp.com/manage-attendance/present/${id}`, {
+    fetch(`https://warm-dawn-94442.herokuapp.com/manage-attendance/present/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

@@ -7,7 +7,7 @@ const AssignedTasks = () => {
   const [tasks] = useTask();
 
   const handleUpdateTaskStatus = (id) => {
-    fetch(`https://sheltered-wave-69822.herokuapp.com/task-member/${id}`, {
+    fetch(`https://warm-dawn-94442.herokuapp.com/task-member/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

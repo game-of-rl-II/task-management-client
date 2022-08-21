@@ -12,7 +12,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
     const taskCompletion = false;
     const assignTask = { name, memberId, task, deadline, taskCompletion };
 
-    const url = "https://sheltered-wave-69822.herokuapp.com/assign-task";
+    const url = "https://warm-dawn-94442.herokuapp.com/assign-task";
     fetch(url, {
       method: "POST",
       headers: {
@@ -33,14 +33,18 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
     <div>
       <input type="checkbox" id="my-modal-6" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-indigo-500">
-          <p class="py-4">Employee Name: {assignTaskMember.name}</p>
-          <p class="py-4">Employee ID: {assignTaskMember._id}</p>
+        <div class="modal-box bg-white border-y-4 border-primary">
+          <p class="py-4 text-charcoal-darker">Employee Name: {assignTaskMember.name}</p>
+          <p class="py-4 text-charcoal-darker">Employee ID: {assignTaskMember._id}</p>
           <form onSubmit={handleAssignTask}>
             <div className="mb-8">
               <div className="md:flex-1 mt-2 mb:mt-0 ">
                 <label className="block uppercase tracking-wide text-charcoal-darker text-xs font-bold p-2">ASSIGNED TASK DETAILS</label>
-                <textarea name="task" className="w-full shadow-inner p-4 border-0 rounded-xl" placeholder=" Enter Assign Task Details..."></textarea>
+                <textarea
+                  name="task"
+                  className="w-full shadow-inner p-2 border-primary border-0 rounded-xl"
+                  placeholder=" Enter Assign Task Details..."
+                ></textarea>
               </div>
               <div className="flex justify-end mt-2 mb:mt-0 md:px-3">
                 <div className="md:flex w-full mb-4">
@@ -62,7 +66,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
               <label for="my-modal-6" class="btn btn-warning btn-sm px-5">
                 CANCEL
               </label>
-              <button for="my-modal-6" type="submit" class="btn btn-success btn-sm px-5">
+              <button for="my-modal-6" type="submit" class="btn btn-primary text-white btn-sm px-5">
                 Assign
               </button>
             </div>

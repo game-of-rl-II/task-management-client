@@ -9,7 +9,7 @@ const ReviewYourTeamMember = () => {
     const rating = event.target.rating.value;
     const review = { memberId, description, rating };
 
-    const url = `https://sheltered-wave-69822.herokuapp.com/add-review/${memberId}`;
+    const url = `https://warm-dawn-94442.herokuapp.com/add-review/${memberId}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -26,11 +26,13 @@ const ReviewYourTeamMember = () => {
       });
   };
   return (
-    <div className="m-9 lg:px-12 text-charcoal min-h-screen font-sans leading-normal overflow-x-hidden lg:overflow-auto bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-indigo-500 w-auto rounded-xl p-10">
+    <div className="lg:px-12 text-charcoal font-sans leading-normal overflow-x-hidden lg:overflow-auto w-auto rounded-xl">
       <div className="flex-1 md:p-0 lg:pt-8 lg:pb-8  mx-auto flex flex-col rounded-xl">
-        <section className="p-4 shadow-xl rounded-xl border-y-4 border-white px-10 mx-5">
+        <section className="shadow-xl rounded-xl border-y-4 border-primary px-10 mx-5">
           <div className="md:flex">
-            <h2 className="md:w-1/3 uppercase tracking-wide text-indigo-700 font-bold text-sm sm:text-lg mb-6">Add a review for your teammate</h2>
+            <h2 className="md:w-1/3 uppercase tracking-wide text-charcoal-darker font-bold text-sm sm:text-lg mb-6">
+              Add a review for your teammate
+            </h2>
           </div>
           <form onSubmit={handleReview}>
             <div className="mb-8">
@@ -63,7 +65,7 @@ const ReviewYourTeamMember = () => {
 
             <div className="md:flex mb-6 border border-t-1 border-b-0 border-x-0 border-cream-dark">
               <div className="md:flex-1 px-3 text-center md:text-right">
-                <button type="submit" className="btn btn-wide bg-indigo-700 font-bold text-xl mt-3">
+                <button type="submit" className="btn btn-wide bg-primary text-white border-none font-bold text-xl mt-3">
                   ADD
                 </button>
               </div>
