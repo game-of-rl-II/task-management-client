@@ -12,13 +12,13 @@ const ManageEmployee = () => {
   const [members, setMembers] = useState([]);
   useEffect(() => {
     if (email) {
-      console.log(email)
+      // console.log(email)
       fetch(`http://localhost:5000/members?email=${email}`)
         .then((res) => res.json())
         .then((data) => setMembers(data));
     }
 
-  }, [members]);
+  }, [email]);
   if (adminLoading) {
     return <p>Loading...</p>;
   }

@@ -32,7 +32,7 @@ const Navbar = () => {
             <span className="p-2 rounded text-2xl font-bold text-white bg-primary">
               TMT
             </span>{" "}
-            Task Mangement Tool
+            Task Management Tool
           </Link>
         </div>
         <div className="flex-none">

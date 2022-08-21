@@ -11,7 +11,7 @@ const useTask = () => {
         fetch(`http://localhost:5000/taskMember?id=${id}`)
             .then(res => res.json())
             .then(data => setTasks(data))
-    }, [tasks])
+    }, [id])
     return [tasks, setTasks]
 }
 

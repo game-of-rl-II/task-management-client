@@ -1,6 +1,5 @@
 import React, {  useState } from "react";
 import useTask from "../../hooks/useTask";
-import Notification from "./Notification";
 import TaskModal from "./TaskModal";
 
 const AssignedTasks = () => {

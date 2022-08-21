@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-
+import { format } from 'date-fns';
+import 'react-day-picker/dist/style.css';
 const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
-
+    const [date, setDate] = useState(new Date());
+   let newDate = <p>{format(date, 'PP')}</p>;
+   const exactDate = newDate.props.children;
     const handleAssignTask = (event) => {
         event.preventDefault();
         const name = assignTaskMember.name;
@@ -12,7 +15,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
 
 
         const taskCompletion = false
-        const assignTask = { name, memberId, task, deadline, taskCompletion }
+        const assignTask = { name, memberId, task, deadline, taskCompletion, exactDate  }
 
         const url = 'http://localhost:5000/assign-task'
         fetch(url, {
@@ -40,6 +43,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
                 <div class="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-indigo-500">
                     <p class="py-4">Employee Name: {assignTaskMember.name}</p>
                     <p class="py-4">Employee ID: {assignTaskMember._id}</p>
+                    <p class="py-4">Task Date: {exactDate}</p>
                     <form onSubmit={handleAssignTask}>
                         <div className="mb-8">
                             <div className="md:flex-1 mt-2 mb:mt-0 ">

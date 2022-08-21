@@ -1,6 +1,7 @@
 import React from 'react';
 
 const TaskModal = ({modalData, setModalData}) => {
+  
     return (
         <div>
             <input type="checkbox" id="my-modal-3" class="modal-toggle" />
