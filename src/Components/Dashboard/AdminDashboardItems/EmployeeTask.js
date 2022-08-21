@@ -51,7 +51,7 @@ const EmployeeTask = () => {
         </div>
       </div>
       <div >
-      <h1 className=" bg-slate-900 w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
+      <h1 className=" bg-secondary w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
         MEMBERS TASK
       </h1>
       <div  className="w-full ">

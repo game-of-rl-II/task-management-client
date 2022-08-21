@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { toast } from "react-toastify";
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../../Firebase/firebase.init';
+import Loading from '../Shared/Loading/Loading';
 const AdminLogin = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
@@ -31,7 +32,7 @@ const AdminLogin = () => {
         return toast.error(`${adminError.message}`)
     }
     if (adminLoading) {
-        return <p>Loading...</p>
+        return <Loading/>
     }
     if (admin) {
         navigate('/dashboard')

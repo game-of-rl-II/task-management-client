@@ -7,17 +7,17 @@ const AssignedTasks = () => {
   const [tasks] = useTask();
 
   const handleUpdateTaskStatus = (id) => {
-      fetch(`http://localhost:5000/task-member/${id}`,{
-        method: 'PUT'
-      })
-      .then(res => res.json())
-      .then(data => {
-        if(data.acknowledged){
+    fetch(`https://warm-dawn-94442.herokuapp.com/task-member/${id}`, {
+      method: "PUT",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
           toast.success('successfully update')
+
         }
-      })
-  }
-  
+      });
+  };
 
   return (
     <div>
@@ -63,7 +63,13 @@ const AssignedTasks = () => {
                   </h1>
                 </th>
                 <th>
-                  <button onClick={()=>handleUpdateTaskStatus(task._id)} disabled={task.taskCompletion === true} className="btn btn-outline btn-success btn-sm">UPDATE</button>
+                  <button
+                    onClick={() => handleUpdateTaskStatus(task._id)}
+                    disabled={task.taskCompletion === true}
+                    className="btn btn-outline btn-success btn-sm"
+                  >
+                    UPDATE
+                  </button>
                 </th>
                 <th>
                   <label onClick={() => setModalData(task)} for="my-modal-3" class="btn btn-outline btn-info btn-sm modal-button">

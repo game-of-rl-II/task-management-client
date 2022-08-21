@@ -5,14 +5,13 @@ const EmployeeDeleteModal = ({ deleteMember }) => {
   const { _id } = deleteMember;
 
   const handleDeleteMember = (id) => {
-    fetch(`http://localhost:5000/member/${id}`, {
+    fetch(`https://warm-dawn-94442.herokuapp.com/member/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.deletedCount) {
-          toast.success("Deleted Member");
+          toast.success("This member is deleted successfully!");
         }
       });
   };
@@ -25,10 +24,10 @@ const EmployeeDeleteModal = ({ deleteMember }) => {
           <h3 class="font-bold text-lg">Are you sure? Do you want to delete this member?</h3>
           <p class="py-4"></p>
           <div class="modal-action">
-            <label for="EmployeeDelete-modal" class="btn btn-success btn-sm px-5">
+            <label for="EmployeeDelete-modal" class="btn btn-warning btn-sm px-5">
               CANCEL
             </label>
-            <label onClick={() => handleDeleteMember(_id)} for="EmployeeDelete-modal" class="btn bg-white border-0 btn-sm text-red-600 px-5">
+            <label onClick={() => handleDeleteMember(_id)} for="EmployeeDelete-modal" class="btn btn-error text-white btn-sm px-5">
               Delete
             </label>
           </div>

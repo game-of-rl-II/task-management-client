@@ -5,6 +5,7 @@ import { auth } from "../../Firebase/firebase.init";
 import "./HomeBanner.css";
 // import Banner from "../../Images/task-tool.png";
 import login2 from "../../Images/login2.png";
+import Loading from "../Shared/Loading/Loading";
 
 const HomeBanner = () => {
   const navigate = useNavigate();
@@ -12,7 +13,10 @@ const HomeBanner = () => {
   const member = localStorage.getItem("member");
 
   if (adminLoading) {
-    return <p>loading...</p>;
+    return <Loading/>
+  }
+  if(admin || member){
+    return navigate('/dashboard')
   }
   return (
     <div className="home-banner-parent">
@@ -125,7 +129,7 @@ const HomeBanner = () => {
               </div>
               <button
                 onClick={() => navigate("/register")}
-                className=" btn btn-primary btn-block"
+                className=" btn btn-primary text-white btn-block"
               >
                 Register with email
               </button>
@@ -134,7 +138,7 @@ const HomeBanner = () => {
               <p className="text-center">or</p>
             </div>
             <div>
-              <button className=" btn btn-neutral btn-block btn-outline">
+              <button className=" btn hover:bg-primary text-primary btn-block btn-outline">
                 Continue with google
               </button>
             </div>
