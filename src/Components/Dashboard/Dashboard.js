@@ -77,6 +77,9 @@ const Dashboard = () => {
                   <Link to="reviewYourTeamMember">Review A Member</Link>
                 </li>
                 <li>
+                  <Link to="myTeams">My Teams</Link>
+                </li>
+                <li>
                   <a onClick={handleSignOut}>Sign Out</a>
                 </li>
               </>
