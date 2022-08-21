@@ -1,12 +1,17 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../../Firebase/firebase.init';
 
 const MyTeamsModal = () => {
+    const [admin, adminLoading, adminError] = useAuthState(auth);
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        const owner = admin?.email;
         const teamName = e.target.teamName.value;
         const members = e.target.members.value;
         const project = e.target.project.value;
-        const teamData = { teamName, members, project, };
+        const teamData = {owner, teamName, members, project, };
         fetch('http://localhost:5000/create-team', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -16,6 +21,9 @@ const MyTeamsModal = () => {
             .then(data => {
                 if (data.acknowledged) {
                     alert('team created')
+                }
+                else if(data.message){
+                    alert(`${data.message}`)
                 }
             })
     }

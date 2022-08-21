@@ -54,7 +54,7 @@ const AddMember = () => {
       .then((res) => res.json())
       .then((data) => {
         if(data.message){
-          handleIdCheck(randomId)
+          return handleIdCheck(randomId)
         }
         else if(data.memberId){
           setGeneratedID(data.memberId)
@@ -67,7 +67,7 @@ const AddMember = () => {
     handleIdCheck(randomId);
   };
 
-  // const handleIdChange = (e) => {
+  
   //   const setId = e.target.value;
   //   setGenerateID(setId);
   // };
