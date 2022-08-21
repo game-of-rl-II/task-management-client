@@ -12,7 +12,7 @@ const ManageEmployee = () => {
   const [members, setMembers] = useState([]);
   useEffect(() => {
     if (email) {
-      console.log(email);
+      
       fetch(`https://warm-dawn-94442.herokuapp.com/members?email=${email}`)
         .then((res) => res.json())
         .then((data) => setMembers(data));
@@ -37,7 +37,7 @@ const ManageEmployee = () => {
           </thead>
           <tbody>
             {members.map((member, index) => (
-              <tr key={member.id}>
+              <tr key={member._id}>
                 <th>{index + 1}</th>
                 <td>
                   <div className="flex items-center space-x-3">

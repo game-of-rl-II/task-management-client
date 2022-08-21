@@ -5,7 +5,7 @@ import "./AddMember.css";
 
 const AddMember = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
-  const [generateID, setGenerateID] = useState("");
+  const [generatedID, setGeneratedID] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     const adminEmail = admin?.email;
@@ -32,7 +32,7 @@ const AddMember = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+
           if (data.acknowledged) {
             // console.log(data)
             alert("member successfully added!");
@@ -49,25 +49,21 @@ const AddMember = () => {
 
   // handle id check al alamin arif start
   const handleIdCheck = (randomId) => {
-    fetch("http://localhost:5000/random-id-check", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ randomId }),
-    })
+
+    fetch(`http://localhost:5000/random-id-check/${randomId}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if (data.id) {
-          setGenerateID(data.id);
-        } else if (data.message) {
-          handleIdCheck(randomId);
+        if(data.message){
+          handleIdCheck(randomId)
+        }
+        else if(data.memberId){
+          setGeneratedID(data.memberId)
         }
       });
   };
   const handleGenerate = () => {
-    const randomId = Math.floor(1 + Math.random() * 9);
+    const randomId = Math.floor(10000 + Math.random() * 9000000);
+
     handleIdCheck(randomId);
   };
 
@@ -101,7 +97,7 @@ const AddMember = () => {
               type="number"
               placeholder="ID"
               className="input input-bordered input-addMember-form"
-              defaultValue={generateID}
+              defaultValue={generatedID}
               name="id"
             />
 

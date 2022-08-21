@@ -10,7 +10,6 @@ const EmployeeDeleteModal = ({ deleteMember }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.deletedCount) {
           toast.success("Deleted Member");
         }
