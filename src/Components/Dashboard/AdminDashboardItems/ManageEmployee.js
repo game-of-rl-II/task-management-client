@@ -12,21 +12,18 @@ const ManageEmployee = () => {
   const [members, setMembers] = useState([]);
   useEffect(() => {
     if (email) {
-      console.log(email)
+      console.log(email);
       fetch(`https://warm-dawn-94442.herokuapp.com/members?email=${email}`)
         .then((res) => res.json())
         .then((data) => setMembers(data));
     }
-
   }, [members]);
   if (adminLoading) {
     return <p>Loading...</p>;
   }
   return (
     <div>
-      <h1 className=" bg-secondary w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
-        MANAGE ALL MEMBER
-      </h1>
+      <h1 className=" bg-secondary w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">MANAGE ALL MEMBER</h1>
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>
@@ -55,34 +52,19 @@ const ManageEmployee = () => {
                   </div>
                 </td>
 
-                <td className="text-xs font-bold">{member._id}</td>
+                <td className="text-xs font-bold">{member.id}</td>
 
                 <th>
-                  <label
-                    onClick={() => setAssignTaskMember(member)}
-                    for="my-modal-6"
-                    class="btn modal-button btn-outline btn-success btn-sm"
-                  >
+                  <label onClick={() => setAssignTaskMember(member)} for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">
                     Assign
                   </label>
-                  {assignTaskMember && (
-                    <AssignTaskModal
-                      assignTaskMember={assignTaskMember}
-                      setAssignTaskMember={setAssignTaskMember}
-                    />
-                  )}
+                  {assignTaskMember && <AssignTaskModal assignTaskMember={assignTaskMember} setAssignTaskMember={setAssignTaskMember} />}
                 </th>
                 <th>
-                  <label
-                    onClick={() => setDeleteMember(member)}
-                    for="EmployeeDelete-modal"
-                    class="btn modal-button btn-outline btn-error  btn-sm"
-                  >
+                  <label onClick={() => setDeleteMember(member)} for="EmployeeDelete-modal" class="btn modal-button btn-outline btn-error  btn-sm">
                     Delete
                   </label>
-                  {deleteMember && (
-                    <EmployeeDeleteModal deleteMember={deleteMember} />
-                  )}
+                  {deleteMember && <EmployeeDeleteModal deleteMember={deleteMember} />}
                 </th>
               </tr>
             ))}

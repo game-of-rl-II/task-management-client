@@ -25,17 +25,10 @@ const EmployeeDeleteModal = ({ deleteMember }) => {
           <h3 class="font-bold text-secondary text-lg">Are you sure? You want to Delete?</h3>
           <p class="py-4"></p>
           <div class="modal-action">
-            <label
-              for="EmployeeDelete-modal"
-              class="btn btn-warning btn-sm px-5"
-            >
+            <label for="EmployeeDelete-modal" class="btn btn-warning btn-sm px-5">
               CANCEL
             </label>
-            <label
-              onClick={() => handleDeleteMember(_id)}
-              for="EmployeeDelete-modal"
-              class="btn btn-error text-white btn-sm px-5"
-            >
+            <label onClick={() => handleDeleteMember(_id)} for="EmployeeDelete-modal" class="btn btn-error text-white btn-sm px-5">
               Delete
             </label>
           </div>

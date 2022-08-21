@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../Firebase/firebase.init";
 import "./AddMember.css";
 
 const AddMember = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
+  const [generateID, setGenerateID] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     const adminEmail = admin?.email;
@@ -13,14 +14,12 @@ const AddMember = () => {
     const id = e.target.id.value;
     const password = e.target.password.value;
 
-
     const data = {
       adminEmail,
       name,
       nickName,
       id,
       password,
-
     };
     // console.log(data);
     if (data) {
@@ -33,13 +32,12 @@ const AddMember = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
+          console.log(data);
           if (data.acknowledged) {
             // console.log(data)
             alert("member successfully added!");
-          }
-          else{
-            alert(`${data.message}`)
+          } else {
+            alert(`${data.message}`);
           }
         });
     }
@@ -48,6 +46,36 @@ const AddMember = () => {
       return <p>Loading...</p>;
     }
   };
+
+  // handle id check al alamin arif start
+  const handleIdCheck = (randomId) => {
+    fetch("http://localhost:5000/random-id-check", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ randomId }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.id) {
+          setGenerateID(data.id);
+        } else if (data.message) {
+          handleIdCheck(randomId);
+        }
+      });
+  };
+  const handleGenerate = () => {
+    const randomId = Math.floor(1 + Math.random() * 9);
+    handleIdCheck(randomId);
+  };
+
+  // const handleIdChange = (e) => {
+  //   const setId = e.target.value;
+  //   setGenerateID(setId);
+  // };
+  // handle id check al alamin arif end
   return (
     <div className="addMember-form">
       <form onSubmit={handleSubmit}>
@@ -68,8 +96,18 @@ const AddMember = () => {
             <label className="label">
               <span className="label-text">ID</span>
             </label>
-            <input required type="number" placeholder="ID" className="input input-bordered input-addMember-form" name="id" />
-            <button type='button' className="btn btn-primary text-white mt-3">Generate an ID</button>
+            <input
+              required
+              type="number"
+              placeholder="ID"
+              className="input input-bordered input-addMember-form"
+              defaultValue={generateID}
+              name="id"
+            />
+
+            <button type="button" onClick={handleGenerate} className="btn btn-primary text-white mt-3">
+              Generate an ID
+            </button>
           </div>
           <div className="form-control">
             <label className="label">
@@ -77,11 +115,8 @@ const AddMember = () => {
             </label>
             <input required type="text" placeholder="Password" className="input input-bordered input-addMember-form" name="password" />
           </div>
-
-
         </div>
         <div className="addMember-form-bottom">
-
           <div className="form-control mt-6">
             <button type="submit" className="btn btn-primary">
               Submit
