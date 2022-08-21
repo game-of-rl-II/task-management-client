@@ -70,7 +70,7 @@ const Navbar = () => {
               <>
                 <li>
                   <Link
-                    className="nav-button mr-3 btn btn-primary"
+                    className="nav-button text-white mr-3 btn btn-primary"
                     to="/dashboard"
                   >
                     Dashboard
@@ -79,7 +79,7 @@ const Navbar = () => {
                 <li>
                   <a
                     onClick={handleLogOut}
-                    className="nav-button mr-3 btn btn-primary"
+                    className="nav-button text-white mr-3 btn btn-primary"
                   >
                     Log out
                   </a>

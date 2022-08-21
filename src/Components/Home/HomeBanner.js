@@ -128,7 +128,7 @@ const HomeBanner = () => {
               </div>
               <button
                 onClick={() => navigate("/register")}
-                className=" btn btn-primary btn-block"
+                className=" btn btn-primary text-white btn-block"
               >
                 Register with email
               </button>
@@ -137,7 +137,7 @@ const HomeBanner = () => {
               <p className="text-center">or</p>
             </div>
             <div>
-              <button className=" btn btn-neutral btn-block btn-outline">
+              <button className=" btn hover:bg-primary text-primary btn-block btn-outline">
                 Continue with google
               </button>
             </div>
