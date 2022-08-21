@@ -3,7 +3,8 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../../Firebase/firebase.init";
-import Notification from "../../Dashboard/MemberDashboardItems/Notification";
+import Notification from "../../Notification/Notification";
+
 import "./Navbar.css";
 
 const Navbar = () => {
