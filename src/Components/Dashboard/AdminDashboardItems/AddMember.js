@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../Firebase/firebase.init";
 import "./AddMember.css";
 
 const AddMember = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
+  const [generateID, setGenerateID] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     const adminEmail = admin?.email;
@@ -28,7 +29,7 @@ const AddMember = () => {
     };
     console.log(data);
     if (data) {
-      fetch("http://localhost:5000/add-new-member", {
+      fetch("https://sheltered-wave-69822.herokuapp.com/add-new-member", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -47,6 +48,13 @@ const AddMember = () => {
     if (adminLoading) {
       return <p>Loading...</p>;
     }
+  };
+  const handleGenerate = () => {
+    setGenerateID(Math.floor(100000 + Math.random() * 900000));
+  };
+  const handleIdChange = (e) => {
+    const setId = e.target.value;
+    setGenerateID(setId);
   };
   return (
     <div className="addMember-form">
@@ -68,7 +76,20 @@ const AddMember = () => {
             <label className="label">
               <span className="label-text">ID</span>
             </label>
-            <input required type="number" placeholder="ID" className="input input-bordered input-addMember-form" name="id" />
+            <input
+              required
+              type="number"
+              placeholder="ID"
+              className="input input-bordered input-addMember-form"
+              onChange={handleIdChange}
+              value={generateID}
+              name="id"
+            />
+            <div className="">
+              <p className=" btn btn-primary mt-6" onClick={handleGenerate}>
+                Generate ID
+              </p>
+            </div>
           </div>
           <div className="form-control">
             <label className="label">

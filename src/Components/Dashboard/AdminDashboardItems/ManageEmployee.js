@@ -12,12 +12,11 @@ const ManageEmployee = () => {
   const [members, setMembers] = useState([]);
   useEffect(() => {
     if (email) {
-      console.log(email)
-      fetch(`http://localhost:5000/members?email=${email}`)
+      console.log(email);
+      fetch(`https://sheltered-wave-69822.herokuapp.com/members?email=${email}`)
         .then((res) => res.json())
         .then((data) => setMembers(data));
     }
-
   }, [members]);
   if (adminLoading) {
     return <p>Loading...</p>;

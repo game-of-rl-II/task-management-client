@@ -26,8 +26,8 @@ const Navbar = () => {
     <div className="max-w-7xl mx-auto">
       <div className="navbar relative z-50 top-5">
         <div className="flex-1">
-          <Link to="/" className="text-3xl text-primary">
-            TM Tool
+          <Link to="/" className="text-black">
+            <span className="p-2 rounded text-2xl font-bold text-white bg-primary">TMT</span> Task Mangement Tool
           </Link>
         </div>
         <div className="flex-none">
@@ -35,12 +35,12 @@ const Navbar = () => {
             {!admin?.uid && !member ? (
               <>
                 <li>
-                  <Link className="nav-button mr-3 btn btn-primary" to="/adminLogin">
+                  <Link className="nav-button text-white font-bold mr-3 bg-primary" to="/adminLogin">
                     Admin Login
                   </Link>
                 </li>
                 <li>
-                  <Link className="nav-button mr-3 btn btn-primary" to="/employeeLogin">
+                  <Link className="nav-button text-white font-bold mr-3 bg-primary" to="/employeeLogin">
                     Employee Login
                   </Link>
                 </li>

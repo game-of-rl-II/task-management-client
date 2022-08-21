@@ -5,13 +5,11 @@ const MyProfile = () => {
   const [openUpdateModal, setOpenUpdateModal] = useState(null);
   return (
     <>
-      <div className="min-h-fit md:m-16 m-4">
+      <div className=" md:m-16 m-4">
         <div className="flex-1  flex flex-col">
           <div className=" p-6 rounded-2xl  shadow">
             <div className="divider before:bg-secondary after:bg-secondary">
-              <h2 className=" uppercase md:text-4xl text-secondary font-bold">
-                Admin Profile
-              </h2>
+              <h2 className=" uppercase md:text-4xl text-secondary font-bold">Admin Profile</h2>
             </div>
             <form autoComplete="off">
               <div className="lg:my-16 md:my-8 my-4 ">
@@ -30,9 +28,7 @@ const MyProfile = () => {
                       <li className="flex items-center py-3">
                         <span className="md:hidden lg:block">Status</span>
                         <span className="ml-auto">
-                          <span className="bg-green-500 py-1 px-2 rounded text-white text-sm">
-                            Active
-                          </span>
+                          <span className="bg-green-500 py-1 px-2 rounded text-white text-sm">Active</span>
                         </span>
                       </li>
                     </ul>
@@ -66,12 +62,7 @@ const MyProfile = () => {
                 </label>
               </div>
             </form>
-            {openUpdateModal && (
-              <UpdateProfileModal
-                openUpdateModal={openUpdateModal}
-                setOpenUpdateModal={setOpenUpdateModal}
-              />
-            )}
+            {openUpdateModal && <UpdateProfileModal openUpdateModal={openUpdateModal} setOpenUpdateModal={setOpenUpdateModal} />}
           </div>
         </div>
       </div>
