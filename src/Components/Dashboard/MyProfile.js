@@ -5,7 +5,7 @@ const MyProfile = () => {
   const [openUpdateModal, setOpenUpdateModal] = useState(null);
   return (
     <>
-      <div className="min-h-fit md:m-16 m-4">
+      <div className="md:m-16">
         <div className="flex-1  flex flex-col">
           <div className=" p-6 rounded-2xl  shadow">
             <div className="divider before:bg-secondary after:bg-secondary">
@@ -14,7 +14,7 @@ const MyProfile = () => {
               </h2>
             </div>
             <form autoComplete="off">
-              <div className="lg:my-16 md:my-8 my-4 ">
+              <div className="lg:my-16 md:my-8 ">
                 <div className="flex lg:flex-row flex-col  items-center justify-center lg:gap-10 md:gap-6 gap-4">
                   <div className="avatar">
                     <div className="lg:w-80 md:w-56 w-32 ring-2 ring-secondary ring-offset-base-100 ring-offset-2 rounded">

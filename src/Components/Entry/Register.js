@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { auth } from '../../Firebase/firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
@@ -7,6 +7,9 @@ const Register = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    useEffect(() => {
+        document.getElementById("footer").style.display = "none"
+    })
     const [
         createUserWithEmailAndPassword,
         admin,
@@ -22,7 +25,7 @@ const Register = () => {
             return alert('password must be 8 characters or longer')
         }
         await createUserWithEmailAndPassword(email, password)
-        fetch('http://localhost:5000/new-admin', {
+        fetch('https://warm-dawn-94442.herokuapp.com/new-admin', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
