@@ -39,7 +39,7 @@ const Navbar = () => {
             <span className="p-2 rounded text-2xl font-bold text-white bg-primary">
               TMT
             </span>{" "}
-            <span className='logo'>
+            <span style={{display: "none"}}>
 
               Task Mangement Tool
             </span>
@@ -70,7 +70,7 @@ const Navbar = () => {
               <>
                 <li>
                   <Link
-                    className="nav-button text-white font-bold mr-3 bg-primary"
+                    className="nav-button mr-3 btn btn-primary"
                     to="/dashboard"
                   >
                     Dashboard
@@ -79,7 +79,7 @@ const Navbar = () => {
                 <li>
                   <a
                     onClick={handleLogOut}
-                    className="nav-button text-white font-bold mr-3 bg-primary"
+                    className="nav-button mr-3 btn btn-primary"
                   >
                     Log out
                   </a>
