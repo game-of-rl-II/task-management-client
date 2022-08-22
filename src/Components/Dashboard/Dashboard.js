@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import useMember from "../hooks/useMember";
 import { signOut } from "firebase/auth";
+import Loading from "../Shared/Loading/Loading";
 
 const Dashboard = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
@@ -21,7 +22,7 @@ const Dashboard = () => {
     }
   };
   if (adminLoading) {
-    return <p>loading...</p>;
+    return <Loading/>
   }
 
   return (
@@ -77,10 +78,12 @@ const Dashboard = () => {
                   <Link to="reviewYourTeamMember">Review A Member</Link>
                 </li>
                 <li>
+
                   <Link to="myTeams">My Teams</Link>
                 </li>
                 <li>
-                  <a onClick={handleSignOut}>Sign Out</a>
+                  <button onClick={handleSignOut}>Sign Out</button>
+
                 </li>
               </>
             )}
@@ -101,7 +104,7 @@ const Dashboard = () => {
                 </li>
 
                 <li>
-                  <a onClick={handleSignOut}>Log Out</a>
+                  <button onClick={handleSignOut}>Log Out</button>
                 </li>
               </>
             )}

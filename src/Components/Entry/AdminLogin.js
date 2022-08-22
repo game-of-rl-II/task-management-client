@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { toast } from "react-toastify";
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../../Firebase/firebase.init';
+import Loading from '../Shared/Loading/Loading';
+import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
+import './Register.css'
 const AdminLogin = () => {
+  const [passwordIcon , setPasswordIcon] = useState(false);
+  const toggleButton = () => {
+    setPasswordIcon(prevPasswordIcon => !prevPasswordIcon)
+  }
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -17,20 +25,20 @@ const AdminLogin = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const handleRegister = () => {
         if (!(/\S+@\S+\.\S+/.test(email))) {
-            return alert('please enter a valid email address')
+            return toast.error('please enter a valid email address')
         }
         if (password <= 7) {
-            return alert('password must be 8 characters or longer')
+            return toast.error('password must be 8 characters or longer')
         }
         signInWithEmailAndPassword(email, password)
 
 
     }
     if (adminError) {
-        return alert(`${adminError.message}`)
+        return toast.error(`${adminError.message}`)
     }
     if (adminLoading) {
-        return <p>Loading...</p>
+        return <Loading/>
     }
     if (admin) {
         navigate('/innerHome')
@@ -84,12 +92,17 @@ const AdminLogin = () => {
                     <label className="label">
                       <span className="label-text">Password</span>
                     </label>
-                    <input
+                   <div className="flex">
+                   <input
                       onChange={(e) => setPassword(e.target.value)}
-                      type="text"
+                      type={passwordIcon ? 'text' : 'password'}
                       placeholder="password"
-                      className="input input-bordered"
+                      className="input input-bordered w-full"
                     />
+                     <button className="btn-icon"onClick={toggleButton}>
+                {passwordIcon ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>}
+              </button>
+                   </div>
                     <label className="label">
                       <a href="#" className="label-text-alt link link-hover">
                         Forgot password?

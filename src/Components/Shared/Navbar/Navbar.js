@@ -3,6 +3,11 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../../Firebase/firebase.init";
+import Notification from "../../Dashboard/Notification/Notification";
+import Loading from "../Loading/Loading";
+// import Loading from "../Loading/Loading";
+
+
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -27,7 +32,7 @@ const Navbar = () => {
   };
 
   if (adminLoading) {
-    return <p>loading...</p>;
+    return <Loading/>
   }
 
   return (
@@ -35,8 +40,10 @@ const Navbar = () => {
       <div className="navbar relative z-50 top-5">
         <div className="flex-1">
           <Link to="/" className="text-black">
+
             <span className="p-2 rounded text-2xl font-bold text-white bg-primary">TMT</span>{" "}
             <span>Task Mangement Tool</span>
+
           </Link>
         </div>
         <div className="flex-none">
@@ -56,23 +63,24 @@ const Navbar = () => {
               </>
             ) : (
               <>
+              <Notification/>
                 <li>
 
                   <Link
                     className="nav-button text-white mr-3 btn btn-primary"
                     to="/myProfile"
+                    
                   >
                     Profile
                   </Link>
                 </li>
                 <li>
 
-                  <a
+                  <button
                     onClick={handleLogOut}
-                    className="nav-button text-white mr-3 btn btn-primary"
-                  >
+                    className="nav-button mr-3 btn btn-primary text-white">
                     Log out
-                  </a>
+                  </button>
                 </li>
               </>
             )}

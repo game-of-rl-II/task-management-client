@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import getMembers from "../../../ReduxServices/actoions/ManageAttendanceActions";
-
+import { toast } from "react-toastify";
+import Loading from "../../Shared/Loading/Loading";
 const ManageAttendance = () => {
   const { isLoading, data, error } = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -11,10 +12,12 @@ const ManageAttendance = () => {
     dispatch(getMembers());
   }, []);
   if (isLoading) {
-    return <p>loading...</p>;
+    return <Loading/>
   }
   if (error) {
-    alert(`${error.message}`);
+
+    toast.error(`${error.message}`)
+
   }
 
   const handlePresent = (id) => {
@@ -24,8 +27,8 @@ const ManageAttendance = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("well done!");
-          dispatch(getMembers());
+          toast.success('well done!')
+          dispatch(getMembers())
         }
       });
   };

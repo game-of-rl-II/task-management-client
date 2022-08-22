@@ -11,7 +11,7 @@ const EmployeeDeleteModal = ({ deleteMember }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {
-          toast.success("Deleted Member");
+          toast.success("This member is deleted successfully!");
         }
       });
   };
@@ -20,8 +20,8 @@ const EmployeeDeleteModal = ({ deleteMember }) => {
     <div>
       <input type="checkbox" id="EmployeeDelete-modal" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box bg-white border-y-4 border-primary">
-          <h3 class="font-bold text-secondary text-lg">Are you sure? You want to Delete?</h3>
+        <div class="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-white">
+          <h3 class="font-bold text-lg">Are you sure? Do you want to delete this member?</h3>
           <p class="py-4"></p>
           <div class="modal-action">
             <label for="EmployeeDelete-modal" class="btn btn-warning btn-sm px-5">

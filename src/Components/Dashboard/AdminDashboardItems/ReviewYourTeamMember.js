@@ -30,21 +30,21 @@ const ReviewYourTeamMember = () => {
       <div className="flex-1 md:p-0 lg:pt-8 lg:pb-8  mx-auto flex flex-col rounded-xl">
         <section className="shadow-xl rounded-xl border-y-4 border-primary px-10 mx-5">
           <div className="md:flex">
-            <h2 className="md:w-1/3 uppercase tracking-wide text-charcoal-darker font-bold text-sm sm:text-lg mb-6">
-              Add a review for your teammate
+            <h2 className="md:w-1/3 uppercase mt-4 tracking-wide text-charcoal-darker font-bold text-sm sm:text-lg mb-6">
+              Provide a review to your teammate.
             </h2>
           </div>
           <form onSubmit={handleReview}>
             <div className="mb-8">
               <div className="md:flex-1 mt-2 mb:mt-0 ">
                 <label className="block uppercase tracking-wide text-charcoal-darker text-xs font-bold p-2">
-                  The member's ID who you want to give review
+                  The member's ID
                 </label>
-                <input name="memberId" className="w-full shadow-inner p-4 border-0 rounded-xl" placeholder="Enter the ID"></input>
+                <input required name="memberId" className="w-full shadow-inner p-4 border-0 rounded-xl" placeholder="Enter the ID"></input>
               </div>
               <div className="md:flex-1 mt-2 mb:mt-0 ">
                 <label className="block uppercase tracking-wide text-charcoal-darker text-xs font-bold p-2">Comment</label>
-                <textarea name="description" className="w-full shadow-inner p-4 border-0 rounded-xl" placeholder="Add a comment here..."></textarea>
+                <textarea required name="description" className="w-full shadow-inner p-4 border-0 rounded-xl" placeholder="Add a comment here..."></textarea>
               </div>
               <div className="flex justify-end mt-2 mb:mt-0 md:px-3">
                 <div className="md:flex w-full mb-4">
@@ -66,7 +66,7 @@ const ReviewYourTeamMember = () => {
             <div className="md:flex mb-6 border border-t-1 border-b-0 border-x-0 border-cream-dark">
               <div className="md:flex-1 px-3 text-center md:text-right">
                 <button type="submit" className="btn btn-wide bg-primary text-white border-none font-bold text-xl mt-3">
-                  ADD
+                  ADD Review
                 </button>
               </div>
             </div>

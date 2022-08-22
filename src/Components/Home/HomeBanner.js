@@ -5,6 +5,7 @@ import { auth } from "../../Firebase/firebase.init";
 import "./HomeBanner.css";
 // import Banner from "../../Images/task-tool.png";
 import login2 from "../../Images/login2.png";
+import Loading from "../Shared/Loading/Loading";
 
 const HomeBanner = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const HomeBanner = () => {
   const member = localStorage.getItem("member");
 
   if (adminLoading) {
-    return <p>loading...</p>;
+    return <Loading/>
   }
   if(admin){
     return navigate('/innerHome')

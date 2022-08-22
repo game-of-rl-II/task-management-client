@@ -1,6 +1,7 @@
 import React from 'react';
 
 const TaskModal = ({modalData, setModalData}) => {
+  
     return (
         <div>
             <input type="checkbox" id="my-modal-3" class="modal-toggle" />
@@ -14,9 +15,7 @@ const TaskModal = ({modalData, setModalData}) => {
                       <p class="text-lg font-bold">
                        Deadline: {modalData.deadline}
                       </p>
-                      <p class="text-lg font-bold">
-                        Status: {modalData.status}
-                      </p>
+                     
                       <p class="text-lg font-bold">
                        Task Description: {modalData.task}
                       </p>

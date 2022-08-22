@@ -2,8 +2,15 @@ import React, { useEffect, useState } from "react";
 import { auth } from "../../Firebase/firebase.init";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-
+import { toast } from "react-toastify";
+import Loading from "../Shared/Loading/Loading";
+import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
+import './Register.css'
 const Register = () => {
+  const [passwordIcon , setPasswordIcon] = useState(false);
+  const toggleButton = () => {
+    setPasswordIcon(prevPasswordIcon => !prevPasswordIcon)
+  }
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,10 +20,10 @@ const Register = () => {
   const [createUserWithEmailAndPassword, admin, adminLoading, adminError] = useCreateUserWithEmailAndPassword(auth);
   const handleRegister = async () => {
     if (!/\S+@\S+\.\S+/.test(email)) {
-      return alert("please enter a valid email address");
+      return toast.error("please enter a valid email address");
     }
     if (password <= 7) {
-      return alert("password must be 8 characters or longer");
+      return toast.error("password must be 8 characters or longer");
     }
     await createUserWithEmailAndPassword(email, password);
     fetch("https://warm-dawn-94442.herokuapp.com/new-admin", {
@@ -34,10 +41,10 @@ const Register = () => {
       });
   };
   if (adminError) {
-    return alert(`${adminError.message}`);
+    return toast.error(`${adminError.message}`);
   }
   if (adminLoading) {
-    return <p>Loading...</p>;
+    return <Loading/>
   }
   if(admin){
     navigate('/innerHome')
@@ -61,9 +68,14 @@ const Register = () => {
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
-              <input onChange={(e) => setPassword(e.target.value)} type="text" placeholder="password" className="input input-bordered" />
+              <div className="flex">
+              <input onChange={(e) => setPassword(e.target.value)} type={passwordIcon ? 'text' : 'password'} placeholder="password" className="input input-bordered w-full" />
+              <button className="btn-icon"onClick={toggleButton}>
+                {passwordIcon ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>}
+              </button>
+              </div>
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                <p className="label-text-alt link link-hover">Forgot password?</p>
               </label>
             </div>
             <div className="form-control mt-6">

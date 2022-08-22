@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../../Firebase/firebase.init';
-
+import { toast } from "react-toastify";
 const MyTeamsModal = () => {
     const [admin, adminLoading, adminError] = useAuthState(auth);
 
@@ -20,10 +20,10 @@ const MyTeamsModal = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    alert('team created')
+                    toast.success('Team created successfully')
                 }
                 else if(data.message){
-                    alert(`${data.message}`)
+                    toast.error(`${data.message}`)
                 }
             })
     }

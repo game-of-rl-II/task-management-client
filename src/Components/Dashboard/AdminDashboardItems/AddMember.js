@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 import { auth } from "../../../Firebase/firebase.init";
 import { useLocation } from 'react-router-dom'
+import Loading from "../../Shared/Loading/Loading";
 import "./AddMember.css";
 import useTeamName from "../../hooks/useTeamName";
 
 const AddMember = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
-  const {pathname} = useLocation()
   const { teamName } = useTeamName()
   const [generatedID, setGeneratedID] = useState("");
   const handleSubmit = (e) => {
@@ -41,14 +42,20 @@ const AddMember = () => {
           if (data.acknowledged) {
             console.log(data)
             alert("member successfully added!");
+            // console.log(data)
+
+            toast.success("Member added successfully!");
           } else {
-            alert(`${data.message}`);
+            toast.error(`${data.message}`);
+
           }
+
         });
+
     }
 
     if (adminLoading) {
-      return <p>Loading...</p>;
+      return <Loading />
     }
   };
 
@@ -70,13 +77,10 @@ const AddMember = () => {
     const randomId = Math.floor(10000 + Math.random() * 9000000);
     handleIdCheck(randomId);
   };
+
+
+
  
-
-
-  //   const setId = e.target.value;
-  //   setGenerateID(setId);
-  // };
-  // handle id check al alamin arif end
   return (
     <div className="addMember-form">
       <form onSubmit={handleSubmit}>
