@@ -25,6 +25,8 @@ import SingleTeam from './Components/Dashboard/AdminDashboardItems/SingleTeam';
 import InnerHome from './Components/Home/InnerHome';
 import Menu from './Components/Home/Menu';
 import CreateTeam from './Components/Home/CreateTeam';
+import NotFound from './Components/ErroPages/NotFound';
+import Denied from './Components/ErroPages/Denied';
 
 function App() {
   return (
@@ -62,6 +64,8 @@ function App() {
           <Route path="uncompletedTask" element={<UncompletedTask></UncompletedTask>}></Route>
           <Route path="taskForwarding" element={<TaskForwarding></TaskForwarding>}></Route>
         </Route>
+        <Route path="*" element={<NotFound />}></Route>
+        <Route path="/denied" element={<Denied />}></Route>
 
       </Routes>
       <Footer></Footer>
