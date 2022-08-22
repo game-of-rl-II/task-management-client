@@ -42,7 +42,7 @@ const UncompletedTask = () => {
                 <td className="text-xs font-bold">{task.memberId}</td>
 
                 <th>
-                  <h2 className="uppercase bg-warning w-32 text-center px-2 py-1 rounded text-white my-8 font-bold">Pending</h2>
+                  <span className="uppercase text-xs font-bold bg-yellow-500 text-white p-1 rounded">Pending</span>
                 </th>
                 <th>
                   <label onClick={() => setTaskData(task)} for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">

@@ -4,7 +4,13 @@ import { toast } from "react-toastify";
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../../Firebase/firebase.init';
 import Loading from '../Shared/Loading/Loading';
+import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
+import './Register.css'
 const AdminLogin = () => {
+  const [passwordIcon , setPasswordIcon] = useState(false);
+  const toggleButton = () => {
+    setPasswordIcon(prevPasswordIcon => !prevPasswordIcon)
+  }
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -86,12 +92,17 @@ const AdminLogin = () => {
                     <label className="label">
                       <span className="label-text">Password</span>
                     </label>
-                    <input
+                   <div className="flex">
+                   <input
                       onChange={(e) => setPassword(e.target.value)}
-                      type="text"
+                      type={passwordIcon ? 'text' : 'password'}
                       placeholder="password"
-                      className="input input-bordered"
+                      className="input input-bordered w-full"
                     />
+                     <button className="btn-icon"onClick={toggleButton}>
+                {passwordIcon ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>}
+              </button>
+                   </div>
                     <label className="label">
                       <a href="#" className="label-text-alt link link-hover">
                         Forgot password?
