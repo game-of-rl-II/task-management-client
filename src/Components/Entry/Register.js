@@ -39,6 +39,9 @@ const Register = () => {
   if (adminLoading) {
     return <p>Loading...</p>;
   }
+  if(admin){
+    navigate('/innerHome')
+  }
 
 
 

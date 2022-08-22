@@ -33,7 +33,7 @@ const AdminLogin = () => {
         return <p>Loading...</p>
     }
     if (admin) {
-        navigate('/dashboard')
+        navigate('/innerHome')
     }
 
     return (

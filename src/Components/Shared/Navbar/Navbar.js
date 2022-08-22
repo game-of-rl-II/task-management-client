@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="flex-1">
           <Link to="/" className="text-black">
             <span className="p-2 rounded text-2xl font-bold text-white bg-primary">TMT</span>{" "}
-            <span style={{ display: "none" }}>Task Mangement Tool</span>
+            <span>Task Mangement Tool</span>
           </Link>
         </div>
         <div className="flex-none">
@@ -60,9 +60,9 @@ const Navbar = () => {
 
                   <Link
                     className="nav-button text-white mr-3 btn btn-primary"
-                    to="/dashboard"
+                    to="/myProfile"
                   >
-                    Dashboard
+                    Profile
                   </Link>
                 </li>
                 <li>

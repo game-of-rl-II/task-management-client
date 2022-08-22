@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../Firebase/firebase.init";
+import { useLocation } from 'react-router-dom'
 import "./AddMember.css";
+import useTeamName from "../../hooks/useTeamName";
 
 const AddMember = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
+  const {pathname} = useLocation()
+  const { teamName } = useTeamName()
   const [generatedID, setGeneratedID] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +20,7 @@ const AddMember = () => {
 
     const data = {
       adminEmail,
+      teamName,
       name,
       nickName,
       id,
@@ -34,7 +39,7 @@ const AddMember = () => {
         .then((data) => {
 
           if (data.acknowledged) {
-            // console.log(data)
+            console.log(data)
             alert("member successfully added!");
           } else {
             alert(`${data.message}`);
@@ -53,21 +58,21 @@ const AddMember = () => {
     fetch(`http://localhost:5000/random-id-check/${randomId}`)
       .then((res) => res.json())
       .then((data) => {
-        if(data.message){
+        if (data.message) {
           return handleIdCheck(randomId)
         }
-        else if(data.memberId){
+        else if (data.memberId) {
           setGeneratedID(data.memberId)
         }
       });
   };
   const handleGenerate = () => {
     const randomId = Math.floor(10000 + Math.random() * 9000000);
-
     handleIdCheck(randomId);
   };
+ 
 
-  
+
   //   const setId = e.target.value;
   //   setGenerateID(setId);
   // };
