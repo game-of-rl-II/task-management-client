@@ -22,33 +22,69 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import MyTeams from './Components/Dashboard/AdminDashboardItems/MyTeams';
 import SingleTeam from './Components/Dashboard/AdminDashboardItems/SingleTeam';
+import NotFound from './Components/ErroPages/NotFound';
+import Denied from './Components/ErroPages/Denied';
 
 function App() {
   return (
     <>
       <Navbar></Navbar>
       <Routes>
-        <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/employeeLogin' element={<EmployeeLogin></EmployeeLogin>}></Route>
-        <Route path='/adminLogin' element={<AdminLogin></AdminLogin>}></Route>
-        <Route path='/myTeams/:teamName' element={<SingleTeam></SingleTeam>}></Route>
+        <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
+        <Route
+          path="/employeeLogin"
+          element={<EmployeeLogin></EmployeeLogin>}
+        ></Route>
+        <Route path="/adminLogin" element={<AdminLogin></AdminLogin>}></Route>
+        <Route
+          path="/myTeams/:teamName"
+          element={<SingleTeam></SingleTeam>}
+        ></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="addMember" element={<AddMember></AddMember>}></Route>
           <Route path="myTeams" element={<MyTeams></MyTeams>}></Route>
-          <Route path="attendanceReports" element={<AttendanceReports></AttendanceReports>}></Route>
-          <Route path="employeeTask" element={<EmployeeTask></EmployeeTask>}></Route>
-          <Route path="manageAttendance" element={<ManageAttendance></ManageAttendance>}></Route>
-          <Route path="manageEmployee" element={<ManageEmployee></ManageEmployee>}></Route>
-          <Route path="reviewYourTeamMember" element={<ReviewYourTeamMember></ReviewYourTeamMember>}></Route>
-          <Route path="assignedTasks" element={<AssignedTasks></AssignedTasks>}></Route>
-          <Route path="completedTask" element={<CompletedTask></CompletedTask>}></Route>
-          <Route path="uncompletedTask" element={<UncompletedTask></UncompletedTask>}></Route>
-          <Route path="taskForwarding" element={<TaskForwarding></TaskForwarding>}></Route>
+          <Route
+            path="attendanceReports"
+            element={<AttendanceReports></AttendanceReports>}
+          ></Route>
+          <Route
+            path="employeeTask"
+            element={<EmployeeTask></EmployeeTask>}
+          ></Route>
+          <Route
+            path="manageAttendance"
+            element={<ManageAttendance></ManageAttendance>}
+          ></Route>
+          <Route
+            path="manageEmployee"
+            element={<ManageEmployee></ManageEmployee>}
+          ></Route>
+          <Route
+            path="reviewYourTeamMember"
+            element={<ReviewYourTeamMember></ReviewYourTeamMember>}
+          ></Route>
+          <Route
+            path="assignedTasks"
+            element={<AssignedTasks></AssignedTasks>}
+          ></Route>
+          <Route
+            path="completedTask"
+            element={<CompletedTask></CompletedTask>}
+          ></Route>
+          <Route
+            path="uncompletedTask"
+            element={<UncompletedTask></UncompletedTask>}
+          ></Route>
+          <Route
+            path="taskForwarding"
+            element={<TaskForwarding></TaskForwarding>}
+          ></Route>
         </Route>
-
+        <Route path="*" element={<NotFound/>}></Route>
+        <Route path="/denied" element={<Denied/>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
