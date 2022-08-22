@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format } from 'date-fns';
+import EmployeeTaskModal from './EmployeeTaskModal';
 // import useTask from '../../hooks/useTask';
 const EmployeeTask = () => {
+  const [memberTaskModal, setMemberTaskModal] = useState(null);
+
   const [date, setDate] = useState(new Date());
   let footer = <p>Please pick a day.</p>;
   if (date) {
@@ -18,11 +21,10 @@ const EmployeeTask = () => {
       .then((data) => SetMemberTask(data));
   }, [])
 
-  let newDate = <p>{format(date, "PP")}</p>;
-  const todaysDate = newDate.props.children;
-  const [taskDate, setTaskDate] = useState('')
+  // let newDate = <p>{format(date, "PP")}</p>;
+  // const todaysDate = newDate.props.children;
+  // const [taskDate, setTaskDate] = useState('')
 
-  console.log(todaysDate, taskDate);
 
 
   return (
@@ -77,15 +79,13 @@ const EmployeeTask = () => {
                     </div>
                   </td>
                   <td className="text-xs font-bold">{member.memberId}</td>
-                 
-                  <td className="text-xs font-bold">{member.exactDate}</td>
-                  
-                  <td>
-                    <button className="btn btn-outline btn-success btn-sm">
-                      DETAILS
-                    </button>
-                  </td>
 
+                  <td className="text-xs font-bold">{member.exactDate}</td>
+
+                  <td>
+                    <label onClick={()=>setMemberTaskModal(member)} for="my-modal-4" class="btn modal-button btn-outline btn-success btn-sm">DETAILS</label>
+                  </td>{memberTaskModal &&
+                  <EmployeeTaskModal  memberTaskModal={memberTaskModal}/>}
                 </tr>
               ))}
             </tbody>
