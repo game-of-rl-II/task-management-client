@@ -35,6 +35,7 @@ const EmployeeTask = () => {
       image: "https://placeimg.com/192/192/people",
     },
   ];
+  
     return (
       <div>
         <div className="hero min-h-screen ">
