@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { toast } from "react-toastify";
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../../Firebase/firebase.init';
+import Loading from '../Shared/Loading/Loading';
 const AdminLogin = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
@@ -17,20 +19,20 @@ const AdminLogin = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const handleRegister = () => {
         if (!(/\S+@\S+\.\S+/.test(email))) {
-            return alert('please enter a valid email address')
+            return toast.error('please enter a valid email address')
         }
         if (password <= 7) {
-            return alert('password must be 8 characters or longer')
+            return toast.error('password must be 8 characters or longer')
         }
         signInWithEmailAndPassword(email, password)
 
 
     }
     if (adminError) {
-        return alert(`${adminError.message}`)
+        return toast.error(`${adminError.message}`)
     }
     if (adminLoading) {
-        return <p>Loading...</p>
+        return <Loading/>
     }
     if (admin) {
         navigate('/dashboard')

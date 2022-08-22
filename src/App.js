@@ -20,6 +20,8 @@ import EmployeeLogin from './Components/Entry/EmployeeLogin';
 import AdminLogin from './Components/Entry/AdminLogin';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import MyTeams from './Components/Dashboard/AdminDashboardItems/MyTeams';
+import SingleTeam from './Components/Dashboard/AdminDashboardItems/SingleTeam';
 
 function App() {
   return (
@@ -31,9 +33,11 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/employeeLogin' element={<EmployeeLogin></EmployeeLogin>}></Route>
         <Route path='/adminLogin' element={<AdminLogin></AdminLogin>}></Route>
+        <Route path='/myTeams/:teamName' element={<SingleTeam></SingleTeam>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="addMember" element={<AddMember></AddMember>}></Route>
+          <Route path="myTeams" element={<MyTeams></MyTeams>}></Route>
           <Route path="attendanceReports" element={<AttendanceReports></AttendanceReports>}></Route>
           <Route path="employeeTask" element={<EmployeeTask></EmployeeTask>}></Route>
           <Route path="manageAttendance" element={<ManageAttendance></ManageAttendance>}></Route>
