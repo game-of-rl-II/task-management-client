@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   if (adminLoading) {
-    return <Loading/>
+    return <Loading />
   }
 
   return (
@@ -57,21 +57,21 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link className="nav-button text-white font-bold mr-3 bg-primary" to="/employeeLogin">
-                    Employee Login
+                    Member Login
                   </Link>
                 </li>
               </>
             ) : (
               <>
-              <Notification/>
+                <Notification />
                 <li>
 
                   <Link
                     className="nav-button text-white mr-3 btn btn-primary"
-                    to="/myProfile"
-                    
+                    to={`${admin?.uid ? '/myProfile' : '/dashboard'}`}
+
                   >
-                    Profile
+                    {admin?.uid ? 'Profile' : "Dashboard"}
                   </Link>
                 </li>
                 <li>
