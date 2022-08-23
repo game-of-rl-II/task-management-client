@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { format } from "date-fns";
 import "react-day-picker/dist/style.css";
+import useTeamName from "../../hooks/useTeamName";
 const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
   const [date, setDate] = useState(new Date());
   let newDate = <p>{format(date, "PP")}</p>;
   const taskDate = newDate.props.children;
-  console.log(taskDate);
+  const {teamName} = useTeamName()
   const handleAssignTask = (event) => {
     event.preventDefault();
     const name = assignTaskMember.name;
@@ -21,6 +22,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
       deadline,
       taskCompletion,
       taskDate,
+      teamName,
     };
 
     const url = "http://localhost:5000/assign-task";
