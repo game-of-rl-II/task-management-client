@@ -17,10 +17,10 @@ const MyTeams = () => {
             <div className='mt-button-wrapper'>
                 <div>
 
-                    <label for="my-modal" class="btn btn-primary modal-button mb-5">Create a team</label></div>
+                    <label for="my-modal" className="btn btn-primary modal-button mb-5">Create a team</label></div>
             </div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
 
@@ -37,8 +37,8 @@ const MyTeams = () => {
                             <th>{team?.teamName}</th>
                             <td>{team?.members}</td>
                             <td>{team?.project}</td>
-                            <td ><button onClick={() => navigate(`/myTeams/${team.teamName}`)} class="btn btn-primary text-white">View Team Details</button></td>
-                            <td ><button class="btn btn-primary text-white">Archive</button></td>
+                            <td ><button onClick={() => navigate(`/myTeams/${team.teamName}`)} className="btn btn-primary text-white">View Team Details</button></td>
+                            <td ><button className="btn btn-primary text-white">Archive</button></td>
 
                         </tr>)
                         }
@@ -49,9 +49,9 @@ const MyTeams = () => {
             </div>
             {/* modal for creating a team */}
 
-            <input type="checkbox" id="my-modal" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box">
+            <input type="checkbox" id="my-modal" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box">
                     <MyTeamsModal></MyTeamsModal>
                 </div>
             </div>

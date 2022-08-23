@@ -18,16 +18,16 @@ const EmployeeDeleteModal = ({ deleteMember }) => {
 
   return (
     <div>
-      <input type="checkbox" id="EmployeeDelete-modal" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-white">
-          <h3 class="font-bold text-lg">Are you sure? Do you want to delete this member?</h3>
-          <p class="py-4"></p>
-          <div class="modal-action">
-            <label for="EmployeeDelete-modal" class="btn btn-warning btn-sm px-5">
+      <input type="checkbox" id="EmployeeDelete-modal" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-white">
+          <h3 className="font-bold text-lg">Are you sure? Do you want to delete this member?</h3>
+          <p className="py-4"></p>
+          <div className="modal-action">
+            <label for="EmployeeDelete-modal" className="btn btn-warning btn-sm px-5">
               CANCEL
             </label>
-            <label onClick={() => handleDeleteMember(_id)} for="EmployeeDelete-modal" class="btn btn-error text-white btn-sm px-5">
+            <label onClick={() => handleDeleteMember(_id)} for="EmployeeDelete-modal" className="btn btn-error text-white btn-sm px-5">
               Delete
             </label>
           </div>

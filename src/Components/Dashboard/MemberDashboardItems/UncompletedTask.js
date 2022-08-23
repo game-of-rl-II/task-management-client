@@ -45,7 +45,7 @@ const UncompletedTask = () => {
                   <span className="uppercase text-xs font-bold bg-yellow-500 text-white p-1 rounded">Pending</span>
                 </th>
                 <th>
-                  <label onClick={() => setTaskData(task)} for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">
+                  <label onClick={() => setTaskData(task)} for="my-modal-6" className="btn modal-button btn-outline btn-success btn-sm">
                     DETAILS
                   </label>
                 </th>

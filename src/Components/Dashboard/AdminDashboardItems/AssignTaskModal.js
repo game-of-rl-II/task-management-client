@@ -42,12 +42,12 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
 
   return (
     <div>
-      <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-indigo-500">
-          <p class="py-4">Employee Name: {assignTaskMember.name}</p>
-          <p class="py-4">Employee ID: {assignTaskMember._id}</p>
-          <p class="py-4">Task Date: {taskDate}</p>
+      <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-indigo-500">
+          <p className="py-4">Employee Name: {assignTaskMember.name}</p>
+          <p className="py-4">Employee ID: {assignTaskMember.id}</p>
+          <p className="py-4">Task Date: {taskDate}</p>
           <form onSubmit={handleAssignTask}>
             <div className="mb-8">
               <div className="md:flex-1 mt-2 mb:mt-0 ">
@@ -69,24 +69,24 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
                     </label>
 
                     <select name="deadline" className="select  w-full max-w-xs">
-                      <option>5 Day</option>
-                      <option>4 Day</option>
-                      <option>3 Day</option>
-                      <option>2 Day</option>
                       <option>1 Day</option>
+                      <option>2 Day</option>
+                      <option>3 Day</option>
+                      <option>4 Day</option>
+                      <option>5 Day</option>
                     </select>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="modal-action">
-              <label for="my-modal-6" class="btn btn-warning btn-sm px-5">
+            <div className="modal-action">
+              <label for="my-modal-6" className="btn btn-warning btn-sm px-5">
                 CANCEL
               </label>
               <button
                 for="my-modal-6"
                 type="submit"
-                class="btn btn-success btn-sm px-5"
+                className="btn btn-success btn-sm px-5"
               >
                 Assign
               </button>

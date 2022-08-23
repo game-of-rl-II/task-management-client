@@ -30,6 +30,8 @@ const Menu = () => {
 
             <li><Link to="manageEmployee">Manage Members</Link></li>
             <li><Link to="reviewYourTeamMember">Review a member</Link></li>
+            <li><Link to="employeeTask">Assigned tasks</Link></li>
+            <li><Link to="todaysTask">Today's tasks</Link></li>
           </ul>
         </div>
         <div class="navbar-end">

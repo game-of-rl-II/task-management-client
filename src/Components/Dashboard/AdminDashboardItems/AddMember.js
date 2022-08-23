@@ -79,8 +79,6 @@ const AddMember = () => {
   };
 
 
-
- 
   return (
     <div className="addMember-form">
       <form onSubmit={handleSubmit}>
