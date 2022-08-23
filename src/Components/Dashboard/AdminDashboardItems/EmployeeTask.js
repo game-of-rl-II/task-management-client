@@ -14,16 +14,17 @@ const EmployeeTask = () => {
   }
 
   const [memberTask, SetMemberTask] = useState([])
-
+// console.log(memberTask);
   useEffect(() => {
     fetch('http://localhost:5000/task')
       .then((res) => res.json())
       .then((data) => SetMemberTask(data));
-  }, [])
+  }, [memberTask])
 
-  // let newDate = <p>{format(date, "PP")}</p>;
-  // const todaysDate = newDate.props.children;
+  let newDate = <p>{format(date, "PP")}</p>;
+  const todaysDate = newDate.props.children;
   // const [taskDate, setTaskDate] = useState('')
+
 
 
 
@@ -80,10 +81,10 @@ const EmployeeTask = () => {
                   </td>
                   <td className="text-xs font-bold">{member.memberId}</td>
 
-                  <td className="text-xs font-bold">{member.exactDate}</td>
+                  <td className="text-xs font-bold"><span className={member.taskDate === todaysDate ? "text-green-500" : "text-black"}>{member.taskDate}</span></td>
 
                   <td>
-                    <label onClick={()=>setMemberTaskModal(member)} for="my-modal-4" class="btn modal-button btn-outline btn-success btn-sm">DETAILS</label>
+                    <label onClick={()=>setMemberTaskModal(member)} for="my-modal-4" className="btn modal-button btn-outline btn-success btn-sm">DETAILS</label>
                   </td>{memberTaskModal &&
                   <EmployeeTaskModal  memberTaskModal={memberTaskModal}/>}
                 </tr>
