@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format } from 'date-fns';
-import EmployeeTaskModal from './employeeTaskModal';
+import EmployeeTaskModal from './EmployeeTaskModal';
 // import useTask from '../../hooks/useTask';
 const EmployeeTask = () => {
   const [memberTaskModal, setMemberTaskModal] = useState(null);
@@ -30,19 +30,6 @@ const EmployeeTask = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen ">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src="https://placeimg.com/260/400/arch" className="max-w-sm lg:ml-32 rounded-lg shadow-2xl" alt="" />
-          <div>
-            <DayPicker
-              mode="single"
-              selected={date}
-              onSelect={setDate}
-              footer={footer} />
-
-          </div>
-        </div>
-      </div>
       <div >
         <h1 className=" bg-secondary w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
           MEMBERS TASK
@@ -65,7 +52,6 @@ const EmployeeTask = () => {
                   <th>
                     {index + 1}
                   </th>
-                  {/* <>{setTaskDate(member.exactDate)}</> */}
                   <td>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
