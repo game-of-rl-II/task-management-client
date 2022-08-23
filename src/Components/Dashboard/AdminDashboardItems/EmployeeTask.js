@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format } from 'date-fns';
-import EmployeeTaskModal from './employeeTaskModal';
+import EmployeeTaskModal from './EmployeeTaskModal';
 // import useTask from '../../hooks/useTask';
 const EmployeeTask = () => {
   const [memberTaskModal, setMemberTaskModal] = useState(null);
@@ -14,34 +14,22 @@ const EmployeeTask = () => {
   }
 
   const [memberTask, SetMemberTask] = useState([])
-
+// console.log(memberTask);
   useEffect(() => {
     fetch('http://localhost:5000/task')
       .then((res) => res.json())
       .then((data) => SetMemberTask(data));
-  }, [])
+  }, [memberTask])
 
-  // let newDate = <p>{format(date, "PP")}</p>;
-  // const todaysDate = newDate.props.children;
+  let newDate = <p>{format(date, "PP")}</p>;
+  const todaysDate = newDate.props.children;
   // const [taskDate, setTaskDate] = useState('')
+
 
 
 
   return (
     <div>
-      <div className="hero min-h-screen ">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src="https://placeimg.com/260/400/arch" className="max-w-sm lg:ml-32 rounded-lg shadow-2xl" alt="" />
-          <div>
-            <DayPicker
-              mode="single"
-              selected={date}
-              onSelect={setDate}
-              footer={footer} />
-
-          </div>
-        </div>
-      </div>
       <div >
         <h1 className=" bg-secondary w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
           MEMBERS TASK
@@ -64,7 +52,6 @@ const EmployeeTask = () => {
                   <th>
                     {index + 1}
                   </th>
-                  {/* <>{setTaskDate(member.exactDate)}</> */}
                   <td>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
@@ -80,10 +67,10 @@ const EmployeeTask = () => {
                   </td>
                   <td className="text-xs font-bold">{member.memberId}</td>
 
-                  <td className="text-xs font-bold">{member.exactDate}</td>
+                  <td className="text-xs font-bold"><span className={member.taskDate === todaysDate ? "text-green-500" : "text-black"}>{member.taskDate}</span></td>
 
                   <td>
-                    <label onClick={()=>setMemberTaskModal(member)} for="my-modal-4" class="btn modal-button btn-outline btn-success btn-sm">DETAILS</label>
+                    <label onClick={()=>setMemberTaskModal(member)} for="my-modal-4" className="btn modal-button btn-outline btn-success btn-sm">DETAILS</label>
                   </td>{memberTaskModal &&
                   <EmployeeTaskModal  memberTaskModal={memberTaskModal}/>}
                 </tr>

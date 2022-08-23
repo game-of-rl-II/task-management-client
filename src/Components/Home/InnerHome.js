@@ -4,8 +4,6 @@ import { Link, Outlet } from 'react-router-dom';
 import { auth } from '../../Firebase/firebase.init';
 
 import { useQuery } from "react-query";
-
-
 import './InnerHome.css'
 
 const InnerHome = () => {
@@ -59,12 +57,10 @@ const InnerHome = () => {
             {admin?.uid && (
               <>
                 {
-                  teams.map(team => <li key={team._id}>
+                  teams.map(team => <li key={team?._id}>
                     <Link to={team?.teamName}>{team?.teamName}</Link>
                   </li>)
                 }
-
-
 
               </>
             )}
