@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../../Firebase/firebase.init";
 import Notification from "../../Dashboard/Notification/Notification";
+import './Navbar.css'
 import Loading from "../Loading/Loading";
 // import Loading from "../Loading/Loading";
 
@@ -42,7 +43,7 @@ const Navbar = () => {
           <Link to="/" className="text-black">
 
             <span className="p-2 rounded text-2xl font-bold text-white bg-primary">TMT</span>{" "}
-            <span>Task Mangement Tool</span>
+            <span className='logo'>Task Mangement Tool</span>
 
           </Link>
         </div>
