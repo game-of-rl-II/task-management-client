@@ -1,8 +1,11 @@
 import AssignTaskModal from "./AssignTaskModal";
 import EmployeeDeleteModal from "./EmployeeDeleteModal";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../Firebase/firebase.init";
+import { useQuery } from "react-query";
+import useTeamName from "../../hooks/useTeamName";
+
 import Loading from "../../Shared/Loading/Loading";
 
 const ManageEmployee = () => {
@@ -10,17 +13,23 @@ const ManageEmployee = () => {
   const email = admin?.email;
   const [deleteMember, setDeleteMember] = useState(null);
   const [assignTaskMember, setAssignTaskMember] = useState(null);
-  const [members, setMembers] = useState([]);
-  useEffect(() => {
-    if (email) {
-      fetch(`https://warm-dawn-94442.herokuapp.com/members?email=${email}`)
-        .then((res) => res.json())
-        .then((data) => setMembers(data));
-    }
-  }, [email]);
+  const { teamName } = useTeamName()
 
-  if (adminLoading) {
-    return <Loading/>
+
+  const {
+    data: members,
+    isLoading,
+
+  } = useQuery(["owner", email], () =>
+    fetch(`http://localhost:5000/members?email=${email}&teamName=${teamName}`, {
+      method: "GET",
+    }).then((res) => res.json())
+  );
+
+
+  if (adminLoading || isLoading) {
+    return <Loading />
+
   }
   return (
     <div>
@@ -56,13 +65,13 @@ const ManageEmployee = () => {
                 <td className="text-xs font-bold">{member.id}</td>
 
                 <th>
-                  <label onClick={() => setAssignTaskMember(member)} for="my-modal-6" className="btn modal-button btn-outline btn-success btn-sm">
+                  <label onClick={() => setAssignTaskMember(member)} htmlFor="my-modal-6" className="btn modal-button btn-outline btn-success btn-sm">
                     Assign
                   </label>
                   {assignTaskMember && <AssignTaskModal assignTaskMember={assignTaskMember} setAssignTaskMember={setAssignTaskMember} />}
                 </th>
                 <th>
-                  <label onClick={() => setDeleteMember(member)} for="EmployeeDelete-modal" className="btn modal-button btn-outline btn-error  btn-sm">
+                  <label onClick={() => setDeleteMember(member)} htmlFor="EmployeeDelete-modal" className="btn modal-button btn-outline btn-error  btn-sm">
                     Delete
                   </label>
                   {deleteMember && <EmployeeDeleteModal deleteMember={deleteMember} />}

@@ -15,8 +15,8 @@ const HomeBanner = () => {
   if (adminLoading) {
     return <Loading/>
   }
-  if(admin || member){
-    return navigate('/dashboard')
+  if(admin){
+    return navigate('/innerHome')
   }
   return (
     <div className="home-banner-parent">

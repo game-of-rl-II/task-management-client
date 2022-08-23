@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <div>
+    <div className="mt-10">
       <div x-ref="loading" className="fixed z-50 flex items-center justify-center text-2xl font-semibold text-white "></div>
       <main aria-labelledby="pageTitle" className="flex items-center justify-center h-screen bg-gray-100 dark:bg-dark dark:text-light">
         <div className="p-4 space-y-4">
           <div className="flex flex-col items-start space-y-3 sm:flex-row sm:space-y-0 sm:items-center sm:space-x-3">
-            <p className="font-semibold text-red-600 opacity-90 text-9xl dark:text-danger">404</p>
+            <p className="font-semibold text-primary opacity-90 text-9xl dark:text-danger">404</p>
             <div className="space-y-2">
               <h1 id="pageTitle" className="flex items-center space-x-2">
                 <svg
@@ -31,7 +31,7 @@ const NotFound = () => {
               <p className="text-base font-normal text-gray-600 dark:text-gray-300">The page you are looking for was not found.</p>
               <p className="text-base font-normal text-gray-600 dark:text-gray-300">
                 You may return to
-                <Link to="/" className="text-blue-600 hover:underline dark:text-blue-500">
+                <Link to="/" className="text-secondary hover:underline font-bold dark:text-green-500">
                   {" "}
                   Home Page
                 </Link>{" "}
@@ -46,9 +46,9 @@ const NotFound = () => {
                 type="text"
                 name="search"
                 placeholder="What are you looking for?"
-                className="w-full px-4 py-2 rounded-l-md focus:outline-none focus:ring focus:ring-primary-light dark:bg-black focus:ring-indigo-700"
+                className="w-full px-4 py-2 rounded-l-md focus:outline-none focus:ring focus:ring-primary-light dark:bg-black focus:ring-secondary"
               />
-              <button className="p-2 text-white rounded-r-md bg-primary bg-indigo-700 hover:bg-primary-dark hover:bg-indigo-600 focus:outline-none focus:ring  focus:ring-indigo-700">
+              <button className="p-2 text-white rounded-r-md bg-primary bg-secondary hover:bg-primary-dark hover:bg-secondary focus:outline-none focus:ring  focus:ring-secondary">
                 <span className="sr-only">Search</span>
                 <svg aria-hidden="true" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

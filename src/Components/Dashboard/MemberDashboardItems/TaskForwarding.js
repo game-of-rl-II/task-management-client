@@ -64,13 +64,13 @@ const TaskForwarding = () => {
                   <td className="text-xs font-bold">{employee._id}</td>
 
                   <th>
-                    <button className="btn btn-outline btn-warning btn-sm">
-                      INCOMPLETED
-                    </button>
+                    <span className="uppercase text-xs bg-yellow-500 text-white p-1 rounded">
+                      UNCOMPLETED
+                    </span>
                   </th>
                   <th>
                     <button className="btn btn-outline btn-success btn-sm">
-                      FORWORD
+                      FORWARD
                     </button>
                   </th>
                 </tr>

@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../../Firebase/firebase.init";
 import Notification from "../../Dashboard/Notification/Notification";
+import Loading from "../Loading/Loading";
 // import Loading from "../Loading/Loading";
 
 
@@ -30,9 +31,9 @@ const Navbar = () => {
     }
   };
 
-  // if (adminLoading) {
-  //   return <Loading/>
-  // }
+  if (adminLoading) {
+    return <Loading/>
+  }
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -41,7 +42,7 @@ const Navbar = () => {
           <Link to="/" className="text-black">
 
             <span className="p-2 rounded text-2xl font-bold text-white bg-primary">TMT</span>{" "}
-            <span style={{ display: "none" }}>Task Management Tool</span>
+            <span>Task Mangement Tool</span>
 
           </Link>
         </div>
@@ -66,11 +67,11 @@ const Navbar = () => {
                 <li>
 
                   <Link
-                    className="nav-button mr-3 btn btn-primary text-white"
-
-                    to="/dashboard"
+                    className="nav-button text-white mr-3 btn btn-primary"
+                    to="/myProfile"
+                    
                   >
-                    Dashboard
+                    Profile
                   </Link>
                 </li>
                 <li>
