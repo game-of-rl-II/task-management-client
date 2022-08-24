@@ -54,9 +54,10 @@ const MyTeamsModal = () => {
                     <input type="project" placeholder="Project" className="input input-bordered" name="project" />
                 </div>
 
-                <div className="modal-action">
-                    <button type='submit' className="btn btn-primary">Create</button>
-                    <label for="my-modal" className="btn">Cancel</label>
+
+                <div class="modal-action">
+                    <button type='submit' class="btn btn-primary text-white">Create</button>
+                    <label for="my-modal" class="btn btn-warning">Cancel</label>
                 </div>
 
             </form>

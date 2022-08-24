@@ -30,7 +30,7 @@ const InnerHome = () => {
       <div className="drawer mt-5">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-          <label htmlFor="my-drawer" className="btn ml-2 btn-primary drawer-button text-white">
+          <label htmlFor="my-drawer" className="btn ml-5 btn-primary drawer-button sm:mb-5 text-white">
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-white"

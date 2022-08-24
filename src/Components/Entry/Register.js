@@ -7,7 +7,7 @@ import Loading from "../Shared/Loading/Loading";
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import './Register.css'
 const Register = () => {
-  const [passwordIcon , setPasswordIcon] = useState(false);
+  const [passwordIcon, setPasswordIcon] = useState(false);
   const toggleButton = () => {
     setPasswordIcon(prevPasswordIcon => !prevPasswordIcon)
   }
@@ -44,9 +44,9 @@ const Register = () => {
     return toast.error(`${adminError.message}`);
   }
   if (adminLoading) {
-    return <Loading/>
+    return <Loading />
   }
-  if(admin){
+  if (admin) {
     navigate('/innerHome')
   }
 
@@ -69,10 +69,10 @@ const Register = () => {
                 <span className="label-text">Password</span>
               </label>
               <div className="flex">
-              <input onChange={(e) => setPassword(e.target.value)} type={passwordIcon ? 'text' : 'password'} placeholder="password" className="input input-bordered w-full" />
-              <button className="btn-icon" onClick={toggleButton}>
-                {passwordIcon ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>}
-              </button>
+                <input onChange={(e) => setPassword(e.target.value)} type={passwordIcon ? 'text' : 'password'} placeholder="password" className="input input-bordered w-full" />
+                <button className="btn-icon" onClick={toggleButton}>
+                  {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                </button>
               </div>
               <label className="label">
                 <p className="label-text-alt link link-hover">Forgot password?</p>
