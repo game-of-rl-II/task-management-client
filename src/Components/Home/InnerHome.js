@@ -46,7 +46,7 @@ const InnerHome = () => {
                 <>
                   {
                     teams.map(team => <li className='' key={team?._id}>
-                      <Link className='font-bold text-green-500' to={team?.teamName}>{team?.teamName}</Link>
+                      <Link className='font-bold' style={{color: `${team?.teamColor}`}} to={team?.teamName}>{team?.teamName}</Link>
                     </li>)
                   }
                 </> : <p className="text-center">You have not added a team</p>

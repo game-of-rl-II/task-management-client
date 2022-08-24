@@ -93,7 +93,7 @@ const Register = () => {
                 onClick={handleRegister}
                 className="btn btn-primary modal-button mb-5 text-white"
               >
-                Login
+                Register
               </button>
             </div>
           </div>

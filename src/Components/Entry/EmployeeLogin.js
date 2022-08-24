@@ -77,7 +77,7 @@ const EmployeeLogin = () => {
                   {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                 </button>
               </div>
-              
+
               <label for="employeeResetModal" class="label-text-alt link link-hover p-2">Forgot password?</label>
               <EmployeeResetModal />
             </div>
