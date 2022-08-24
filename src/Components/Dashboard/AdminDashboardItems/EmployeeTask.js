@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import EmployeeTaskModal from "./employeeTaskModal";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
-
+import EmployeeTaskModal from "./employeeTaskModal";
 import useTeamName from "../../hooks/useTeamName";
 // import useTask from '../../hooks/useTask';
 const EmployeeTask = () => {
@@ -24,7 +23,6 @@ const EmployeeTask = () => {
         .then((res) => res.json())
         .then((data) => {
           setMemberTask(data);
-          console.log(data);
         });
     }
   }, [memberTask, teamName]);

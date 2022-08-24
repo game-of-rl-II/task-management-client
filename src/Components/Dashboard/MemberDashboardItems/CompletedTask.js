@@ -5,8 +5,8 @@ import CompleteDetailsModal from "./CompleteDetailsModal";
 const CompletedTask = () => {
   const [members, setMembers] = useState([]);
   const [detailsModal, setDetailsModal] = useState(null);
-  const [tasks] = useTask()
-  const completedTasks = tasks.filter(task => task.taskCompletion === true)
+  const {completedTasks} = useTask()
+  console.log(completedTasks)
 
   return (
     <div>
