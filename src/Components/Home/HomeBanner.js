@@ -1,27 +1,42 @@
 import React, { useEffect } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../Firebase/firebase.init";
 import "./HomeBanner.css";
 // import Banner from "../../Images/task-tool.png";
 import login2 from "../../Images/login2-removebg-preview.jpg";
 import Loading from "../Shared/Loading/Loading";
+import { toast } from "react-toastify";
 
 const HomeBanner = () => {
   const navigate = useNavigate();
   const [admin, adminLoading, adminError] = useAuthState(auth);
+  const [signInWithGoogle, googleAdmin, googleAdminLoading, googleAdminError] = useSignInWithGoogle(auth);
   const member = localStorage.getItem("member");
   useEffect(() => {
     document.getElementById("footer").style.display = "visible"
   }, [])
 
-  if (adminLoading) {
+  if (adminLoading || googleAdminLoading) {
     return <Loading />
   }
-  if (admin) {
+  if (adminError) {
+    return (
+      toast.error(adminError.message)
+    );
+  }
+  if (googleAdminError) {
+    return (
+      toast.error(googleAdminError.message)
+    );
+  }
+  
+  if (admin || googleAdmin) {
+    toast.success("Successfully Signed In")
     return navigate('/innerHome')
   }
   if (member) {
+    toast.success("Successfully Signed In")
     return navigate('/dashboard')
   }
   return (
@@ -144,7 +159,7 @@ const HomeBanner = () => {
               <p className="text-center">or</p>
             </div>
             <div>
-              <button className=" btn hover:bg-primary text-primary btn-block btn-outline">
+              <button onClick={() => signInWithGoogle()} className=" btn hover:bg-primary text-primary btn-block btn-outline">
                 Continue with google
               </button>
             </div>
