@@ -3,7 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../Firebase/firebase.init";
 import { toast } from "react-toastify";
 import { Alert } from "react-st-modal";
-import { HuePicker, SketchPicker, TwitterPicker } from "react-color";
+import {  TwitterPicker } from "react-color";
 const MyTeamsModal = () => {
   const [color, setColor] = useState({hex: '#000000.'})
   

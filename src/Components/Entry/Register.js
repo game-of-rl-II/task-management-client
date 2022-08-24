@@ -48,7 +48,7 @@ const Register = () => {
   if (adminLoading) {
     return <Loading />;
   }
-  
+
 
   return (
     <div className="hero min-h-screen">
