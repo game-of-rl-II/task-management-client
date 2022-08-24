@@ -19,9 +19,8 @@ const HomeBanner = () => {
     );
   }
   if (user) {
-    return (
       toast.success("Google SignIn successfully")
-    );
+      return navigate('/innerHome') 
   }
 
   if (adminLoading || loading) {
