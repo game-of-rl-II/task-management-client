@@ -45,14 +45,14 @@ const AdminLogin = () => {
     }
 
     return (
-      <div className="hero min-h-screen">
+      <div className="hero min-h-screen bg-lime-50">
         <div>
           <div className="hero min-h-screen">
             <div
               style={{ scrollBehavior: "smooth" }}
               className="hero-content flex-col lg:flex-row-reverse w-full rounded-xl p-10"
             >
-              <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-white p-7">
+              <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-primary p-7">
                 <h1 className="text-3xl font-bold text-neutral text-center">
                   Admin Login
                 </h1>

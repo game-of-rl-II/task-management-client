@@ -44,7 +44,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
     <div>
       <input type="checkbox" id="my-modal-6" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box bg-gradient-to-t from-pink-500 to-orange-400 border-y-4 border-indigo-500">
+        <div class="modal-box bg-white border-y-4 border-primary">
           <p class="py-4">Employee Name: {assignTaskMember.name}</p>
           <p class="py-4">Employee ID: {assignTaskMember._id}</p>
           <p class="py-4">Task Date: {taskDate}</p>
@@ -86,7 +86,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
               <button
                 for="my-modal-6"
                 type="submit"
-                class="btn btn-success btn-sm px-5"
+                class="btn btn-primary text-white btn-sm px-5"
               >
                 Assign
               </button>

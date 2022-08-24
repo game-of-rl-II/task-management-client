@@ -65,7 +65,7 @@ const ManageEmployee = () => {
                   <td className="text-xs font-bold">{member.id}</td>
 
                   <th>
-                    <label onClick={() => setAssignTaskMember(member)} htmlFor="my-modal-6" className="btn modal-button btn-outline btn-success btn-sm">
+                    <label onClick={() => setAssignTaskMember(member)} htmlFor="my-modal-6" className="btn modal-button btn-outline btn-primary btn-sm">
                       Assign
                     </label>
                     {assignTaskMember && <AssignTaskModal assignTaskMember={assignTaskMember} setAssignTaskMember={setAssignTaskMember} />}

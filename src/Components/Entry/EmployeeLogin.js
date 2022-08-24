@@ -75,7 +75,7 @@ const EmployeeLogin = () => {
             </div>
           </div>
         </div>
-        <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-white p-7">
+        <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-primary p-7">
           <h1 className="text-3xl font-bold text-neutral text-center">Employee Login</h1>
           <p className="py-6 text-center text-gray-500">
             Hello Employee, You Have To Login First. We Give All Of Our Employee An Employee ID Addreess And Password. Enter Your Employee ID And

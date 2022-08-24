@@ -51,8 +51,8 @@ const MyTeamsModal = () => {
                 </div>
 
                 <div class="modal-action">
-                    <button type='submit' class="btn btn-primary">Create</button>
-                    <label for="my-modal" class="btn">Cancel</label>
+                    <button type='submit' class="btn btn-primary text-white">Create</button>
+                    <label for="my-modal" class="btn btn-warning">Cancel</label>
                 </div>
 
             </form>
