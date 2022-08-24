@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify";
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import './Register.css'
+import EmployeeResetModal from "./EmployeeResetModal";
 const EmployeeLogin = () => {
   const [passwordIcon, setPasswordIcon] = useState(false);
   const toggleButton = () => {
@@ -62,9 +63,8 @@ const EmployeeLogin = () => {
                 {passwordIcon ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>}
               </button>
               </div>
-              <label className="label">
-                <p className="label-text-alt link link-hover">Forgot password?</p>
-              </label>
+              <label for="employeeResetModal" class="label-text-alt link link-hover p-2">Forgot password?</label>
+              <EmployeeResetModal />
             </div>
             <div className="form-control mt-6">
               <button onClick={handleLogin} className="p-3 rounded-md bg-primary text-white font-bold">
