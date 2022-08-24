@@ -5,8 +5,8 @@ import UncompletedTaskModal from "./UncompletedTaskModal";
 
 const UncompletedTask = () => {
   const [taskData, setTaskData] = useState(null);
-  const [tasks] = useTask()
-  const unCompletedTasks = tasks.filter(task => task.taskCompletion !== true)
+  const {unCompletedTasks} = useTask()
+  // const unCompletedTasks = tasks.filter(task => task.taskCompletion !== true)
   
   return (
     <div>
@@ -45,7 +45,7 @@ const UncompletedTask = () => {
                   <span className="uppercase text-xs font-bold bg-yellow-500 text-white p-1 rounded">Pending</span>
                 </th>
                 <th>
-                  <label onClick={() => setTaskData(task)} for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">
+                  <label onClick={() => setTaskData(task)} for="my-modal-6" className="btn modal-button btn-outline btn-success btn-sm">
                     DETAILS
                   </label>
                 </th>

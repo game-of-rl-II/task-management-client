@@ -27,6 +27,7 @@ import Menu from './Components/Home/Menu';
 import CreateTeam from './Components/Home/CreateTeam';
 import NotFound from './Components/ErroPages/NotFound';
 import Denied from './Components/ErroPages/Denied';
+import TodaysTasks from './Components/Dashboard/AdminDashboardItems/TodaysTasks';
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
             <Route index element={<CreateTeam></CreateTeam>}></Route>
             <Route path="addMember" element={<AddMember></AddMember>}></Route>
             <Route path="manageEmployee" element={<ManageEmployee></ManageEmployee>}></Route>
+            <Route path="employeeTask" element={<EmployeeTask></EmployeeTask>}></Route>
+            <Route path="todaysTask" element={<TodaysTasks></TodaysTasks>}></Route>
+
             <Route path="reviewYourTeamMember" element={<ReviewYourTeamMember></ReviewYourTeamMember>}></Route>
           </Route>
 
@@ -55,7 +59,6 @@ function App() {
           {/* <Route path="addMember" element={<AddMember></AddMember>}></Route> */}
           <Route path="myTeams" element={<MyTeams></MyTeams>}></Route>
           <Route path="attendanceReports" element={<AttendanceReports></AttendanceReports>}></Route>
-          <Route path="employeeTask" element={<EmployeeTask></EmployeeTask>}></Route>
           <Route path="manageAttendance" element={<ManageAttendance></ManageAttendance>}></Route>
           {/* <Route path="manageEmployee" element={<ManageEmployee></ManageEmployee>}></Route> */}
           {/* <Route path="reviewYourTeamMember" element={<ReviewYourTeamMember></ReviewYourTeamMember>}></Route> */}

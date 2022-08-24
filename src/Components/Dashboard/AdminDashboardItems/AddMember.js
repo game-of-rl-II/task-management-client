@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import { auth } from "../../../Firebase/firebase.init";
-import { useLocation } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
 import Loading from "../../Shared/Loading/Loading";
 import "./AddMember.css";
 import useTeamName from "../../hooks/useTeamName";
 
 const AddMember = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
-  const { teamName } = useTeamName()
+  const { teamName } = useTeamName();
   const [generatedID, setGeneratedID] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     const adminEmail = admin?.email;
     const name = e.target.name.value;
-    const nickName = e.target.nickName.value;
+
+    const memberEmail = e.target.email.value;
     const id = e.target.id.value;
     const password = e.target.password.value;
 
@@ -23,11 +24,11 @@ const AddMember = () => {
       adminEmail,
       teamName,
       name,
-      nickName,
+
+      memberEmail,
       id,
       password,
     };
-    // console.log(data);
     if (data) {
       fetch("http://localhost:5000/add-new-member", {
         method: "POST",
@@ -38,38 +39,30 @@ const AddMember = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-
           if (data.acknowledged) {
-            console.log(data)
-            alert("member successfully added!");
             // console.log(data)
 
             toast.success("Member added successfully!");
           } else {
             toast.error(`${data.message}`);
-
           }
-
         });
-
     }
 
     if (adminLoading) {
-      return <Loading />
+      return <Loading />;
     }
   };
 
   // handle id check al alamin arif start
   const handleIdCheck = (randomId) => {
-
     fetch(`http://localhost:5000/random-id-check/${randomId}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.message) {
-          return handleIdCheck(randomId)
-        }
-        else if (data.memberId) {
-          setGeneratedID(data.memberId)
+          return handleIdCheck(randomId);
+        } else if (data.memberId) {
+          setGeneratedID(data.memberId);
         }
       });
   };
@@ -78,9 +71,6 @@ const AddMember = () => {
     handleIdCheck(randomId);
   };
 
-
-
- 
   return (
     <div className="addMember-form">
       <form onSubmit={handleSubmit}>
@@ -99,14 +89,15 @@ const AddMember = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Nickname</span>
+              <span className="label-text">Email</span>
             </label>
+
             <input
               required
-              type="text"
-              placeholder="Nickname"
+              type="email"
+              placeholder="Email"
               className="input input-bordered input-addMember-form"
-              name="nickName"
+              name="email"
             />
           </div>
           <div className="form-control">
@@ -145,10 +136,7 @@ const AddMember = () => {
         </div>
         <div className="addMember-form-bottom">
           <div className="form-control mt-6">
-            <button
-              type="submit"
-              className="btn btn-primary modal-button mb-5 text-white"
-            >
+            <button type="submit" className="btn btn-primary">
               Submit
             </button>
           </div>

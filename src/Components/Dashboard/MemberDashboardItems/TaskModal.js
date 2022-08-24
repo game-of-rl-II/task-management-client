@@ -4,20 +4,15 @@ const TaskModal = ({modalData, setModalData}) => {
   
     return (
         <div>
-            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-                  <div class="modal">
-                    <div class="modal-box relative">
-                      <h1 class="text-lg uppercase text-center font-bold"> Task Details</h1>
+            <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+                  <div className="modal">
+                    <div className="modal-box relative">
+                      <h1 className="text-lg uppercase text-center font-bold"> Task Details</h1>
                      
-                      <h3 class="text-lg mt-4 font-bold">
-                       Task Assigned: {modalData.name}
-                      </h3>
-                      <p class="text-lg font-bold">
-                       Deadline: {modalData.deadline}
-                      </p>
+                      
                      
-                      <p class="text-lg font-bold">
-                       Task Description: {modalData.task}
+                      <p className="text-lg font-bold">
+                       {modalData.task}
                       </p>
                       <div className="flex gap-5 justify-end mt-5">
                         <button

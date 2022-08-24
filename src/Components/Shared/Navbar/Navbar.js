@@ -4,9 +4,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../../Firebase/firebase.init";
 import Notification from "../../Dashboard/Notification/Notification";
+import "./Navbar.css";
 import Loading from "../Loading/Loading";
 // import Loading from "../Loading/Loading";
-
 
 import "./Navbar.css";
 
@@ -32,18 +32,18 @@ const Navbar = () => {
   };
 
   if (adminLoading) {
-    return <Loading/>
+    return <Loading />;
   }
 
   return (
-    <div className="mx-auto">
-      <div className="navbar relative p-5 flex flex-col md:flex-row gap-y-4 bg-lime-100">
+    <div className="max-w-7xl mx-auto">
+      <div className="navbar relative z-50 top-5">
         <div className="flex-1">
           <Link to="/" className="text-black">
             <span className="p-2 rounded text-2xl font-bold text-white bg-primary">
               TMT
             </span>{" "}
-            <span>Task Mangement Tool</span>
+            <span className="logo">Task Mangement Tool</span>
           </Link>
         </div>
         <div className="flex-none">
@@ -63,7 +63,7 @@ const Navbar = () => {
                     className="nav-button text-white font-bold mr-3 bg-primary"
                     to="/employeeLogin"
                   >
-                    Employee Login
+                    Member Login
                   </Link>
                 </li>
               </>
@@ -72,16 +72,16 @@ const Navbar = () => {
                 <Notification />
                 <li>
                   <Link
-                    className="nav-button text-white font-bold mr-3 bg-primary"
-                    to="/myProfile"
+                    className="nav-button text-white mr-3 btn btn-primary"
+                    to={`${admin?.uid ? "/myProfile" : "/dashboard"}`}
                   >
-                    Profile
+                    {admin?.uid ? "Profile" : "Dashboard"}
                   </Link>
                 </li>
                 <li>
                   <button
                     onClick={handleLogOut}
-                    className="nav-button text-white font-bold mr-3 bg-primary"
+                    className="nav-button mr-3 btn btn-primary text-white"
                   >
                     Log out
                   </button>
