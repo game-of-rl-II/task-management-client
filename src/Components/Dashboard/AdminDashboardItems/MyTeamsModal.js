@@ -12,9 +12,12 @@ const MyTeamsModal = () => {
     const teamName = e.target.teamName.value;
     if (teamName.includes(" ")) {
       return Alert(
-        "Please don't use any <space> in team name",
+        "Please don't use any <space> in the team name",
         "Team name not valid"
       );
+    }
+    if(teamName.length >=16){
+      return Alert("Please keep your team name shorter than 16 characters","Team name not valid")
     }
     const members = e.target.members.value;
     const project = e.target.project.value;

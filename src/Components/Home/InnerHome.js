@@ -18,7 +18,7 @@ const InnerHome = () => {
       .then(data => setTeams(data))
   }, [email, teams])
 
-  
+
 
 
   return (
