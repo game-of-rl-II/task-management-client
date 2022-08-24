@@ -70,9 +70,9 @@ const Dashboard = () => {
                 <li>
                   <Link to="uncompletedTask">Uncompleted Tasks</Link>
                 </li>
-                {/* <li>
+                <li>
                   <Link to="taskForwarding">Task Forwarding</Link>
-                </li> */}
+                </li>
 
                 <li>
                   <button onClick={handleSignOut}>Log Out</button>
