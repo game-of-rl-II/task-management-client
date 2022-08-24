@@ -13,28 +13,26 @@ const ManageEmployee = () => {
   const email = admin?.email;
   const [deleteMember, setDeleteMember] = useState(null);
   const [assignTaskMember, setAssignTaskMember] = useState(null);
-  const { teamName } = useTeamName()
-
+  const { teamName } = useTeamName();
 
   const {
     data: members,
     refetch,
     isLoading,
-
   } = useQuery(["owner", email], () =>
     fetch(`http://localhost:5000/members?email=${email}&teamName=${teamName}`, {
       method: "GET",
     }).then((res) => res.json())
   );
 
-
   if (adminLoading || isLoading) {
-    return <Loading />
-
+    return <Loading />;
   }
   return (
     <div>
-      <h1 className=" bg-secondary w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">MANAGE ALL MEMBER</h1>
+      <h1 className=" bg-secondary w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
+        MANAGE ALL MEMBER
+      </h1>
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>
@@ -66,16 +64,34 @@ const ManageEmployee = () => {
                 <td className="text-xs font-bold">{member.id}</td>
 
                 <th>
-                  <label onClick={() => setAssignTaskMember(member)} htmlFor="my-modal-6" className="btn modal-button btn-outline btn-success btn-sm">
+                  <label
+                    onClick={() => setAssignTaskMember(member)}
+                    htmlFor="my-modal-6"
+                    className="btn modal-button btn-outline btn-success btn-sm"
+                  >
                     Assign
                   </label>
-                  {assignTaskMember && <AssignTaskModal assignTaskMember={assignTaskMember} setAssignTaskMember={setAssignTaskMember} />}
+                  {assignTaskMember && (
+                    <AssignTaskModal
+                      assignTaskMember={assignTaskMember}
+                      setAssignTaskMember={setAssignTaskMember}
+                    />
+                  )}
                 </th>
                 <th>
-                  <label onClick={() => setDeleteMember(member)} htmlFor="EmployeeDelete-modal" className="btn modal-button btn-outline btn-error  btn-sm">
+                  <label
+                    onClick={() => setDeleteMember(member)}
+                    htmlFor="EmployeeDelete-modal"
+                    className="btn modal-button btn-outline btn-error  btn-sm"
+                  >
                     Delete
                   </label>
-                  {deleteMember && <EmployeeDeleteModal refetch={refetch} deleteMember={deleteMember} />}
+                  {deleteMember && (
+                    <EmployeeDeleteModal
+                      refetch={refetch}
+                      deleteMember={deleteMember}
+                    />
+                  )}
                 </th>
               </tr>
             ))}

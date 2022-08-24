@@ -7,7 +7,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
   const [date, setDate] = useState(new Date());
   let newDate = <p>{format(date, "PP")}</p>;
   const taskDate = newDate.props.children;
-  const { teamName } = useTeamName()
+  const { teamName } = useTeamName();
   const handleAssignTask = (event) => {
     event.preventDefault();
     const name = assignTaskMember.name;

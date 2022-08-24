@@ -147,6 +147,7 @@ const HomeBanner = () => {
             <div>
               <div className="banner-image">
                 <img style={{ width: "90%" }} src={login2} alt="" />
+                <img className="ml-10" style={{width: "80%"}} src={login2} alt="" />
               </div>
               <button
                 onClick={() => navigate("/register")}

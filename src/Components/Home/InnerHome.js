@@ -18,15 +18,7 @@ const InnerHome = () => {
       .then(data => setTeams(data))
   }, [email, teams])
 
-  // const {
-  //   data: teams,
-  //   isLoading,
-
-  // } = useQuery(["teamOwner", email], () =>
-  //   fetch(`http://localhost:5000/teams/${email}`, {
-  //     method: "GET",
-  //   }).then((res) => res.json())
-  // );
+  
 
 
   return (
@@ -42,14 +34,14 @@ const InnerHome = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+          <ul className="menu p-4 overflow-y-auto w-48 bg-lime-50 text-base-content">
 
 
             {admin?.uid && (
               <>
                 {
-                  teams.map(team => <li key={team?._id}>
-                    <Link to={team?.teamName}>{team?.teamName}</Link>
+                  teams.map(team => <li className='' key={team?._id}>
+                    <Link className='font-bold text-green-500' to={team?.teamName}>{team?.teamName}</Link>
                   </li>)
                 }
 
