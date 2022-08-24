@@ -67,7 +67,7 @@ const Register = () => {
               </label>
               <div className="flex">
               <input onChange={(e) => setPassword(e.target.value)} type={passwordIcon ? 'text' : 'password'} placeholder="password" className="input input-bordered w-full" />
-              <button className="btn-icon"onClick={toggleButton}>
+              <button className="btn-icon" onClick={toggleButton}>
                 {passwordIcon ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>}
               </button>
               </div>

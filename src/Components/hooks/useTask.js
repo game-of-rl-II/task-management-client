@@ -10,7 +10,7 @@ const useTask = () => {
     fetch(`https://warm-dawn-94442.herokuapp.com/taskMember?id=${id}`)
       .then((res) => res.json())
       .then((data) => setTasks(data));
-  }, [tasks]);
+  }, [id]);
   return [tasks, setTasks];
 };
 
