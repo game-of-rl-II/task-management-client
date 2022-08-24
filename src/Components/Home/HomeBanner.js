@@ -13,9 +13,7 @@ const HomeBanner = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
   const [signInWithGoogle, googleAdmin, googleAdminLoading, googleAdminError] = useSignInWithGoogle(auth);
   const member = localStorage.getItem("member");
-  useEffect(() => {
-    document.getElementById("footer").style.display = "visible"
-  }, [])
+
 
   if (adminLoading || googleAdminLoading) {
     return <Loading />
@@ -32,11 +30,11 @@ const HomeBanner = () => {
   }
   
   if (admin || googleAdmin) {
-    toast.success("Successfully Signed In")
+    // toast.success("Successfully Signed In")
     return navigate('/innerHome')
   }
   if (member) {
-    toast.success("Successfully Signed In")
+    // toast.success("Successfully Signed In")
     return navigate('/dashboard')
   }
   return (
@@ -146,7 +144,6 @@ const HomeBanner = () => {
           <div className="w-full">
             <div>
               <div className="banner-image">
-                <img style={{ width: "90%" }} src={login2} alt="" />
                 <img className="ml-10" style={{width: "80%"}} src={login2} alt="" />
               </div>
               <button

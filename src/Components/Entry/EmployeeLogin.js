@@ -28,6 +28,7 @@ const EmployeeLogin = () => {
             if (data.password === password) {
               localStorage.setItem("member", JSON.stringify(data));
               navigate("/dashboard");
+              toast.success('Member Successfully logged In')
             } else {
               toast.error("password did not match");
             }

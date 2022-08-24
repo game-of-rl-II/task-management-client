@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../Firebase/firebase.init";
 import { toast } from "react-toastify";
 import { Alert } from "react-st-modal";
+import { HuePicker, SketchPicker, TwitterPicker } from "react-color";
 const MyTeamsModal = () => {
+  const [color, setColor] = useState({hex: '#000000.'})
+  
   const [admin, adminLoading, adminError] = useAuthState(auth);
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,12 +21,12 @@ const MyTeamsModal = () => {
         "Team name not valid"
       );
     }
-    if(teamName.length >=16){
-      return Alert("Please keep your team name shorter than 16 characters","Team name not valid")
+    if (teamName.length >= 16) {
+      return Alert("Please keep your team name shorter than 16 characters", "Team name not valid")
     }
     const members = e.target.members.value;
     const project = e.target.project.value;
-    const teamData = { owner, teamName, members, project };
+    const teamData = { owner, teamName, members, project, color };
     fetch("http://localhost:5000/create-team", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -74,6 +79,12 @@ const MyTeamsModal = () => {
             className="input input-bordered"
             name="project"
           />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Choose a theme (You can change it later)</span>
+          </label>
+          <TwitterPicker color={color} onChange={newColor => setColor(newColor)}></TwitterPicker>
         </div>
 
         <div class="modal-action">

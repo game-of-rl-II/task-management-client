@@ -19,14 +19,18 @@ const AdminLogin = () => {
   });
   const [signInWithEmailAndPassword, admin, adminLoading, adminError] =
     useSignInWithEmailAndPassword(auth);
-  const handleRegister = () => {
+  const handleRegister = async () => {
     if (!/\S+@\S+\.\S+/.test(email)) {
       return toast.error("please enter a valid email address");
     }
     if (password <= 7) {
       return toast.error("password must be 8 characters or longer");
     }
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+
+    toast.success('Signed In successfully')
+
+
   };
   if (adminError) {
     return toast.error(`${adminError.message}`);

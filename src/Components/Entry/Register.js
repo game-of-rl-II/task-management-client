@@ -38,6 +38,7 @@ const Register = () => {
       .then((data) => {
         if (data.acknowledged) {
           navigate("/home");
+          toast.success('Successfully Registered')
         }
       });
   };
@@ -47,9 +48,7 @@ const Register = () => {
   if (adminLoading) {
     return <Loading />;
   }
-  if (admin) {
-    navigate("/innerHome");
-  }
+  
 
   return (
     <div className="hero min-h-screen">
