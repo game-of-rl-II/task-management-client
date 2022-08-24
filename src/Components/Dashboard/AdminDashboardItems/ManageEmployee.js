@@ -18,6 +18,7 @@ const ManageEmployee = () => {
 
   const {
     data: members,
+    refetch,
     isLoading,
 
   } = useQuery(["owner", email], () =>
@@ -74,7 +75,7 @@ const ManageEmployee = () => {
                   <label onClick={() => setDeleteMember(member)} htmlFor="EmployeeDelete-modal" className="btn modal-button btn-outline btn-error  btn-sm">
                     Delete
                   </label>
-                  {deleteMember && <EmployeeDeleteModal deleteMember={deleteMember} />}
+                  {deleteMember && <EmployeeDeleteModal refetch={refetch} deleteMember={deleteMember} />}
                 </th>
               </tr>
             ))}

@@ -15,7 +15,7 @@ const AddMember = () => {
     e.preventDefault();
     const adminEmail = admin?.email;
     const name = e.target.name.value;
-    const nickName = e.target.nickName.value;
+    const email = e.target.email.value;
     const id = e.target.id.value;
     const password = e.target.password.value;
 
@@ -23,7 +23,7 @@ const AddMember = () => {
       adminEmail,
       teamName,
       name,
-      nickName,
+      email,
       id,
       password,
     };
@@ -91,9 +91,9 @@ const AddMember = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Nickname</span>
+              <span className="label-text">Email</span>
             </label>
-            <input required type="text" placeholder="Nickname" className="input input-bordered input-addMember-form" name="nickName" />
+            <input required type="text" placeholder="email" className="input input-bordered input-addMember-form" name="email" />
           </div>
           <div className="form-control">
             <label className="label">

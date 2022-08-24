@@ -1,7 +1,7 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-const EmployeeDeleteModal = ({ deleteMember }) => {
+const EmployeeDeleteModal = ({ deleteMember, refetch }) => {
   const { _id } = deleteMember;
 
   const handleDeleteMember = (id) => {
@@ -11,7 +11,10 @@ const EmployeeDeleteModal = ({ deleteMember }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {
-          toast.success("This member is deleted successfully!");
+          if(data.acknowledged){
+            refetch()
+            toast.success("This member is deleted successfully!");
+          }
         }
       });
   };
