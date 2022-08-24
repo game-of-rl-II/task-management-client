@@ -5,12 +5,12 @@ import UncompletedTaskModal from "./UncompletedTaskModal";
 
 const UncompletedTask = () => {
   const [taskData, setTaskData] = useState(null);
-  const [tasks] = useTask()
-  const unCompletedTasks = tasks.filter(task => task.taskCompletion !== true)
+  const {unCompletedTasks} = useTask()
+  // const unCompletedTasks = tasks.filter(task => task.taskCompletion !== true)
   
   return (
     <div>
-      <h1 className=" bg-slate-900 w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Uncompleted Task</h1>
+      <h1 className=" bg-green-700 w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Uncompleted Task</h1>
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>

@@ -15,7 +15,8 @@ const AddMember = () => {
     e.preventDefault();
     const adminEmail = admin?.email;
     const name = e.target.name.value;
-    const nickName = e.target.nickName.value;
+
+    const memberEmail = e.target.email.value;
     const id = e.target.id.value;
     const password = e.target.password.value;
 
@@ -23,11 +24,11 @@ const AddMember = () => {
       adminEmail,
       teamName,
       name,
-      nickName,
+
+      memberEmail,
       id,
       password,
     };
-    // console.log(data);
     if (data) {
       fetch("http://localhost:5000/add-new-member", {
         method: "POST",
@@ -91,10 +92,11 @@ const AddMember = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Nickname</span>
+              <span className="label-text">Email</span>
             </label>
-            <input required type="text" placeholder="Nickname" className="input input-bordered input-addMember-form" name="nickName" />
-          </div>
+
+            <input required type="email" placeholder="Email" className="input input-bordered input-addMember-form" name="email" />
+          </div >
           <div className="form-control">
             <label className="label">
               <span className="label-text">ID</span>
@@ -118,16 +120,16 @@ const AddMember = () => {
             </label>
             <input required type="text" placeholder="Password" className="input input-bordered input-addMember-form" name="password" />
           </div>
-        </div>
-        <div className="addMember-form-bottom">
-          <div className="form-control mt-6">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-        </div>
-      </form>
+        </div >
+  <div className="addMember-form-bottom">
+    <div className="form-control mt-6">
+      <button type="submit" className="btn btn-primary">
+        Submit
+      </button>
     </div>
+  </div>
+      </form >
+    </div >
   );
 };
 

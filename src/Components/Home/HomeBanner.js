@@ -1,22 +1,37 @@
 import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../Firebase/firebase.init";
 import "./HomeBanner.css";
 // import Banner from "../../Images/task-tool.png";
-import login2 from "../../Images/login2.png";
+import login2 from "../../Images/login2-removebg-preview.jpg";
 import Loading from "../Shared/Loading/Loading";
+import { toast } from "react-toastify";
 
 const HomeBanner = () => {
   const navigate = useNavigate();
   const [admin, adminLoading, adminError] = useAuthState(auth);
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const member = localStorage.getItem("member");
+  if (error) {
+    return (
+      toast.error(error.message)
+    );
+  }
+  if (user) {
+    return (
+      toast.success("Google SignIn successfully")
+    );
+  }
 
-  if (adminLoading) {
+  if (adminLoading || loading) {
     return <Loading/>
   }
   if(admin){
     return navigate('/innerHome')
+  }
+  if(member){
+    return navigate('/dashboard')
   }
   return (
     <div className="home-banner-parent">
@@ -125,7 +140,7 @@ const HomeBanner = () => {
           <div className="w-full">
             <div>
               <div className="banner-image">
-                <img src={login2} alt="" />
+                <img style={{width: "90%"}} src={login2} alt="" />
               </div>
               <button
                 onClick={() => navigate("/register")}
@@ -138,7 +153,7 @@ const HomeBanner = () => {
               <p className="text-center">or</p>
             </div>
             <div>
-              <button className=" btn hover:bg-primary text-primary btn-block btn-outline">
+              <button  onClick={() => signInWithGoogle()} className=" btn hover:bg-primary text-primary btn-block btn-outline">
                 Continue with google
               </button>
             </div>

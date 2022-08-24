@@ -9,15 +9,10 @@ const TaskModal = ({modalData, setModalData}) => {
                     <div className="modal-box relative">
                       <h1 className="text-lg uppercase text-center font-bold"> Task Details</h1>
                      
-                      <h3 className="text-lg mt-4 font-bold">
-                       Task Assigned: {modalData.name}
-                      </h3>
-                      <p className="text-lg font-bold">
-                       Deadline: {modalData.deadline}
-                      </p>
+                      
                      
                       <p className="text-lg font-bold">
-                       Task Description: {modalData.task}
+                       {modalData.task}
                       </p>
                       <div className="flex gap-5 justify-end mt-5">
                         <button

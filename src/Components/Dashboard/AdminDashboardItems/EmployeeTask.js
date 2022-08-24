@@ -3,23 +3,33 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format } from 'date-fns';
 import EmployeeTaskModal from './EmployeeTaskModal';
+import useTeamName from '../../hooks/useTeamName';
 // import useTask from '../../hooks/useTask';
 const EmployeeTask = () => {
   const [memberTaskModal, setMemberTaskModal] = useState(null);
 
   const [date, setDate] = useState(new Date());
+  const { teamName } = useTeamName()
   let footer = <p>Please pick a day.</p>;
   if (date) {
     footer = <p>You picked {format(date, 'PP')}.</p>;
   }
 
-  const [memberTask, SetMemberTask] = useState([])
-// console.log(memberTask);
+  const [memberTask, setMemberTask] = useState([])
+  // console.log(memberTask);
   useEffect(() => {
-    fetch('http://localhost:5000/task')
-      .then((res) => res.json())
-      .then((data) => SetMemberTask(data));
-  }, [memberTask])
+    if (teamName) {
+
+      fetch(`http://localhost:5000/task/${teamName}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setMemberTask(data)
+
+        })
+
+    }
+
+  }, [memberTask, teamName])
 
   let newDate = <p>{format(date, "PP")}</p>;
   const todaysDate = newDate.props.children;
@@ -70,9 +80,9 @@ const EmployeeTask = () => {
                   <td className="text-xs font-bold"><span className={member.taskDate === todaysDate ? "text-green-500" : "text-black"}>{member.taskDate}</span></td>
 
                   <td>
-                    <label onClick={()=>setMemberTaskModal(member)} for="my-modal-4" className="btn modal-button btn-outline btn-success btn-sm">DETAILS</label>
+                    <label onClick={() => setMemberTaskModal(member)} for="my-modal-4" className="btn modal-button btn-outline btn-success btn-sm">DETAILS</label>
                   </td>{memberTaskModal &&
-                  <EmployeeTaskModal  memberTaskModal={memberTaskModal}/>}
+                    <EmployeeTaskModal memberTaskModal={memberTaskModal} />}
                 </tr>
               ))}
             </tbody>
