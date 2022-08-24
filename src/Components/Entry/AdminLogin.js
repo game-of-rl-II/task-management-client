@@ -58,8 +58,8 @@ const AdminLogin = () => {
               </h1>
               <p className="py-6 text-center text-gray-500">
                 Hello Admin, Log in now to manage your team works. If you are already registered you must have an email and password. Use them for login. If you did not register yet, <span>
-                    <Link to="/register" className='text-primary'>Click here.</Link>
-                  </span>
+                  <Link to="/register" className='text-primary'>Click here.</Link>
+                </span>
               </p>
               <hr className="pb-4" />
               <div>

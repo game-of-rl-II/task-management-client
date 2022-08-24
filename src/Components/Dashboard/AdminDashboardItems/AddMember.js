@@ -41,7 +41,8 @@ const AddMember = () => {
         .then((data) => {
 
           if (data.acknowledged) {
-
+            console.log(data)
+            alert("member successfully added!");
             // console.log(data)
 
             toast.success("Member added successfully!");
@@ -120,13 +121,13 @@ const AddMember = () => {
             <input required type="text" placeholder="Password" className="input input-bordered input-addMember-form" name="password" />
           </div>
         </div >
-        <div className="addMember-form-bottom">
-          <div className="form-control mt-6">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-        </div>
+  <div className="addMember-form-bottom">
+    <div className="form-control mt-6">
+      <button type="submit" className="btn btn-primary">
+        Submit
+      </button>
+    </div>
+  </div>
       </form >
     </div >
   );

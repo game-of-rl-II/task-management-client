@@ -10,12 +10,12 @@ const MyTeamsModal = () => {
         e.preventDefault();
         const owner = admin?.email;
         const teamName = e.target.teamName.value;
-        if(teamName.includes(" ")){
-            return Alert("Please don't use any <space> in team name",'Team name not valid')
+        if (teamName.includes(" ")) {
+            return Alert("Please don't use any <space> in team name", 'Team name not valid')
         }
         const members = e.target.members.value;
         const project = e.target.project.value;
-        const teamData = {owner, teamName, members, project, };
+        const teamData = { owner, teamName, members, project, };
         fetch('http://localhost:5000/create-team', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -26,7 +26,7 @@ const MyTeamsModal = () => {
                 if (data.acknowledged) {
                     toast.success('Team created successfully')
                 }
-                else if(data.message){
+                else if (data.message) {
                     toast.error(`${data.message}`)
                 }
             })
@@ -54,9 +54,10 @@ const MyTeamsModal = () => {
                     <input type="project" placeholder="Project" className="input input-bordered" name="project" />
                 </div>
 
-                <div className="modal-action">
-                    <button type='submit' className="btn btn-primary">Create</button>
-                    <label for="my-modal" className="btn">Cancel</label>
+
+                <div class="modal-action">
+                    <button type='submit' class="btn btn-primary text-white">Create</button>
+                    <label for="my-modal" class="btn btn-warning">Cancel</label>
                 </div>
 
             </form>

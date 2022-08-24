@@ -31,7 +31,7 @@ import TodaysTasks from './Components/Dashboard/AdminDashboardItems/TodaysTasks'
 
 function App() {
   return (
-    <>
+    <div className='bg-lime-50'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/home' element={<Home></Home>}></Route>
@@ -73,7 +73,7 @@ function App() {
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
-    </>
+    </div>
   );
 }
 
