@@ -13,9 +13,9 @@ const InnerHome = () => {
 
   useEffect(() => {
     fetch(`http://localhost:5000/teams/${email}`)
-    .then(res => res.json())
-    .then(data => setTeams(data))
-  },[email, teams])
+      .then(res => res.json())
+      .then(data => setTeams(data))
+  }, [email, teams])
 
   // const {
   //   data: teams,
@@ -28,7 +28,7 @@ const InnerHome = () => {
   // );
 
 
- 
+
 
   return (
     <>
@@ -36,7 +36,7 @@ const InnerHome = () => {
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           <label htmlFor="my-drawer" className="btn ml-5 btn-primary drawer-button sm:mb-5 text-white">
-            
+
             My Teams
           </label>
           <Outlet></Outlet>
