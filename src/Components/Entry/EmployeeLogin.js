@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import useMember from "../hooks/useMember";
-import {Link, useNavigate} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify";
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import './Register.css'
 const EmployeeLogin = () => {
-  const [passwordIcon , setPasswordIcon] = useState(false);
+  const [passwordIcon, setPasswordIcon] = useState(false);
   const toggleButton = () => {
     setPasswordIcon(prevPasswordIcon => !prevPasswordIcon)
   }
@@ -24,16 +24,16 @@ const EmployeeLogin = () => {
       })
         .then(res => res.json())
         .then(data => {
-          if(data._id){
-            if(data.password===password) {
+          if (data._id) {
+            if (data.password === password) {
               localStorage.setItem('member', JSON.stringify(data))
               navigate('/dashboard')
             }
-            else{
+            else {
               toast.error('password did not match')
             }
           }
-          else{
+          else {
             toast.error('user not found')
           }
         })
@@ -58,14 +58,12 @@ const EmployeeLogin = () => {
               </label>
               <div className="flex">
               <input onChange={(e) => setPassword(e.target.value)} type={passwordIcon ? 'text' : 'password'} placeholder="password" className="input input-bordered w-full" />
-              <button className="btn-icon"onClick={toggleButton}>
+              <button className="btn-icon" onClick={toggleButton}>
                 {passwordIcon ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>}
               </button>
               </div>
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
+                <p className="label-text-alt link link-hover">Forgot password?</p>
               </label>
             </div>
             <div className="form-control mt-6">
