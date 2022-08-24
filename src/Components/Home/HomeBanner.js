@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../Firebase/firebase.init";
@@ -11,14 +11,17 @@ const HomeBanner = () => {
   const navigate = useNavigate();
   const [admin, adminLoading, adminError] = useAuthState(auth);
   const member = localStorage.getItem("member");
+  useEffect(() => {
+    document.getElementById("footer").style.display = "visible"
+  }, [])
 
   if (adminLoading) {
-    return <Loading/>
+    return <Loading />
   }
-  if(admin){
+  if (admin) {
     return navigate('/innerHome')
   }
-  if(member){
+  if (member) {
     return navigate('/dashboard')
   }
   return (
@@ -128,7 +131,7 @@ const HomeBanner = () => {
           <div className="w-full">
             <div>
               <div className="banner-image">
-                <img style={{width: "90%"}} src={login2} alt="" />
+                <img style={{ width: "90%" }} src={login2} alt="" />
               </div>
               <button
                 onClick={() => navigate("/register")}
