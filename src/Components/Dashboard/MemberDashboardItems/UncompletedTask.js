@@ -5,12 +5,12 @@ import UncompletedTaskModal from "./UncompletedTaskModal";
 
 const UncompletedTask = () => {
   const [taskData, setTaskData] = useState(null);
-  const [tasks] = useTask()
-  const unCompletedTasks = tasks.filter(task => task.taskCompletion !== true)
+  const {unCompletedTasks} = useTask()
+  // const unCompletedTasks = tasks.filter(task => task.taskCompletion !== true)
   
   return (
     <div>
-      <h1 className=" bg-slate-900 w-48 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Incompleted Task</h1>
+      <h1 className=" bg-green-700 w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Uncompleted Task</h1>
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>
@@ -42,10 +42,10 @@ const UncompletedTask = () => {
                 <td className="text-xs font-bold">{task.memberId}</td>
 
                 <th>
-                  <h2 className="uppercase bg-warning w-32 text-center px-2 py-1 rounded text-white my-8 font-bold">Pending</h2>
+                  <span className="uppercase text-xs font-bold bg-yellow-500 text-white p-1 rounded">Pending</span>
                 </th>
                 <th>
-                  <label onClick={() => setTaskData(task)} for="my-modal-6" class="btn modal-button btn-outline btn-success btn-sm">
+                  <label onClick={() => setTaskData(task)} for="my-modal-6" className="btn modal-button btn-outline btn-success btn-sm">
                     DETAILS
                   </label>
                 </th>

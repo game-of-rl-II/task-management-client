@@ -5,12 +5,12 @@ import CompleteDetailsModal from "./CompleteDetailsModal";
 const CompletedTask = () => {
   const [members, setMembers] = useState([]);
   const [detailsModal, setDetailsModal] = useState(null);
-  const [tasks] = useTask()
-  const completedTasks = tasks.filter(task => task.taskCompletion === true)
+  const {completedTasks} = useTask()
+  console.log(completedTasks)
 
   return (
     <div>
-      <h1 className=" bg-slate-900 w-48 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Completed Task</h1>
+      <h1 className=" bg-slate-900 w-40 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Completed Task</h1>
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>
@@ -26,14 +26,14 @@ const CompletedTask = () => {
               <tr key={task._id}>
                 <th>{index + 1}</th>
                 <td>
-                  <div class="flex items-center space-x-3">
-                    <div class="avatar">
-                      <div class="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                      <div className="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         {/* <img src={employee.image} alt="" /> */}
                       </div>
                     </div>
                     <div>
-                      <div class="font-bold">{task.name}</div>
+                      <div className="font-bold">{task.name}</div>
                     </div>
                   </div>
                 </td>
@@ -44,7 +44,7 @@ const CompletedTask = () => {
                   <button className="btn btn-outline btn-warning btn-sm">COMPLETED</button>
                 </th> */}
                 <th>
-                  <label for="details-modal" class="btn modal-button btn-outline btn-success btn-sm" onClick={() => setDetailsModal(task)}>
+                  <label for="details-modal" className="btn modal-button btn-outline btn-success btn-sm" onClick={() => setDetailsModal(task)}>
                     DETAILS
                   </label>
                 </th>

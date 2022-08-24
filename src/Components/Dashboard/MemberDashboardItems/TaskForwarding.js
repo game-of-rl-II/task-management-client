@@ -30,7 +30,7 @@ const TaskForwarding = () => {
     ];
     return (
       <div>
-        <h1 className=" bg-slate-900 w-48 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
+        <h1 className=" bg-green-700 w-36 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
           Task Forword
         </h1>
         <div className="w-full ">
@@ -64,13 +64,13 @@ const TaskForwarding = () => {
                   <td className="text-xs font-bold">{employee._id}</td>
 
                   <th>
-                    <button className="btn btn-outline btn-warning btn-sm">
-                      INCOMPLETED
-                    </button>
+                    <span className="uppercase text-xs bg-yellow-500 text-white p-1 rounded">
+                      UNCOMPLETED
+                    </span>
                   </th>
                   <th>
                     <button className="btn btn-outline btn-success btn-sm">
-                      FORWORD
+                      FORWARD
                     </button>
                   </th>
                 </tr>
