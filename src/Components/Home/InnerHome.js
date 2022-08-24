@@ -5,6 +5,7 @@ import { auth } from '../../Firebase/firebase.init';
 
 import { useQuery } from "react-query";
 import './InnerHome.css'
+import Loading from '../Shared/Loading/Loading';
 
 const InnerHome = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
@@ -22,7 +23,7 @@ const InnerHome = () => {
 
 
   if (adminLoading || isLoading) {
-    return <p>loading....</p>
+    return <Loading/>
   }
 
   return (
