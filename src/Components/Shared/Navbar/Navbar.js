@@ -37,13 +37,15 @@ const Navbar = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="navbar relative z-50 top-5">
+    <div className="mx-auto">
+      <div className="navbar relative p-5 flex flex-col md:flex-row gap-y-4 bg-lime-100">
         <div className="flex-1">
           <Link to="/" className="text-black">
 
+
             <span className="p-2 rounded text-2xl font-bold text-white bg-primary">TMT</span>{" "}
             <span className='logo'>Task Mangement Tool</span>
+
 
           </Link>
         </div>
@@ -52,34 +54,41 @@ const Navbar = () => {
             {!admin?.uid && !member ? (
               <>
                 <li>
-                  <Link className="nav-button text-white font-bold mr-3 bg-primary" to="/adminLogin">
+                  <Link
+                    className="nav-button text-white font-bold mr-3 bg-primary"
+                    to="/adminLogin"
+                  >
                     Admin Login
                   </Link>
                 </li>
                 <li>
                   <Link className="nav-button text-white font-bold mr-3 bg-primary" to="/employeeLogin">
                     Member Login
+
                   </Link>
                 </li>
               </>
             ) : (
               <>
-                <Notification />
+              {
+                admin?.uid ? "" : <Notification />
+              }
+                
                 <li>
-
                   <Link
                     className="nav-button text-white mr-3 btn btn-primary"
                     to={`${admin?.uid ? '/myProfile' : '/dashboard'}`}
+
 
                   >
                     {admin?.uid ? 'Profile' : "Dashboard"}
                   </Link>
                 </li>
                 <li>
-
                   <button
                     onClick={handleLogOut}
-                    className="nav-button mr-3 btn btn-primary text-white">
+                    className="nav-button text-white font-bold mr-3 bg-primary"
+                  >
                     Log out
                   </button>
                 </li>

@@ -22,7 +22,7 @@ const Dashboard = () => {
     }
   };
   if (adminLoading) {
-    return <Loading/>
+    return <Loading />
   }
 
   return (
@@ -51,47 +51,18 @@ const Dashboard = () => {
         <div className="drawer-side">
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
-            {(admin || member) && (
+            {(member) && (
               <li>
                 <Link to="/dashboard">My Profile</Link>
               </li>
             )}
 
-            {admin?.uid && (
-              <>
-                <li>
-                  <Link to="addMember">Add New Member</Link>
-                </li>
-                <li>
-                  <Link to="manageEmployee">Manage Members</Link>
-                </li>
-                <li>
-                  <Link to="employeeTask">Members Tasks</Link>
-                </li>
-                {/* <li>
-                  <Link to="manageAttendance">Manage Attendance</Link>
-                </li>
-                <li>
-                  <Link to="attendanceReports">Attendance Reports</Link>
-                </li> */}
-                <li>
-                  <Link to="reviewYourTeamMember">Review A Member</Link>
-                </li>
-                <li>
 
-                  <Link to="myTeams">My Teams</Link>
-                </li>
-                <li>
-                  <button onClick={handleSignOut}>Sign Out</button>
-
-                </li>
-              </>
-            )}
 
             {member && (
               <>
                 <li>
-                  <Link to="assignedTasks">Assigned Tasks</Link>
+                  <Link to="assignedTasks">My Tasks</Link>
                 </li>
                 <li>
                   <Link to="completedTask">Completed Tasks</Link>

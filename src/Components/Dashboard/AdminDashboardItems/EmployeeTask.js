@@ -23,9 +23,14 @@ const EmployeeTask = () => {
       fetch(`http://localhost:5000/task/${teamName}`)
         .then((res) => res.json())
         .then((data) => {
+
           setMemberTask(data);
           console.log(data);
         });
+          setMemberTask(data)
+
+        })
+
     }
   }, [memberTask, teamName]);
 
