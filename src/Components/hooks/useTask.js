@@ -8,19 +8,21 @@ const useTask = () => {
 
   const completedTasks = tasks.filter(task => task?.taskCompletion === true)
   const unCompletedTasks = tasks.filter(task => task?.taskCompletion === !true)
-  
+
 
 
   useEffect(() => {
     fetch(`https://warm-dawn-94442.herokuapp.com/taskMember?id=${id}`)
       .then((res) => res.json())
       .then((data) => setTasks(data));
+
   }, [id, tasks]);
   return {
     tasks,
     completedTasks,
     unCompletedTasks
   };
+
 };
 
 export default useTask;
