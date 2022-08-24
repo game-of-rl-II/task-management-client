@@ -5,8 +5,8 @@ import UncompletedTaskModal from "./UncompletedTaskModal";
 
 const UncompletedTask = () => {
   const [taskData, setTaskData] = useState(null);
-  const [tasks] = useTask()
-  const unCompletedTasks = tasks.filter(task => task.taskCompletion !== true)
+  const {unCompletedTasks} = useTask()
+  // const unCompletedTasks = tasks.filter(task => task.taskCompletion !== true)
   
   return (
     <div>
