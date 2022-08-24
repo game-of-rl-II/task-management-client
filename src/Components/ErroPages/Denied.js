@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Denied = () => {
   return (
-    <div className="mt-10">
+    <div className="">
       <div x-ref="loading" className="fixed z-50 flex items-center justify-center text-2xl font-semibold text-white "></div>
-      <main aria-labelledby="pageTitle" className="flex items-center justify-center h-screen bg-lime-100 dark:bg-dark dark:text-light">
+      <main aria-labelledby="pageTitle" className="flex items-center justify-center h-screen bg-lime-50 dark:bg-dark dark:text-light">
         <div className="p-4 space-y-4">
           <div className="flex flex-col items-start space-y-3 sm:flex-row sm:space-y-0 sm:items-center sm:space-x-3">
             <p className="font-semibold text-primary opacity-90 text-9xl dark:text-danger">!</p>

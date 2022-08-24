@@ -10,7 +10,7 @@ const UncompletedTask = () => {
   
   return (
     <div>
-      <h1 className=" bg-green-700 w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Uncompleted Task</h1>
+      <h1 className=" bg-secondary w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Uncompleted Task</h1>
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>

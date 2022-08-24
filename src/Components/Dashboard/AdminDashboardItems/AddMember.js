@@ -40,6 +40,8 @@ const AddMember = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {
+            console.log(data);
+            alert("member successfully added!");
             // console.log(data)
 
             toast.success("Member added successfully!");

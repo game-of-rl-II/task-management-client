@@ -46,7 +46,7 @@ const AdminLogin = () => {
             style={{ scrollBehavior: "smooth" }}
             className="hero-content flex-col lg:flex-row-reverse w-full rounded-xl p-10"
           >
-            <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-white p-7">
+            <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-primary p-7">
               <h1 className="text-3xl font-bold text-neutral text-center">
                 Admin Login
               </h1>
@@ -117,7 +117,7 @@ const AdminLogin = () => {
                 <div className="form-control mt-6">
                   <button
                     onClick={handleRegister}
-                    className="p-3 rounded-md bg-primary text-white font-bold"
+                    className="btn btn-primary modal-button mb-5 text-white"
                   >
                     Login
                   </button>

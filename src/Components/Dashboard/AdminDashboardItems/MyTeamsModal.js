@@ -73,11 +73,11 @@ const MyTeamsModal = () => {
           />
         </div>
 
-        <div className="modal-action">
-          <button type="submit" className="btn btn-primary">
+        <div class="modal-action">
+          <button type="submit" class="btn btn-primary text-white">
             Create
           </button>
-          <label for="my-modal" className="btn">
+          <label for="my-modal" class="btn btn-warning">
             Cancel
           </label>
         </div>

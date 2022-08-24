@@ -53,7 +53,7 @@ const Register = () => {
 
   return (
     <div className="hero min-h-screen">
-      <div className="hero-content flex-col lg:flex-row-reverse bg-white w-[80%] rounded-xl p-10">
+      <div className="hero-content flex-col lg:flex-row-reverse bg-lime-50 w-[80%] rounded-xl p-10">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-primary">
           <div className="card-body">
             <div className="form-control">
@@ -92,7 +92,7 @@ const Register = () => {
             <div className="form-control mt-6">
               <button
                 onClick={handleRegister}
-                className="btn bg-primary text-white border-0 "
+                className="btn btn-primary modal-button mb-5 text-white"
               >
                 Login
               </button>

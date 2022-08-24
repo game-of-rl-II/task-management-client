@@ -76,22 +76,22 @@ const EmployeeLogin = () => {
                 </button>
               </div>
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+                <p className="label-text-alt link link-hover">
                   Forgot password?
-                </a>
+                </p>
               </label>
             </div>
             <div className="form-control mt-6">
               <button
                 onClick={handleLogin}
-                className="p-3 rounded-md bg-primary text-white font-bold"
+                className="btn btn-primary modal-button mb-5 text-white"
               >
                 Login
               </button>
             </div>
           </div>
         </div>
-        <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-white p-7">
+        <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-primary p-7">
           <h1 className="text-3xl font-bold text-neutral text-center">
             Member Login
           </h1>

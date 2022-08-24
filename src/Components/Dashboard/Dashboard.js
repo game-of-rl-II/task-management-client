@@ -27,10 +27,10 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="drawer mt-5">
+      <div className="drawer mt-5 ">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-          <label htmlFor="my-drawer" className="btn ml-2 btn-primary drawer-button">
+          <label htmlFor="my-drawer" className="btn ml-5 btn-primary drawer-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-white"
@@ -50,7 +50,7 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+          <ul className="menu p-4 overflow-y-auto w-48 bg-lime-50 text-base-content">
             {(member) && (
               <li>
                 <Link to="/dashboard">My Profile</Link>
@@ -70,9 +70,9 @@ const Dashboard = () => {
                 <li>
                   <Link to="uncompletedTask">Uncompleted Tasks</Link>
                 </li>
-                {/* <li>
+                <li>
                   <Link to="taskForwarding">Task Forwarding</Link>
-                </li> */}
+                </li>
 
                 <li>
                   <button onClick={handleSignOut}>Log Out</button>

@@ -10,7 +10,7 @@ const Menu = () => {
 
   return (
     <div>
-      <h2 className="text-center text-3xl text-green-700">you are switched to {teamName}</h2>
+      <h2 className="text-center text-3xl text-green-700 uppercase">you are switched to {teamName}</h2>
       <div class="navbar bg-lime-50">
         <div class="navbar-start">
           <div class="dropdown">

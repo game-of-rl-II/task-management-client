@@ -30,7 +30,7 @@ const TaskForwarding = () => {
     ];
     return (
       <div>
-        <h1 className=" bg-green-700 w-36 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
+        <h1 className=" bg-secondary w-36 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
           Task Forword
         </h1>
         <div className="w-full ">
