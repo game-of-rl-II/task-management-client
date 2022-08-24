@@ -5,11 +5,9 @@ const EmployeeTaskModal = ({ memberTaskModal }) => {
     
     var status = "";
     if(taskCompletion){
-        // console.log("false");
         status = <p className="py-4"><span className='text-2xl text-yellow-500 font-bold'>Task-Uncomplete</span></p>
     }
     else{
-        // console.log('true');
         status = <p className="py-4"><span className='text-2xl text-green-500 font-bold'>Task-Complete</span></p>
     }
 
