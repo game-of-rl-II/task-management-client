@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
-import EmployeeTaskModal from "./employeeTaskModal";
+import EmployeeTaskModal from "./EmployeeTaskModal";
 import useTeamName from "../../hooks/useTeamName";
 // import useTask from '../../hooks/useTask';
 const EmployeeTask = () => {
