@@ -74,9 +74,6 @@ const Register = () => {
                   {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                 </button>
               </div>
-              <label className="label">
-                <p className="label-text-alt link link-hover">Forgot password?</p>
-              </label>
             </div>
             <div className="form-control mt-6">
               <button onClick={handleRegister} className="btn bg-primary text-white border-0 ">Login</button>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { toast } from "react-toastify";
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../../Firebase/firebase.init';
@@ -23,6 +23,18 @@ const AdminLogin = () => {
     adminLoading,
     adminError,
   ] = useSignInWithEmailAndPassword(auth);
+
+   //------- handle reset-email-password start------
+   const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
+   if (error) {
+     toast.error(error.message)
+   }
+   if (sending) {
+     return <Loading />
+   }
+   //-------handle reset-email-password-end------
+
+
   const handleRegister = () => {
     if (!(/\S+@\S+\.\S+/.test(email))) {
       return toast.error('please enter a valid email address')
@@ -85,14 +97,14 @@ const AdminLogin = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     type="text"
                     placeholder="email"
-                    className="input input-bordered"
+                    className="input input-bordered w-full"
                   />
                 </div>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Password</span>
                   </label>
-                  <div className="flex">
+                  <div className="flex flex-between w-full ml-1">
                     <input
                       onChange={(e) => setPassword(e.target.value)}
                       type={passwordIcon ? 'text' : 'password'}
@@ -103,10 +115,16 @@ const AdminLogin = () => {
                       {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                     </button>
                   </div>
+
                   <label className="label">
-                    <a href="#" className="label-text-alt link link-hover">
-                      Forgot password?
-                    </a>
+                    <button className='hover:text-green-500'
+                      onClick={async () => {
+                        await sendPasswordResetEmail(email);
+                        toast("Sent email..")
+                      }}
+                    >
+                      Reset password
+                    </button>
                   </label>
                 </div>
                 <div className="form-control mt-6">
