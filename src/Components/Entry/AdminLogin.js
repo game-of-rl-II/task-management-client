@@ -66,7 +66,9 @@ const AdminLogin = () => {
                   <p className="text-center p-5 text-gray-500 font-bold">
                     Are you Employee?{" "}
                     <span>
-                      <Link to="/employeeLogin" className='text-primary'>Login here.</Link>
+                      <Link to="/employeeLogin" className="text-primary">
+                        Login here.
+                      </Link>
                     </span>
                     <h2 className="text-white"> Employee Login</h2>
                   </p>
@@ -92,17 +94,21 @@ const AdminLogin = () => {
                     <label className="label">
                       <span className="label-text">Password</span>
                     </label>
-                   <div className="flex">
-                   <input
-                      onChange={(e) => setPassword(e.target.value)}
-                      type={passwordIcon ? 'text' : 'password'}
-                      placeholder="password"
-                      className="input input-bordered w-full"
-                    />
-                     <button className="btn-icon"onClick={toggleButton}>
-                {passwordIcon ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>}
-              </button>
-                   </div>
+                    <div className="flex">
+                      <input
+                        onChange={(e) => setPassword(e.target.value)}
+                        type={passwordIcon ? "text" : "password"}
+                        placeholder="password"
+                        className="input input-bordered w-full"
+                      />
+                      <button className="btn-icon" onClick={toggleButton}>
+                        {passwordIcon ? (
+                          <AiOutlineEyeInvisible />
+                        ) : (
+                          <AiOutlineEye />
+                        )}
+                      </button>
+                    </div>
                     <label className="label">
                       <a href="#" className="label-text-alt link link-hover">
                         Forgot password?
@@ -112,7 +118,7 @@ const AdminLogin = () => {
                   <div className="form-control mt-6">
                     <button
                       onClick={handleRegister}
-                      className="p-3 rounded-md bg-primary text-white font-bold"
+                      className="btn btn-primary modal-button mb-5 text-white"
                     >
                       Login
                     </button>

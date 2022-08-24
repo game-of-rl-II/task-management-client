@@ -81,7 +81,7 @@ const Navbar = () => {
                 <li>
                   <button
                     onClick={handleLogOut}
-                    className="nav-button pr-3 btn btn-primary text-white"
+                    className="nav-button text-white font-bold mr-3 bg-primary"
                   >
                     Log out
                   </button>

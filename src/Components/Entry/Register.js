@@ -54,7 +54,7 @@ const Register = () => {
 
   return (
     <div className="hero min-h-screen">
-      <div className="hero-content flex-col lg:flex-row-reverse bg-white w-[80%] rounded-xl p-10">
+      <div className="hero-content flex-col lg:flex-row-reverse bg-lime-50 w-[80%] rounded-xl p-10">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-primary">
           <div className="card-body">
             <div className="form-control">
@@ -62,24 +62,41 @@ const Register = () => {
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
-              <input onChange={(e) => setEmail(e.target.value)} type="text" placeholder="email" className="input input-bordered" />
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                placeholder="email"
+                className="input input-bordered"
+              />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <div className="flex">
-              <input onChange={(e) => setPassword(e.target.value)} type={passwordIcon ? 'text' : 'password'} placeholder="password" className="input input-bordered w-full" />
-              <button className="btn-icon"onClick={toggleButton}>
-                {passwordIcon ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>}
-              </button>
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  type={passwordIcon ? "text" : "password"}
+                  placeholder="password"
+                  className="input input-bordered w-full"
+                />
+                <button className="btn-icon" onClick={toggleButton}>
+                  {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                </button>
               </div>
               <label className="label">
-                <p className="label-text-alt link link-hover">Forgot password?</p>
+                <p className="label-text-alt link link-hover">
+                  Forgot password?
+                </p>
               </label>
             </div>
             <div className="form-control mt-6">
-              <button onClick={handleRegister} className="btn bg-primary text-white border-0 ">Login</button>
+              <button
+                onClick={handleRegister}
+                className="btn btn-primary modal-button mb-5 text-white"
+              >
+                Login
+              </button>
             </div>
           </div>
         </div>

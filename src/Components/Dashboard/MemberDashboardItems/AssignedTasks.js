@@ -21,7 +21,7 @@ const AssignedTasks = () => {
 
   return (
     <div>
-      <h1 className=" bg-slate-900 w-36 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Assigned Task</h1>
+      <h1 className=" bg-green-700 w-36 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Assigned Task</h1>
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>
@@ -66,7 +66,7 @@ const AssignedTasks = () => {
                   <button
                     onClick={() => handleUpdateTaskStatus(task._id)}
                     disabled={task.taskCompletion === true}
-                    className="btn btn-outline btn-success btn-sm"
+                    className="btn btn-outline btn-primary btn-sm"
                   >
                     UPDATE
                   </button>

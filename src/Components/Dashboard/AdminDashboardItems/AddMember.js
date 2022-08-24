@@ -89,13 +89,25 @@ const AddMember = () => {
             <label className="label">
               <span className="label-text">Name</span>
             </label>
-            <input required type="text" placeholder="Name" className="input input-bordered input-addMember-form" name="name" />
+            <input
+              required
+              type="text"
+              placeholder="Name"
+              className="input input-bordered input-addMember-form"
+              name="name"
+            />
           </div>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Nickname</span>
             </label>
-            <input required type="text" placeholder="Nickname" className="input input-bordered input-addMember-form" name="nickName" />
+            <input
+              required
+              type="text"
+              placeholder="Nickname"
+              className="input input-bordered input-addMember-form"
+              name="nickName"
+            />
           </div>
           <div className="form-control">
             <label className="label">
@@ -110,7 +122,11 @@ const AddMember = () => {
               name="id"
             />
 
-            <button type="button" onClick={handleGenerate} className="btn btn-primary text-white mt-3">
+            <button
+              type="button"
+              onClick={handleGenerate}
+              className="btn btn-primary text-white mt-3"
+            >
               Generate an ID
             </button>
           </div>
@@ -118,12 +134,21 @@ const AddMember = () => {
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input required type="text" placeholder="Password" className="input input-bordered input-addMember-form" name="password" />
+            <input
+              required
+              type="text"
+              placeholder="Password"
+              className="input input-bordered input-addMember-form"
+              name="password"
+            />
           </div>
         </div>
         <div className="addMember-form-bottom">
           <div className="form-control mt-6">
-            <button type="submit" className="btn btn-primary">
+            <button
+              type="submit"
+              className="btn btn-primary modal-button mb-5 text-white"
+            >
               Submit
             </button>
           </div>

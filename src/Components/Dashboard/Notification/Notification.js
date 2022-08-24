@@ -17,7 +17,7 @@ const Notification = () => {
           <span class="font-bold text-lg">Notification</span>
           <span class="text-info">coming soon...</span>
           <div class="card-actions">
-            <button class="btn btn-primary text-white btn-block">View All</button>
+            <button class="btn btn-primary btn-sm text-white btn-block">View All</button>
           </div>
         </div>
       </div>
