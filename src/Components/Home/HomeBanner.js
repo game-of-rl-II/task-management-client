@@ -22,9 +22,11 @@ const HomeBanner = () => {
     return navigate('/dashboard')
   }
   return (
-    <div className="home-banner-parent">
-      <div className="banner-left-side">
-        <h2 className="text-4xl">
+    <div className="home-banner-parent"  >
+      <div className="banner-left-side" data-aos="fade-down-right"
+    data-aos-easing="linear"
+    data-aos-duration="2000">
+        <h2 className="text-3xl font-bold text-slate-800 font-serif">
           The one place for all your projects and team collaboration
         </h2>
         <ul className="mt-10">
@@ -43,7 +45,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3">
+            <p className="ml-3 text-slate-600 font-serif">
               All the tools your team needs put under one roof
             </p>
           </li>
@@ -62,7 +64,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3">
+            <p className="ml-3 text-slate-600 font-serif">
               Ultimate control over teams and projects easier than ever
             </p>
           </li>
@@ -81,7 +83,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3">
+            <p className="ml-3 text-slate-600 font-serif">
               On time project delivery & on point team accountability
             </p>
           </li>
@@ -100,7 +102,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3">
+            <p className="ml-3 text-slate-600 font-serif">
               Easy-to-understand with little to no learning curve
             </p>
           </li>
@@ -119,11 +121,13 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3">Free and always will be</p>
+            <p className="ml-3 text-slate-600 font-serif">Free and always will be</p>
           </li>
         </ul>
       </div>
-      <div className="banner-right-side">
+      <div className="banner-right-side" data-aos="fade-down-left"
+    data-aos-easing="linear"
+    data-aos-duration="2000">
         {!admin?.uid && !member && (
           <div className="w-full">
             <div>

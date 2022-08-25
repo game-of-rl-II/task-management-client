@@ -49,10 +49,11 @@ const AdminLogin = () => {
       <div>
         <div className="hero min-h-screen">
           <div
-            style={{ scrollBehavior: "smooth" }}
             className="hero-content flex-col lg:flex-row-reverse w-full rounded-xl p-10"
           >
-            <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-white p-7">
+            <div data-aos="fade-left"
+    data-aos-easing="linear"
+    data-aos-duration="2000"  className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-white p-7">
               <h1 className="text-3xl font-bold text-neutral text-center">
                 Admin Login
               </h1>
@@ -72,8 +73,10 @@ const AdminLogin = () => {
                 </p>
               </div>
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-primary">
-              <div className="card-body">
+            <div data-aos="fade-right"
+    data-aos-easing="linear"
+    data-aos-duration="2000" className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-primary">
+              <div className="card-body" >
                 <div className="form-control">
                   <h1 className="text-3xl font-bold text-neutral">
                     Admin Login

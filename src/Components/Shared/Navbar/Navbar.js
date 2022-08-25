@@ -44,7 +44,7 @@ const Navbar = () => {
 
 
             <span className="p-2 rounded text-2xl font-bold text-white bg-primary">TMT</span>{" "}
-            <span className='logo'>Task Mangement Tool</span>
+            <span className='logo text-slate-700 font-serif font-bold'>Task Mangement Tool</span>
 
 
           </Link>
@@ -64,7 +64,6 @@ const Navbar = () => {
                 <li>
                   <Link className="nav-button text-white font-bold mr-3 bg-primary" to="/employeeLogin">
                     Member Login
-
                   </Link>
                 </li>
               </>
@@ -78,8 +77,6 @@ const Navbar = () => {
                   <Link
                     className="nav-button text-white mr-3 btn btn-primary"
                     to={`${admin?.uid ? '/myProfile' : '/dashboard'}`}
-
-
                   >
                     {admin?.uid ? 'Profile' : "Dashboard"}
                   </Link>

@@ -42,10 +42,8 @@ const AddMember = () => {
 
           if (data.acknowledged) {
             console.log(data)
-            alert("member successfully added!");
-            // console.log(data)
 
-            toast.success("Member added successfully!");
+            toast.success("Member has been added successfully!");
           } else {
             toast.error(`${data.message}`);
 
