@@ -10,28 +10,7 @@ import { useQuery } from 'react-query'
 const Menu = () => {
 
   const { teamName } = useParams()
-  // const [team, setTeam] = useState({})
-
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/team-one/${teamName}`)
-  //     .then(res => res.json())
-  //     .then(data => setTeam(data))
-  // }, [teamName])
-
-  const {
-    data: team,
-    refetch,
-    isLoading,
-  } = useQuery(["team", teamName], () =>
-    fetch(`http://localhost:5000/team-one/${teamName}`, {
-      method: "GET",
-    }).then((res) => res.json())
-  );
-
-  if (isLoading) {
-    return <></>
-  }
-
+  
   return (
     <div>
       <h2 className="text-center text-3xl text-green-700 uppercase">you are switched to <span>{teamName}</span></h2>
