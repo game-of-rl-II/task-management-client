@@ -32,6 +32,7 @@ import RequireAdmin from './Components/RequireAuth/RequireAdmin';
 import RequireMember from './Components/RequireAuth/RequireMember';
 import RequireCommon from './Components/RequireAuth/RequireCommon';
 import Settings from './Components/Dashboard/AdminDashboardItems/Settings';
+import AllNotifications from './Components/AllNotifications/AllNotifications';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
       <Routes>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/myProfile' element={<RequireCommon><MyProfile></MyProfile></RequireCommon>}></Route>
+        <Route path='/allNotifications' element={<AllNotifications></AllNotifications>}></Route>
         <Route path='/innerHome' element={<RequireAdmin><InnerHome></InnerHome></RequireAdmin>}>
           <Route index element={<RequireAdmin><CreateTeam></CreateTeam></RequireAdmin>}></Route>
           <Route path=':teamName' element={<RequireAdmin><Menu></Menu></RequireAdmin>}>

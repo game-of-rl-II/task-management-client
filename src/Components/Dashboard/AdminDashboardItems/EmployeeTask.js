@@ -20,7 +20,7 @@ const EmployeeTask = () => {
   // console.log(memberTask);
   useEffect(() => {
     if (teamName) {
-      fetch(`https://warm-dawn-94442.herokuapp.com/task/${teamName}`)
+      fetch(`http://localhost:5000/task/${teamName}`)
         .then((res) => res.json())
         .then((data) => {
 

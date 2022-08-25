@@ -3,19 +3,24 @@ import { toast } from "react-toastify";
 import { format } from "date-fns";
 import "react-day-picker/dist/style.css";
 import useTeamName from "../../hooks/useTeamName";
+import { auth } from "../../../Firebase/firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
 const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
+  const [admin, adminLoading, adminError] = useAuthState(auth);
   const [date, setDate] = useState(new Date());
   let newDate = <p>{format(date, "PP")}</p>;
   const taskDate = newDate.props.children;
   const { teamName } = useTeamName();
   const handleAssignTask = (event) => {
     event.preventDefault();
+    const adminEmail = admin?.email
     const name = assignTaskMember.name;
     const memberId = assignTaskMember.id;
     const task = event.target.task.value;
     const deadline = event.target.deadline.value;
     const taskCompletion = false;
     const assignTask = {
+      adminEmail,
       name,
       memberId,
       task,
@@ -25,7 +30,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
       teamName,
     };
 
-    const url = "https://warm-dawn-94442.herokuapp.com/assign-task";
+    const url = "http://localhost:5000/assign-task";
     fetch(url, {
       method: "POST",
       headers: {
@@ -42,6 +47,9 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
         setAssignTaskMember(null);
       });
   };
+  if (adminLoading) {
+    return <></>
+  }
 
   return (
     <div>

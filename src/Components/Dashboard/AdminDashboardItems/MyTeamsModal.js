@@ -28,7 +28,7 @@ const MyTeamsModal = () => {
     const project = e.target.project.value;
     const teamColor = color?.hex;
     const teamData = { owner, teamName, members, project, teamColor };
-    fetch("https://warm-dawn-94442.herokuapp.com/create-team", {
+    fetch("http://localhost:5000/create-team", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(teamData),
@@ -45,7 +45,7 @@ const MyTeamsModal = () => {
   return (
     <>
       <h3 className="font-bold text-lg">Create a team</h3>
-      <form onSubmit={handleSubmit}>
+      <form className="" onSubmit={handleSubmit}>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Team Name</span>
