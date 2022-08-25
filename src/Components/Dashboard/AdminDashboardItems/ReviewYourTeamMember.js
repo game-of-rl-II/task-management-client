@@ -9,7 +9,7 @@ const ReviewYourTeamMember = () => {
     const rating = event.target.rating.value;
     const review = { memberId, description, rating };
 
-    const url = `https://warm-dawn-94442.herokuapp.com/add-review/${memberId}`;
+    const url = `http://localhost:5000/add-review/${memberId}`;
     fetch(url, {
       method: "PUT",
       headers: {

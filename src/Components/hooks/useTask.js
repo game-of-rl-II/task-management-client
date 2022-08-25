@@ -13,7 +13,7 @@ const useTask = () => {
 
 
   useEffect(() => {
-    fetch(`https://warm-dawn-94442.herokuapp.com/taskMember?id=${id}`)
+    fetch(`http://localhost:5000/taskMember?id=${id}`)
       .then((res) => res.json())
       .then((data) => setTasks(data));
 
