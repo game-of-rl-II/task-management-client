@@ -14,9 +14,7 @@ const Register = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  useEffect(() => {
-    document.getElementById("footer").style.display = "none";
-  });
+ 
   const [createUserWithEmailAndPassword, admin, adminLoading, adminError] =
     useCreateUserWithEmailAndPassword(auth);
   const handleRegister = async () => {

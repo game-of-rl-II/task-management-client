@@ -20,7 +20,7 @@ const ManageEmployee = () => {
     refetch,
     isLoading,
   } = useQuery(["owner", email], () =>
-    fetch(`http://localhost:5000/members?email=${email}&teamName=${teamName}`, {
+    fetch(`https://warm-dawn-94442.herokuapp.com/members?email=${email}&teamName=${teamName}`, {
       method: "GET",
     }).then((res) => res.json())
   );
