@@ -1,10 +1,16 @@
 import React from 'react';
 import { toast } from "react-toastify";
+import useNotifyAdmin from '../hooks/useNotifyAdmin';
 
 const EmployeeResetModal = () => {
+    const [handleNotification] = useNotifyAdmin()
 
     const handleReset = (event) => {
         event.preventDefault();
+
+        const message = 'one of your team mates forgot his password'
+        const success = 'Your admin will contact you'
+
         const userId = event.target.userId.value;
         const adminEmail = event.target.adminEmail.value;
 
@@ -12,10 +18,13 @@ const EmployeeResetModal = () => {
         const forReset = {
             userId,
             adminEmail,
+            message
         };
+
         // console.log(forReset);
 
-        const url = "http://localhost:5000/notification-admin";
+        const url = "http://localhost:5000/notification-archive-admin";
+
         fetch(url, {
             method: "POST",
             headers: {
@@ -25,34 +34,17 @@ const EmployeeResetModal = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                
-                if (data.acknowledged) {
-                    setTimeout(() =>{ 
 
-                        handleArchiveNotification()
-                    }, 1000)
+                if (data.acknowledged) {
+
+                    handleNotification({ message, adminEmail, success })
+
                 }
             });
 
     }
 
-    const handleArchiveNotification = () => {
-        const message = 'one of your team mates forgot his password'
-        fetch('http://localhost:5000/notification-archive-admin', {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify({message}),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                
-                if (data.acknowledged) {
-                    toast("Your admin will contact you");
-                }
-            });
-    }
+
     return (
         <div>
             <input type="checkbox" id="employeeResetModal" class="modal-toggle" />
