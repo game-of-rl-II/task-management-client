@@ -15,7 +15,7 @@ const EmployeeResetModal = () => {
         };
         // console.log(forReset);
 
-        const url = "http://localhost:5000/notification-admin";
+        const url = "https://warm-dawn-94442.herokuapp.com/notification-admin";
         fetch(url, {
             method: "POST",
             headers: {

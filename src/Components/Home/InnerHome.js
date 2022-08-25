@@ -12,7 +12,7 @@ const InnerHome = () => {
   const email = admin?.email;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/teams/${email}`)
+    fetch(`https://warm-dawn-94442.herokuapp.com/teams/${email}`)
       .then(res => res.json())
       .then(data => setTeams(data))
   }, [email, teams])
