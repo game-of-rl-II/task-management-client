@@ -5,7 +5,9 @@ import UpdateProfileModal from "./UpdateProfileModal";
 
 const MyProfile = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
-  const member = localStorage.getItem("member");
+
+  const member = JSON.parse(localStorage.getItem("member"));
+  // console.log(member);
   const [openUpdateModal, setOpenUpdateModal] = useState(null);
   return (
     <>
@@ -13,7 +15,7 @@ const MyProfile = () => {
         <div className="flex-1  flex flex-col">
           <div className=" p-6 rounded-2xl  shadow">
             <div className="divider before:bg-secondary after:bg-secondary">
-              <h2 className=" uppercase md:text-4xl text-secondary font-bold">{admin?.uid ? 'Admin Profile' : "Member Profile"}</h2>
+              <h2 className=" uppercase md:text-4xl text-secondary font-bold">{admin?.uid ? "Admin Profile" : "Member Profile"}</h2>
             </div>
             <form autoComplete="off">
               <div className="lg:my-16 md:my-8 ">
@@ -39,23 +41,23 @@ const MyProfile = () => {
                   </div>
                   <div className="flex flex-col md:gap-4 gap-2 md:font-semibold md:text-xl">
                     <p>
-                      <strong>Name: </strong>
+                      <strong>Name: {member.name}</strong>
                     </p>
                     <p>
-                      <strong>Email: </strong>
+                      <strong>Email: {member.adminEmail} </strong>
                     </p>
                     <p>
                       <strong>Phone: </strong>
                     </p>
-                    {
-                      admin?.uid ? <p>
+                    {admin?.uid ? (
+                      <p>
                         <strong>Teams: </strong>
-                      </p> : <p>
-                        <strong>ID: </strong>
                       </p>
-                    }
-
-
+                    ) : (
+                      <p>
+                        <strong>ID: {member.id} </strong>
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
