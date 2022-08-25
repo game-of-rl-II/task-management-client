@@ -8,7 +8,7 @@ import {
 const getMembers = () => async (dispatch) => {
   dispatch({ type: MANAGE_ATTENDANCE_MEMBERS_DATA });
   try {
-    const result = await axios.get("http://localhost:5000/manage-attendance");
+    const result = await axios.get("https://warm-dawn-94442.herokuapp.com/manage-attendance");
     dispatch({ type: MANAGE_ATTENDANCE_MEMBERS_SUCCESS, payload: result.data });
   } catch (error) {
     dispatch({ type: MANAGE_ATTENDANCE_MEMBERS_FAILED, payload: error.message });

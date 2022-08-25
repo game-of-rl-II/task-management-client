@@ -7,7 +7,7 @@ const AssignedTasks = () => {
   const [modalData, setModalData] = useState(null);
   const { tasks } = useTask();
   const [handleNotification] = useNotifyAdmin()
-  console.log(tasks);
+  
 
 
   const handleUpdateTaskStatus = (task) => {
@@ -16,7 +16,7 @@ const AssignedTasks = () => {
     const name = task?.name
     const message = `${name} has updated his task status`
     const success = "Successfully updated"
-    fetch(`http://localhost:5000/task-member/${id}`, {
+    fetch(`https://warm-dawn-94442.herokuapp.com/task-member/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

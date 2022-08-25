@@ -5,7 +5,7 @@ const EmployeeDeleteModal = ({ deleteMember, refetch }) => {
   const { _id } = deleteMember;
 
   const handleDeleteMember = (id) => {
-    fetch(`http://localhost:5000/member/${id}`, {
+    fetch(`https://warm-dawn-94442.herokuapp.com/member/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
