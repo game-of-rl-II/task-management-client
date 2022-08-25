@@ -15,7 +15,7 @@ const EmployeeResetModal = () => {
         };
         // console.log(forReset);
 
-        const url = "https://warm-dawn-94442.herokuapp.com/notification-admin";
+        const url = "http://localhost:5000/notification-admin";
         fetch(url, {
             method: "POST",
             headers: {
@@ -25,12 +25,33 @@ const EmployeeResetModal = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                
+                if (data.acknowledged) {
+                    setTimeout(() =>{ 
+
+                        handleArchiveNotification()
+                    }, 1000)
+                }
+            });
+
+    }
+
+    const handleArchiveNotification = () => {
+        const message = 'one of your team mates forgot his password'
+        fetch('http://localhost:5000/notification-archive-admin', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({message}),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                
                 if (data.acknowledged) {
                     toast("Your admin will contact you");
                 }
             });
-
     }
     return (
         <div>
