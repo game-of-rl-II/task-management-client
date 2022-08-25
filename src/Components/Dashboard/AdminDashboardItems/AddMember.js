@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import { auth } from "../../../Firebase/firebase.init";
-import { useLocation } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
 import Loading from "../../Shared/Loading/Loading";
 import "./AddMember.css";
 import useTeamName from "../../hooks/useTeamName";
 
 const AddMember = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
-  const { teamName } = useTeamName()
+  const { teamName } = useTeamName();
   const [generatedID, setGeneratedID] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,36 +39,29 @@ const AddMember = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-
           if (data.acknowledged) {
-            console.log(data)
 
             toast.success("Member has been added successfully!");
           } else {
             toast.error(`${data.message}`);
-
           }
-
         });
-
     }
 
     if (adminLoading) {
-      return <Loading />
+      return <Loading />;
     }
   };
 
   // handle id check al alamin arif start
   const handleIdCheck = (randomId) => {
-
     fetch(`http://localhost:5000/random-id-check/${randomId}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.message) {
-          return handleIdCheck(randomId)
-        }
-        else if (data.memberId) {
-          setGeneratedID(data.memberId)
+          return handleIdCheck(randomId);
+        } else if (data.memberId) {
+          setGeneratedID(data.memberId);
         }
       });
   };
@@ -76,7 +69,6 @@ const AddMember = () => {
     const randomId = Math.floor(10000 + Math.random() * 9000000);
     handleIdCheck(randomId);
   };
-
 
   return (
     <div className="addMember-form">
@@ -86,15 +78,27 @@ const AddMember = () => {
             <label className="label">
               <span className="label-text">Name</span>
             </label>
-            <input required type="text" placeholder="Name" className="input input-bordered input-addMember-form" name="name" />
+            <input
+              required
+              type="text"
+              placeholder="Name"
+              className="input input-bordered input-addMember-form"
+              name="name"
+            />
           </div>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
             </label>
 
-            <input required type="email" placeholder="Email" className="input input-bordered input-addMember-form" name="email" />
-          </div >
+            <input
+              required
+              type="email"
+              placeholder="Email"
+              className="input input-bordered input-addMember-form"
+              name="email"
+            />
+          </div>
           <div className="form-control">
             <label className="label">
               <span className="label-text">ID</span>
@@ -108,7 +112,11 @@ const AddMember = () => {
               name="id"
             />
 
-            <button type="button" onClick={handleGenerate} className="btn btn-primary text-white mt-3">
+            <button
+              type="button"
+              onClick={handleGenerate}
+              className="btn btn-primary text-white mt-3"
+            >
               Generate an ID
             </button>
           </div>
@@ -116,18 +124,24 @@ const AddMember = () => {
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input required type="text" placeholder="Password" className="input input-bordered input-addMember-form" name="password" />
+            <input
+              required
+              type="text"
+              placeholder="Password"
+              className="input input-bordered input-addMember-form"
+              name="password"
+            />
           </div>
-        </div >
-  <div className="addMember-form-bottom">
-    <div className="form-control mt-6">
-      <button type="submit" className="btn btn-primary">
-        Submit
-      </button>
+        </div>
+        <div className="addMember-form-bottom">
+          <div className="form-control mt-6">
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-  </div>
-      </form >
-    </div >
   );
 };
 

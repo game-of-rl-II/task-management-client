@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import "./Register.css";
+import EmployeeResetModal from "./EmployeeResetModal";
 const EmployeeLogin = () => {
   const [passwordIcon, setPasswordIcon] = useState(false);
   const toggleButton = () => {
@@ -19,7 +20,7 @@ const EmployeeLogin = () => {
 
   const handleLogin = () => {
     if (id) {
-      fetch(`https://warm-dawn-94442.herokuapp.com/member-login/${id}`, {
+      fetch(`http://localhost:5000/member-login/${id}`, {
         method: "GET",
       })
         .then((res) => res.json())
@@ -28,6 +29,7 @@ const EmployeeLogin = () => {
             if (data.password === password) {
               localStorage.setItem("member", JSON.stringify(data));
               navigate("/dashboard");
+              toast.success('Member Successfully logged In')
             } else {
               toast.error("password did not match");
             }
@@ -40,16 +42,14 @@ const EmployeeLogin = () => {
 
   return (
     <div className="hero min-h-screen">
-      <div
-      
+      <div 
         className="hero-content flex-col lg:flex-row-reverse "
       >
         <div
-          data-aos="fade-left"
-          data-aos-easing="linear"
-          data-aos-duration="2000"
-          className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-primary"
-        >
+        data-aos="fade-left"
+        data-aos-easing="linear"
+        data-aos-duration="2000"
+        className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-primary">
           <div className="card-body">
             <div className="form-control">
               <h1 className="text-3xl font-bold text-neutral text-center">
@@ -80,28 +80,25 @@ const EmployeeLogin = () => {
                   {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                 </button>
               </div>
-              <label className="label">
-                <p className="label-text-alt link link-hover">
-                  Forgot password?
-                </p>
-              </label>
+
+              <label for="employeeResetModal" class="label-text-alt link link-hover p-2">Forgot password?</label>
+              <EmployeeResetModal />
             </div>
             <div className="form-control mt-6">
               <button
                 onClick={handleLogin}
-                className="p-3 rounded-md bg-primary text-white font-bold"
+                className="btn btn-primary modal-button mb-5 text-white"
               >
                 Login
               </button>
             </div>
           </div>
         </div>
-        <div
-          data-aos="fade-right"
-          data-aos-easing="linear"
-          data-aos-duration="2000"
-          className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-white p-7"
-        >
+        <div 
+        data-aos="fade-right"
+        data-aos-easing="linear"
+        data-aos-duration="2000"
+        className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-primary p-7">
           <h1 className="text-3xl font-bold text-neutral text-center">
             Member Login
           </h1>

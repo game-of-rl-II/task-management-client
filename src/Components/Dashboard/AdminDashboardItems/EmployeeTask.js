@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
@@ -19,17 +20,17 @@ const EmployeeTask = () => {
   // console.log(memberTask);
   useEffect(() => {
     if (teamName) {
-
       fetch(`http://localhost:5000/task/${teamName}`)
         .then((res) => res.json())
         .then((data) => {
-          setMemberTask(data)
 
-        })
+          setMemberTask(data);
+          console.log(data);
+        });
+      }
 
-    }
-
-  }, [memberTask, teamName])
+    
+  }, [memberTask, teamName]);
 
   let newDate = <p>{format(date, "PP")}</p>;
   const todaysDate = newDate.props.children;

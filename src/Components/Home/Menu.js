@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { auth } from "../../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet, useParams } from 'react-router-dom';
 import "./Menu.css";
+import useTeams from '../hooks/useTeams';
+import Loading from '../Shared/Loading/Loading';
+import { useQuery } from 'react-query'
 
 const Menu = () => {
+
   const { teamName } = useParams()
-
-
+  
   return (
     <div>
-      <h2 className="text-center text-3xl text-green-700">you are switched to {teamName}</h2>
+      <h2 className="text-center text-3xl text-green-700 uppercase">you are switched to <span>{teamName}</span></h2>
       <div class="navbar bg-lime-50">
         <div class="navbar-start">
           <div class="dropdown">
@@ -33,6 +36,7 @@ const Menu = () => {
             <li><Link to="reviewYourTeamMember">Review a member</Link></li>
             <li><Link to="employeeTask">Assigned tasks</Link></li>
             <li><Link to="todaysTask">Today's tasks</Link></li>
+            <li><Link to="settings">Settings</Link></li>
           </ul>
         </div>
         <div class="navbar-end">
