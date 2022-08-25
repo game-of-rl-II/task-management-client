@@ -80,9 +80,9 @@ const AdminLogin = () => {
   }
 
   return (
-    <div className="hero min-h-screen">
+    <div className="hero min-h-secreen">
       <div>
-        <div className="hero min-h-screen">
+        <div className="hero min-h-secreen">
           <div
             style={{ scrollBehavior: "smooth" }}
             className="hero-content flex-col lg:flex-row-reverse w-full rounded-xl p-10"
@@ -151,7 +151,8 @@ const AdminLogin = () => {
                   </div>
 
                   <label className="label">
-                    <button className='hover:text-green-500'
+                    <button
+                      className="hover:text-green-500"
                       onClick={handlePasswordReset}
                     >
                       Reset password

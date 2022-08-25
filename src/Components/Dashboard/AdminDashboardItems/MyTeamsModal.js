@@ -45,7 +45,7 @@ const MyTeamsModal = () => {
   return (
     <>
       <h3 className="font-bold text-lg">Create a team</h3>
-      <form onSubmit={handleSubmit}>
+      <form className="" onSubmit={handleSubmit}>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Team Name</span>
