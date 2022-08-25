@@ -43,7 +43,9 @@ const AdminLogin = () => {
     }
     await signInWithEmailAndPassword(email, password);
 
-    toast.success('Signed In successfully')
+    
+    
+
 
 
   };
@@ -68,16 +70,18 @@ const AdminLogin = () => {
     return <Loading />;
   }
   if (adminError) {
-    return toast.error(`${adminError?.message}`);
-
+    toast.error(`${adminError?.message}`);
+    return navigate('/adminLogin')
   }
   if (sendingError) {
     return toast.error(`${adminError?.message}`);
   }
-
   if (admin) {
     navigate("/innerHome");
+    toast.success('Signed In successfully')
   }
+
+  
 
   return (
     <div className="hero min-h-screen">
