@@ -1,14 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Firebase/firebase.init";
+import Loading from "../Shared/Loading/Loading";
 import UpdateProfileModal from "./UpdateProfileModal";
 
 const MyProfile = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
+  const [adminProfile, setAdminProfile] = useState({});
 
   const member = JSON.parse(localStorage.getItem("member"));
   // console.log(member);
   const [openUpdateModal, setOpenUpdateModal] = useState(null);
+
+  const [teams, setTeams] = useState([]);
+  const email = admin?.email;
+
+  useEffect(() => {
+    fetch(`https://warm-dawn-94442.herokuapp.com/teams/${email}`)
+      .then((res) => res.json())
+      .then((data) => setTeams(data));
+  }, [email, teams]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/admin-profile/${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAdminProfile(data);
+        console.log(data);
+      });
+  }, [email, adminProfile]);
+
+  if (adminLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <>
       <div className="md:m-16">
@@ -41,17 +66,19 @@ const MyProfile = () => {
                   </div>
                   <div className="flex flex-col md:gap-4 gap-2 md:font-semibold md:text-xl">
                     <p>
-                      <strong>Name: {member.name}</strong>
+                      <strong>Name: {adminProfile?.displayName ? adminProfile?.displayName : admin?.displayName}</strong>
                     </p>
                     <p>
-                      <strong>Email: {member.adminEmail} </strong>
+                      <strong>Email: {admin?.uid ? admin.email : member.memberEmail} </strong>
                     </p>
-                    <p>
+                    {/* <p>
                       <strong>Phone: </strong>
-                    </p>
+                    </p> */}
                     {admin?.uid ? (
                       <p>
-                        <strong>Teams: </strong>
+                        <strong>
+                          Teams: <Link to="/innerHome">{teams?.length}</Link>
+                        </strong>
                       </p>
                     ) : (
                       <p>
@@ -72,7 +99,7 @@ const MyProfile = () => {
                 </label>
               </div>
             </form>
-            {openUpdateModal && <UpdateProfileModal openUpdateModal={openUpdateModal} setOpenUpdateModal={setOpenUpdateModal} />}
+            {openUpdateModal && <UpdateProfileModal openUpdateModal={openUpdateModal} admin={admin} setOpenUpdateModal={setOpenUpdateModal} />}
           </div>
         </div>
       </div>

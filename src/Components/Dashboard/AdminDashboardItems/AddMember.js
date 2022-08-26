@@ -30,7 +30,7 @@ const AddMember = () => {
       password,
     };
     if (data) {
-      fetch("http://localhost:5000/add-new-member", {
+      fetch("https://warm-dawn-94442.herokuapp.com/add-new-member", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -40,10 +40,6 @@ const AddMember = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {
-            console.log(data);
-            alert("member successfully added!");
-            // console.log(data)
-
             toast.success("Member added successfully!");
           } else {
             toast.error(`${data.message}`);
@@ -58,7 +54,7 @@ const AddMember = () => {
 
   // handle id check al alamin arif start
   const handleIdCheck = (randomId) => {
-    fetch(`http://localhost:5000/random-id-check/${randomId}`)
+    fetch(`https://warm-dawn-94442.herokuapp.com/random-id-check/${randomId}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.message) {

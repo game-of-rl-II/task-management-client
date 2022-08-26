@@ -17,7 +17,7 @@ const TodaysTasks = () => {
         isLoading,
 
     } = useQuery(["teamName", teamName], () =>
-        fetch(`http://localhost:5000/today-tasks?teamName=${teamName}&todaysDate=${todaysDate}`, {
+        fetch(`https://warm-dawn-94442.herokuapp.com/today-tasks?teamName=${teamName}&todaysDate=${todaysDate}`, {
             method: "GET",
         }).then((res) => res.json())
     );

@@ -1,14 +1,11 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useTask from "../../hooks/useTask";
 import TaskModal from "./TaskModal";
 import { toast } from "react-toastify";
 const AssignedTasks = () => {
   const [modalData, setModalData] = useState(null);
-  const {tasks} = useTask()
+  const { tasks } = useTask();
 
-
- 
- 
   const handleUpdateTaskStatus = (id) => {
     fetch(`https://warm-dawn-94442.herokuapp.com/task-member/${id}`, {
       method: "PUT",
@@ -16,16 +13,17 @@ const AssignedTasks = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          toast.success('successfully updated')
-
+          toast.success("successfully updated");
         }
       });
   };
 
   return (
     <div>
-      <h1 className=" bg-slate-900 w-36 mx-auto py-1 rounded  text-center text-white my-8 font-bold">My Tasks</h1>
-      
+      <h1 className=" bg-secondary w-36 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
+        My Tasks
+      </h1>
+
       <div className="w-full ">
         <table className="table w-3/4 mx-auto ">
           <thead>
@@ -40,19 +38,20 @@ const AssignedTasks = () => {
           </thead>
           <tbody>
             {tasks.map((task, index) => (
-              <tr key={task._id} >
+              <tr key={task._id}>
                 <th>{index + 1}</th>
-                <td>
-                  {task.taskDate}
-                </td>
-
+                <td>{task.taskDate}</td>
 
                 <td>
                   <h1 className=" text-gray-800 lg:leading-10 text-xs  ">
                     {task.taskCompletion ? (
-                      <span className=" uppercase bg-lime-500 text-white p-1 rounded">Completed</span>
+                      <span className=" uppercase bg-lime-500 text-white p-1 rounded">
+                        Completed
+                      </span>
                     ) : (
-                      <span className="uppercase bg-yellow-500 text-white p-1 rounded">Pending</span>
+                      <span className="uppercase bg-yellow-500 text-white p-1 rounded">
+                        Pending
+                      </span>
                     )}
                   </h1>
                 </td>
@@ -67,7 +66,11 @@ const AssignedTasks = () => {
                   </button>
                 </th>
                 <th>
-                  <label onClick={() => setModalData(task)} for="my-modal-3" className="btn btn-outline btn-info btn-sm modal-button">
+                  <label
+                    onClick={() => setModalData(task)}
+                    for="my-modal-3"
+                    className="btn btn-outline btn-info btn-sm modal-button"
+                  >
                     View Task
                   </label>
                 </th>
@@ -76,8 +79,9 @@ const AssignedTasks = () => {
           </tbody>
         </table>
       </div>
-      {modalData && <TaskModal modalData={modalData} setModalData={setModalData} />}
-    
+      {modalData && (
+        <TaskModal modalData={modalData} setModalData={setModalData} />
+      )}
     </div>
   );
 };

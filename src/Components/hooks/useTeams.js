@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../Firebase/firebase.init";
+import useTeamName from "./useTeamName";
+import { useQuery } from 'react-query'
 
-const useTeams = (admin) => {
-    // const email = admin?.email;
-    // const [teams, setTeams] = useState([])
-    // if (email) {
+const useTeams = () => {
+    const [team, setTeam] = useState({})
+    
+    const { teamName } = useTeamName();
 
-    //     fetch(`http://localhost:5000/teams/${email}`)
-    //         .then(res => res.json())
-    //         .then(data => setTeams(data))
-    // }
 
+    if (teamName) {
+        fetch(`https://warm-dawn-94442.herokuapp.com/team-one/${teamName}`)
+            .then(res => res.json())
+            .then(data => setTeam(data))
+    }
 
 
     return {
-        // teams
+        team
     }
 }
 export default useTeams;

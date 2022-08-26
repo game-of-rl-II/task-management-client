@@ -7,7 +7,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
   const [date, setDate] = useState(new Date());
   let newDate = <p>{format(date, "PP")}</p>;
   const taskDate = newDate.props.children;
-  const { teamName } = useTeamName()
+  const { teamName } = useTeamName();
   const handleAssignTask = (event) => {
     event.preventDefault();
     const name = assignTaskMember.name;
@@ -25,7 +25,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
       teamName,
     };
 
-    const url = "http://localhost:5000/assign-task";
+    const url = "https://warm-dawn-94442.herokuapp.com/assign-task";
     fetch(url, {
       method: "POST",
       headers: {

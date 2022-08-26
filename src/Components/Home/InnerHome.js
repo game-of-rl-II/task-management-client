@@ -3,7 +3,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import { auth } from '../../Firebase/firebase.init';
 
-import { useQuery } from "react-query";
 import './InnerHome.css'
 import Loading from '../Shared/Loading/Loading';
 
@@ -13,20 +12,14 @@ const InnerHome = () => {
   const email = admin?.email;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/teams/${email}`)
+    fetch(`https://warm-dawn-94442.herokuapp.com/teams/${email}`)
       .then(res => res.json())
       .then(data => setTeams(data))
   }, [email, teams])
 
-  // const {
-  //   data: teams,
-  //   isLoading,
-
-  // } = useQuery(["teamOwner", email], () =>
-  //   fetch(`http://localhost:5000/teams/${email}`, {
-  //     method: "GET",
-  //   }).then((res) => res.json())
-  // );
+  if (adminLoading) {
+    return <Loading></Loading>
+  }
 
 
   return (
@@ -42,16 +35,22 @@ const InnerHome = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+          <ul className="menu p-4 overflow-y-auto w-48 bg-lime-50 text-base-content">
 
 
             {admin?.uid && (
               <>
-                {
-                  teams.map(team => <li key={team?._id}>
-                    <Link to={team?.teamName}>{team?.teamName}</Link>
-                  </li>)
-                }
+              {
+                teams.length !== 0 ?
+              
+                <>
+                  {
+                    teams.map(team => <li className='' key={team?._id}>
+                      <Link className='font-bold' style={{color: `${team?.teamColor}`}} to={team?.teamName}>{team?.teamName}</Link>
+                    </li>)
+                  }
+                </> : <p className="text-center">You have not added a team</p>
+              }
 
               </>
             )}
