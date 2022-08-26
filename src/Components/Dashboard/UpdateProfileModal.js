@@ -13,11 +13,11 @@ const UpdateProfileModal = ({ openUpdateModal, setOpenUpdateModal, refetch, admi
   const onSubmit = (data) => {
     if (email && data.name && data.number) {
       console.log(data);
-      const url = `http://localhost:5000/update-admin/${email}`;
+      const url = `https://warm-dawn-94442.herokuapp.com/update-admin/${email}`;
       fetch(url, {
         method: "PUT",
         headers: {
-          "content-type": "aplication/json",
+          'content-type': 'application/json',
         },
         body: JSON.stringify(data),
       })

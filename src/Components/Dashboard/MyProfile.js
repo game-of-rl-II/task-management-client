@@ -23,7 +23,7 @@ const MyProfile = () => {
   }, [email, teams]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/admin-profile/${email}`)
+    fetch(`https://warm-dawn-94442.herokuapp.com/admin-profile/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setAdminProfile(data);
@@ -65,8 +65,14 @@ const MyProfile = () => {
                     </ul>
                   </div>
                   <div className="flex flex-col md:gap-4 gap-2 md:font-semibold md:text-xl">
+
                     <p>
-                      <strong>Name: {adminProfile?.displayName ? adminProfile?.displayName : admin?.displayName}</strong>
+
+                      {
+                        admin?.uid ? <strong>Name: {adminProfile?.displayName ? adminProfile?.displayName : admin?.displayName}</strong> : <strong>Name: {member?.name ? member?.name : "(name not added)"}</strong>
+                      }
+
+
                     </p>
                     <p>
                       <strong>Email: {admin?.uid ? admin.email : member.memberEmail} </strong>
@@ -82,7 +88,7 @@ const MyProfile = () => {
                       </p>
                     ) : (
                       <p>
-                        <strong>ID: {member.id} </strong>
+                        <strong>ID: {member?.id} </strong>
                       </p>
                     )}
                   </div>
@@ -90,7 +96,7 @@ const MyProfile = () => {
               </div>
               <div className="divider before:bg-secondary after:bg-secondary">
                 <label
-                  disabled={member}
+                  style={member && { visibility: 'hidden' }}
                   htmlFor="update-profile"
                   onClick={() => setOpenUpdateModal({})}
                   className="btn  md:btn-md btn-sm modal-button btn-secondary md:px-10 text-white font-bold"
