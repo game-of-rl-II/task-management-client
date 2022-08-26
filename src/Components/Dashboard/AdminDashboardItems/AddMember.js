@@ -40,7 +40,8 @@ const AddMember = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {
-            toast.success("Member added successfully!");
+
+            toast.success("Member has been added successfully!");
           } else {
             toast.error(`${data.message}`);
           }
@@ -70,40 +71,59 @@ const AddMember = () => {
   };
 
   return (
-    <div className="addMember-form">
+    <div
+      data-aos="zoom-in"
+      data-aos-easing="linear"
+      data-aos-duration="1000"
+      className="addMember-form">
       <form onSubmit={handleSubmit}>
         <div className="my-10 addMember-form-top">
-          <div className="form-control">
+          <div
+
+            className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
             </label>
             <input required type="text" placeholder="Name" className="input input-bordered input-addMember-form" name="name" />
           </div>
-          <div className="form-control">
+          <div
+
+            className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
             </label>
 
             <input required type="email" placeholder="Email" className="input input-bordered input-addMember-form" name="email" />
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">ID</span>
-            </label>
-            <input
-              required
-              type="number"
-              placeholder="ID"
-              className="input input-bordered input-addMember-form"
-              defaultValue={generatedID}
-              name="id"
-            />
+          <div
 
-            <button type="button" onClick={handleGenerate} className="btn btn-primary text-white mt-3">
+            className="form-control">
+            <div
+              className="form-control">
+              <label className="label">
+                <span className="label-text">ID</span>
+              </label>
+              <input
+                required
+                type="number"
+                placeholder="ID"
+                className="input input-bordered input-addMember-form"
+                defaultValue={generatedID}
+                name="id"
+              />
+
+            </div>
+            <button
+              type="button"
+              onClick={handleGenerate}
+              className="btn btn-primary text-white mt-3"
+            >
               Generate an ID
             </button>
           </div>
-          <div className="form-control">
+          <div
+
+            className="form-control">
             <label className="label">
               <span className="label-text">Password</span>
             </label>

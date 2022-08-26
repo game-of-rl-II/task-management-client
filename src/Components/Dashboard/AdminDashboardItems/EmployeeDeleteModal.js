@@ -22,8 +22,13 @@ const EmployeeDeleteModal = ({ deleteMember, refetch }) => {
   return (
     <div>
       <input type="checkbox" id="EmployeeDelete-modal" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box bg-white border-y-4 border-primary">
+      <div 
+      class="modal modal-bottom sm:modal-middle">
+        <div
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+        class="modal-box bg-white border-y-4 border-primary">
           <h3 class="font-bold text-lg">
             Are you sure? Do you want to delete this member?
           </h3>

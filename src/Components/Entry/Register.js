@@ -49,9 +49,13 @@ const Register = () => {
 
 
   return (
-    <div className="hero min-h-screen">
-      <div className="hero-content flex-col lg:flex-row-reverse bg-lime-50 w-[80%] rounded-xl p-10">
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-primary">
+    <div data-aos="zoom-in" 
+    data-aos-easing="linear"
+    data-aos-duration="1000"
+    className="hero min-h-screen">
+      <div className="hero-content flex-col lg:flex-row-reverse  w-[80%] rounded-xl p-10">
+        <div className="card flex-shrink-0 w-full max-w-lg   shadow-2xl bg-base-100 border-y-4 border-primary">
+
           <div className="card-body">
             <div className="form-control">
               <h1 className="text-4xl font-bold text-black">Register</h1>
