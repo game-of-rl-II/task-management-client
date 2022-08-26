@@ -91,6 +91,11 @@ const MyProfile = () => {
                         <strong>ID: {member?.id} </strong>
                       </p>
                     )}
+                    { 
+                    member.rating && <p>
+                    <strong>Rating: {member?.rating} </strong>
+                  </p>
+                    }
                   </div>
                 </div>
               </div>
