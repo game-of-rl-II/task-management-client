@@ -2,18 +2,27 @@ import React, { useEffect, useState } from "react";
 import useTask from "../../hooks/useTask";
 import TaskModal from "./TaskModal";
 import { toast } from "react-toastify";
+import useNotifyAdmin from "../../hooks/useNotifyAdmin";
 const AssignedTasks = () => {
   const [modalData, setModalData] = useState(null);
   const { tasks } = useTask();
+  const [handleNotification] = useNotifyAdmin()
+  
 
-  const handleUpdateTaskStatus = (id) => {
+
+  const handleUpdateTaskStatus = (task) => {
+    const adminEmail = task?.adminEmail;
+    const id = task?._id
+    const name = task?.name
+    const message = `${name} has updated his task status`
+    const success = "Successfully updated"
     fetch(`https://warm-dawn-94442.herokuapp.com/task-member/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          toast.success("successfully updated");
+          handleNotification({message, adminEmail, success})
         }
       });
   };
@@ -58,7 +67,7 @@ const AssignedTasks = () => {
                 <td>{task.deadline}</td>
                 <th>
                   <button
-                    onClick={() => handleUpdateTaskStatus(task._id)}
+                    onClick={() => handleUpdateTaskStatus(task)}
                     disabled={task.taskCompletion === true}
                     className="btn btn-outline btn-primary btn-sm"
                   >

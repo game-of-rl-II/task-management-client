@@ -70,7 +70,7 @@ const Navbar = () => {
             ) : (
               <>
               {
-                admin?.uid ? "" : <Notification />
+                <Notification />
               }
                 
                 <li>

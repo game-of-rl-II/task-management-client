@@ -9,6 +9,7 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import "./Register.css";
 import { Alert, Prompt } from 'react-st-modal';
 const AdminLogin = () => {
+  const [loginError, setLoginError] = useState('')
   const [passwordIcon, setPasswordIcon] = useState(false);
   const toggleButton = () => {
     setPasswordIcon((prevPasswordIcon) => !prevPasswordIcon);
@@ -21,7 +22,7 @@ const AdminLogin = () => {
     signInWithEmailAndPassword,
     admin,
     adminLoading,
-    adminError,
+    error,
   ] = useSignInWithEmailAndPassword(auth);
 
 
@@ -34,21 +35,34 @@ const AdminLogin = () => {
   //-------handle reset-email-password-end------
 
 
-  const handleRegister = async () => {
+  const handleLogin = () => {
     if (!(/\S+@\S+\.\S+/.test(email))) {
       return toast.error('please enter a valid email address')
     }
     if (password <= 7) {
       return toast.error("password must be 8 characters or longer");
     }
-    await signInWithEmailAndPassword(email, password);
-
-    
-    
-
-
-
+    signInWithEmailAndPassword(email, password);
   };
+
+
+
+  if (adminLoading) {
+    return <Loading />;
+  }
+
+  if (sendingError) {
+    return toast.error(sendingError?.message);
+  }
+  if (admin) {
+    navigate("/innerHome");
+    toast.success('Signed In successfully')
+  }
+  // if (error) {
+
+  //   setLoginError(error?.message)
+  // }
+
 
   const handlePasswordReset = async () => {
     const requiredEmail = await Prompt('Input your email', {
@@ -66,27 +80,10 @@ const AdminLogin = () => {
 
   }
 
-  if (adminLoading) {
-    return <Loading />;
-  }
-  if (adminError) {
-    toast.error(`${adminError?.message}`);
-    return navigate('/adminLogin')
-  }
-  if (sendingError) {
-    return toast.error(`${adminError?.message}`);
-  }
-  if (admin) {
-    navigate("/innerHome");
-    toast.success('Signed In successfully')
-  }
-
-  
-
   return (
-    <div className="hero min-h-screen">
+    <div className="hero min-h-secreen">
       <div>
-        <div className="hero min-h-screen">
+        <div className="hero min-h-secreen">
           <div
             style={{ scrollBehavior: "smooth" }}
             className="hero-content flex-col lg:flex-row-reverse w-full rounded-xl p-10"
@@ -155,16 +152,20 @@ const AdminLogin = () => {
                   </div>
 
                   <label className="label">
-                    <button className='hover:text-green-500'
+                    <button
+                      className="hover:text-green-500"
                       onClick={handlePasswordReset}
                     >
                       Reset password
                     </button>
                   </label>
                 </div>
+                {
+                  loginError && <small className="text-red-500">{loginError}</small>
+                }
                 <div className="form-control mt-6">
                   <button
-                    onClick={handleRegister}
+                    onClick={handleLogin}
                     className="btn btn-primary modal-button mb-5 text-white"
                   >
                     Login
