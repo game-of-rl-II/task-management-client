@@ -40,8 +40,6 @@ const AddMember = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {
-
-
             toast.success("Member added successfully!");
           } else {
             toast.error(`${data.message}`);
@@ -79,26 +77,14 @@ const AddMember = () => {
             <label className="label">
               <span className="label-text">Name</span>
             </label>
-            <input
-              required
-              type="text"
-              placeholder="Name"
-              className="input input-bordered input-addMember-form"
-              name="name"
-            />
+            <input required type="text" placeholder="Name" className="input input-bordered input-addMember-form" name="name" />
           </div>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
             </label>
 
-            <input
-              required
-              type="email"
-              placeholder="Email"
-              className="input input-bordered input-addMember-form"
-              name="email"
-            />
+            <input required type="email" placeholder="Email" className="input input-bordered input-addMember-form" name="email" />
           </div>
           <div className="form-control">
             <label className="label">
@@ -113,11 +99,7 @@ const AddMember = () => {
               name="id"
             />
 
-            <button
-              type="button"
-              onClick={handleGenerate}
-              className="btn btn-primary text-white mt-3"
-            >
+            <button type="button" onClick={handleGenerate} className="btn btn-primary text-white mt-3">
               Generate an ID
             </button>
           </div>
@@ -125,13 +107,7 @@ const AddMember = () => {
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input
-              required
-              type="text"
-              placeholder="Password"
-              className="input input-bordered input-addMember-form"
-              name="password"
-            />
+            <input required type="text" placeholder="Password" className="input input-bordered input-addMember-form" name="password" />
           </div>
         </div>
         <div className="addMember-form-bottom">
