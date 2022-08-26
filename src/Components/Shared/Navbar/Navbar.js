@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   if (adminLoading) {
-    return <Loading />;
+    return <></>;
   }
 
   return (
