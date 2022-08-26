@@ -81,7 +81,7 @@ const Register = () => {
                   className="input input-bordered w-full"
                 />
                 <button className="btn-icon" onClick={toggleButton}>
-                  {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                  {passwordIcon ? <AiOutlineEye /> :  <AiOutlineEyeInvisible /> }
                 </button>
               </div>
               <label className="label">
