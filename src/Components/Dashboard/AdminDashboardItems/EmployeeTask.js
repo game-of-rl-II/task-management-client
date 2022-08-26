@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
-import EmployeeTaskModal from "./EmployeeTaskModal";
 import useTeamName from "../../hooks/useTeamName";
+import EmployeeTaskModalNew from "./EmployeeTaskModalNew";
 // import useTask from '../../hooks/useTask';
 const EmployeeTask = () => {
   const [memberTaskModal, setMemberTaskModal] = useState(null);
@@ -74,7 +74,7 @@ const EmployeeTask = () => {
                       DETAILS
                     </label>
                   </td>
-                  {memberTaskModal && <EmployeeTaskModal memberTaskModal={memberTaskModal} />}
+                  {memberTaskModal && <EmployeeTaskModalNew memberTaskModal={memberTaskModal} />}
                 </tr>
               ))}
             </tbody>
