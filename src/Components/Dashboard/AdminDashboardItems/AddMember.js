@@ -71,10 +71,16 @@ const AddMember = () => {
   };
 
   return (
-    <div className="addMember-form">
+    <div
+    data-aos="zoom-in" 
+    data-aos-easing="linear"
+    data-aos-duration="1000"
+    className="addMember-form">
       <form onSubmit={handleSubmit}>
         <div className="my-10 addMember-form-top">
-          <div className="form-control">
+          <div
+         
+          className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
             </label>
@@ -86,7 +92,9 @@ const AddMember = () => {
               name="name"
             />
           </div>
-          <div className="form-control">
+          <div
+          
+          className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
             </label>
@@ -99,7 +107,11 @@ const AddMember = () => {
               name="email"
             />
           </div>
-          <div className="form-control">
+          <div
+          
+          className="form-control">
+            <div 
+          className="form-control">
             <label className="label">
               <span className="label-text">ID</span>
             </label>
@@ -111,7 +123,7 @@ const AddMember = () => {
               defaultValue={generatedID}
               name="id"
             />
-
+            </div>
             <button
               type="button"
               onClick={handleGenerate}
@@ -120,7 +132,9 @@ const AddMember = () => {
               Generate an ID
             </button>
           </div>
-          <div className="form-control">
+          <div
+          
+          className="form-control">
             <label className="label">
               <span className="label-text">Password</span>
             </label>

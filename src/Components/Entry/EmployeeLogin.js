@@ -48,7 +48,7 @@ const EmployeeLogin = () => {
         <div
         data-aos="fade-left"
         data-aos-easing="linear"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-primary">
           <div className="card-body">
             <div className="form-control">
@@ -97,7 +97,7 @@ const EmployeeLogin = () => {
         <div 
         data-aos="fade-right"
         data-aos-easing="linear"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-primary p-7">
           <h1 className="text-3xl font-bold text-neutral text-center">
             Member Login

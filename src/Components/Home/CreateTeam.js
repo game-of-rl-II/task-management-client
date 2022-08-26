@@ -8,9 +8,17 @@ const CreateTeam = () => {
             <h2 className="text-center text-4xl text-primary uppercase">Create a Team now and Start working together</h2>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ width: '300px', height: '300px' }}>
-                    <SiMicrosoftteams size={"100%"} style={{color: "#84cc16"}} />
+                    <SiMicrosoftteams 
+                     data-aos="fade-up"
+                     data-aos-easing="linear"
+                     data-aos-duration="2000"
+                    size={"100%"} style={{color: "#84cc16"}} />
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
-                        <label for="my-modal" class="btn btn-primary modal-button mb-5 text-white">Create a team</label>
+                        <label
+                         data-aos="zoom-in"
+                         data-aos-easing="linear"
+                         data-aos-duration="1000"
+                         for="my-modal" class="btn btn-primary modal-button mb-5 text-white">Create a team</label>
                     </div>
                 </div>
             </div>

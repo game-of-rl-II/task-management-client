@@ -22,7 +22,7 @@ const MyTeamsModal = () => {
       );
     }
     if (teamName.length >= 16) {
-      return Alert("Please keep your team name shorter than 16 characters", "Team name not valid")
+      return toast.error("Please keep your team name shorter than 16 characters", "Team name not valid")
     }
     const members = e.target.members.value;
     const project = e.target.project.value;
@@ -43,7 +43,7 @@ const MyTeamsModal = () => {
       });
   };
   return (
-    <>
+    <div>
       <h3 className="font-bold text-lg">Create a team</h3>
       <form className="" onSubmit={handleSubmit}>
         <div className="form-control">
@@ -97,7 +97,7 @@ const MyTeamsModal = () => {
           </label>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

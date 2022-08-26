@@ -41,7 +41,7 @@ const HomeBanner = () => {
     <div className="home-banner-parent"  >
       <div className="banner-left-side" data-aos="fade-down-right"
     data-aos-easing="linear"
-    data-aos-duration="2000">
+    data-aos-duration="1000">
         <h2 className="text-3xl font-bold text-slate-800 font-serif">
           The one place for all your projects and team collaboration
         </h2>
@@ -143,7 +143,7 @@ const HomeBanner = () => {
       </div>
       <div className="banner-right-side" data-aos="fade-down-left"
     data-aos-easing="linear"
-    data-aos-duration="2000">
+    data-aos-duration="1000">
         {!admin?.uid && !member && (
           <div className="w-full">
             <div>
