@@ -61,7 +61,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
         data-aos-duration="2000"
         class="modal-box bg-white border-y-4 border-primary">
           <p class="py-4">Employee Name: {assignTaskMember.name}</p>
-          <p class="py-4">Employee ID: {assignTaskMember._id}</p>
+          <p class="py-4">Employee ID: {assignTaskMember.id}</p>
           <p class="py-4">Task Date: {taskDate}</p>
           <form onSubmit={handleAssignTask}>
             <div className="mb-8">

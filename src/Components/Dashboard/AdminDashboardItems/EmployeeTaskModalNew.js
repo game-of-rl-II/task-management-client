@@ -5,10 +5,10 @@ const EmployeeTaskModalNew = ({ memberTaskModal }) => {
     
     var status = "";
     if(taskCompletion){
-        status = <p className="py-4"><span className='text-2xl text-yellow-500 font-bold'>Pending</span></p>
+        status = <p className="py-4"><span className='text-2xl text-green-500 font-bold'>Done</span></p>
     }
     else{
-        status = <p className="py-4"><span className='text-2xl text-green-500 font-bold'>Done</span></p>
+        status = <p className="py-4"><span className='text-2xl text-yellow-500 font-bold'>Pending</span></p>
     }
 
     return (

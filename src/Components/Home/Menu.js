@@ -36,6 +36,7 @@ const Menu = () => {
             <li><Link to="reviewYourTeamMember">Review a member</Link></li>
             <li><Link to="employeeTask">Assigned tasks</Link></li>
             <li><Link to="todaysTask">Today's tasks</Link></li>
+            <li><Link to="todaysTask">Forwarded tasks</Link></li>
             <li><Link to="settings">Settings</Link></li>
           </ul>
         </div>
