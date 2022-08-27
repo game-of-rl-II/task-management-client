@@ -17,37 +17,57 @@ const EmployeeTask = () => {
         .then((res) => res.json())
         .then((data) => {
           setMemberTask(data);
-          console.log(data);
         });
     }
   }, [memberTask, teamName]);
 
 
   const [assignedTasksColumns] = useAssignedTasksTable({ setMemberTaskModal })
-  createTheme('solarized', {
-    text: {
-      primary: '#029743',
-      secondary: '#2aa198',
-    },
-    background: {
-      default: '#F7FEE7',
-    },
-    context: {
-      background: '#cb4b16',
-      text: '#FFFFFF',
-    },
-    divider: {
-      default: '#CCD1D8',
-    },
 
-  }, 'white');
+  const customStyles = {
+    rows: {
+      style: {
+        minHeight: '72px', // override the row height
+        backgroundColor: '#ECFCCB',
+      },
+    },
+    headCells: {
+      style: {
+        paddingLeft: '8px', // override the cell padding for head cells
+        paddingRight: '8px',
+      },
+    },
+    cells: {
+      style: {
+        paddingLeft: '8px', // override the cell padding for data cells
+        paddingRight: '8px',
+      },
+    },
+  };
+  // createTheme('solarized', {
+  //   text: {
+  //     primary: '#029743',
+  //     secondary: '#2aa198',
+  //   },
+  //   background: {
+  //     default: '#F7FEE7',
+  //   },
+  //   context: {
+  //     background: '#cb4b16',
+  //     text: '#FFFFFF',
+  //   },
+  //   divider: {
+  //     default: '#CCD1D8',
+  //   },
+
+  // }, 'dark');
 
   return (
     <div>
       <div>
         <h1 className=" bg-secondary w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">MEMBERS TASK</h1>
         <div className="mx-5">
-          <DataTable columns={assignedTasksColumns} pagination theme='solarized' data={memberTask}></DataTable>
+          <DataTable customStyles={customStyles} columns={assignedTasksColumns} pagination data={memberTask}></DataTable>
         </div>
       </div>
       {memberTaskModal && <EmployeeTaskModalNew memberTaskModal={memberTaskModal} />}

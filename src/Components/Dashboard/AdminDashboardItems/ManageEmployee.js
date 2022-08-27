@@ -29,23 +29,23 @@ const ManageEmployee = () => {
 
   const [manageMembersColumns] = useManageMembers({ setAssignTaskMember, setDeleteMember })
 
-  createTheme('solarized', {
-    text: {
-      primary: '#029743',
-      secondary: '#2aa198',
-    },
-    background: {
-      default: '#F7FEE7',
-    },
-    context: {
-      background: '#029743',
-      text: '#E2E8F0',
-    },
-    divider: {
-      default: '#E2E8F0',
-    },
+  // createTheme('solarized', {
+  //   text: {
+  //     primary: '#029743',
+  //     secondary: '#2aa198',
+  //   },
+  //   background: {
+  //     default: '#F7FEE7',
+  //   },
+  //   context: {
+  //     background: '#029743',
+  //     text: '#E2E8F0',
+  //   },
+  //   divider: {
+  //     default: '#E2E8F0',
+  //   },
 
-  }, 'dark');
+  // }, 'dark');
 
   if (adminLoading || isLoading) {
     return <Loading />;
@@ -57,7 +57,7 @@ const ManageEmployee = () => {
       </h1>
       <div className="mx-5">
 
-        <DataTable theme={'solarized'} columns={manageMembersColumns} data={members}></DataTable>
+        <DataTable columns={manageMembersColumns} data={members}></DataTable>
       </div>
       {assignTaskMember && (
         <AssignTaskModal

@@ -12,7 +12,7 @@ import useTodaysTasksTable from '../../Tables/useTodaysTasksTable';
 const TodaysTasks = () => {
     const [date, setDate] = useState(new Date());
 
-  const [memberTaskModal, setMemberTaskModal] = useState(null);
+    const [memberTaskModal, setMemberTaskModal] = useState(null);
 
 
     const { teamName } = useTeamName()
@@ -30,25 +30,25 @@ const TodaysTasks = () => {
     );
 
 
-    const [todaysTasksColumns]= useTodaysTasksTable({setMemberTaskModal})
+    const [todaysTasksColumns] = useTodaysTasksTable({ setMemberTaskModal })
 
-    createTheme('solarized', {
-        text: {
-          primary: '#029743',
-          secondary: '#2aa198',
-        },
-        background: {
-          default: '#F7FEE7',
-        },
-        context: {
-          background: '#cb4b16',
-          text: '#FFFFFF',
-        },
-        divider: {
-          default: '#CCD1D8',
-        },
-    
-      }, 'white');
+    // createTheme('solarized', {
+    //     text: {
+    //         primary: '#029743',
+    //         secondary: '#2aa198',
+    //     },
+    //     background: {
+    //         default: '#F7FEE7',
+    //     },
+    //     context: {
+    //         background: '#cb4b16',
+    //         text: '#FFFFFF',
+    //     },
+    //     divider: {
+    //         default: '#CCD1D8',
+    //     },
+
+    // }, 'dark');
 
     if (isLoading) {
         return <Loading />;
@@ -56,7 +56,7 @@ const TodaysTasks = () => {
 
     return (
         <div class="overflow-x-auto mx-10">
-            <DataTable columns={todaysTasksColumns} pagination theme='solarized' data={tasks}></DataTable>
+            <DataTable columns={todaysTasksColumns} pagination data={tasks}></DataTable>
             {memberTaskModal && <EmployeeTaskModalNew memberTaskModal={memberTaskModal} />}
         </div>
     );

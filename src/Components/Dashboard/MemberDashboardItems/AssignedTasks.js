@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useTask from "../../hooks/useTask";
 import TaskModal from "./TaskModal";
-import DataTable, {createTheme} from 'react-data-table-component';
+import DataTable, { createTheme } from 'react-data-table-component';
 
 import useNotifyAdmin from "../../hooks/useNotifyAdmin";
 import useMyTasksTable from "../../Tables/useMyTasksTable";
@@ -11,13 +11,13 @@ const AssignedTasks = () => {
   const { tasks } = useTask();
   const tasksData = [...tasks].reverse()
 
-  
+
 
 
   const [handleNotification] = useNotifyAdmin()
 
   // using react data table to show data
-  
+
 
 
   const handleUpdateTaskStatus = (task) => {
@@ -37,24 +37,24 @@ const AssignedTasks = () => {
       });
   };
 
-  const [myTasksColumns] = useMyTasksTable({setModalData, handleUpdateTaskStatus})
-  createTheme('solarized', {
-    text: {
-      primary: '#029743',
-      secondary: '#2aa198',
-    },
-    background: {
-        default: '#F7FEE7',
-    },
-    context: {
-        background: '#cb4b16',
-        text: '#FFFFFF',
-    },
-    divider: {
-        default: '#CCD1D8',
-    },
-   
-}, 'dark');
+  const [myTasksColumns] = useMyTasksTable({ setModalData, handleUpdateTaskStatus })
+  // createTheme('solarized', {
+  //   text: {
+  //     primary: '#029743',
+  //     secondary: '#2aa198',
+  //   },
+  //   background: {
+  //     default: '#F7FEE7',
+  //   },
+  //   context: {
+  //     background: '#cb4b16',
+  //     text: '#FFFFFF',
+  //   },
+  //   divider: {
+  //     default: '#CCD1D8',
+  //   },
+
+  // }, 'dark');
 
 
   return (
@@ -65,7 +65,7 @@ const AssignedTasks = () => {
 
       <div className="mx-5">
 
-        <DataTable columns={myTasksColumns} data={tasksData} pagination highlightOnHover fixedHeader fixedHeaderScrollHeight="550px" theme={'solarized'}></DataTable>
+        <DataTable columns={myTasksColumns} data={tasksData} pagination highlightOnHover fixedHeader fixedHeaderScrollHeight="550px"></DataTable>
       </div>
       {modalData && (
         <TaskModal modalData={modalData} setModalData={setModalData} />
