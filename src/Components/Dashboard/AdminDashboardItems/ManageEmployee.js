@@ -65,9 +65,7 @@ const ManageEmployee = () => {
 
                 <th>
                   <label
-                  data-aos="zoom-in" 
-                  data-aos-easing="linear"
-                  data-aos-duration="2000"
+
                     onClick={() => setAssignTaskMember(member)}
                     htmlFor="my-modal-6"
                     className="btn modal-button btn-outline btn-success btn-sm"
@@ -82,16 +80,16 @@ const ManageEmployee = () => {
                   )}
                 </th>
                 <th>
-                  <label
-                  data-aos="zoom-in" 
-                  data-aos-easing="linear"
-                  data-aos-duration="2000"
-                    onClick={() => setDeleteMember(member)}
-                    htmlFor="EmployeeDelete-modal"
-                    className="btn modal-button btn-outline btn-error  btn-sm"
-                  >
-                    Delete
-                  </label>
+                  {
+                    member?.id === '6169176' ? "non removable" : <label
+
+                      onClick={() => setDeleteMember(member)}
+                      htmlFor="EmployeeDelete-modal"
+                      className="btn modal-button btn-outline btn-error  btn-sm"
+                    >
+                      Delete
+                    </label>
+                  }
                   {deleteMember && (
                     <EmployeeDeleteModal
                       refetch={refetch}
