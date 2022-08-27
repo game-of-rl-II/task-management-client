@@ -5,7 +5,7 @@ import { SiMicrosoftteams } from "react-icons/si";
 const CreateTeam = () => {
     return (
         <div>
-            <h2 className="text-center text-4xl text-primary uppercase">Create a Team now and Start working together</h2>
+            <h2 className="text-center text-4xl text-primary  uppercase">Create a Team now and Start working together</h2>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ width: '300px', height: '300px' }}>
                     <SiMicrosoftteams 

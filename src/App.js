@@ -36,7 +36,7 @@ import AllNotifications from './Components/AllNotifications/AllNotifications';
 
 function App() {
   return (
-    <div className='bg-lime-50'>
+    <div className='rl-bg font-serif'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/home' element={<Home></Home>}></Route>

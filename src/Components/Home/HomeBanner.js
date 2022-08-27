@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../Firebase/firebase.init";
 import "./HomeBanner.css";
 // import Banner from "../../Images/task-tool.png";
-import login2 from "../../Images/login2-removebg-preview.jpg";
+import login2 from "../../Images/banner.png";
 import Loading from "../Shared/Loading/Loading";
 import { toast } from "react-toastify";
 
@@ -42,7 +42,7 @@ const HomeBanner = () => {
       <div className="banner-left-side" data-aos="fade-down-right"
     data-aos-easing="linear"
     data-aos-duration="1000">
-        <h2 className="text-3xl font-bold text-slate-800 font-serif">
+        <h2 className="text-3xl font-bold text-white font-serif">
           The one place for all your projects and team collaboration
         </h2>
         <ul className="mt-10">
@@ -61,7 +61,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-600 font-serif">
+            <p className="ml-3 text-slate-300 font-serif">
               All the tools your team needs put under one roof
             </p>
           </li>
@@ -80,7 +80,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-600 font-serif">
+            <p className="ml-3 text-slate-300 font-serif">
               Ultimate control over teams and projects easier than ever
             </p>
           </li>
@@ -99,7 +99,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-600 font-serif">
+            <p className="ml-3 text-slate-300 font-serif">
               On time project delivery & on point team accountability
             </p>
           </li>
@@ -118,7 +118,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-600 font-serif">
+            <p className="ml-3 text-slate-300 font-serif">
               Easy-to-understand with little to no learning curve
             </p>
           </li>
@@ -137,7 +137,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-600 font-serif">Free and always will be</p>
+            <p className="ml-3 text-slate-300 font-serif">Free and always will be</p>
           </li>
         </ul>
       </div>
@@ -150,18 +150,21 @@ const HomeBanner = () => {
               <div className="banner-image">
                 <img className="ml-10" style={{width: "80%"}} src={login2} alt="" />
               </div>
+              
+            </div>
+            <div className="lg:ml-40 ml-12">
               <button
                 onClick={() => navigate("/register")}
-                className=" btn btn-primary text-white btn-block"
+                className=" btn bg-teal-500  text-white lg:w-3/5"
               >
                 Register with email
               </button>
-            </div>
+              </div>
             <div>
-              <p className="text-center">or</p>
+              <p className="text-center text-white mr-10">or</p>
             </div>
-            <div>
-              <button onClick={() => signInWithGoogle()} className=" btn hover:bg-primary text-primary btn-block btn-outline">
+            <div className="lg:ml-40 ml-12">
+              <button onClick={() => signInWithGoogle()} className=" btn hover:bg-teal-500 text-white  lg:w-3/5 btn-outline">
                 Continue with google
               </button>
             </div>

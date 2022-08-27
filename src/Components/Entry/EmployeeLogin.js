@@ -49,7 +49,7 @@ const EmployeeLogin = () => {
         data-aos="fade-left"
         data-aos-easing="linear"
         data-aos-duration="1000"
-        className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-primary">
+        className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-teal-500">
           <div className="card-body">
             <div className="form-control">
               <h1 className="text-3xl font-bold text-neutral text-center">
@@ -62,7 +62,7 @@ const EmployeeLogin = () => {
                 onChange={(e) => setId(e.target.value)}
                 type="text"
                 placeholder="ID"
-                className="input input-bordered"
+                className="input shadow input-bordered"
               />
             </div>
             <div className="form-control">
@@ -74,7 +74,7 @@ const EmployeeLogin = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   type={passwordIcon ? "text" : "password"}
                   placeholder="password"
-                  className="input input-bordered w-full"
+                  className="input input-bordered shadow w-full"
                 />
                 <button className="btn-icon" onClick={toggleButton}>
                   {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
@@ -87,7 +87,7 @@ const EmployeeLogin = () => {
             <div className="form-control mt-6">
               <button
                 onClick={handleLogin}
-                className="btn btn-primary modal-button mb-5 text-white"
+                className="btn bg-teal-500 border-none modal-button mb-5 text-white"
               >
                 Login
               </button>
@@ -98,20 +98,20 @@ const EmployeeLogin = () => {
         data-aos="fade-right"
         data-aos-easing="linear"
         data-aos-duration="1000"
-        className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-primary p-7">
-          <h1 className="text-3xl font-bold text-neutral text-center">
+        className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-teal-500 p-7">
+          <h1 className="text-3xl font-bold text-white text-center">
             Member Login
           </h1>
-          <p className="py-6 text-center text-gray-500">
+          <p className="py-6 text-center text-white">
             Hello Member!, It is time to login and work with your team. Your
             team leader provided a member ID and Password. Use them for Login.
           </p>
           <hr className="pb-4" />
           <div>
-            <p className="text-center p-5 text-gray-500 font-bold">
+            <p className="text-center p-5 text-white font-bold">
               Are you an admin?{" "}
               <span>
-                <Link to="/adminLogin" className="text-primary">
+                <Link to="/adminLogin" className="text-teal-300">
                   Login here.
                 </Link>
               </span>

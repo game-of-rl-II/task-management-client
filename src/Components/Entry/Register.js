@@ -54,7 +54,7 @@ const Register = () => {
     data-aos-duration="1000"
     className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse  w-[80%] rounded-xl p-10">
-        <div className="card flex-shrink-0 w-full max-w-lg   shadow-2xl bg-base-100 border-y-4 border-primary">
+        <div className="card flex-shrink-0 w-full max-w-lg   shadow-2xl bg-base-100 border-y-4 border-rose-600">
 
           <div className="card-body">
             <div className="form-control">
@@ -66,7 +66,7 @@ const Register = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 type="text"
                 placeholder="email"
-                className="input input-bordered"
+                className="input input-bordered shadow"
               />
             </div>
             <div className="form-control">
@@ -78,7 +78,7 @@ const Register = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   type={passwordIcon ? "text" : "password"}
                   placeholder="password"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full shadow"
                 />
                 <button className="btn-icon" onClick={toggleButton}>
                   {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
@@ -93,7 +93,7 @@ const Register = () => {
             <div className="form-control mt-6">
               <button
                 onClick={handleRegister}
-                className="btn btn-primary modal-button mb-5 text-white"
+                className="btn bg-red-600 modal-button border-none mb-5 text-white "
               >
                 Register
               </button>

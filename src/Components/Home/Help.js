@@ -11,10 +11,10 @@ const Help = () => {
       <div data-aos="zoom-in-left"
      data-aos-easing="linear"
      data-aos-duration="3000">
-        <h1 class="text-3xl mx-12 mt-8 lg:mx-0 pt-8 font-bold text-slate-800 font-serif">
+        <h1 class="text-3xl mx-12 mt-8 lg:mx-0 pt-8 font-bold text-white font-serif">
           TMT helps to manage team projects
         </h1>
-        <p class="py-6 text-xl text-slate-500 font-serif ">
+        <p class="py-6 text-xl text-slate-300 font-serif ">
          By using TMT you can collaborate, manage projects, organize tasks, and build team
           spirit-all in one place. The way your team works is unique-accomplish it with TMT.
         </p>
