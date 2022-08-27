@@ -4,49 +4,20 @@ import TaskModal from "./TaskModal";
 import DataTable from 'react-data-table-component';
 
 import useNotifyAdmin from "../../hooks/useNotifyAdmin";
+import useMyTasksTable from "../../Tables/useMyTasksTable";
 
 const AssignedTasks = () => {
   const [modalData, setModalData] = useState(null);
   const { tasks } = useTask();
+  const tasksData = [...tasks].reverse()
+
+  
+
+
   const [handleNotification] = useNotifyAdmin()
 
   // using react data table to show data
-  const columns = [
-    {
-      name: <h1>Assigned Date</h1>,
-      selector: task => <h1>{task?.taskDate}</h1>
-    },
-    {
-      name: <h1>TaskDate</h1>,
-      selector: task => <h1>{task.taskCompletion ? 'Done' : "pending"}</h1>
-    },
-    {
-      name: <h1>Task Deadline</h1>,
-      selector: task => <h1>{task?.deadline}</h1>
-    },
-    {
-      name: 'Update',
-      selector: task => <button
-        onClick={() => handleUpdateTaskStatus(task)}
-        disabled={task.taskCompletion === true}
-        className="btn btn-outline btn-primary btn-sm"
-      >
-        UPDATE
-      </button>
-    },
-    {
-      name: 'View Task',
-      selector: task => <label
-        onClick={() => setModalData(task)}
-        for="my-modal-3"
-        className="btn btn-outline btn-info btn-sm modal-button"
-      >
-        View Task
-      </label>
-    },
-
-  ]
-
+  
 
 
   const handleUpdateTaskStatus = (task) => {
@@ -66,15 +37,18 @@ const AssignedTasks = () => {
       });
   };
 
+  const [myTasksColumns] = useMyTasksTable({setModalData, handleUpdateTaskStatus})
+
+
   return (
     <div>
       <h1 className=" bg-secondary w-36 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
         My Tasks
       </h1>
 
-      <div className="w-full">
+      <div className="w-full container">
 
-        <DataTable columns={columns} data={tasks} pagination highlightOnHover fixedHeader fixedHeaderScrollHeight="550px"></DataTable>
+        <DataTable columns={myTasksColumns} data={tasksData} pagination highlightOnHover fixedHeader fixedHeaderScrollHeight="550px"></DataTable>
       </div>
       {modalData && (
         <TaskModal modalData={modalData} setModalData={setModalData} />
