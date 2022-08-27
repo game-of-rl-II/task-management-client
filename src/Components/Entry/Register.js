@@ -49,10 +49,10 @@ const Register = () => {
 
 
   return (
-    <div data-aos="zoom-in" 
-    data-aos-easing="linear"
-    data-aos-duration="1000"
-    className="hero min-h-screen">
+    <div data-aos="zoom-in"
+      data-aos-easing="linear"
+      data-aos-duration="1000"
+      className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse  w-[80%] rounded-xl p-10">
         <div className="card flex-shrink-0 w-full max-w-lg   shadow-2xl bg-base-100 border-y-4 border-primary">
 
@@ -81,7 +81,7 @@ const Register = () => {
                   className="input input-bordered w-full"
                 />
                 <button className="btn-icon" onClick={toggleButton}>
-                  {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                  {passwordIcon ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
                 </button>
               </div>
               <label className="label">
