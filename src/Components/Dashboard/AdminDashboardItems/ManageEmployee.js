@@ -20,7 +20,7 @@ const ManageEmployee = () => {
     refetch,
     isLoading,
   } = useQuery(["owner", email], () =>
-    fetch(`http://localhost:5000/members?email=${email}&teamName=${teamName}`, {
+    fetch(`https://warm-dawn-94442.herokuapp.com/members?email=${email}&teamName=${teamName}`, {
       method: "GET",
     }).then((res) => res.json())
   );
@@ -30,11 +30,11 @@ const ManageEmployee = () => {
   }
   return (
     <div>
-      <h1 className=" bg-secondary w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
+      <h1 className=" bg-teal-500 w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
         MANAGE ALL MEMBER
       </h1>
       <div className="w-full ">
-        <table className="table w-3/4 mx-auto ">
+        <table className="table lg:w-3/5 mx-auto ">
           <thead>
             <tr>
               <th></th>
@@ -65,12 +65,10 @@ const ManageEmployee = () => {
 
                 <th>
                   <label
-                  data-aos="zoom-in" 
-                  data-aos-easing="linear"
-                  data-aos-duration="2000"
+
                     onClick={() => setAssignTaskMember(member)}
                     htmlFor="my-modal-6"
-                    className="btn modal-button btn-outline btn-success btn-sm"
+                    className="btn modal-button bg-teal-500 hover:bg-teal-700 text-white border-none btn-sm"
                   >
                     Assign
                   </label>
@@ -82,16 +80,16 @@ const ManageEmployee = () => {
                   )}
                 </th>
                 <th>
-                  <label
-                  data-aos="zoom-in" 
-                  data-aos-easing="linear"
-                  data-aos-duration="2000"
-                    onClick={() => setDeleteMember(member)}
-                    htmlFor="EmployeeDelete-modal"
-                    className="btn modal-button btn-outline btn-error  btn-sm"
-                  >
-                    Delete
-                  </label>
+                  {
+                    member?.id === '6169176' ? "non removable" : <label
+
+                      onClick={() => setDeleteMember(member)}
+                      htmlFor="EmployeeDelete-modal"
+                      className="btn modal-button btn-error lg:ml-6 text-white hover:bg-red-600  btn-sm"
+                    >
+                      Delete
+                    </label>
+                  }
                   {deleteMember && (
                     <EmployeeDeleteModal
                       refetch={refetch}

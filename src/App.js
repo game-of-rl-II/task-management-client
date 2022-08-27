@@ -41,7 +41,7 @@ function App() {
       <Routes>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/myProfile' element={<RequireCommon><MyProfile></MyProfile></RequireCommon>}></Route>
-        <Route path='/allNotifications' element={<AllNotifications></AllNotifications>}></Route>
+        <Route path='/allNotifications' element={<RequireCommon><AllNotifications></AllNotifications></RequireCommon>}></Route>
         <Route path='/innerHome' element={<RequireAdmin><InnerHome></InnerHome></RequireAdmin>}>
           <Route index element={<RequireAdmin><CreateTeam></CreateTeam></RequireAdmin>}></Route>
           <Route path=':teamName' element={<RequireAdmin><Menu></Menu></RequireAdmin>}>

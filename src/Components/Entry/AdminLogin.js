@@ -134,7 +134,7 @@ const AdminLogin = () => {
                   className="input input-bordered shadow w-full"
                 />
                 <button className="btn-icon" onClick={toggleButton}>
-                  {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                  {passwordIcon ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
                 </button>
               </div>
               <label className="label">
@@ -150,7 +150,7 @@ const AdminLogin = () => {
             <div className="form-control mt-6">
               <button
                 onClick={handleLogin}
-                className="btn bg-teal-500 border-none modal-button mb-5 text-white"
+                className="btn bg-teal-500 hover:bg-teal-800 border-none modal-button mb-5 text-white"
               >
                 Login
               </button>

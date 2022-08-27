@@ -22,14 +22,19 @@ const GetInTouch = () => {
         
             <div class=" lg:mt-12  shadow-xl">
   <div class="hero-content mx-auto flex-col lg:flex-row-reverse">
-    <div class="lg:ml-24 ">
+    <div
+    data-aos="fade-up"
+    data-aos-duration="2000"
+    class="lg:ml-24 ">
     <h1  class="text-3xl font-bold text-white">Contact with TMT</h1>
       <p class=" text-white  ">Address: Hathazari, Chittagong</p>
       <p class=" text-white ">Phone: +8801820082894</p>
       <p class=" text-white ">Email: arifulislam64743@gmail.com</p>
     </div>
     <div class=" flex-shrink-0 w-full max-w-sm shadow-2xl">
-      <div class="card-body">
+      <div data-aos="fade-up"
+     data-aos-duration="2000"
+       class="card-body">
       <form ref={form} onSubmit={sendEmail}
        
         className="grid grid-cols-1 gap-4 mt-4 justify-items-center"
@@ -60,7 +65,7 @@ const GetInTouch = () => {
         
         <input
           type="submit" value="Send"
-          className="btn  btn-outline btn-success w-full my-4 text-white font-bold max-w-xs"
+          className="btn hover:bg-teal-800   bg-teal-500 w-full my-4 text-white font-bold max-w-xs"
         />
       </form>
       </div>

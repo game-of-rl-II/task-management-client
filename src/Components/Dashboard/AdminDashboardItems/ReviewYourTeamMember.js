@@ -9,7 +9,7 @@ const ReviewYourTeamMember = () => {
     const rating = event.target.rating.value;
     const review = { memberId, description, rating };
 
-    const url = `http://localhost:5000/add-review/${memberId}`;
+    const url = `https://warm-dawn-94442.herokuapp.com/add-review/${memberId}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -23,19 +23,22 @@ const ReviewYourTeamMember = () => {
         if (data.acknowledged) {
           toast.success("Your review has been added successfully");
         }
+        else if (data.message) {
+          toast.error(data.message)
+        }
       });
   };
   return (
     <div className="lg:px-12 text-charcoal font-sans leading-normal overflow-x-hidden lg:overflow-auto w-auto rounded-xl">
       <div className="flex-1 md:p-0 lg:pt-8 lg:pb-8  mx-auto flex flex-col rounded-xl">
-        <section 
-        data-aos="zoom-in" 
-        data-aos-easing="linear"
-        data-aos-duration="1000"
-        className="shadow-xl rounded-xl border-y-4 border-primary px-10 mx-5">
+        <section
+          data-aos="zoom-in"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+          className="shadow-xl rounded-xl border-y-4 border-primary px-10 mx-5">
           <div className="md:flex">
             <h2 className="md:w-1/3 uppercase mt-4 tracking-wide text-charcoal-darker font-bold text-sm sm:text-lg mb-6">
-              Provide a review to your teammate.
+              Give a review to your teammate.
             </h2>
           </div>
           <form onSubmit={handleReview}>
@@ -52,7 +55,7 @@ const ReviewYourTeamMember = () => {
                 ></input>
               </div>
               <div
-               className="md:flex-1 mt-2 mb:mt-0 ">
+                className="md:flex-1 mt-2 mb:mt-0 ">
                 <label className="block uppercase tracking-wide text-charcoal-darker text-xs font-bold p-2">
                   Comment
                 </label>

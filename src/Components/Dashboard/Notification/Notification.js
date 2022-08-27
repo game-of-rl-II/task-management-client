@@ -10,7 +10,7 @@ const Notification = () => {
   const email = admin?.email;
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:5000/notification-admin/${email}`)
+      fetch(`https://warm-dawn-94442.herokuapp.com/notification-admin/${email}`)
         .then(res => res.json())
         .then(data => {
           setNewNotification(data)
@@ -20,13 +20,15 @@ const Notification = () => {
   }, [email, newNotification])
 
   const handleClearNotification = () => {
-    fetch(`http://localhost:5000/notification-clear/${email}`, {
+    fetch(`https://warm-dawn-94442.herokuapp.com/notification-clear/${email}`, {
       method: 'DELETE',
     })
       .then(res => res.json())
       .then(data => {
+        if (data.acknowledged) {
 
-        navigate('/allNotifications')
+          navigate('/allNotifications')
+        }
       })
   }
 
@@ -42,7 +44,8 @@ const Notification = () => {
           <span className="font-bold text-lg">Notification</span>
           <span className="text-info">{newNotification?.length >= 1 ? <ul>
             {
-              newNotification.slice(0, 3).reverse().map(n => (<li>{n.message}</li>))
+              newNotification.slice(0, 3).reverse().map(n => (<><li key={n?._id}>{n.message}</li>
+                <hr /></>))
             }
           </ul> : 'You have no new notifications'}</span>
           <div className="card-actions">

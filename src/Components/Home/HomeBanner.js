@@ -155,7 +155,7 @@ const HomeBanner = () => {
             <div className="lg:ml-40 ml-12">
               <button
                 onClick={() => navigate("/register")}
-                className=" btn bg-teal-500  text-white lg:w-3/5"
+                className=" btn bg-teal-500 hover:bg-teal-800   text-white lg:w-3/5"
               >
                 Register with email
               </button>

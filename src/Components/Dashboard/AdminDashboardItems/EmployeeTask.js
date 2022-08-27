@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
-import EmployeeTaskModal from "./EmployeeTaskModal";
 import useTeamName from "../../hooks/useTeamName";
+import EmployeeTaskModalNew from "./EmployeeTaskModalNew";
 // import useTask from '../../hooks/useTask';
 const EmployeeTask = () => {
   const [memberTaskModal, setMemberTaskModal] = useState(null);
@@ -19,7 +19,7 @@ const EmployeeTask = () => {
   // console.log(memberTask);
   useEffect(() => {
     if (teamName) {
-      fetch(`http://localhost:5000/task/${teamName}`)
+      fetch(`https://warm-dawn-94442.herokuapp.com/task/${teamName}`)
         .then((res) => res.json())
         .then((data) => {
           setMemberTask(data);
@@ -35,9 +35,7 @@ const EmployeeTask = () => {
   return (
     <div>
       <div>
-        <h1 className=" bg-secondary w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
-          MEMBERS TASK
-        </h1>
+        <h1 className=" bg-secondary w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">MEMBERS TASK</h1>
         <div className="w-full ">
           <table className="table w-3/4 mx-auto ">
             <thead>
@@ -68,32 +66,15 @@ const EmployeeTask = () => {
                   <td className="text-xs font-bold">{member.memberId}</td>
 
                   <td className="text-xs font-bold">
-                    <span
-                      className={
-                        member.taskDate === todaysDate
-                          ? "text-green-500"
-                          : "text-black"
-                      }
-                    >
-                      {member.taskDate}
-                    </span>
+                    <span className={member.taskDate === todaysDate ? "text-green-500" : "text-black"}>{member.taskDate}</span>
                   </td>
 
                   <td>
-                    <label
-                    data-aos="zoom-in" 
-                    data-aos-easing="linear"
-                    data-aos-duration="2000"
-                      onClick={() => setMemberTaskModal(member)}
-                      for="my-modal-4"
-                      className="btn modal-button btn-outline btn-success btn-sm"
-                    >
+                    <label onClick={() => setMemberTaskModal(member)} for="my-modal-4" className="btn modal-button btn-outline btn-success btn-sm">
                       DETAILS
                     </label>
                   </td>
-                  {memberTaskModal && (
-                    <EmployeeTaskModal memberTaskModal={memberTaskModal} />
-                  )}
+                  {memberTaskModal && <EmployeeTaskModalNew memberTaskModal={memberTaskModal} />}
                 </tr>
               ))}
             </tbody>

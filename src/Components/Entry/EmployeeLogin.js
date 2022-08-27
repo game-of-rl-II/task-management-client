@@ -81,13 +81,13 @@ const EmployeeLogin = () => {
                 </button>
               </div>
 
-              <label for="employeeResetModal" class="label-text-alt link link-hover p-2">Forgot password?</label>
+              <label for="employeeResetModal" class="label-text-alt text-teal-500 link link-hover p-2">Forgot password?</label>
               <EmployeeResetModal />
             </div>
             <div className="form-control mt-6">
               <button
                 onClick={handleLogin}
-                className="btn bg-teal-500 border-none modal-button mb-5 text-white"
+                className="btn bg-teal-500 hover:bg-teal-800  border-none modal-button mb-5 text-white"
               >
                 Login
               </button>

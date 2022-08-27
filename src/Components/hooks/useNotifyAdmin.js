@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 
 const useNotifyAdmin = () => {
     const handleNotification = ({ message, adminEmail, success }) => {
-        fetch('http://localhost:5000/notification-admin', {
+        fetch('https://warm-dawn-94442.herokuapp.com/notification-admin', {
             method: "POST",
             headers: {
                 "content-type": "application/json",

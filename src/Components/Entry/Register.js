@@ -25,7 +25,7 @@ const Register = () => {
       return toast.error("password must be 8 characters or longer");
     }
     await createUserWithEmailAndPassword(email, password);
-    fetch("http://localhost:5000/", {
+    fetch("https://warm-dawn-94442.herokuapp.com/", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -49,16 +49,16 @@ const Register = () => {
 
 
   return (
-    <div data-aos="zoom-in" 
-    data-aos-easing="linear"
-    data-aos-duration="1000"
-    className="hero min-h-screen">
+    <div data-aos="zoom-in"
+      data-aos-easing="linear"
+      data-aos-duration="1000"
+      className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse  w-[80%] rounded-xl p-10">
-        <div className="card flex-shrink-0 w-full max-w-lg   shadow-2xl bg-base-100 border-y-4 border-rose-600">
+        <div className="card flex-shrink-0 w-full max-w-lg   shadow-2xl bg-base-100 border-y-4 border-teal-500">
 
           <div className="card-body">
             <div className="form-control">
-              <h1 className="text-4xl font-bold text-black">Register</h1>
+              <h1 className="text-4xl font-bold  text-center text-black">Register</h1>
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
@@ -81,11 +81,11 @@ const Register = () => {
                   className="input input-bordered w-full shadow"
                 />
                 <button className="btn-icon" onClick={toggleButton}>
-                  {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                  {passwordIcon ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
                 </button>
               </div>
               <label className="label">
-                <p className="label-text-alt link link-hover">
+                <p className="label-text-alt text-teal-500 link link-hover">
                   Forgot password?
                 </p>
               </label>
@@ -93,7 +93,7 @@ const Register = () => {
             <div className="form-control mt-6">
               <button
                 onClick={handleRegister}
-                className="btn bg-red-600 modal-button border-none mb-5 text-white "
+                className="btn bg-teal-500 hover:bg-teal-800 modal-button border-none mb-5 text-white "
               >
                 Register
               </button>
