@@ -90,7 +90,6 @@ const ManageEmployee = () => {
                       Delete
                     </label>
                   }
-
                   {deleteMember && (
                     <EmployeeDeleteModal
                       refetch={refetch}
