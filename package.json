@@ -30,6 +30,7 @@
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.4",
     "react-st-modal": "^1.1.3",
+    "react-table": "^7.8.0",
     "react-toastify": "^9.0.8",
     "recharts": "^2.1.13",
     "redux": "^4.2.0",
