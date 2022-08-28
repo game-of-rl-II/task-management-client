@@ -3,18 +3,18 @@ import React from 'react';
 const Settings = () => {
     return (
       <div>
-        <h2 className="mt-5 text-center text-3xl">We are working on it</h2>
+        <h2 className="my-5 text-center text-white text-3xl">We are working on it</h2>
         <form class="w-full max-w-lg m-auto">
           <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
                 for="grid-first-name"
               >
                 Team Name
               </label>
               <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                class="appearance-none block w-full bg-gray-200 text-white border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 id="grid-first-name"
                 type="text"
                 placeholder="Jane"
@@ -25,21 +25,21 @@ const Settings = () => {
             </div>
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
                 for="grid-state"
               >
                 Members
               </label>
               <div class="relative">
                 <select
-                  class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  class="block appearance-none w-full bg-gray-200 border border-gray-200 text-white py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 >
                   <option>New Mexico</option>
                   <option>Missouri</option>
                   <option>Texas</option>
                 </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
                   <svg
                     class="fill-current h-4 w-4"
                     xmlns="http://www.w3.org/2000/svg"
@@ -54,28 +54,28 @@ const Settings = () => {
           <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
               <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
                 for="grid-password"
               >
                 Address
               </label>
               <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                class="appearance-none block w-full bg-gray-200 text-white border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-password"
                 type="password"
                 placeholder="******************"
               />
-              <p class="text-gray-600 text-xs italic">
+              <p class="text-white text-xs italic">
                 Make it as long and as crazy as you'd like
               </p>
             </div>
           </div>
           <div class="flex flex-wrap -mx-3 mb-2">
             <div className="w-full md:w-1/2 px-3 m-auto">
-              <button className="btn ml-5 btn-primary drawer-button sm:mb-5 text-white">
+              <button className="btn ml-5  bg-teal-500 hover:bg-teal-800 modal-button sm:mb-5 text-white">
                 Save
               </button>
-              <button className="btn ml-5 btn-primary drawer-button sm:mb-5 text-white">
+              <button className="btn ml-5 bg-slate-500 hover:bg-slate-800 sm:mb-5 text-white">
                 Edit
               </button>
             </div>

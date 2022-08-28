@@ -35,9 +35,9 @@ const EmployeeTask = () => {
   return (
     <div>
       <div>
-        <h1 className=" bg-secondary w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">MEMBERS TASK</h1>
+        <h1 className=" bg-teal-500 w-40 mx-auto py-1 rounded  text-center text-white my-6 font-bold">MEMBERS TASK</h1>
         <div className="w-full ">
-          <table className="table w-3/4 mx-auto ">
+          <table className="table w-3/5 mx-auto ">
             <thead>
               <tr>
                 <th></th>
@@ -54,7 +54,7 @@ const EmployeeTask = () => {
                   <td>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
-                        <div className="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <div className="w-14 mr-4 rounded-full ring ring-teal-500 ring-offset-base-100 ring-offset-2">
                           <img src={member.image} alt="" />
                         </div>
                       </div>
@@ -66,11 +66,11 @@ const EmployeeTask = () => {
                   <td className="text-xs font-bold">{member.memberId}</td>
 
                   <td className="text-xs font-bold">
-                    <span className={member.taskDate === todaysDate ? "text-green-500" : "text-black"}>{member.taskDate}</span>
+                    <span className={member.taskDate === todaysDate ? "text-teal-500" : "text-black"}>{member.taskDate}</span>
                   </td>
 
                   <td>
-                    <label onClick={() => setMemberTaskModal(member)} for="my-modal-4" className="btn modal-button btn-outline btn-success btn-sm">
+                    <label onClick={() => setMemberTaskModal(member)} for="my-modal-4" className="btn modal-button bg-teal-500 hover:bg-teal-700 text-white border-none btn-sm">
                       DETAILS
                     </label>
                   </td>

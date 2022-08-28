@@ -27,8 +27,8 @@ const TodaysTasks = () => {
     }
 
     return (
-        <div class="overflow-x-auto mx-10">
-            <table class="table w-full">
+        <div class="overflow-x-auto ">
+            <table class="table w-3/5 mx-auto mt-6">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -43,7 +43,7 @@ const TodaysTasks = () => {
                             <th>{task?.name}</th>
                             <td>{task?.memberId}</td>
                             <td className={task?.taskCompletion ? 'text-green-500' : 'text-yellow-500'}>{task?.taskCompletion ? 'Done' : 'Pending'}</td>
-                            <th><button className="btn btn-primary">Details</button></th>
+                            <th><button className="btn bg-teal-500 hover:bg-teal-800 border-none text-white">Details</button></th>
 
                         </tr>))}
 

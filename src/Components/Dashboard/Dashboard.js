@@ -30,7 +30,7 @@ const Dashboard = () => {
       <div className="drawer mt-5 ">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-          <label htmlFor="my-drawer" className="btn ml-5 btn-primary drawer-button">
+          <label htmlFor="my-drawer" className="btn ml-5 bg-teal-500 hover:bg-teal-700 drawer-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-white"
@@ -50,10 +50,10 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-48 bg-lime-50 text-base-content">
+          <ul className="menu p-4 overflow-y-auto w-48 bg-white  ">
             {(member) && (
               <li>
-                <Link to="/dashboard">My Profile</Link>
+                <Link className="hover:bg-teal-300" to="/dashboard">My Profile</Link>
               </li>
             )}
 
@@ -62,20 +62,20 @@ const Dashboard = () => {
             {member && (
               <>
                 <li>
-                  <Link to="assignedTasks">My Tasks</Link>
+                  <Link className="hover:bg-teal-300" to="assignedTasks">My Tasks</Link>
                 </li>
                 <li>
-                  <Link to="completedTask">Completed Tasks</Link>
+                  <Link className="hover:bg-teal-300" to="completedTask">Completed Tasks</Link>
                 </li>
                 <li>
-                  <Link to="uncompletedTask">Uncompleted Tasks</Link>
+                  <Link className="hover:bg-teal-300" to="uncompletedTask">Uncompleted Tasks</Link>
                 </li>
                 {/* <li>
                   <Link to="taskForwarding">Task Forwarding</Link>
                 </li> */}
 
                 <li>
-                  <button onClick={handleSignOut}>Log Out</button>
+                  <button className="hover:bg-teal-300" onClick={handleSignOut}>Log Out</button>
                 </li>
               </>
             )}

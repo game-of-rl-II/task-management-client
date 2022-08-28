@@ -8,7 +8,7 @@ const EmployeeTaskModalNew = ({ memberTaskModal }) => {
         status = <p className="py-4"><span className='text-2xl text-yellow-500 font-bold'>Pending</span></p>
     }
     else{
-        status = <p className="py-4"><span className='text-2xl text-green-500 font-bold'>Done</span></p>
+        status = <p className="py-4"><span className='text-2xl text-teal-500 font-bold'>Done</span></p>
     }
 
     return (
@@ -19,7 +19,7 @@ const EmployeeTaskModalNew = ({ memberTaskModal }) => {
                 data-aos="flip-left"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000"
-                 className="modal-box relative shadow-2xl bg-base-100 border-y-4 border-primary" for="" >
+                 className="modal-box relative shadow-2xl bg-base-100 border-y-4 border-teal-500" for="" >
                     <h3 className="text-lg font-bold"><span className='text-black font-bold'> Name: </span>{memberTaskModal.name}</h3>
                     <p className="py-4"><span className='text-black font-bold'> Task: </span>{memberTaskModal.task}</p>
                     <p className="py-4"><span className='text-black font-bold'> Dateline: </span>{memberTaskModal.deadline}</p>

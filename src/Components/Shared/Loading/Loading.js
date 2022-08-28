@@ -4,7 +4,7 @@ const Loading = () => {
     return (
         <div className="flex items-center justify-center pt-32">
             <FadeLoader
-  color="#54ef1e"
+  color="#1CE2DB"
   height={15}
   loading={true}
   radius={2}

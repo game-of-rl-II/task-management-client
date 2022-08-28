@@ -17,7 +17,7 @@ const TaskModal = ({modalData, setModalData}) => {
                       <div className="flex gap-5 justify-end mt-5">
                         <button
                             onClick={() => setModalData(null)}
-                            className="btn btn-outline btn-error btn-sm"
+                            className="btn bg-red-500 text-white border-none hover:bg-red-600 btn-sm"
                         >
                             Close
                         </button>

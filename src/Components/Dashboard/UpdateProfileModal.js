@@ -37,8 +37,8 @@ const UpdateProfileModal = ({ openUpdateModal, setOpenUpdateModal, refetch, admi
       <input type="checkbox" id="update-profile" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
-          <div className="divider before:bg-secondary after:bg-secondary">
-            <h2 className=" uppercase md:text-4xl text-xl text-secondary font-bold">Update Info</h2>
+          <div className="divider before:bg-teal-500 after:bg-teal-500">
+            <h2 className=" uppercase md:text-4xl text-xl text-white font-bold">Update Info</h2>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex-1  flex flex-col">
