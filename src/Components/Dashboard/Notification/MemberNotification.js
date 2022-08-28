@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const MemberNotification = () => {
     const navigate = useNavigate()
     const [newNotification, setNewNotification] = useState([])
-    console.log(newNotification)
     const member = JSON.parse(localStorage.getItem("member"));
     const id = member?.id
 
