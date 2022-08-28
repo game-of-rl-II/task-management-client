@@ -11,7 +11,7 @@ const ReviewYourTeamMember = () => {
     const rating = event.target.rating.value;
     const review = { memberId, description, rating };
 
-    const message ='You received a review form your admin'
+    const message = 'You received a review form your admin'
     const success = 'Your review has been added successfully'
 
     const url = `https://warm-dawn-94442.herokuapp.com/add-review/${memberId}`;
@@ -26,7 +26,8 @@ const ReviewYourTeamMember = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-handleNotificationMember({memberId, message, success})        }
+          handleNotificationMember({ memberId, message, success })
+        }
         else if (data.message) {
           toast.error(data.message)
         }
