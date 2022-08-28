@@ -71,11 +71,11 @@ const UpdateProfileModal = ({ openUpdateModal, setOpenUpdateModal, refetch, admi
                 </div>
               </div>
             </div>
-            <div className="divider before:bg-secondary after:bg-secondary mt-10">
-              <button onClick={() => setOpenUpdateModal(null)} className=" btn btn-sm  btn-secondary  text-white font-bold">
+            <div className="divider before:bg-teal-500 after:bg-teal-500">
+              <button onClick={() => setOpenUpdateModal(null)} className=" btn btn-error text-white hover:bg-red-600  btn-sm px-5">
                 Cancel
               </button>
-              <button type="submit" className=" btn btn-sm  btn-secondary  text-white font-bold">
+              <button type="submit" className="btn modal-button bg-teal-500 hover:bg-teal-700 text-white border-none btn-sm">
                 Update
               </button>
             </div>

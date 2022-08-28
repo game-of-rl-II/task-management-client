@@ -54,7 +54,7 @@ const MyProfile = () => {
                     </div>
                   </div>
                   <div>
-                    <ul className="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-5 mt-3 divide-y rounded shadow-sm">
+                    <ul className="bg-teal-500 text-white  hover:shadow py-2 px-5 mt-3 divide-y rounded shadow-sm">
                       <li className="flex items-center py-3">
                         <span className="md:hidden lg:block">Role:</span>
                         <span className="ml-auto">
@@ -103,7 +103,7 @@ const MyProfile = () => {
                   style={member && { visibility: 'hidden' }}
                   htmlFor="update-profile"
                   onClick={() => setOpenUpdateModal({})}
-                  className="btn  md:btn-md btn-sm modal-button btn-teal-500 hover:text-teal-700 md:px-10 text-white font-bold"
+                  className="btn modal-button bg-teal-500 hover:bg-teal-700 text-white border-none btn-sm"
                 >
                   Update Profile
                 </label>
