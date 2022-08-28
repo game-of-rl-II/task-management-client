@@ -5,17 +5,19 @@ import "react-day-picker/dist/style.css";
 import useTeamName from "../../hooks/useTeamName";
 import { auth } from "../../../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
+import useNotifyMember from "../../hooks/useNotifyMember";
 const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
   const [date, setDate] = useState(new Date());
   let newDate = <p>{format(date, "PP")}</p>;
   const taskDate = newDate.props.children;
   const { teamName } = useTeamName();
+  const [handleNotificationMember] = useNotifyMember()
   const handleAssignTask = (event) => {
     event.preventDefault();
     const adminEmail = admin?.email
     const name = assignTaskMember.name;
-    const memberId = assignTaskMember.id;
+    const memberId = assignTaskMember?.id;
     const task = event.target.task.value;
     const deadline = event.target.deadline.value;
     const taskCompletion = false;
@@ -29,7 +31,8 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
       taskDate,
       teamName,
     };
-
+    const message = 'A task has been added to you'
+    const success = 'Task assigned successfully'
     const url = "https://warm-dawn-94442.herokuapp.com/assign-task";
     fetch(url, {
       method: "POST",
@@ -40,9 +43,9 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if (data) {
-          toast.success("Task assigned successfully");
+        
+        if (data.acknowledged) {
+          handleNotificationMember({memberId, message, success})
         }
         setAssignTaskMember(null);
       });

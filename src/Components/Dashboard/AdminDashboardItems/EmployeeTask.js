@@ -4,7 +4,11 @@ import "react-day-picker/dist/style.css";
 import useTeamName from "../../hooks/useTeamName";
 import EmployeeTaskModalNew from "./EmployeeTaskModalNew";
 import useAssignedTasksTable from "../../Tables/useAssignedTasksTable";
+import { useTableStyles } from "../../Tables/useTableStyles";
+
 const EmployeeTask = () => {
+  const [customTableStyles] = useTableStyles()
+
   const [memberTaskModal, setMemberTaskModal] = useState(null);
 
   const { teamName } = useTeamName();
@@ -24,26 +28,7 @@ const EmployeeTask = () => {
 
   const [assignedTasksColumns] = useAssignedTasksTable({ setMemberTaskModal })
 
-  const customStyles = {
-    rows: {
-      style: {
-        minHeight: '72px', // override the row height
-        backgroundColor: '#ECFCCB',
-      },
-    },
-    headCells: {
-      style: {
-        paddingLeft: '8px', // override the cell padding for head cells
-        paddingRight: '8px',
-      },
-    },
-    cells: {
-      style: {
-        paddingLeft: '8px', // override the cell padding for data cells
-        paddingRight: '8px',
-      },
-    },
-  };
+  
   // createTheme('solarized', {
   //   text: {
   //     primary: '#029743',
@@ -67,7 +52,7 @@ const EmployeeTask = () => {
       <div>
         <h1 className=" bg-secondary w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">MEMBERS TASK</h1>
         <div className="mx-5">
-          <DataTable customStyles={customStyles} columns={assignedTasksColumns} pagination data={memberTask}></DataTable>
+          <DataTable customStyles={customTableStyles} columns={assignedTasksColumns} pagination data={memberTask}></DataTable>
         </div>
       </div>
       {memberTaskModal && <EmployeeTaskModalNew memberTaskModal={memberTaskModal} />}
