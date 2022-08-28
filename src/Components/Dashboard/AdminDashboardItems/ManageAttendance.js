@@ -2,17 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import getMembers from "../../../ReduxServices/actoions/ManageAttendanceActions";
 import { toast } from "react-toastify";
 import Loading from "../../Shared/Loading/Loading";
 const ManageAttendance = () => {
   const { isLoading, data, error } = useSelector((state) => state);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getMembers());
   }, []);
   if (isLoading) {
-    return <Loading/>
+    return <Loading />
   }
   if (error) {
 
@@ -28,7 +26,6 @@ const ManageAttendance = () => {
       .then((data) => {
         if (data.acknowledged) {
           toast.success('well done!')
-          dispatch(getMembers())
         }
       });
   };

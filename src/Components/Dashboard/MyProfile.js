@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Firebase/firebase.init";
 import Loading from "../Shared/Loading/Loading";
 import UpdateProfileModal from "./UpdateProfileModal";
+import ReactStars from "react-rating-stars-component";
 
 const MyProfile = () => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
@@ -91,9 +92,11 @@ const MyProfile = () => {
                       </p>
                     )}
                     {
-                      member?.rating && <p>
-                        <strong>Rating: {member?.rating} </strong>
-                      </p>
+                      member?.rating && <ReactStars count={5}
+                        value={member?.rating}
+                        edit={false}
+                        activeColor={'gold'}
+                      ></ReactStars>
                     }
                   </div>
                 </div>
