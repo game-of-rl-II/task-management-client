@@ -4,7 +4,7 @@ import axios from 'axios'
 const getAllNotification = () => async (dispatch) => {
     dispatch({ type: GET_NOTIFICATION });
     try {
-        const result = await axios.get("http://localhost:5000/all-notification");
+        const result = await axios.get("https://warm-dawn-94442.herokuapp.com/all-notification");
         dispatch({ type: SUCCESS_NOTIFICATION, payload: result.data });
     } catch (error) {
         dispatch({ type: FAILED_NOTIFICATION, payload: error.message });
