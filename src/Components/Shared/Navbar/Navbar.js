@@ -41,16 +41,26 @@ const Navbar = () => {
       <div className="navbar relative p-5 flex flex-col md:flex-row gap-y-4 bg-lime-100">
         <div className="flex-1">
           <Link to="/" className="text-black">
-
-            <span className="p-2 rounded text-2xl font-bold text-white bg-primary">TMT</span>{" "}
-            <span className='logo text-slate-700 font-serif font-bold'>Task Management Tool</span>
-
+            <span className="p-2 rounded text-2xl font-bold text-white bg-primary">
+              TMT
+            </span>{" "}
+            <span className="logo text-slate-700 font-serif font-bold">
+              Task Management Tool
+            </span>
           </Link>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal p-0">
             {!admin?.uid && !member ? (
               <>
+                <li>
+                  <Link
+                    className="nav-button text-white font-bold mr-3 bg-primary"
+                    to="/aboutus"
+                  >
+                    About Us
+                  </Link>
+                </li>
                 <li>
                   <Link
                     className="nav-button text-white font-bold mr-3 bg-primary"
@@ -70,16 +80,16 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                {
-                  admin?.uid ? <Notification /> : <MemberNotification></MemberNotification>
-                }
+                {admin?.uid ? (
+                  <Notification />
+                ) : (
+                  <MemberNotification></MemberNotification>
+                )}
 
                 <li>
                   <Link
-
                     className="nav-button text-white mr-3 btn btn-primary"
-                    to={`${admin?.uid ? '/myProfile' : '/dashboard'}`}
-
+                    to={`${admin?.uid ? "/myProfile" : "/dashboard"}`}
                   >
                     {admin?.uid ? "Profile" : "Dashboard"}
                   </Link>
