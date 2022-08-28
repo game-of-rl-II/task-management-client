@@ -12,23 +12,23 @@ const CompletedTask = () => {
 
   // using theme 
 
-  createTheme('solarized', {
-    text: {
-      primary: '#029743',
-      secondary: '#2aa198',
-    },
-    background: {
-      default: '#F7FEE7',
-    },
-    context: {
-      background: '#029743',
-      text: '#E2E8F0',
-    },
-    divider: {
-      default: '#E2E8F0',
-    },
+  // createTheme('solarized', {
+  //   text: {
+  //     primary: '#029743',
+  //     secondary: '#2aa198',
+  //   },
+  //   background: {
+  //     default: '#F7FEE7',
+  //   },
+  //   context: {
+  //     background: '#029743',
+  //     text: '#E2E8F0',
+  //   },
+  //   divider: {
+  //     default: '#E2E8F0',
+  //   },
 
-  }, 'dark');
+  // }, 'dark');
 
 
 
@@ -38,7 +38,7 @@ const CompletedTask = () => {
       <div className="w-3/5 rounded mx-auto">
         <DataTable
           columns={completedTasksColumns} data={completedTasks}
-          theme={'solarized'}
+          
         ></DataTable>
       </div>
       {detailsModal && <CompleteDetailsModal detailsModal={detailsModal} />}

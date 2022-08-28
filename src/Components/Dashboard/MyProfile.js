@@ -10,7 +10,7 @@ const MyProfile = () => {
   const [adminProfile, setAdminProfile] = useState({});
 
   const member = JSON.parse(localStorage.getItem("member"));
-  // console.log(member);
+
   const [openUpdateModal, setOpenUpdateModal] = useState(null);
 
   const [teams, setTeams] = useState([]);
@@ -27,7 +27,6 @@ const MyProfile = () => {
       .then((res) => res.json())
       .then((data) => {
         setAdminProfile(data);
-        console.log(data);
       });
   }, [email, adminProfile]);
 
@@ -91,10 +90,10 @@ const MyProfile = () => {
                         <strong>ID: {member?.id} </strong>
                       </p>
                     )}
-                    { 
-                    member.rating && <p>
-                    <strong>Rating: {member?.rating} </strong>
-                  </p>
+                    {
+                      member?.rating && <p>
+                        <strong>Rating: {member?.rating} </strong>
+                      </p>
                     }
                   </div>
                 </div>

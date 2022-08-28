@@ -9,6 +9,7 @@ import Loading from "../Loading/Loading";
 // import Loading from "../Loading/Loading";
 
 import "./Navbar.css";
+import MemberNotification from "../../Dashboard/Notification/MemberNotification";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -69,10 +70,10 @@ const Navbar = () => {
               </>
             ) : (
               <>
-              {
-                <Notification />
-              }
-                
+                {
+                  admin?.uid ? <Notification /> : <MemberNotification></MemberNotification>
+                }
+
                 <li>
                   <Link
 

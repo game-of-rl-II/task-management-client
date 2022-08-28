@@ -31,12 +31,13 @@ const Menu = () => {
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal bg-teal-500 font-bold rounded text-white p-0">
             <li><Link className='hover:bg-teal-700'to="addMember">Add Member</Link></li>
-
             <li><Link className='hover:bg-teal-700' to="manageEmployee">Manage Members</Link></li>
             <li><Link className='hover:bg-teal-700' to="reviewYourTeamMember">Review a member</Link></li>
             <li><Link className='hover:bg-teal-700' to="employeeTask">Assigned tasks</Link></li>
             <li><Link className='hover:bg-teal-700' to="todaysTask">Today's tasks</Link></li>
+            <li><Link className='hover:bg-teal-700' to="forwardedTask">Forwarded tasks</Link></li>
             <li><Link className='hover:bg-teal-700' to="settings">Settings</Link></li>
+
           </ul>
         </div>
         <div class="navbar-end">

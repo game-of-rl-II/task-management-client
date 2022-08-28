@@ -22,25 +22,10 @@ const EmployeeResetModal = () => {
         };
 
         // console.log(forReset);
+        handleNotification({ message, adminEmail, success })
+        
 
-        const url = "https://warm-dawn-94442.herokuapp.com/notification-archive-admin";
-
-        fetch(url, {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(forReset),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-
-                if (data.acknowledged) {
-
-                    handleNotification({ message, adminEmail, success })
-
-                }
-            });
+        
 
     }
 

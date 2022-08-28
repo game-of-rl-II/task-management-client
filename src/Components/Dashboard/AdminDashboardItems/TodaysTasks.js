@@ -3,10 +3,18 @@ import useTeamName from '../../hooks/useTeamName';
 import { useQuery } from 'react-query'
 import { format } from 'date-fns';
 import Loading from '../../Shared/Loading/Loading';
+import EmployeeTaskModalNew from './EmployeeTaskModalNew';
+import DataTable, { createTheme } from 'react-data-table-component'
+import useTodaysTasksTable from '../../Tables/useTodaysTasksTable';
+import { useTableStyles } from '../../Tables/useTableStyles';
+
 
 
 const TodaysTasks = () => {
     const [date, setDate] = useState(new Date());
+
+    const [memberTaskModal, setMemberTaskModal] = useState(null);
+
 
     const { teamName } = useTeamName()
     let newDate = <p>{format(date, "PP")}</p>;
@@ -22,33 +30,40 @@ const TodaysTasks = () => {
         }).then((res) => res.json())
     );
 
+const [customTableStyles] = useTableStyles()
+    const [todaysTasksColumns] = useTodaysTasksTable({ setMemberTaskModal })
+
+    // createTheme('solarized', {
+    //     text: {
+    //         primary: '#029743',
+    //         secondary: '#2aa198',
+    //     },
+    //     background: {
+    //         default: '#F7FEE7',
+    //     },
+    //     context: {
+    //         background: '#cb4b16',
+    //         text: '#FFFFFF',
+    //     },
+    //     divider: {
+    //         default: '#CCD1D8',
+    //     },
+
+    // }, 'dark');
+
     if (isLoading) {
         return <Loading />;
     }
 
     return (
-        <div class="overflow-x-auto ">
-            <table class="table w-3/5 mx-auto mt-6">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Member ID</th>
-                        <th>Task Status</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        tasks.map(task => (<tr ky={task?._id}>
-                            <th>{task?.name}</th>
-                            <td>{task?.memberId}</td>
-                            <td className={task?.taskCompletion ? 'text-green-500' : 'text-yellow-500'}>{task?.taskCompletion ? 'Done' : 'Pending'}</td>
-                            <th><button className="btn bg-teal-500 hover:bg-teal-800 border-none text-white">Details</button></th>
+        <div>
+             <h1 className="w-36 mx-auto py-1 rounded  bg-teal-500 text-center text-white my-4 font-bold">Today's TASK</h1>
+       
+        <div class="w-3/5 rounded mx-auto">
+            <DataTable customStyles={customTableStyles} columns={todaysTasksColumns} pagination data={tasks}></DataTable>
+            {memberTaskModal && <EmployeeTaskModalNew memberTaskModal={memberTaskModal} />}
 
-                        </tr>))}
-
-                </tbody>
-            </table>
+        </div>
         </div>
     );
 };

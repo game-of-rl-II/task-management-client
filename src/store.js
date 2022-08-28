@@ -1,6 +1,9 @@
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, createStore, combineReducers } from "redux";
 import thunk from "redux-thunk";
-import { manageAttendanceReducers } from "./ReduxServices/reducers/ManageAttendanceReducers";
+import { AllNotificationsReducer } from "./ReduxServices/reducers/AllNotificationsReducer";
+import { ForwardedTaskReducer } from "./ReduxServices/reducers/ForwardedTaskReducer";
+import rootReducer from './ReduxServices/reducers/rootReducer';
 
-const store = createStore(manageAttendanceReducers,applyMiddleware(thunk));
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 export default store;

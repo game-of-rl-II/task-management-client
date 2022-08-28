@@ -1,13 +1,18 @@
 import React from "react";
 import { toast } from "react-toastify";
+import useNotifyMember from "../../hooks/useNotifyMember";
 
 const ReviewYourTeamMember = () => {
+  const [handleNotificationMember] = useNotifyMember()
   const handleReview = (event) => {
     event.preventDefault();
     const memberId = event.target.memberId.value;
     const description = event.target.description.value;
     const rating = event.target.rating.value;
     const review = { memberId, description, rating };
+
+    const message = 'You received a review form your admin'
+    const success = 'Your review has been added successfully'
 
     const url = `https://warm-dawn-94442.herokuapp.com/add-review/${memberId}`;
     fetch(url, {
@@ -21,7 +26,7 @@ const ReviewYourTeamMember = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          toast.success("Your review has been added successfully");
+          handleNotificationMember({ memberId, message, success })
         }
         else if (data.message) {
           toast.error(data.message)
