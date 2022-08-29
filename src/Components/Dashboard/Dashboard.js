@@ -22,10 +22,11 @@ const Dashboard = () => {
     }
   };
   if (adminLoading) {
-    return <Loading />
+    return <Loading />;
   }
 
   return (
+    
     <>
       <div className="drawer mt-5 ">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -39,11 +40,7 @@ const Dashboard = () => {
               stroke="currentColor"
               strokeWidth="2"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </label>
           <Outlet></Outlet>
@@ -51,13 +48,11 @@ const Dashboard = () => {
         <div className="drawer-side">
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-48 bg-lime-50 text-base-content">
-            {(member) && (
+            {member && (
               <li>
                 <Link to="/dashboard">My Profile</Link>
               </li>
             )}
-
-
 
             {member && (
               <>
@@ -87,3 +82,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
