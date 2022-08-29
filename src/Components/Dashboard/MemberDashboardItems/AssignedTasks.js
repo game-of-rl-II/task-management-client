@@ -59,11 +59,11 @@ const AssignedTasks = () => {
 
   return (
     <div>
-      <h1 className=" bg-secondary w-36 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
+      <h1 className=" bg-teal-500 w-28 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
         My Tasks
       </h1>
 
-      <div className="mx-5">
+      <div className="w-3/5 rounded mx-auto">
 
         <DataTable columns={myTasksColumns} data={tasksData} pagination highlightOnHover fixedHeader fixedHeaderScrollHeight="550px"></DataTable>
       </div>

@@ -12,17 +12,17 @@ const Feature = () => {
     <div className="font-serif mb-6">
       <div class="mb-6 " >
         {" "}
-        <h1 class="text-3xl pt-8 font-bold mx-14 lg:text-center text-slate-800 font-serif">
+        <h1 class="text-3xl pt-8 font-bold mx-14 lg:text-center text-white font-serif">
           The four main features of TMT
         </h1>
-        <p class="py-6 text-lg text-slate-500 font-serif w-2/4 lg:text-center mx-auto ">
+        <p class="py-6 text-lg text-slate-300 font-serif lg:w-2/4 mx-4 lg:text-center lg:mx-auto ">
           TMT Software is a mission-critical tool to plan, assign, release, and
           report on work. With TMT Software, you can rest easy knowing that you
           have the right foundation on which to grow
         </p>
       </div>
       <div className="features">
-        <div className="" data-aos="fade-down-right"
+        <div data-aos="fade-up"
     data-aos-easing="linear"
     data-aos-duration="2000">
           <div class="card lg:w-4/6 lg:ml-auto  card-side bg-base-100 shadow-xl">
@@ -38,7 +38,7 @@ const Feature = () => {
             </div>
           </div>
         </div>
-        <div data-aos="fade-down-left"
+        <div data-aos="zoom-in"
     data-aos-easing="linear"
     data-aos-duration="2000">
           <div class="card lg:w-4/6 lg:ml-8 card-side bg-base-100 shadow-xl">
@@ -54,7 +54,7 @@ const Feature = () => {
             </div>
           </div>
         </div>
-        <div data-aos="fade-up-right"
+        <div data-aos="zoom-in"
     data-aos-easing="linear"
     data-aos-duration="2000">
           <div class="card lg:w-4/6 lg:ml-auto   card-side bg-base-100 shadow-xl">
@@ -62,14 +62,14 @@ const Feature = () => {
               <img src={feature3} alt="Movie" />
             </figure>
             <div class="card-body">
-              <h2 class="card-title">Member Task information</h2>
+              <h2 class="card-title">Member task information</h2>
               <p class="text-slate-500 font-serif">
                 A member can see his completed, uncompleted task and he can update the pending tasks.
               </p>
             </div>
           </div>
         </div>
-        <div data-aos="fade-up-left"
+        <div data-aos="zoom-in"
     data-aos-easing="linear"
     data-aos-duration="2000">
           <div class="card lg:w-4/6 lg:ml-8 card-side bg-base-100 shadow-xl">

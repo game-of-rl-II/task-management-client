@@ -5,20 +5,20 @@ import { SiMicrosoftteams } from "react-icons/si";
 const CreateTeam = () => {
   return (
     <div>
-      <h2 className="text-center text-4xl text-primary uppercase">Create a Team now and Start working together</h2>
+      <h2 className="text-center font-bold text-xl mt-2 text-white uppercase">Create a Team now and Start working together</h2>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ width: '300px', height: '300px' }}>
           <SiMicrosoftteams
             data-aos="fade-up"
             data-aos-easing="linear"
             data-aos-duration="2000"
-            size={"100%"} style={{ color: "#84cc16" }} />
+            size={"80%"} style={{ color: "#3CDEC8" , marginTop: '50px', marginLeft: '30px' }} />
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
             <label
               data-aos="zoom-in"
               data-aos-easing="linear"
               data-aos-duration="1000"
-              for="my-modal" class="btn btn-primary modal-button mb-5 text-white">Create a team</label>
+              for="my-modal" class="btn bg-teal-500 hover:bg-teal-800   modal-button mb-5 text-white">Create a team</label>
           </div>
         </div>
       </div>

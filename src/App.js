@@ -33,11 +33,12 @@ import RequireMember from "./Components/RequireAuth/RequireMember";
 import RequireCommon from "./Components/RequireAuth/RequireCommon";
 import Settings from "./Components/Dashboard/AdminDashboardItems/Settings";
 import AllNotifications from "./Components/AllNotifications/AllNotifications";
+import ForwardedTasks from "./Components/Dashboard/AdminDashboardItems/ForwardedTasks";
 import AboutUs from "./Components/AboutUs/AboutUs";
 
 function App() {
   return (
-    <div className="bg-lime-50">
+    <div className="rl-bg font-serif">
       <Navbar></Navbar>
       <Routes>
         <Route path="/home" element={<Home></Home>}></Route>
@@ -118,6 +119,14 @@ function App() {
               element={
                 <RequireAdmin>
                   <TodaysTasks></TodaysTasks>
+                </RequireAdmin>
+              }
+            ></Route>
+            <Route
+              path="forwardedTask"
+              element={
+                <RequireAdmin>
+                  <ForwardedTasks></ForwardedTasks>
                 </RequireAdmin>
               }
             ></Route>
