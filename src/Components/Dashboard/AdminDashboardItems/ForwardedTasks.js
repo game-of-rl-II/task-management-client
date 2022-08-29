@@ -27,7 +27,11 @@ const ForwardedTasks = () => {
     }
     return (
         <div className="mx-5">
-            <DataTable columns={forwardedTasksTable} data={data}></DataTable>
+            <div>
+
+                <DataTable columns={forwardedTasksTable} data={data}></DataTable>
+            </div>
+            {/* message modal */}
         </div>
     );
 };
