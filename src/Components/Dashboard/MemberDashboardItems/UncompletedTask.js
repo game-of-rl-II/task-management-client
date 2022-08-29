@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import useTask from "../../hooks/useTask";
-import DataTable, { createTheme } from 'react-data-table-component'
+import DataTable, { createTheme } from "react-data-table-component";
 // import TaskModal from './TaskModal';
 import UncompletedTaskModal from "./UncompletedTaskModal";
 import useUncompletedTasksTable from "../../Tables/useUnCompletedTasksTable";
 
 const UncompletedTask = () => {
   const [taskData, setTaskData] = useState(null);
-  const [unCompletedTasksColumns] = useUncompletedTasksTable({ setTaskData })
-  const { unCompletedTasks } = useTask()
+  const [unCompletedTasksColumns] = useUncompletedTasksTable({ setTaskData });
+  const { unCompletedTasks } = useTask();
 
   // createTheme('solarized', {
   //   text: {
@@ -29,11 +29,10 @@ const UncompletedTask = () => {
   // }, 'dark');
 
   return (
-    <div>
+    <div className="">
       <h1 className=" bg-teal-500 w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Uncompleted Task</h1>
-      <div  className="w-3/5 rounded mx-auto ">
-
-        <DataTable columns={unCompletedTasksColumns} data={unCompletedTasks} ></DataTable>
+      <div className="mx-auto  lg:max-w-3xl xl:max-w-6xl lg:pl-6 rounded">
+        <DataTable columns={unCompletedTasksColumns} data={unCompletedTasks}></DataTable>
       </div>
       {taskData && <UncompletedTaskModal taskData={taskData} setTaskData={setTaskData} />}
     </div>
