@@ -1,10 +1,16 @@
 import React from 'react';
 import { toast } from "react-toastify";
+import useNotifyAdmin from '../hooks/useNotifyAdmin';
 
 const EmployeeResetModal = () => {
+    const [handleNotification] = useNotifyAdmin()
 
     const handleReset = (event) => {
         event.preventDefault();
+
+        const message = 'one of your team mates forgot his password'
+        const success = 'Your admin will contact you'
+
         const userId = event.target.userId.value;
         const adminEmail = event.target.adminEmail.value;
 
@@ -12,26 +18,18 @@ const EmployeeResetModal = () => {
         const forReset = {
             userId,
             adminEmail,
+            message
         };
-        // console.log(forReset);
 
-        const url = "https://warm-dawn-94442.herokuapp.com/notification-admin";
-        fetch(url, {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(forReset),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                if (data.acknowledged) {
-                    toast("Your admin will contact you");
-                }
-            });
+        // console.log(forReset);
+        handleNotification({ message, adminEmail, success })
+        
+
+        
 
     }
+
+
     return (
         <div>
             <input type="checkbox" id="employeeResetModal" class="modal-toggle" />

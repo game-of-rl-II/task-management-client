@@ -1,8 +1,8 @@
 import React from "react";
-
+import './Footer.css'
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-lime-100 text-base-content" id="footer">
+    <footer className="footer footer-rl p-10  bg-teal-500 text-white font-serif" id="footer">
       <div>
         <span className="footer-title">Legal</span>
         <a className="link link-hover">Terms of use</a>

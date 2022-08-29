@@ -1,59 +1,42 @@
 import React, { useEffect, useState } from "react";
 import useTask from "../../hooks/useTask";
+import useCompletedTasksTable from "../../Tables/useCompletedTasksTable";
 import CompleteDetailsModal from "./CompleteDetailsModal";
+import DataTable, { createTheme } from "react-data-table-component";
 
 const CompletedTask = () => {
   const [members, setMembers] = useState([]);
   const [detailsModal, setDetailsModal] = useState(null);
-  const {completedTasks} = useTask()
-  console.log(completedTasks)
+  const { completedTasks } = useTask();
+  const [completedTasksColumns] = useCompletedTasksTable(setDetailsModal);
+
+  // using theme
+
+  // createTheme('solarized', {
+  //   text: {
+  //     primary: '#029743',
+  //     secondary: '#2aa198',
+  //   },
+  //   background: {
+  //     default: '#F7FEE7',
+  //   },
+  //   context: {
+  //     background: '#029743',
+  //     text: '#E2E8F0',
+  //   },
+  //   divider: {
+  //     default: '#E2E8F0',
+  //   },
+
+  // }, 'dark');
 
   return (
     <div>
-      <h1 className=" bg-secondary w-40 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Completed Task</h1>
-      <div className="w-full">
-        <table className="table w-3/4 mx-auto ">
-          <thead>
-            <tr>
-              <th></th>
-              <th className="text-sm font-bold">MEMBER NAME</th>
-              <th className="text-sm font-bold">MEMBER Id</th>
-              <th className="text-sm font-bold">TASK</th>
-            </tr>
-          </thead>
-          <tbody>
-            {completedTasks.map((task, index) => (
-              <tr key={task._id}>
-                <th>{index + 1}</th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="w-14 mr-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        {/* <img src={employee.image} alt="" /> */}
-                      </div>
-                    </div>
-                    <div>
-                      <div className="font-bold">{task.name}</div>
-                    </div>
-                  </div>
-                </td>
-
-                <td className="text-xs font-bold">{task.memberId}</td>
-
-                {/* <th>
-                  <button className="btn btn-outline btn-warning btn-sm">COMPLETED</button>
-                </th> */}
-                <th>
-                  <label for="details-modal" className="btn modal-button btn-outline btn-success btn-sm" onClick={() => setDetailsModal(task)}>
-                    DETAILS
-                  </label>
-                </th>
-              </tr>
-            ))}
-            {detailsModal && <CompleteDetailsModal detailsModal={detailsModal} />}
-          </tbody>
-        </table>
+      <h1 className=" bg-teal-500 w-40 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Completed Task</h1>
+      <div className="mx-auto  lg:max-w-3xl xl:max-w-6xl p-6 rounded">
+        <DataTable columns={completedTasksColumns} data={completedTasks}></DataTable>
       </div>
+      {detailsModal && <CompleteDetailsModal detailsModal={detailsModal} />}
     </div>
   );
 };

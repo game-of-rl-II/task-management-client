@@ -9,3 +9,8 @@
     
 
 }
+.shadow{
+    -webkit-box-shadow: inset 1px 1px 22px 10px rgba(0,0,0,0.13);
+-moz-box-shadow: inset 1px 1px 22px 10px rgba(0,0,0,0.13);
+box-shadow: inset 1px 1px 22px 10px rgba(0,0,0,0.13);
+}
