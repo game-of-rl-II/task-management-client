@@ -31,7 +31,7 @@ const Menu = () => {
 </ul>
           </div>
         </div>
-        <div class="navbar-center hidden lg:flex">
+        <div class="navbar-center hidden lg:flex max-w-5xl">
           <ul class="menu menu-horizontal bg-teal-500 font-bold rounded text-white p-0">
             <li><Link className='hover:bg-teal-700'to="addMember">Add Member</Link></li>
             <li><Link className='hover:bg-teal-700' to="manageEmployee">Manage Members</Link></li>
