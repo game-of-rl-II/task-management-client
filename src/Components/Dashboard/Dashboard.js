@@ -28,9 +28,9 @@ const Dashboard = () => {
   return (
     <>
       <div className="drawer drawer-mobile mt-5 ">
-        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+        <input id="my-drawer-member" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-          <label htmlFor="my-drawer" class="btn ml-5 bg-teal-500 drawer-button sm:mb-5 text-white lg:hidden">
+          <label htmlFor="my-drawer-member" class="btn ml-5 bg-teal-500 drawer-button sm:mb-5 text-white lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-white"
@@ -45,6 +45,7 @@ const Dashboard = () => {
           <Outlet></Outlet>
         </div>
         <div className="drawer-side">
+          <label htmlFor="my-drawer-member" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-48 bg-white lg:bg-teal-500 text-base-content rounded ">
             {member && (
               <li>
@@ -83,8 +84,8 @@ const Dashboard = () => {
               </>
             )}
           </ul>
-        </div>
-      </div>
+        </div >
+      </div >
     </>
   );
 };

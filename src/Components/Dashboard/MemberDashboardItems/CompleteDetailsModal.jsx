@@ -3,7 +3,7 @@ import React from "react";
 const CompleteDetailsModal = ({ detailsModal }) => {
   const { deadline, task, image, name, status } = detailsModal;
   return (
-    <div>
+    <div className="mx-auto  lg:max-w-3xl xl:max-w-6xl p-6 rounded">
       <input type="checkbox" id="details-modal" className="modal-toggle" />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">

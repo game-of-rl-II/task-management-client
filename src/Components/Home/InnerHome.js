@@ -26,7 +26,7 @@ const InnerHome = () => {
       <div className="drawer drawer-mobile mt-5">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-          <label for="my-drawer" class="btn ml-5 bg-teal-500 drawer-button sm:mb-5 text-white lg:hidden" >
+          <label for="my-drawer" class="btn ml-5 bg-teal-500 drawer-button sm:mb-5 text-white lg:hidden">
             My Teams
           </label>
           <div className="pb-10">
@@ -36,7 +36,7 @@ const InnerHome = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-48 text-base-content rounded" style={{backgroundColor: "#C7CCD2"}}>
+          <ul className="menu p-4 overflow-y-auto w-48 bg-white lg:bg-teal-500 text-base-content rounded">
             {admin?.uid && (
               <>
                 {teams.length !== 0 ? (
@@ -50,7 +50,7 @@ const InnerHome = () => {
                     ))}
                   </>
                 ) : (
-                  <p className="text-center">You have not added a team yet!</p>
+                  <p className="text-center">You have not added a team</p>
                 )}
               </>
             )}
