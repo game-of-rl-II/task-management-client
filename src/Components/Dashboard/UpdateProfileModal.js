@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-const UpdateProfileModal = ({ openUpdateModal, setOpenUpdateModal, refetch, admin }) => {
+const UpdateProfileModal = ({ openUpdateModal, setOpenUpdateModal, refetch, admin, adminProfile }) => {
   const {
     register,
     handleSubmit,
@@ -46,6 +46,7 @@ const UpdateProfileModal = ({ openUpdateModal, setOpenUpdateModal, refetch, admi
                 <div className="md:flex-1 mt-2 mb:mt-0 ">
                   <label className="label font-bold">Your Name</label>
                   <input
+                    defaultValue={adminProfile?.displayName}
                     className="input border-2 input-bordered w-full shadow-inner"
                     name="name"
                     placeholder="Enter Your Name"
@@ -58,6 +59,7 @@ const UpdateProfileModal = ({ openUpdateModal, setOpenUpdateModal, refetch, admi
                 <div className="md:flex-1 mt-2 mb:mt-0 ">
                   <label className="label font-bold">Phone Number</label>
                   <input
+                    defaultValue={adminProfile?.phone}
                     className="input border-2 input-bordered w-full shadow-inner"
                     placeholder="Your contact number"
                     name="number"

@@ -74,6 +74,11 @@ const MyProfile = () => {
 
 
                     </p>
+                    {
+                      admin?.uid && <p>
+                        <strong>Phone: {adminProfile?.phone} </strong>
+                      </p>
+                    }
                     <p>
                       <strong>Email: {admin?.uid ? admin.email : member.memberEmail} </strong>
                     </p>
@@ -112,7 +117,7 @@ const MyProfile = () => {
                 </label>
               </div>
             </form>
-            {openUpdateModal && <UpdateProfileModal openUpdateModal={openUpdateModal} admin={admin} setOpenUpdateModal={setOpenUpdateModal} />}
+            {openUpdateModal && <UpdateProfileModal openUpdateModal={openUpdateModal} admin={admin} adminProfile={adminProfile}setOpenUpdateModal={setOpenUpdateModal} />}
           </div>
         </div>
       </div>

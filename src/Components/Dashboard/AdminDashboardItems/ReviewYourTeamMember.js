@@ -1,20 +1,24 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import { auth } from "../../../Firebase/firebase.init";
 import useNotifyMember from "../../hooks/useNotifyMember";
 
 const ReviewYourTeamMember = () => {
   const [handleNotificationMember] = useNotifyMember()
+  const [admin, adminLoading, adminError] = useAuthState(auth);
+  const adminEmail = admin?.email
   const handleReview = (event) => {
     event.preventDefault();
     const memberId = event.target.memberId.value;
     const description = event.target.description.value;
     const rating = event.target.rating.value;
-    const review = { memberId, description, rating };
+    const review = { memberId, description, rating, adminEmail };
 
     const message = 'You received a review form your admin'
     const success = 'Your review has been added successfully'
 
-    const url = `https://warm-dawn-94442.herokuapp.com/add-review/${memberId}`;
+    const url = `http://localhost:5000/add-review?memberId=${memberId}&adminEmail=${adminEmail}`;
     fetch(url, {
       method: "PUT",
       headers: {

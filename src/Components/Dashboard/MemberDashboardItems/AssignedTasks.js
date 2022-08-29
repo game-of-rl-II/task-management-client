@@ -33,23 +33,7 @@ const AssignedTasks = () => {
   };
 
   const [myTasksColumns] = useMyTasksTable({ setModalData, handleUpdateTaskStatus });
-  // createTheme('solarized', {
-  //   text: {
-  //     primary: '#029743',
-  //     secondary: '#2aa198',
-  //   },
-  //   background: {
-  //     default: '#F7FEE7',
-  //   },
-  //   context: {
-  //     background: '#cb4b16',
-  //     text: '#FFFFFF',
-  //   },
-  //   divider: {
-  //     default: '#CCD1D8',
-  //   },
 
-  // }, 'dark');
 
   return (
     <div>

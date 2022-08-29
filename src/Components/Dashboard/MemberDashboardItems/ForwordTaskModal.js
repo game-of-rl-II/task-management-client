@@ -45,8 +45,8 @@ const ForwordTaskModal = ({ taskForword, setTaskForword }) => {
 
       }).then(res => res.json())
         .then(data => {
-          if(data.acknowledged){
-            handleNotifyAdmin({message, adminEmail, success})
+          if (data.acknowledged) {
+            handleNotifyAdmin({ message, adminEmail, success })
           }
         })
     }

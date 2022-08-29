@@ -1,14 +1,47 @@
 import React, { useEffect, useState } from "react";
-import { auth } from "../../Firebase/firebase.init";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, Outlet, useParams } from "react-router-dom";
+import {toast} from 'react-toastify'
+import { Link, Outlet, useParams, useNavigate } from "react-router-dom";
 import "./Menu.css";
 import useTeams from "../hooks/useTeams";
 import Loading from "../Shared/Loading/Loading";
 import { useQuery } from "react-query";
+import { Alert, Confirm, Prompt } from "react-st-modal";
 
 const Menu = () => {
+  const navigate = useNavigate()
   const { teamName } = useParams();
+
+  const handleDeleteTheTeam = async () => {
+    const result = await Confirm('if you delete the team, you will loss all records related to your team',
+      'Careful!');
+
+    if (result) {
+      const team = await Prompt('Input your team name', {
+        isRequired: true,
+
+      });
+      if (team === teamName) {
+
+        fetch(`http://localhost:5000/delete-team/${teamName}`, {
+          method: 'DELETE',
+
+        }).then(res => res.json())
+          .then(data => {
+            if (data.deleteMembers.acknowledged && data.deleteTeam.acknowledged) {
+              toast.success('Team successfully deleted')
+              navigate('/innerHome')
+            }
+          })
+      }
+      else {
+        await Alert('Team Name did not match', 'Opps!')
+      }
+    }
+  }
+
+
+
+
 
   return (
     <div>
@@ -55,9 +88,8 @@ const Menu = () => {
                 </Link>
               </li>
               <li>
-                <Link className="hover:bg-teal-700" to="settings">
-                  Settings
-                </Link>
+                <button onClick={handleDeleteTheTeam}>Delete</button>
+
               </li>
             </ul>
           </div>
@@ -95,9 +127,8 @@ const Menu = () => {
               </Link>
             </li>
             <li>
-              <Link className="hover:bg-teal-700" to="settings">
-                Settings
-              </Link>
+              <button onClick={handleDeleteTheTeam}>Delete</button>
+
             </li>
           </ul>
         </div>
