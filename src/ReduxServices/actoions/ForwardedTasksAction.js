@@ -4,7 +4,7 @@ import axios from 'axios'
 const getForwardedTasks = (email) => async (dispatch) => {
     dispatch({ type: GET_FORWARDED_TASKS });
     try {
-        const result = await axios.get(`http://localhost:5000/forwarded-task/${email}`);
+        const result = await axios.get(`https://warm-dawn-94442.herokuapp.com/forwarded-task/${email}`);
         dispatch({ type: SUCCESS_FORWARDED_TASKS, payload: result.data });
     } catch (error) {
         dispatch({ type: FAILED_FORWARDED_TASKS, payload: error.message });

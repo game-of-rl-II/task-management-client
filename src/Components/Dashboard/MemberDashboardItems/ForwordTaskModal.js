@@ -23,7 +23,7 @@ const ForwordTaskModal = ({ taskForword, setTaskForword }) => {
     const success = 'Task forwarded successfully'
 
     if (taskInfo.teamName) {
-      fetch('http://localhost:5000/forward-task-api', {
+      fetch('https://warm-dawn-94442.herokuapp.com/forward-task-api', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
@@ -40,7 +40,7 @@ const ForwordTaskModal = ({ taskForword, setTaskForword }) => {
 
     }
     const handleRemoveUncompletedTask = (id) => {
-      fetch(`http://localhost:5000/forward-task/${id}`, {
+      fetch(`https://warm-dawn-94442.herokuapp.com/forward-task/${id}`, {
         method: 'DELETE',
 
       }).then(res => res.json())
