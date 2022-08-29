@@ -1,6 +1,9 @@
 import React from "react";
 
 const ForwordTaskModal = () => {
+  const handleSubmit = (e) => {
+    console.log("object");
+  };
   return (
     <div>
       <label for="forword-task-modal" class="btn modal-button">

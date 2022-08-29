@@ -26,12 +26,11 @@ const Dashboard = () => {
   }
 
   return (
-    
     <>
-      <div className="drawer mt-5 ">
+      <div className="drawer drawer-mobile mt-5 ">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-          <label htmlFor="my-drawer" className="btn ml-5 btn-primary drawer-button">
+          <label htmlFor="my-drawer" class="btn ml-5 bg-teal-500 drawer-button sm:mb-5 text-white lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-white"
@@ -46,31 +45,40 @@ const Dashboard = () => {
           <Outlet></Outlet>
         </div>
         <div className="drawer-side">
-          <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-48 bg-lime-50 text-base-content">
+          <ul className="menu p-4 overflow-y-auto w-48 bg-white lg:bg-teal-500 text-base-content rounded ">
             {member && (
               <li>
-                <Link to="/dashboard">My Profile</Link>
+                <Link className="hover:bg-teal-300 lg:text-white uppercase " to="/dashboard">
+                  My Profile
+                </Link>
               </li>
             )}
 
             {member && (
               <>
                 <li>
-                  <Link to="assignedTasks">My Tasks</Link>
+                  <Link className="hover:bg-teal-300 lg:text-white uppercase" to="assignedTasks">
+                    My Tasks
+                  </Link>
                 </li>
                 <li>
-                  <Link to="completedTask">Completed Tasks</Link>
+                  <Link className="hover:bg-teal-300 lg:text-white uppercase" to="completedTask">
+                    Completed Tasks
+                  </Link>
                 </li>
                 <li>
-                  <Link to="uncompletedTask">Uncompleted Tasks</Link>
+                  <Link className="hover:bg-teal-300 lg:text-white uppercase" to="uncompletedTask">
+                    Uncompleted Tasks
+                  </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="taskForwarding">Task Forwarding</Link>
-                </li>
+                </li> */}
 
                 <li>
-                  <button onClick={handleSignOut}>Log Out</button>
+                  <button className="hover:bg-teal-300 lg:text-white uppercase" onClick={handleSignOut}>
+                    Log Out
+                  </button>
                 </li>
               </>
             )}
@@ -82,5 +90,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-

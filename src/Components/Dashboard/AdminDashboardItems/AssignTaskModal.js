@@ -5,17 +5,19 @@ import "react-day-picker/dist/style.css";
 import useTeamName from "../../hooks/useTeamName";
 import { auth } from "../../../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
+import useNotifyMember from "../../hooks/useNotifyMember";
 const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
   const [admin, adminLoading, adminError] = useAuthState(auth);
   const [date, setDate] = useState(new Date());
   let newDate = <p>{format(date, "PP")}</p>;
   const taskDate = newDate.props.children;
   const { teamName } = useTeamName();
+  const [handleNotificationMember] = useNotifyMember()
   const handleAssignTask = (event) => {
     event.preventDefault();
     const adminEmail = admin?.email
     const name = assignTaskMember.name;
-    const memberId = assignTaskMember.id;
+    const memberId = assignTaskMember?.id;
     const task = event.target.task.value;
     const deadline = event.target.deadline.value;
     const taskCompletion = false;
@@ -29,7 +31,8 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
       taskDate,
       teamName,
     };
-
+    const message = 'A task has been added to you'
+    const success = 'Task assigned successfully'
     const url = "https://warm-dawn-94442.herokuapp.com/assign-task";
     fetch(url, {
       method: "POST",
@@ -40,9 +43,9 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if (data) {
-          toast.success("Task assigned successfully");
+        
+        if (data.acknowledged) {
+          handleNotificationMember({memberId, message, success})
         }
         setAssignTaskMember(null);
       });
@@ -55,9 +58,13 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
     <div>
       <input type="checkbox" id="my-modal-6" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box bg-white border-y-4 border-primary">
+        <div 
+        data-aos="flip-right"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+        class="modal-box bg-white border-y-4 border-teal-500">
           <p class="py-4">Employee Name: {assignTaskMember.name}</p>
-          <p class="py-4">Employee ID: {assignTaskMember._id}</p>
+          <p class="py-4">Employee ID: {assignTaskMember.id}</p>
           <p class="py-4">Task Date: {taskDate}</p>
           <form onSubmit={handleAssignTask}>
             <div className="mb-8">
@@ -91,13 +98,13 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
               </div>
             </div>
             <div class="modal-action">
-              <label for="my-modal-6" class="btn btn-warning btn-sm px-5">
+              <label for="my-modal-6" class="btn btn-error text-white hover:bg-red-600  btn-sm px-5">
                 CANCEL
               </label>
               <button
                 for="my-modal-6"
                 type="submit"
-                class="btn btn-primary text-white btn-sm px-5"
+                class="btn bg-teal-500 hover:bg-teal-700 text-white border-none btn-sm px-5"
               >
                 Assign
               </button>
