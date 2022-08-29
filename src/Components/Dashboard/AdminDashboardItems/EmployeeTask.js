@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import DataTable, { createTheme } from 'react-data-table-component'
+import DataTable, { createTheme } from "react-data-table-component";
 import "react-day-picker/dist/style.css";
 import useTeamName from "../../hooks/useTeamName";
 import EmployeeTaskModalNew from "./EmployeeTaskModalNew";
@@ -7,7 +7,7 @@ import useAssignedTasksTable from "../../Tables/useAssignedTasksTable";
 import { useTableStyles } from "../../Tables/useTableStyles";
 
 const EmployeeTask = () => {
-  const [customTableStyles] = useTableStyles()
+  const [customTableStyles] = useTableStyles();
 
   const [memberTaskModal, setMemberTaskModal] = useState(null);
 
@@ -25,10 +25,8 @@ const EmployeeTask = () => {
     }
   }, [memberTask, teamName]);
 
+  const [assignedTasksColumns] = useAssignedTasksTable({ setMemberTaskModal });
 
-  const [assignedTasksColumns] = useAssignedTasksTable({ setMemberTaskModal })
-
-  
   // createTheme('solarized', {
   //   text: {
   //     primary: '#029743',
@@ -51,7 +49,7 @@ const EmployeeTask = () => {
     <div>
       <div>
         <h1 className="w-44 mx-auto py-1 rounded  bg-teal-500 text-center text-white my-4 font-bold">MEMBERS TASK</h1>
-        <div className="w-3/5 rounded mx-auto">
+        <div className="mx-auto  lg:max-w-3xl xl:max-w-5xl rounded">
           <DataTable customStyles={customTableStyles} columns={assignedTasksColumns} pagination data={memberTask}></DataTable>
         </div>
       </div>

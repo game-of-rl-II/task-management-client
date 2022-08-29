@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { auth } from "../../../Firebase/firebase.init";
 import { useLocation } from "react-router-dom";
 import Loading from "../../Shared/Loading/Loading";
-import "./AddMember.css";
+// import "./AddMember.css";
 import useTeamName from "../../hooks/useTeamName";
 import '../../Entry/Register.css'
 const AddMember = () => {
@@ -77,7 +77,7 @@ const AddMember = () => {
       data-aos-duration="1000"
       className="addMember-form">
       <form onSubmit={handleSubmit}>
-        <div className="my-10 addMember-form-top ">
+        <div className="my-10 addMember-form-top mx-10 w-96">
           <div
 
             className="form-control">
@@ -129,14 +129,15 @@ const AddMember = () => {
             </label>
             <input required type="text" placeholder="Password" className="input shadow input-bordered input-addMember-form" name="password" />
           </div>
-        </div>
-        <div className="addMember-form-bottom">
           <div className="form-control mt-6">
-            <button type="submit" className="btn bg-teal-500 hover:bg-teal-800">
+            <button type="submit" className="btn bg-teal-500 hover:bg-teal-800 w-96">
               Submit
             </button>
           </div>
         </div>
+
+
+
       </form>
     </div>
   );

@@ -44,7 +44,7 @@ const Notification = () => {
           <span className="font-bold text-lg">Notification</span>
           <span className="text-info">{newNotification?.length >= 1 ? <ul>
             {
-              newNotification.slice(0, 3).reverse().map(n => (<><li key={n?._id}>{n.message}</li>
+              newNotification.slice(0, 3).reverse().map(n => (<><li>{n.message}</li>
                 <hr /></>))
             }
           </ul> : 'You have no new notifications'}</span>
