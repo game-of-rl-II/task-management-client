@@ -29,7 +29,7 @@ const useManageMembers = ({setAssignTaskMember, setDeleteMember}) => {
             name: <h2>Delete</h2>,
             selector: member => <>
             {
-                    member?.memberId === '6169176' ? "non removable" : <label
+                    member?.id === '6169176' ? <label>Non removable</label> : <label
 
                       onClick={() => setDeleteMember(member)}
                       htmlFor="EmployeeDelete-modal"
