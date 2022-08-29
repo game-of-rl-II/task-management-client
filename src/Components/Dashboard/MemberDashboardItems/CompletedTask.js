@@ -34,8 +34,8 @@ const CompletedTask = () => {
 
   return (
     <div>
-      <h1 className=" bg-secondary w-40 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Completed Task</h1>
-      <div className="w-full mx-5">
+      <h1 className=" bg-teal-500 w-40 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Completed Task</h1>
+      <div className="w-3/5 rounded mx-auto">
         <DataTable
           columns={completedTasksColumns} data={completedTasks}
           

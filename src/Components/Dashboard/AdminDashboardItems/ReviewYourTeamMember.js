@@ -40,16 +40,16 @@ const ReviewYourTeamMember = () => {
           data-aos="zoom-in"
           data-aos-easing="linear"
           data-aos-duration="1000"
-          className="shadow-xl rounded-xl border-y-4 border-primary px-10 mx-5">
+          className="shadow-xl rounded-xl w-2/4 mx-auto border-y-4 border-teal-500 px-10 ">
           <div className="md:flex">
-            <h2 className="md:w-1/3 uppercase mt-4 tracking-wide text-charcoal-darker font-bold text-sm sm:text-lg mb-6">
+            <h2 className=" uppercase mt-4 tracking-wide text-white font-bold text-sm sm:text-lg mb-6">
               Give a review to your teammate.
             </h2>
           </div>
           <form onSubmit={handleReview}>
             <div className="mb-8">
               <div className="md:flex-1 mt-2 mb:mt-0 ">
-                <label className="block uppercase tracking-wide text-charcoal-darker text-xs font-bold p-2">
+                <label className="block uppercase tracking-wide text-white text-xs font-bold p-2">
                   The member's ID
                 </label>
                 <input
@@ -61,7 +61,7 @@ const ReviewYourTeamMember = () => {
               </div>
               <div
                 className="md:flex-1 mt-2 mb:mt-0 ">
-                <label className="block uppercase tracking-wide text-charcoal-darker text-xs font-bold p-2">
+                <label className="block uppercase tracking-wide text-white text-xs font-bold p-2">
                   Comment
                 </label>
                 <textarea
@@ -74,7 +74,7 @@ const ReviewYourTeamMember = () => {
               <div className="flex justify-end mt-2 mb:mt-0 md:px-3">
                 <div className="md:flex w-full mb-4">
                   <div className="md:flex-1 md:pr-3 mb-4 md:mb-0">
-                    <label className="block uppercase tracking-wide text-charcoal-darker text-xs font-bold">
+                    <label className="block uppercase tracking-wide text-white text-xs font-bold">
                       Review Rating
                     </label>
 
@@ -94,7 +94,7 @@ const ReviewYourTeamMember = () => {
               <div className="md:flex-1 px-3 text-center md:text-right">
                 <button
                   type="submit"
-                  className="btn btn-primary modal-button mb-5 text-white"
+                  className="btn bg-teal-500 hover:bg-teal-800 modal-button mb-5 text-white"
                 >
                   ADD Review
                 </button>

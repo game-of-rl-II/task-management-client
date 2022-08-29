@@ -62,7 +62,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
         data-aos="flip-right"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        class="modal-box bg-white border-y-4 border-primary">
+        class="modal-box bg-white border-y-4 border-teal-500">
           <p class="py-4">Employee Name: {assignTaskMember.name}</p>
           <p class="py-4">Employee ID: {assignTaskMember.id}</p>
           <p class="py-4">Task Date: {taskDate}</p>
@@ -98,13 +98,13 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
               </div>
             </div>
             <div class="modal-action">
-              <label for="my-modal-6" class="btn btn-warning btn-sm px-5">
+              <label for="my-modal-6" class="btn btn-error text-white hover:bg-red-600  btn-sm px-5">
                 CANCEL
               </label>
               <button
                 for="my-modal-6"
                 type="submit"
-                class="btn btn-primary text-white btn-sm px-5"
+                class="btn bg-teal-500 hover:bg-teal-700 text-white border-none btn-sm px-5"
               >
                 Assign
               </button>

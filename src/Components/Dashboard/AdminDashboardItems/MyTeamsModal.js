@@ -38,7 +38,7 @@ const MyTeamsModal = () => {
       });
   };
   return (
-    <div>
+    <div >
       <h3 className="font-bold text-lg">Create a team</h3>
       <form className="" onSubmit={handleSubmit}>
         <div className="form-control">
@@ -67,10 +67,10 @@ const MyTeamsModal = () => {
         </div>
 
         <div class="modal-action">
-          <button type="submit" class="btn btn-primary text-white">
+          <button type="submit" class="btn bg-teal-500 border-none text-white hover:bg-teal-700  btn-sm px-5">
             Create
           </button>
-          <label for="my-modal" class="btn btn-warning">
+          <label for="my-modal" class="btn btn-error text-white hover:bg-red-600  btn-sm px-5">
             Cancel
           </label>
         </div>

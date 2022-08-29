@@ -3,33 +3,33 @@
 const useMyTasksTable = ({ handleUpdateTaskStatus, setModalData }) => {
   const myTasksColumns = [
     {
-      name: <h1>Assign Date</h1>,
+      name: <h1 className="text-black text-lg font-bold">Assign Date</h1>,
       selector: task => <h1>{task.taskDate}</h1>
     },
     {
-      name: <h1>Task Status</h1>,
-      selector: task => <h1 className={task?.taskCompletion ? 'text-green-500' : 'text-red-600'}>{task.taskCompletion ? 'Done' : "pending"}</h1>
+      name: <h1 className="text-black text-lg font-bold">Task Status</h1>,
+      selector: task => <h1 className={task?.taskCompletion ? 'text-green-500 text-lg font-bold' : 'text-red-600'}>{task.taskCompletion ? 'Done' : "pending"}</h1>
     },
     {
-      name: <h1>Task Deadline</h1>,
-      selector: task => <h1>{task.deadline}</h1>
+      name: <h1 className="text-black text-lg font-bold">Task Deadline</h1>,
+      selector: task => <h1 className="text-teal-500 text-lg font-bold">{task.deadline}</h1>
     },
     {
-      name: 'Update',
+      name: <h1 className="text-black text-lg font-bold">Update</h1>,
       selector: task => <button
         onClick={() => handleUpdateTaskStatus(task)}
         disabled={task.taskCompletion === true}
-        className="btn btn-outline btn-primary btn-sm"
+        className="btn bg-teal-500 text-white btn-sm"
       >
         UPDATE
       </button>
     },
     {
-      name: 'View Task',
+      name: <h1 className="text-black text-lg font-bold">View Task</h1>,
       selector: task => <label
         onClick={() => setModalData(task)}
         for="my-modal-3"
-        className="btn btn-outline btn-info btn-sm modal-button"
+        className="btn bg-teal-500 text-white hover:bg-teal-700 border-none btn-sm modal-button"
       >
         View Task
       </label>

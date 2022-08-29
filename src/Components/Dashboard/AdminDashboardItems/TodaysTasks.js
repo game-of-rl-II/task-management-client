@@ -6,6 +6,7 @@ import Loading from '../../Shared/Loading/Loading';
 import EmployeeTaskModalNew from './EmployeeTaskModalNew';
 import DataTable, { createTheme } from 'react-data-table-component'
 import useTodaysTasksTable from '../../Tables/useTodaysTasksTable';
+import { useTableStyles } from '../../Tables/useTableStyles';
 
 
 
@@ -29,7 +30,7 @@ const TodaysTasks = () => {
         }).then((res) => res.json())
     );
 
-
+const [customTableStyles] = useTableStyles()
     const [todaysTasksColumns] = useTodaysTasksTable({ setMemberTaskModal })
 
     // createTheme('solarized', {
@@ -55,9 +56,14 @@ const TodaysTasks = () => {
     }
 
     return (
-        <div class="overflow-x-auto mx-10">
-            <DataTable columns={todaysTasksColumns} pagination data={tasks}></DataTable>
+        <div>
+             <h1 className="w-36 mx-auto py-1 rounded  bg-teal-500 text-center text-white my-4 font-bold">Today's TASK</h1>
+       
+        <div class="w-3/5 rounded mx-auto">
+            <DataTable customStyles={customTableStyles} columns={todaysTasksColumns} pagination data={tasks}></DataTable>
             {memberTaskModal && <EmployeeTaskModalNew memberTaskModal={memberTaskModal} />}
+
+        </div>
         </div>
     );
 };

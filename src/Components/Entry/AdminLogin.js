@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Register.css'
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -75,27 +76,27 @@ const AdminLogin = () => {
           data-aos="zoom-in-left"
           data-aos-easing="linear"
           data-aos-duration="1000"
-          className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-primary p-7"
+          className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-teal-600 p-7"
         >
-          <h1 className="text-3xl font-bold text-neutral text-center">
+          <h1 className="text-3xl font-bold text-white text-center">
             Admin Login
           </h1>
-          <p className="py-6 text-center text-gray-500">
+          <p className="py-6 text-center text-white">
             Hello Admin, Log in now to manage your team works. If you are
             already registered you must have an email and password. Use them for
             login. If you did not register yet,{" "}
             <span>
-              <Link to="/register" className="text-primary">
+              <Link to="/register" className="text-teal-300">
                 Click here.
               </Link>
             </span>
           </p>
           <hr className="pb-4" />
           <div>
-            <p className="text-center p-5 text-gray-500 font-bold">
+            <p className="text-center p-5 text-white font-bold">
               Are you a member?{" "}
               <span>
-                <Link to="/employeeLogin" className="text-primary">
+                <Link to="/employeeLogin" className="text-teal-300">
                   Login here.
                 </Link>
               </span>
@@ -107,10 +108,10 @@ const AdminLogin = () => {
           data-aos="zoom-in-right"
           data-aos-easing="linear"
           data-aos-duration="1000"
-        className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-primary">
+        className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-teal-600">
           <div className="card-body">
             <div className="form-control">
-              <h1 className="text-3xl font-bold text-neutral">Admin Login</h1>
+              <h1 className="text-3xl font-bold text-center text-neutral">Admin Login</h1>
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
@@ -118,7 +119,7 @@ const AdminLogin = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 type="text"
                 placeholder="email"
-                className="input input-bordered w-full"
+                className="input input-bordered shadow w-full"
               />
             </div>
             <div className="form-control">
@@ -130,7 +131,7 @@ const AdminLogin = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   type={passwordIcon ? "text" : "password"}
                   placeholder="password"
-                  className="input input-bordered w-full"
+                  className="input input-bordered shadow w-full"
                 />
                 <button className="btn-icon" onClick={toggleButton}>
                   {passwordIcon ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
@@ -138,7 +139,7 @@ const AdminLogin = () => {
               </div>
               <label className="label">
                 <button
-                  className="hover:text-green-500"
+                  className="hover:text-teal-500"
                   onClick={handlePasswordReset}
                 >
                   Reset password
@@ -149,7 +150,7 @@ const AdminLogin = () => {
             <div className="form-control mt-6">
               <button
                 onClick={handleLogin}
-                className="btn btn-primary modal-button mb-5 text-white"
+                className="btn bg-teal-500 hover:bg-teal-800 border-none modal-button mb-5 text-white"
               >
                 Login
               </button>

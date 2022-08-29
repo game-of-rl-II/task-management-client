@@ -29,35 +29,18 @@ const ManageEmployee = () => {
 
   const [manageMembersColumns] = useManageMembers({ setAssignTaskMember, setDeleteMember })
 
-  // createTheme('solarized', {
-  //   text: {
-  //     primary: '#029743',
-  //     secondary: '#2aa198',
-  //   },
-  //   background: {
-  //     default: '#F7FEE7',
-  //   },
-  //   context: {
-  //     background: '#029743',
-  //     text: '#E2E8F0',
-  //   },
-  //   divider: {
-  //     default: '#E2E8F0',
-  //   },
-
-  // }, 'dark');
-
+  const [customTableStyles] =useManageMembers({})
   if (adminLoading || isLoading) {
     return <Loading />;
   }
   return (
     <div>
-      <h1 className=" bg-secondary w-52 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
+      <h1 className=" bg-teal-500 w-56 mx-auto py-1 rounded  text-center text-white my-8 font-bold">
         MANAGE ALL MEMBER
       </h1>
-      <div className="mx-5">
+      <div className="w-4/6 rounded mx-auto">
 
-        <DataTable columns={manageMembersColumns} data={members}></DataTable>
+        <DataTable customTableStyles={customTableStyles} columns={manageMembersColumns} data={members}></DataTable>
       </div>
       {assignTaskMember && (
         <AssignTaskModal

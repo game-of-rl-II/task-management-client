@@ -50,8 +50,8 @@ const EmployeeTask = () => {
   return (
     <div>
       <div>
-        <h1 className=" bg-secondary w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">MEMBERS TASK</h1>
-        <div className="mx-5">
+        <h1 className="w-44 mx-auto py-1 rounded  bg-teal-500 text-center text-white my-4 font-bold">MEMBERS TASK</h1>
+        <div className="w-3/5 rounded mx-auto">
           <DataTable customStyles={customTableStyles} columns={assignedTasksColumns} pagination data={memberTask}></DataTable>
         </div>
       </div>

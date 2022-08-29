@@ -38,12 +38,12 @@ const Navbar = () => {
 
   return (
     <div className="mx-auto">
-      <div className="navbar relative p-5 flex flex-col md:flex-row gap-y-4 bg-lime-100">
+      <div className="navbar relative p-5 flex flex-col md:flex-row gap-y-4 rl-bg">
         <div className="flex-1">
           <Link to="/" className="text-black">
 
-            <span className="p-2 rounded text-2xl font-bold text-white bg-primary">TMT</span>{" "}
-            <span className='logo text-slate-700 font-serif font-bold'>Task Management Tool</span>
+            <span className="p-2 rounded text-2xl font-bold hover:bg-teal-800 text-white bg-teal-500">TMT</span>{" "}
+            <span className='logo text-teal-300 font-serif font-bold'>Task Management Tool</span>
 
           </Link>
         </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
               <>
                 <li>
                   <Link
-                    className="nav-button text-white font-bold mr-3 bg-primary"
+                    className="nav-button hover:bg-teal-800 text-white font-bold mr-3 bg-teal-500"
                     to="/adminLogin"
                   >
                     Admin Login
@@ -61,7 +61,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    className="nav-button text-white font-bold mr-3 bg-primary"
+                    className="nav-button text-white hover:bg-teal-800 font-bold mr-3 bg-teal-500"
                     to="/employeeLogin"
                   >
                     Member Login
@@ -77,7 +77,7 @@ const Navbar = () => {
                 <li>
                   <Link
 
-                    className="nav-button text-white mr-3 btn btn-primary"
+                    className="nav-button text-white mr-3 btn hover:bg-teal-800  bg-teal-500"
                     to={`${admin?.uid ? '/myProfile' : '/dashboard'}`}
 
                   >
@@ -87,7 +87,7 @@ const Navbar = () => {
                 <li>
                   <button
                     onClick={handleLogOut}
-                    className="nav-button text-white font-bold mr-3 bg-primary"
+                    className="nav-button text-white font-bold mr-3 hover:bg-teal-800  bg-teal-500"
                   >
                     Log out
                   </button>
