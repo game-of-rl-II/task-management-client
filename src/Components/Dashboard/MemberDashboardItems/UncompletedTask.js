@@ -4,29 +4,13 @@ import DataTable, { createTheme } from "react-data-table-component";
 // import TaskModal from './TaskModal';
 import UncompletedTaskModal from "./UncompletedTaskModal";
 import useUncompletedTasksTable from "../../Tables/useUnCompletedTasksTable";
+import ForwordTaskModal from "./ForwordTaskModal";
 
 const UncompletedTask = () => {
   const [taskData, setTaskData] = useState(null);
-  const [unCompletedTasksColumns] = useUncompletedTasksTable({ setTaskData });
+  const [taskForword, setTaskForword] = useState(null);
   const { unCompletedTasks } = useTask();
-
-  // createTheme('solarized', {
-  //   text: {
-  //     primary: '#029743',
-  //     secondary: '#2aa198',
-  //   },
-  //   background: {
-  //     default: '#ECFCCB',
-  //   },
-  //   context: {
-  //     background: '#cb4b16',
-  //     text: '#FFFFFF',
-  //   },
-  //   divider: {
-  //     default: '#C1C6CD',
-  //   },
-
-  // }, 'dark');
+  const [unCompletedTasksColumns] = useUncompletedTasksTable({ setTaskForword, setTaskData });
 
   return (
     <div className="">
@@ -35,6 +19,7 @@ const UncompletedTask = () => {
         <DataTable columns={unCompletedTasksColumns} data={unCompletedTasks}></DataTable>
       </div>
       {taskData && <UncompletedTaskModal taskData={taskData} setTaskData={setTaskData} />}
+      {taskForword && <ForwordTaskModal taskForword={taskForword} setTaskForword={setTaskForword} />}
     </div>
   );
 };
