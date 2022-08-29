@@ -14,13 +14,11 @@ const EmployeeLogin = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    document.getElementById("footer").style.display = "none";
-  });
+ 
 
   const handleLogin = () => {
     if (id) {
-      fetch(`http://localhost:5000/member-login/${id}`, {
+      fetch(`https://warm-dawn-94442.herokuapp.com/member-login/${id}`, {
         method: "GET",
       })
         .then((res) => res.json())

@@ -28,7 +28,7 @@ const HomeBanner = () => {
       toast.error(googleAdminError.message)
     );
   }
-  
+
   if (admin || googleAdmin) {
     // toast.success("Successfully Signed In")
     return navigate('/innerHome')
@@ -40,8 +40,8 @@ const HomeBanner = () => {
   return (
     <div className="home-banner-parent"  >
       <div className="banner-left-side" data-aos="fade-down-right"
-    data-aos-easing="linear"
-    data-aos-duration="1000">
+        data-aos-easing="linear"
+        data-aos-duration="1000">
         <h2 className="text-3xl font-bold text-white font-serif">
           The one place for all your projects and team collaboration
         </h2>
@@ -142,29 +142,29 @@ const HomeBanner = () => {
         </ul>
       </div>
       <div className="banner-right-side" data-aos="fade-down-left"
-    data-aos-easing="linear"
-    data-aos-duration="1000">
+        data-aos-easing="linear"
+        data-aos-duration="1000">
         {!admin?.uid && !member && (
           <div className="w-full">
             <div>
               <div className="banner-image">
-                <img className="ml-10" style={{width: "80%"}} src={login2} alt="" />
+                <img className="ml-10" style={{ width: "80%" }} src={login2} alt="" />
               </div>
-              
+
             </div>
-            <div className="lg:ml-40 ml-12">
+            <div className="lg:ml-12 ml-12">
               <button
                 onClick={() => navigate("/register")}
-                className=" btn bg-teal-500 hover:bg-teal-800   text-white lg:w-3/5"
+                className=" btn bg-teal-500 hover:bg-teal-800   text-white lg:w-4/5"
               >
                 Register with email
               </button>
-              </div>
-            <div>
-              <p className="text-center text-white mr-10">or</p>
             </div>
-            <div className="lg:ml-40 ml-12">
-              <button onClick={() => signInWithGoogle()} className=" btn hover:bg-teal-500 text-white  lg:w-3/5 btn-outline">
+            <div>
+              <p className="text-center text-white mr-2">or</p>
+            </div>
+            <div className="lg:ml-12 ml-12">
+              <button onClick={() => signInWithGoogle()} className=" btn hover:bg-teal-500 text-white  lg:w-4/5 btn-outline">
                 Continue with google
               </button>
             </div>

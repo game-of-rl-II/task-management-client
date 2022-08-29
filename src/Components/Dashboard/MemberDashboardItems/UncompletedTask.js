@@ -4,10 +4,12 @@ import DataTable, { createTheme } from 'react-data-table-component'
 // import TaskModal from './TaskModal';
 import UncompletedTaskModal from "./UncompletedTaskModal";
 import useUncompletedTasksTable from "../../Tables/useUnCompletedTasksTable";
+import ForwordTaskModal from "./ForwordTaskModal";
 
 const UncompletedTask = () => {
   const [taskData, setTaskData] = useState(null);
-  const [unCompletedTasksColumns] = useUncompletedTasksTable({ setTaskData })
+  const [forwardedTaskData, setForwardedTaskData] = useState(null)
+  const [unCompletedTasksColumns] = useUncompletedTasksTable({ setTaskData, setForwardedTaskData })
   const { unCompletedTasks } = useTask()
 
   // createTheme('solarized', {
@@ -31,11 +33,13 @@ const UncompletedTask = () => {
   return (
     <div>
       <h1 className=" bg-teal-500 w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Uncompleted Task</h1>
-      <div  className="w-3/5 rounded mx-auto ">
+      <div className="w-3/5 rounded mx-auto ">
 
         <DataTable columns={unCompletedTasksColumns} data={unCompletedTasks} ></DataTable>
       </div>
       {taskData && <UncompletedTaskModal taskData={taskData} setTaskData={setTaskData} />}
+      {forwardedTaskData && <ForwordTaskModal taskData={taskData} setTaskData={setTaskData} />}
+
     </div>
   );
 };

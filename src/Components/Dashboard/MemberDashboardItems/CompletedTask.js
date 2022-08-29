@@ -10,7 +10,7 @@ const CompletedTask = () => {
   const { completedTasks } = useTask()
   const [completedTasksColumns] = useCompletedTasksTable(setDetailsModal)
 
-  // using theme 
+  
 
   // createTheme('solarized', {
   //   text: {

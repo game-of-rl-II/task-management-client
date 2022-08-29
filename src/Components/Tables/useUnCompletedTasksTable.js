@@ -1,4 +1,4 @@
-const useUncompletedTasksTable = ({setTaskData}) => {
+const useUncompletedTasksTable = ({setTaskData, setForwardedTaskData}) => {
     const unCompletedTasksColumns = [
         {
             name: <h2 className="text-black text-lg font-bold">Assign Date</h2>,
@@ -16,9 +16,9 @@ const useUncompletedTasksTable = ({setTaskData}) => {
         },
         {
             name: <h2 className="text-black text-lg font-bold">Forward</h2>,
-            selector: utc => <h2><button className="btn btn-outline btn-success btn-sm">
-                FORWARD
-            </button></h2>,
+            selector: utc => <label onClick={() => setForwardedTaskData(utc)} for="my-modal-6" className="btn modal-button btn-outline btn-success btn-sm">
+            Forwarded
+          </label>,
         },
     ]
     return [unCompletedTasksColumns];
