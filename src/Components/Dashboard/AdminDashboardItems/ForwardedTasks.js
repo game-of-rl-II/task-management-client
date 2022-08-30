@@ -13,7 +13,7 @@ const ForwardedTasks = () => {
   // const [admin, adminLoading, AdminError] = useAuthState(auth);
   const { teamName } = useTeamName();
   const [forwardTaskViewMessage, setForwardTaskViewMessage] = useState(null);
-  console.log(teamName);
+  
   // const email = admin?.email;
   const { isLoading, data, error } = useSelector((state) => state);
 
