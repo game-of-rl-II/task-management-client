@@ -27,6 +27,7 @@ const ForwordTaskModal = ({ taskForword, setTaskForword }) => {
 
     const message = `${name} (${memberId})  has forwarded his task`;
     const success = "Task forwarded successfully";
+    const navLink = `/innerHome/${teamName}/forwardedTask`
 
     if (taskInfo.teamName) {
       fetch("https://warm-dawn-94442.herokuapp.com/forward-task-api", {
@@ -51,7 +52,7 @@ const ForwordTaskModal = ({ taskForword, setTaskForword }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {
-            handleNotifyAdmin({ message, adminEmail, success });
+            handleNotifyAdmin({ message, adminEmail, success, navLink });
           }
         });
     };

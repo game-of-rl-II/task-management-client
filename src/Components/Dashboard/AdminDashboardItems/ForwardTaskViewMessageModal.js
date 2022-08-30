@@ -1,12 +1,9 @@
 import React from "react";
 
 const ForwardTaskViewMessageModal = ({ forwardTaskViewMessage }) => {
-  console.log(forwardTaskViewMessage);
   return (
     <div>
-      <label for="forward-task-view-message" class="btn modal-button">
-        view message
-      </label>
+
 
       <input type="checkbox" id="forward-task-view-message" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">

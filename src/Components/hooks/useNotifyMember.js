@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 
 const useNotifyMember = () => {
-    const handleNotificationMember = ({ memberId, message, success }) => {
+    const handleNotificationMember = ({ memberId, message, success, navLink }) => {
         fetch('https://warm-dawn-94442.herokuapp.com/notification-member', {
             method: "POST",
             headers: {
@@ -15,19 +15,19 @@ const useNotifyMember = () => {
                 if (data.acknowledged) {
                     setTimeout(() => {
 
-                        handleArchiveNotificationMember({ memberId, message, success })
+                        handleArchiveNotificationMember({ memberId, message, success, navLink })
                     }, 1000)
 
                 }
             });
     }
-    const handleArchiveNotificationMember = ({ memberId, message, success }) => {
+    const handleArchiveNotificationMember = ({ memberId, message, success, navLink }) => {
         fetch('https://warm-dawn-94442.herokuapp.com/notification-archive-member', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
             },
-            body: JSON.stringify({ memberId, message, success }),
+            body: JSON.stringify({ memberId, message, navLink }),
         })
             .then((res) => res.json())
             .then((data) => {

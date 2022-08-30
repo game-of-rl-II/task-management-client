@@ -8,24 +8,20 @@ const EmployeeResetModal = () => {
     const handleReset = (event) => {
         event.preventDefault();
 
-        const message = 'one of your team mates forgot his password'
-        const success = 'Your admin will contact you'
 
         const userId = event.target.userId.value;
+        const teamName = event.target.teamName.value;
+
         const adminEmail = event.target.adminEmail.value;
-
-
-        const forReset = {
-            userId,
-            adminEmail,
-            message
-        };
+        const message = `One of your teammates holding the id: ${userId} has lost his password`
+        const success = 'Your admin will contact you'
+        const navLink = `/innerHome/${teamName}/manageEmployee`
 
         // console.log(forReset);
-        handleNotification({ message, adminEmail, success })
-        
+        handleNotification({ message, adminEmail, success, navLink })
 
-        
+
+
 
     }
 
@@ -52,6 +48,12 @@ const EmployeeResetModal = () => {
                                     name="adminEmail"
                                     className="w-full shadow-inner p-4 border-0 rounded-xl mb-5 outline-green-500"
                                     placeholder=" Enter Your Admin Email"
+                                ></input>
+                                <input
+                                    required
+                                    name="teamName"
+                                    className="w-full shadow-inner p-4 border-0 rounded-xl mb-5 outline-green-500"
+                                    placeholder=" Enter Your Team Name"
                                 ></input>
                             </div>
                         </div>

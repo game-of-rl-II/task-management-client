@@ -20,7 +20,7 @@ const AllNotifications = () => {
     const [notificationsTableColumns] = useNotificationsTable();
     const notification = [...data].reverse()
     if (isLoading || adminLoading) {
-        return <p>...</p>;
+        return <></>;
     }
     if (error) {
         alert(error.message);

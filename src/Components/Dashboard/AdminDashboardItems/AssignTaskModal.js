@@ -33,6 +33,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
     };
     const message = 'A task has been added to you'
     const success = 'Task assigned successfully'
+    const navLink ='/dashboard/assignedTasks'
     const url = "https://warm-dawn-94442.herokuapp.com/assign-task";
     fetch(url, {
       method: "POST",
@@ -45,7 +46,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
       .then((data) => {
         
         if (data.acknowledged) {
-          handleNotificationMember({memberId, message, success})
+          handleNotificationMember({memberId, message, success, navLink})
         }
         setAssignTaskMember(null);
       });
