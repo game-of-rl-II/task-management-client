@@ -18,7 +18,7 @@ const ReviewYourTeamMember = () => {
     const message = 'You received a review form your admin'
     const success = 'Your review has been added successfully'
 
-    const url = `http://localhost:5000/add-review?memberId=${memberId}&adminEmail=${adminEmail}`;
+    const url = `https://warm-dawn-94442.herokuapp.com/add-review?memberId=${memberId}&adminEmail=${adminEmail}`;
     fetch(url, {
       method: "PUT",
       headers: {
