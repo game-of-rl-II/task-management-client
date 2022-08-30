@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 import { Link, Outlet, useParams, useNavigate } from "react-router-dom";
 import "./Menu.css";
 import useTeams from "../hooks/useTeams";
@@ -22,7 +22,7 @@ const Menu = () => {
       });
       if (team === teamName) {
 
-        fetch(`http://localhost:5000/delete-team/${teamName}`, {
+        fetch(`https://warm-dawn-94442.herokuapp.com/delete-team/${teamName}`, {
           method: 'DELETE',
 
         }).then(res => res.json())
