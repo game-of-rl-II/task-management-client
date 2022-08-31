@@ -19,15 +19,17 @@ const AssignedTasks = () => {
     const adminEmail = task?.adminEmail;
     const id = task?._id;
     const name = task?.name;
+    const teamName = task?.teamName;
     const message = `${name} has updated his task status`;
     const success = "Successfully updated";
+    const navLink = `/innerHome/${teamName}/employeeTask`
     fetch(`https://warm-dawn-94442.herokuapp.com/task-member/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          handleNotification({ message, adminEmail, success });
+          handleNotification({ message, adminEmail, success, navLink });
         }
       });
   };

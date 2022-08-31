@@ -2,55 +2,60 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import useNotifyAdmin from "../../hooks/useNotifyAdmin";
 
-
 const ForwordTaskModal = ({ taskForword, setTaskForword }) => {
   const [issue, setIssue] = useState("");
-  const [handleNotifyAdmin] = useNotifyAdmin()
+  const [handleNotifyAdmin] = useNotifyAdmin();
   const handleForward = (taskInfo) => {
     const adminEmail = taskInfo.adminEmail;
     const memberId = taskInfo.memberId;
     const deadline = taskInfo.deadline;
-    const name = taskInfo.name
-    const task = taskInfo.task
-    const teamName = taskInfo.teamName
-    const taskDate = taskInfo.taskDate
+    const name = taskInfo.name;
+    const task = taskInfo.task;
+    const teamName = taskInfo.teamName;
+    const taskDate = taskInfo.taskDate;
 
     const info = {
-      adminEmail, memberId, deadline, name, task, teamName, taskDate, issue
-    }
+      adminEmail,
+      memberId,
+      deadline,
+      name,
+      task,
+      teamName,
+      taskDate,
+      issue,
+    };
 
-    const message = `${name} (${memberId})  has forwarded his task`
-    const success = 'Task forwarded successfully'
+    const message = `${name} (${memberId})  has forwarded his task`;
+    const success = "Task forwarded successfully";
+    const navLink = `/innerHome/${teamName}/forwardedTask`
 
     if (taskInfo.teamName) {
-      fetch('https://warm-dawn-94442.herokuapp.com/forward-task-api', {
-        method: 'POST',
+      fetch("https://warm-dawn-94442.herokuapp.com/forward-task-api", {
+        method: "POST",
         headers: {
-          'content-type': 'application/json'
+          "content-type": "application/json",
         },
-        body: JSON.stringify(info)
-      }).then(res => res.json())
-        .then(data => {
+        body: JSON.stringify(info),
+      })
+        .then((res) => res.json())
+        .then((data) => {
           if (data.acknowledged) {
-
-            setTaskForword(null)
-            handleRemoveUncompletedTask(taskInfo?._id)
+            setTaskForword(null);
+            handleRemoveUncompletedTask(taskInfo?._id);
           }
-        })
-
+        });
     }
     const handleRemoveUncompletedTask = (id) => {
       fetch(`https://warm-dawn-94442.herokuapp.com/forward-task/${id}`, {
-        method: 'DELETE',
-
-      }).then(res => res.json())
-        .then(data => {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
           if (data.acknowledged) {
-            handleNotifyAdmin({ message, adminEmail, success })
+            handleNotifyAdmin({ message, adminEmail, success, navLink });
           }
-        })
-    }
-
+        });
+    };
   };
   return (
     <div>

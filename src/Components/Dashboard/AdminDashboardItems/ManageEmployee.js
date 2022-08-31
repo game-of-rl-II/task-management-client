@@ -35,9 +35,10 @@ const ManageEmployee = () => {
   }
   return (
     <div>
+
       <h1 className=" bg-teal-500 w-56 mx-auto py-1 rounded  text-center text-white my-8 font-bold">MANAGE ALL MEMBER</h1>
       <div className="mx-auto  lg:max-w-3xl xl:max-w-5xl rounded">
-        <DataTable customTableStyles={customTableStyles} columns={manageMembersColumns} data={members}></DataTable>
+        <DataTable customTableStyles={customTableStyles} columns={manageMembersColumns} data={members} pagination></DataTable>
       </div>
       {assignTaskMember && <AssignTaskModal assignTaskMember={assignTaskMember} setAssignTaskMember={setAssignTaskMember} />}
       {deleteMember && <EmployeeDeleteModal refetch={refetch} deleteMember={deleteMember} />}

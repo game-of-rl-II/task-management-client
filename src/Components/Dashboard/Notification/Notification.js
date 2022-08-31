@@ -51,7 +51,7 @@ const Notification = () => {
           <div className="card-actions">
 
             {
-              newNotification?.length >= 1 ? <button onClick={handleClearNotification} className="btn btn-primary btn-block">View All</button> : <button className="btn btn-primary btn-block" onClick={() => { navigate('/allNotifications') }}>View Previous Notifications</button>
+              newNotification?.length >= 1 ? <button onClick={handleClearNotification} className="btn btn-primary btn-block">View Details</button> : <button className="btn btn-primary btn-block" onClick={() => { navigate('/allNotifications') }}>View Previous Notifications</button>
             }
 
           </div>

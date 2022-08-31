@@ -17,7 +17,7 @@ const useUncompletedTasksTable = ({ setTaskData, setTaskForword }) => {
       ),
     },
     {
-      name: <h2 className="text-black text-lg font-bold">Forward</h2>,
+      name: <h2 className="text-black text-lg font-bold">Forward 2</h2>,
       selector: (utc) => (
         <label onClick={() => setTaskForword(utc)} for="forword-task-modal" className="btn modal-button btn-outline btn-success btn-sm">
           Forward

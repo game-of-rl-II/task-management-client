@@ -17,6 +17,7 @@ const ReviewYourTeamMember = () => {
 
     const message = 'You received a review form your admin'
     const success = 'Your review has been added successfully'
+    const navLink= '/dashboard'
 
     const url = `https://warm-dawn-94442.herokuapp.com/add-review?memberId=${memberId}&adminEmail=${adminEmail}`;
     fetch(url, {
@@ -30,7 +31,7 @@ const ReviewYourTeamMember = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          handleNotificationMember({ memberId, message, success })
+          handleNotificationMember({ memberId, message, success, navLink})
         }
         else if (data.message) {
           toast.error(data.message)
