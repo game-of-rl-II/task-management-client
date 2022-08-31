@@ -4,25 +4,25 @@
 
 .App {
   text-align: center;
+}
+
+.font-family{
   font-family: 'Poppins', sans-serif;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-  font-family: 'Poppins', sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
-  font-family: 'Poppins', sans-serif;
   }
 }
 .rl-bg{
  
 background:  linear-gradient(to right, #24243e, #302b63, #0f0c29); 
-  font-family: 'Poppins', sans-serif;
 
 
 }
@@ -35,12 +35,10 @@ background:  linear-gradient(to right, #24243e, #302b63, #0f0c29);
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  font-family: 'Poppins', sans-serif;
 }
 
 .App-link {
   color: #61dafb;
-  font-family: 'Poppins', sans-serif;
 }
 
 @keyframes App-logo-spin {

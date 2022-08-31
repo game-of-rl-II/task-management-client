@@ -44,7 +44,7 @@ const Navbar = () => {
             <span className="p-2 rounded text-2xl font-bold hover:bg-teal-800 text-white bg-teal-500">
               TMT
             </span>{" "}
-            <span className="logo text-teal-300 font-serif font-bold">
+            <span className="logo text-teal-300 font-family font-bold">
               Task Management Tool
             </span>
           </Link>

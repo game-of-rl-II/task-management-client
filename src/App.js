@@ -38,7 +38,7 @@ import AboutUs from "./Components/AboutUs/AboutUs";
 
 function App() {
   return (
-    <div className="rl-bg font-serif">
+    <div className="rl-bg font-family">
       <Navbar></Navbar>
       <Routes>
         <Route path="/home" element={<Home></Home>}></Route>

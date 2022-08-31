@@ -11,31 +11,27 @@ import { toast } from "react-toastify";
 const HomeBanner = () => {
   const navigate = useNavigate();
   const [admin, adminLoading, adminError] = useAuthState(auth);
-  const [signInWithGoogle, googleAdmin, googleAdminLoading, googleAdminError] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, googleAdmin, googleAdminLoading, googleAdminError] =
+    useSignInWithGoogle(auth);
   const member = localStorage.getItem("member");
 
-
   if (adminLoading || googleAdminLoading) {
-    return <Loading />
+    return <Loading />;
   }
   if (adminError) {
-    return (
-      toast.error(adminError.message)
-    );
+    return toast.error(adminError.message);
   }
   if (googleAdminError) {
-    return (
-      toast.error(googleAdminError.message)
-    );
+    return toast.error(googleAdminError.message);
   }
 
   if (admin || googleAdmin) {
     // toast.success("Successfully Signed In")
-    return navigate('/innerHome')
+    return navigate("/innerHome");
   }
   if (member) {
     // toast.success("Successfully Signed In")
-    return navigate('/dashboard')
+    return navigate("/dashboard");
   }
   return (
     <div className="home-banner-parent">
@@ -45,7 +41,7 @@ const HomeBanner = () => {
         data-aos-easing="linear"
         data-aos-duration="1000"
       >
-        <h2 className="text-3xl font-bold text-white font-serif">
+        <h2 className="text-3xl font-bold text-white font-family">
           The one place for all your projects and team collaboration
         </h2>
         <ul className="mt-10">
@@ -64,7 +60,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-300 font-serif">
+            <p className="ml-3 text-slate-300 font-family">
               All the tools your team needs put{" "}
               <span style={{ color: "#29274D", backgroundColor: "#3CBDAB" }}>
                 under one roof
@@ -86,7 +82,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-300 font-serif">
+            <p className="ml-3 text-slate-300 font-family">
               <span style={{ color: "#29274D", backgroundColor: "#3CBDAB" }}>
                 Ultimate control
               </span>{" "}
@@ -108,7 +104,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-300 font-serif">
+            <p className="ml-3 text-slate-300 font-family">
               On time{" "}
               <span style={{ color: "#29274D", backgroundColor: "#3CBDAB" }}>
                 project delivery
@@ -134,7 +130,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-300 font-serif">
+            <p className="ml-3 text-slate-300 font-family">
               <span style={{ color: "#29274D", backgroundColor: "#3CBDAB" }}>
                 Easy-to-understand
               </span>{" "}
@@ -156,7 +152,7 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-300 font-serif">
+            <p className="ml-3 text-slate-300 font-family">
               <span style={{ color: "#29274D", backgroundColor: "#3CBDAB" }}>
                 Free
               </span>{" "}
