@@ -14,10 +14,10 @@ const ContactUs = () => {
 
       emailjs
         .sendForm(
-          "service_cnm8pyb",
-          "template_vx4l4a3",
+          "service_axfd09h",
+          "template_9b9k42b",
           form.current,
-          "zB9NtTA21ptk1JGDA"
+          "oiUui3aGgZZY8ztTs"
         )
         .then(
           (result) => {
@@ -34,9 +34,9 @@ const ContactUs = () => {
       <div class="hero-content mx-auto flex-col lg:flex-row-reverse">
         <div data-aos="fade-up" data-aos-duration="2000" class="lg:ml-24 ">
           <h1 class="text-3xl font-bold text-white">Contact with TMT</h1>
-          <p class=" text-white  ">Address: Hathazari, Chittagong</p>
-          <p class=" text-white ">Phone: +8801820082894</p>
-          <p class=" text-white ">Email: arifulislam64743@gmail.com</p>
+          <p class=" text-white  ">Address: Boalkhali, Chittagong</p>
+          <p class=" text-white ">Phone: +8801608250777</p>
+          <p class=" text-white ">Email: jewelnabin@gmail.com</p>
         </div>
         <div class=" flex-shrink-0 w-full max-w-sm shadow-2xl">
           <div data-aos="fade-up" data-aos-duration="2000" class="card-body">
