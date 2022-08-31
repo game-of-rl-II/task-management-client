@@ -1,5 +1,6 @@
 import React from "react";
 import About from "./About";
+import ContactUs from "./ContactUs";
 import FAQ from "./FAQ";
 import Feature from "./Feature";
 import GetInTouch from "./GetInTouch";
