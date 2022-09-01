@@ -8,7 +8,7 @@ import nabin from "../../Images/nabin.jpg";
 import "./AboutUs.css";
 function AboutUs() {
   return (
-    <div className="font-serif mb-6">
+    <div className="font-family mb-6">
       <h1 className="text-primary about">About Our Team Members</h1>
       <div className="tmtabout">
         <div
@@ -24,7 +24,7 @@ function AboutUs() {
             <div class="card-body">
               <h2 class="card-title">Name: Md Al Amin Hossain</h2>
               <h4>Email:hossainalamin1246@gmail.com</h4>
-              <p class="text-slate-500 font-serif">
+              <p class="text-slate-500 font-family">
                 Contact Number:01627948044
               </p>
             </div>
@@ -42,7 +42,7 @@ function AboutUs() {
             <div class="card-body">
               <h2 class="card-title">Name: Md Faridul Haque Murshed</h2>
               <h4>Email:faridulhaquemurshed@gmail.com</h4>
-              <p class="text-slate-500 font-serif">
+              <p class="text-slate-500 font-family">
                 Contact Number:01996438234
               </p>
             </div>
@@ -60,7 +60,7 @@ function AboutUs() {
             <div class="card-body">
               <h2 class="card-title">Name: Md Ariful Islam Shuvo</h2>
               <h4>Email:arifulislams063@gmail.com</h4>
-              <p class="text-slate-500 font-serif">
+              <p class="text-slate-500 font-family">
                 Contact Number:01838404512
               </p>
             </div>
@@ -78,7 +78,7 @@ function AboutUs() {
             <div class="card-body">
               <h2 class="card-title">Name: Md Ariful Islam</h2>
               <h4>Email:arifulislam64743@gmail.com</h4>
-              <p class="text-slate-500 font-serif">
+              <p class="text-slate-500 font-family">
                 Contact Number:01820082894
               </p>
             </div>
@@ -96,7 +96,7 @@ function AboutUs() {
             <div class="card-body">
               <h2 class="card-title">Name: Md Arifur Rahman</h2>
               <h4>Email:arifurr231@gmail.com</h4>
-              <p class="text-slate-500 font-serif">
+              <p class="text-slate-500 font-family">
                 Contact Number:01793911158
               </p>
             </div>
@@ -114,7 +114,7 @@ function AboutUs() {
             <div class="card-body">
               <h2 class="card-title">Name: Mohammad Jewel</h2>
               <h4>Email:jewelnabin@gmail.com</h4>
-              <p class="text-slate-600 font-serif">
+              <p class="text-slate-600 font-family">
                 Contact Number:01608250777
               </p>
             </div>

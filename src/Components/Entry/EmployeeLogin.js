@@ -40,14 +40,13 @@ const EmployeeLogin = () => {
 
   return (
     <div className="hero min-h-screen">
-      <div 
-        className="hero-content flex-col lg:flex-row-reverse "
-      >
+      <div className="hero-content flex-col lg:flex-row-reverse w-full rounded-xl">
         <div
-        data-aos="fade-left"
-        data-aos-easing="linear"
-        data-aos-duration="1000"
-        className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-teal-500">
+          data-aos="fade-left"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+          className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-teal-500"
+        >
           <div className="card-body">
             <div className="form-control">
               <h1 className="text-3xl font-bold text-neutral text-center">
@@ -79,7 +78,12 @@ const EmployeeLogin = () => {
                 </button>
               </div>
 
-              <label for="employeeResetModal" class="label-text-alt text-teal-500 link link-hover p-2">Forgot password?</label>
+              <label
+                for="employeeResetModal"
+                class="label-text-alt text-teal-500 link link-hover p-2"
+              >
+                Forgot password?
+              </label>
               <EmployeeResetModal />
             </div>
             <div className="form-control mt-6">
@@ -92,11 +96,12 @@ const EmployeeLogin = () => {
             </div>
           </div>
         </div>
-        <div 
-        data-aos="fade-right"
-        data-aos-easing="linear"
-        data-aos-duration="1000"
-        className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-teal-500 p-7">
+        <div
+          data-aos="fade-right"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+          className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-teal-500 p-7"
+        >
           <h1 className="text-3xl font-bold text-white text-center">
             Member Login
           </h1>
