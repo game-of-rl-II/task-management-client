@@ -99,7 +99,7 @@ const ReviewYourTeamMember = () => {
               <div className="md:flex-1 px-3 text-center md:text-right">
                 <button
                   type="submit"
-                  className="btn bg-teal-500 hover:bg-teal-800 modal-button mb-5 text-white"
+                  className="btn bg-teal-500 hover:bg-teal-800 modal-button my-5 text-white"
                 >
                   ADD Review
                 </button>

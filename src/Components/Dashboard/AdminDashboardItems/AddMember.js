@@ -67,6 +67,7 @@ const AddMember = () => {
       });
   };
   const handleGenerate = () => {
+    setGeneratedID('')
     const randomId = Math.floor(10000 + Math.random() * 9000000);
     handleIdCheck(randomId);
   };

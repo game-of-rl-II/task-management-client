@@ -54,7 +54,7 @@ const MyProfile = () => {
                       />
                     </div>
                   </div>
-                  <div>
+                  <div style={member && { display: 'none' }}>
                     <ul className="bg-teal-500 text-white  hover:shadow py-2 px-5 mt-3 divide-y rounded shadow-sm">
                       <li className="flex items-center py-3">
                         <span className="md:hidden lg:block">Role:</span>
@@ -117,7 +117,7 @@ const MyProfile = () => {
                 </label>
               </div>
             </form>
-            {openUpdateModal && <UpdateProfileModal openUpdateModal={openUpdateModal} admin={admin} adminProfile={adminProfile}setOpenUpdateModal={setOpenUpdateModal} />}
+            {openUpdateModal && <UpdateProfileModal openUpdateModal={openUpdateModal} admin={admin} adminProfile={adminProfile} setOpenUpdateModal={setOpenUpdateModal} />}
           </div>
         </div>
       </div>
