@@ -27,9 +27,9 @@ const Feature = () => {
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div className="card lg:mr-8 flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+          <div className="card lg:mr-8 flex lg:flex-row flex-col items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
             <figure>
-              <img src={feature2} alt="Movie"/>
+              <img src={feature2} alt="Movie" className="rounded lg:w-96 lg:h-40 w-40 h-40 "/>
             </figure>
             <div className="card-body">
               <h2 className="card-title">Manage team members</h2>
@@ -43,14 +43,14 @@ const Feature = () => {
         <div  data-aos="zoom-in"
           data-aos-easing="linear"
           data-aos-duration="2000">
-        <div className="card lg:ml-8 flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+        <div className="card lg:ml-8 flex lg:flex-row flex-col items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
             <figure>
-              <img src={feature4} alt="Movie" />
+              <img src={feature4} alt="Movie" className="rounded lg:w-96 lg:h-40 w-40 h-40 p-2"/>
             </figure>
             <div className="card-body">
               <h2 className="card-title">Email system</h2>
-              <p className="text-slate-500 text-sm font-serif">
-                When an admin add a member in a team, then the member will get a
+              <p className="text-slate-500  font-serif ">
+                When admin add a member in a team, the member will get a
                 mail. In this mail, member can see his member id and password.
               </p>
             </div>
@@ -61,9 +61,9 @@ const Feature = () => {
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div className="card lg:mr-8 flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+          <div className="card lg:mr-8 flex lg:flex-row flex-col items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
             <figure>
-              <img src={feature} alt="Movie" />
+              <img src={feature} alt="Movie" className="rounded lg:w-96 lg:h-40 w-40 h-40 p-2" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">Assign tasks to members</h2>
@@ -79,9 +79,9 @@ const Feature = () => {
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div className="card lg:ml-8 flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+          <div className="card lg:ml-8 flex lg:flex-row flex-col items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
             <figure>
-              <img src={feature3} alt="Movie" />
+              <img src={feature3} alt="Movie" className="rounded lg:w-96 lg:h-40 w-40 h-40 p-2" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">Member task information</h2>

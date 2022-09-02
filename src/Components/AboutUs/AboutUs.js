@@ -26,9 +26,9 @@ function AboutUs() {
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div className="card  flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+          <div className="card  flex lg:flex-row flex-col items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
             <figure className="w-3/4">
-              <img src={alamin} alt="Movie" className="rounded-full p-2"/>
+              <img src={alamin} alt="Movie" className="rounded-full w-28 h-28 p-2"/>
             </figure>
             <div className="card-body">
               <h2 className="text-lg font-bold">Md Al Amin Hossain</h2>
@@ -47,9 +47,9 @@ function AboutUs() {
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div className="card  flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+          <div className="card  lg:flex-row flex-col items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
             <figure className="w-3/4">
-              <img src={faridul} alt="Movie" className="rounded-full p-2"/>
+              <img src={faridul} alt="Movie" className="rounded-full w-28 h-28 p-2"/>
             </figure>
             <div className="card-body">
             <h2 className="text-lg font-bold">Md Faridul Haque</h2>
@@ -69,9 +69,9 @@ function AboutUs() {
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div className="card  flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+          <div className="card  lg:flex-row flex-col items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
             <figure className="w-3/4">
-              <img src={shuvo} alt="Movie" className="rounded-full p-2"/>
+              <img src={shuvo} alt="Movie" className="rounded-full w-28 h-28 p-2"/>
             </figure>
             <div className="card-body">
             <h2 className="text-lg font-bold">Md Ariful Islam</h2>
@@ -90,9 +90,9 @@ function AboutUs() {
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div className="card flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+          <div className="card lg:flex-row flex-col items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
             <figure className="w-3/4">
-              <img src={arifulislam} alt="Movie" className="rounded-full p-2"/>
+              <img src={arifulislam} alt="Movie" className="rounded-full w-28 h-28 p-2"/>
             </figure>
             <div className="card-body">
             <h2 className="text-lg font-bold">Md Ariful Islam</h2>
@@ -111,9 +111,9 @@ function AboutUs() {
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div className="card flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+          <div className="card lg:flex-row flex-col items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
             <figure className="w-3/4">
-              <img src={alaminarif} alt="Movie" className="rounded-full p-2"/>
+              <img src={alaminarif} alt="Movie" className="rounded-full w-28 h-28 p-2"/>
             </figure>
             <div className="card-body">
             <h2 className="text-lg font-bold">Md Arifur Rahman</h2>
@@ -133,9 +133,9 @@ function AboutUs() {
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div className="card  flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+          <div className="card  lg:flex-row flex-col items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
             <figure>
-              <img src={nabin} alt="Movie" className="rounded-full p-2"/>
+              <img src={nabin} alt="Movie" className="rounded-full w-28 h-28 p-2"/>
             </figure>
             <div className="card-body">
             <h2 className="text-xl font-bold">Mohammad Jewel</h2>
