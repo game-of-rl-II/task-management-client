@@ -8,11 +8,11 @@ const useTodaysTasksTable = ({ setMemberTaskModal }) => {
     },
     {
       name: <h2 className=" text-black text-lg font-bold">Member Id</h2>,
-      selector: (task) => <h2 className=" text-black text-md font-bold text-center">{task.memberId}</h2>,
+      selector: (task) => <h2 className=" text-black text-md font-family font-bold text-center">{task.memberId}</h2>,
     },
     {
       name: <h2 className=" text-black text-lg font-bold">Deadline</h2>,
-      selector: (task) => <h2 className="text-black text-md font-bold">{task.deadline}</h2>,
+      selector: (task) => <h2 className="text-black text-md font-family font-bold">{task.deadline}</h2>,
     },
     {
       name: <h2 className="text-black text-lg font-bold">Details</h2>,

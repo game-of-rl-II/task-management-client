@@ -15,7 +15,7 @@ const useForwardedTasksTable = ({ setForwardTaskViewMessage }) => {
     {
       name: <h2 className="text-black text-lg font-bold">Message</h2>,
       selector: (task) => (
-        <label for="forward-task-view-message" onClick={() => setForwardTaskViewMessage(task)} class="btn btn-sm bg-teal-500 border-0">
+        <label for="forward-task-view-message" onClick={() => setForwardTaskViewMessage(task)} className="btn btn-sm bg-teal-500 border-0">
           view message
         </label>
       ),

@@ -30,16 +30,16 @@ const ContactUs = () => {
         );
     };
   return (
-    <div class=" lg:mt-12  shadow-xl">
-      <div class="hero-content mx-auto flex-col lg:flex-row-reverse">
-        <div data-aos="fade-up" data-aos-duration="2000" class="lg:ml-24 ">
-          <h1 class="text-3xl font-bold text-white">Contact with TMT</h1>
-          <p class=" text-white  ">Address: Boalkhali, Chittagong</p>
-          <p class=" text-white ">Phone: +8801608250777</p>
-          <p class=" text-white ">Email: jewelnabin@gmail.com</p>
+    <div className=" lg:mt-12  shadow-xl">
+      <div className="hero-content mx-auto flex-col lg:flex-row-reverse">
+        <div data-aos="fade-up" data-aos-duration="2000" className="lg:ml-24 ">
+          <h1 className="text-3xl font-bold text-white">Contact with TMT</h1>
+          <p className=" text-white  ">Address: Boalkhali, Chittagong</p>
+          <p className=" text-white">Phone: <span className="font-family">+8801608250777</span></p>
+          <p className=" text-white ">Email: jewelnabin@gmail.com</p>
         </div>
-        <div class=" flex-shrink-0 w-full max-w-sm shadow-2xl">
-          <div data-aos="fade-up" data-aos-duration="2000" class="card-body">
+        <div className=" flex-shrink-0 w-full max-w-sm shadow-2xl">
+          <div data-aos="fade-up" data-aos-duration="2000" className="card-body">
             <form
               ref={form}
               onSubmit={sendEmail}

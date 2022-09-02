@@ -78,7 +78,7 @@ const Register = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   type={passwordIcon ? "text" : "password"}
                   placeholder="password"
-                  className="input input-bordered w-full shadow"
+                  className="input input-bordered w-full font-family shadow"
                 />
                 <button className="btn-icon" onClick={toggleButton}>
                   {passwordIcon ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}

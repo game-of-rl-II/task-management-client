@@ -5,13 +5,13 @@ const ForwardTaskViewMessageModal = ({ forwardTaskViewMessage }) => {
     <div>
 
 
-      <input type="checkbox" id="forward-task-view-message" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
-          <h3 class="font-bold text-lg">{forwardTaskViewMessage?.issue}</h3>
+      <input type="checkbox" id="forward-task-view-message" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">{forwardTaskViewMessage?.issue}</h3>
 
-          <div class="modal-action">
-            <label for="forward-task-view-message" class="btn bg-teal-500  border-0">
+          <div className="modal-action">
+            <label for="forward-task-view-message" className="btn bg-teal-500  border-0">
               cancel
             </label>
           </div>

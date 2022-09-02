@@ -8,118 +8,177 @@ import nabin from "../../Images/nabin.jpg";
 import "./AboutUs.css";
 function AboutUs() {
   return (
-    <div className="font-family mb-6">
-      <h1 className="text-primary about">About Our Team Members</h1>
-      <div className="tmtabout">
+  
+    <div className="font-serif mb-40">
+      <div className="mb-6 ">
+        {" "}
+        <h1 className="text-3xl pt-8 font-bold mx-14 lg:text-center text-white font-serif">
+          About our TMT team
+        </h1>
+        <p className="py-6 text-lg text-slate-300 font-serif lg:w-2/4 mx-4 lg:text-center lg:mx-auto ">
+         There are six members of TMT team. 
+         Every member is responsible for managing the software that is used to build the project. Everyone is capable of building the software.
+        </p>
+      </div>
+      <div className="about">
         <div
-          className=""
-          data-aos="fade-down-right"
-          data-aos-easing="linear"
-          data-aos-duration="1000"
-        >
-          <div class="card lg:w-4/6 lg:ml-auto  card-side bg-base-100 shadow-xl">
-            <figure>
-              <img src={alamin} alt="Movie" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Name: Md Al Amin Hossain</h2>
-              <h4>Email:hossainalamin1246@gmail.com</h4>
-              <p class="text-slate-500 font-family">
-                Contact Number:01627948044
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          data-aos="fade-down-left"
+          data-aos="zoom-in"
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div class="card lg:w-4/6 lg:ml-8 card-side bg-base-100 shadow-xl">
-            <figure>
-              <img src={faridul} alt="Movie" />
+          <div className="card  flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+            <figure className="w-3/4">
+              <img src={alamin} alt="Movie" className="rounded-full p-2"/>
             </figure>
-            <div class="card-body">
-              <h2 class="card-title">Name: Md Faridul Haque Murshed</h2>
-              <h4>Email:faridulhaquemurshed@gmail.com</h4>
-              <p class="text-slate-500 font-family">
-                Contact Number:01996438234
+            <div className="card-body">
+              <h2 className="text-lg font-bold">Md Al Amin Hossain</h2>
+              <h3 className="text-sm font-bold">Full-stack web developer</h3>
+              <p className="text-slate-700 font-serif">
+              hossainalamin1246@gmail.com
+              </p>
+              <p className="text-slate-700 font-serif font-family">
+              Phone: 01627948044
               </p>
             </div>
           </div>
         </div>
         <div
-          data-aos="fade-up-right"
+          data-aos="zoom-in"
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div class="card lg:w-4/6 lg:ml-auto   card-side bg-base-100 shadow-xl">
-            <figure>
-              <img src={shuvo} alt="Movie" />
+          <div className="card  flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+            <figure className="w-3/4">
+              <img src={faridul} alt="Movie" className="rounded-full p-2"/>
             </figure>
-            <div class="card-body">
-              <h2 class="card-title">Name: Md Ariful Islam Shuvo</h2>
-              <h4>Email:arifulislams063@gmail.com</h4>
-              <p class="text-slate-500 font-family">
-                Contact Number:01838404512
+            <div className="card-body">
+            <h2 className="text-lg font-bold">Md Faridul Haque</h2>
+              <h3 className="text-sm font-bold">MERN-stack web developer</h3>
+              <p className="text-slate-700 text-sm font-serif">
+              faridulhaquemurshed@gmail.com
+              </p>
+              <p className="text-slate-700 font-serif font-family">
+              Phone: 01996438234
+              </p>
+              
+            </div>
+          </div>
+        </div>
+        <div
+          data-aos="zoom-in"
+          data-aos-easing="linear"
+          data-aos-duration="2000"
+        >
+          <div className="card  flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+            <figure className="w-3/4">
+              <img src={shuvo} alt="Movie" className="rounded-full p-2"/>
+            </figure>
+            <div className="card-body">
+            <h2 className="text-lg font-bold">Md Ariful Islam</h2>
+              <h3 className="text-sm font-bold">Junior web developer</h3>
+              <p className="text-slate-700 font-serif">
+              arifulislams063@gmail.com
+              </p>
+              <p className="text-slate-700 font-serif font-family">
+              Phone: 01838404512
               </p>
             </div>
           </div>
         </div>
         <div
-          data-aos="fade-up-right"
+          data-aos="zoom-in"
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div class="card lg:w-4/6 lg:ml-auto   card-side bg-base-100 shadow-xl">
-            <figure>
-              <img src={arifulislam} alt="Movie" />
+          <div className="card flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+            <figure className="w-3/4">
+              <img src={arifulislam} alt="Movie" className="rounded-full p-2"/>
             </figure>
-            <div class="card-body">
-              <h2 class="card-title">Name: Md Ariful Islam</h2>
-              <h4>Email:arifulislam64743@gmail.com</h4>
-              <p class="text-slate-500 font-family">
-                Contact Number:01820082894
+            <div className="card-body">
+            <h2 className="text-lg font-bold">Md Ariful Islam</h2>
+              <h3 className="text-sm font-bold">MERN web developer</h3>
+              <p className="text-slate-700 font-serif">
+              arifulislam64743@gmail.com
+              </p>
+              <p className="text-slate-700 font-serif font-family">
+              Phone: 01820082894
               </p>
             </div>
           </div>
         </div>
         <div
-          data-aos="fade-up-right"
+          data-aos="zoom-in"
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div class="card lg:w-4/6 lg:ml-auto   card-side bg-base-100 shadow-xl">
-            <figure>
-              <img src={alaminarif} alt="Movie" />
+          <div className="card flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
+            <figure className="w-3/4">
+              <img src={alaminarif} alt="Movie" className="rounded-full p-2"/>
             </figure>
-            <div class="card-body">
-              <h2 class="card-title">Name: Md Arifur Rahman</h2>
-              <h4>Email:arifurr231@gmail.com</h4>
-              <p class="text-slate-500 font-family">
-                Contact Number:01793911158
+            <div className="card-body">
+            <h2 className="text-lg font-bold">Md Arifur Rahman</h2>
+              <h3 className="text-sm font-bold">MERN web developer</h3>
+              <p className="text-slate-700 text-xl font-serif">
+              arifurr231@gmail.com
+              </p>
+              <p className="text-slate-600 font-serif font-family">
+              Phone: 01793911158
               </p>
             </div>
           </div>
         </div>
+       
         <div
-          data-aos="fade-up-left"
+          data-aos="zoom-in"
           data-aos-easing="linear"
           data-aos-duration="2000"
         >
-          <div class="card lg:w-4/6 lg:ml-8 card-side bg-base-100 shadow-xl">
+          <div className="card  flex flex-row items-center bg-white w-96 max-h-80 mx-auto shadow-xl">
             <figure>
-              <img src={nabin} alt="Movie" />
+              <img src={nabin} alt="Movie" className="rounded-full p-2"/>
             </figure>
-            <div class="card-body">
-              <h2 class="card-title">Name: Mohammad Jewel</h2>
-              <h4>Email:jewelnabin@gmail.com</h4>
-              <p class="text-slate-600 font-family">
-                Contact Number:01608250777
+            <div className="card-body">
+            <h2 className="text-xl font-bold">Mohammad Jewel</h2>
+              <h3 className="text-sm font-bold">Frontend web developer</h3>
+              <p className="text-slate-600 text-xl font-serif">
+              jewelnabin@gmail.com
+              </p>
+              <p className="text-slate-700 font-serif font-family">
+              Phone: 01608250777
               </p>
             </div>
           </div>
         </div>
+        
+       
+        {/* <div>
+          <div className="card w-3/5 lg:ml-auto  card-side bg-base-100 shadow-xl">
+            <figure>
+              <img src={success} alt="Movie" />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">New movie is released!</h2>
+              <p>Click the button to watch on Jetflix app.</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Watch</button>
+              </div>
+            </div>
+          </div>
+        </div> */}
+        {/* <div>
+          <div className="card w-3/5  card-side bg-base-100 shadow-xl">
+            <figure>
+              <img src={success} alt="Movie" />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">New movie is released!</h2>
+              <p>Click the button to watch on Jetflix app.</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Watch</button>
+              </div>
+            </div>
+          </div>
+        </div> */}
       </div>
     </div>
   );

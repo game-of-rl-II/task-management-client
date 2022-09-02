@@ -57,10 +57,10 @@ const UpdateProfileModal = ({ openUpdateModal, setOpenUpdateModal, refetch, admi
                   {errors.name && <span className="text-red-500">name is required.</span>}
                 </div>
                 <div className="md:flex-1 mt-2 mb:mt-0 ">
-                  <label className="label font-bold">Phone Number</label>
+                  <label className="label  font-bold">Phone Number</label>
                   <input
                     defaultValue={adminProfile?.phone}
-                    className="input border-2 input-bordered w-full shadow-inner"
+                    className="input font-family border-2 input-bordered w-full shadow-inner"
                     placeholder="Your contact number"
                     name="number"
                     type="tel"

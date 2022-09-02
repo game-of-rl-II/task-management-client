@@ -41,7 +41,7 @@ const HomeBanner = () => {
         data-aos-easing="linear"
         data-aos-duration="1000"
       >
-        <h2 className="text-3xl font-bold text-white font-family">
+        <h2 className="text-3xl font-bold text-white font-serif">
           The one place for all your projects and team collaboration
         </h2>
         <ul className="mt-10">
@@ -60,11 +60,9 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-300 font-family">
-              All the tools your team needs put{" "}
-              <span style={{ color: "#29274D", backgroundColor: "#3CBDAB" }}>
-                under one roof
-              </span>
+            <p className="ml-3 text-slate-300 font-serif">
+              All the tools your team needs put under one roof
+            
             </p>
           </li>
           <li className="mt-3 list-banner">
@@ -82,11 +80,8 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-300 font-family">
-              <span style={{ color: "#29274D", backgroundColor: "#3CBDAB" }}>
-                Ultimate control
-              </span>{" "}
-              over teams and projects easier than ever
+            <p className="ml-3 text-slate-300 font-serif">
+                Ultimate control over teams and projects easier than ever
             </p>
           </li>
           <li className="mt-3 list-banner">
@@ -104,15 +99,10 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-300 font-family">
-              On time{" "}
-              <span style={{ color: "#29274D", backgroundColor: "#3CBDAB" }}>
-                project delivery
-              </span>{" "}
-              & on point{" "}
-              <span style={{ color: "#29274D", backgroundColor: "#3CBDAB" }}>
-                team accountability
-              </span>
+            <p className="ml-3 text-slate-300 font-serif">
+              
+                project delivery & on point team accountability
+           
             </p>
           </li>
           <li className="mt-3 list-banner">
@@ -130,11 +120,9 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-300 font-family">
-              <span style={{ color: "#29274D", backgroundColor: "#3CBDAB" }}>
-                Easy-to-understand
-              </span>{" "}
-              with little to no learning curve
+            <p className="ml-3 text-slate-300 font-serif">
+        
+                Easy-to-understand with little to no learning curve
             </p>
           </li>
           <li className="mt-3 list-banner">
@@ -152,11 +140,8 @@ const HomeBanner = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>{" "}
-            <p className="ml-3 text-slate-300 font-family">
-              <span style={{ color: "#29274D", backgroundColor: "#3CBDAB" }}>
-                Free
-              </span>{" "}
-              and always will be
+            <p className="ml-3 text-slate-300 font-serif">
+                Free and always will be
             </p>
           </li>
         </ul>
@@ -179,10 +164,10 @@ const HomeBanner = () => {
                 />
               </div>
             </div>
-            <div className="lg:ml-12 ml-12">
+            <div className="w-3/6 mx-auto">
               <button
                 onClick={() => navigate("/register")}
-                className=" btn bg-teal-500 hover:bg-teal-800   text-white lg:w-4/5"
+                className=" btn bg-teal-500 hover:bg-teal-800 w-full  text-white "
               >
                 Register with email
               </button>
@@ -190,10 +175,10 @@ const HomeBanner = () => {
             <div>
               <p className="text-center text-white mr-2">or</p>
             </div>
-            <div className="lg:ml-12 ml-12">
+            <div className="w-3/6 mx-auto">
               <button
                 onClick={() => signInWithGoogle()}
-                className=" btn hover:bg-teal-500 text-white  lg:w-4/5 btn-outline"
+                className=" btn hover:bg-teal-500 text-white w-full  btn-outline"
               >
                 Continue with google
               </button>

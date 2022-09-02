@@ -6,11 +6,11 @@ const useAssignedTasksTable = ({ setMemberTaskModal }) => {
     },
     {
       name: <h2 className="text-black text-lg font-bold">Member ID</h2>,
-      selector: (task) => <h2 className="text-black text-md font-bold">{task.memberId}</h2>,
+      selector: (task) => <h2 className="text-black text-md font-family font-bold">{task.memberId}</h2>,
     },
     {
-      name: <h2 className="text-black text-lg font-bold">Date</h2>,
-      selector: (task) => <h2 className={task.taskCompletion !== true && "text-teal-600 text-md"}>{task.taskDate}</h2>,
+      name: <h2 className="text-black text-lg  font-bold">Date</h2>,
+      selector: (task) => <h2 className={task.taskCompletion !== true && "text-teal-600 font-family text-md"}>{task.taskDate}</h2>,
     },
     {
       name: <h2 className="text-black text-lg font-bold">Details</h2>,

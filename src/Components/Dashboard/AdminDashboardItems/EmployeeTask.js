@@ -49,7 +49,11 @@ const EmployeeTask = () => {
     <div>
       <div>
         <h1 className="w-44 mx-auto py-1 rounded  bg-teal-500 text-center text-white my-4 font-bold">MEMBERS TASK</h1>
-        <div className="mx-auto  lg:max-w-3xl xl:max-w-5xl rounded">
+        <div 
+        data-aos="zoom-in"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
+        className="mx-auto  lg:max-w-3xl xl:max-w-5xl rounded">
           <DataTable customStyles={customTableStyles} columns={assignedTasksColumns} pagination data={memberTask}></DataTable>
         </div>
       </div>

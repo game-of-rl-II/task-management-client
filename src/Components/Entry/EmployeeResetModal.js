@@ -28,9 +28,9 @@ const EmployeeResetModal = () => {
 
     return (
         <div>
-            <input type="checkbox" id="employeeResetModal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box bg-white border-y-4 border-primary">
+            <input type="checkbox" id="employeeResetModal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box bg-white border-y-4 border-primary">
                     <form onSubmit={handleReset}>
                         <div className="mb-8">
                             <div className="md:flex-1 mt-2 mb:mt-0 ">
@@ -57,14 +57,14 @@ const EmployeeResetModal = () => {
                                 ></input>
                             </div>
                         </div>
-                        <div class="modal-action">
-                            <label for="employeeResetModal" class="btn btn-warning btn-sm px-5">
+                        <div className="modal-action">
+                            <label for="employeeResetModal" className="btn btn-warning btn-sm px-5">
                                 CANCEL
                             </label>
                             <button
                                 for="employeeResetModal"
                                 type="submit"
-                                class="btn btn-primary text-white btn-sm px-5"
+                                className="btn btn-primary text-white btn-sm px-5"
                             >
                                 Assign
                             </button>

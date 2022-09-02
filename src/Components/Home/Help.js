@@ -8,17 +8,17 @@ const Help = () => {
         data-aos-easing="linear"
         data-aos-duration="3000"
       >
-        <img src={task} class="  h-5/6 rounded-lg " alt="" />
+        <img src={task} className="  h-5/6 rounded-lg " alt="" />
       </div>
       <div
         data-aos="zoom-in-left"
         data-aos-easing="linear"
         data-aos-duration="3000"
       >
-        <h1 class="text-3xl mx-12 mt-8 lg:mx-0 pt-8 font-bold text-white font-family">
+        <h1 className="text-3xl mx-12 mt-8 lg:mx-0 pt-8 font-bold text-white font-serif">
           TMT helps to manage team projects
         </h1>
-        <p class="py-6 text-xl text-slate-300 font-family ">
+        <p className="py-6 text-xl text-slate-300 font-serif ">
           By using TMT you can collaborate, manage projects, organize tasks, and
           build team spirit-all in one place. The way your team works is
           unique-accomplish it with TMT.

@@ -21,29 +21,29 @@ const EmployeeDeleteModal = ({ deleteMember, refetch }) => {
 
   return (
     <div>
-      <input type="checkbox" id="EmployeeDelete-modal" class="modal-toggle" />
+      <input type="checkbox" id="EmployeeDelete-modal" className="modal-toggle" />
       <div 
-      class="modal modal-bottom sm:modal-middle">
+      className="modal modal-bottom sm:modal-middle">
         <div
         data-aos="flip-left"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        class="modal-box bg-white border-y-4 border-teal-500">
-          <h3 class="font-bold text-lg">
+        className="modal-box bg-white border-y-4 border-teal-500">
+          <h3 className="font-bold text-lg">
             Are you sure? Do you want to delete this member?
           </h3>
-          <p class="py-4"></p>
-          <div class="modal-action">
+          <p className="py-4"></p>
+          <div className="modal-action">
             <label
               for="EmployeeDelete-modal"
-              class="btn bg-teal-500 hover:bg-teal-700 border-none btn-sm px-5"
+              className="btn bg-teal-500 hover:bg-teal-700 border-none btn-sm px-5"
             >
               CANCEL
             </label>
             <label
               onClick={() => handleDeleteMember(_id)}
               for="EmployeeDelete-modal"
-              class="btn btn-error text-white hover:bg-red-600  btn-sm px-5"
+              className="btn btn-error text-white hover:bg-red-600  btn-sm px-5"
             >
               Delete
             </label>

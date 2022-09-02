@@ -57,16 +57,16 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
 
   return (
     <div>
-      <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
+      <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
         <div 
         data-aos="flip-right"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        class="modal-box bg-white border-y-4 border-teal-500">
-          <p class="py-4">Employee Name: {assignTaskMember.name}</p>
-          <p class="py-4">Employee ID: {assignTaskMember.id}</p>
-          <p class="py-4">Task Date: {taskDate}</p>
+        className="modal-box bg-white border-y-4 border-teal-500">
+          <p className="py-4">Employee Name: {assignTaskMember.name}</p>
+          <p className="py-4">Employee ID: <span className="font-family">{assignTaskMember.id}</span> </p>
+          <p className="py-4">Task Date: <span className="font-family">{taskDate}</span></p>
           <form onSubmit={handleAssignTask}>
             <div className="mb-8">
               <div className="md:flex-1 mt-2 mb:mt-0 ">
@@ -98,14 +98,14 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
                 </div>
               </div>
             </div>
-            <div class="modal-action">
-              <label for="my-modal-6" class="btn btn-error text-white hover:bg-red-600  btn-sm px-5">
+            <div className="modal-action">
+              <label for="my-modal-6" className="btn btn-error text-white hover:bg-red-600  btn-sm px-5">
                 CANCEL
               </label>
               <button
                 for="my-modal-6"
                 type="submit"
-                class="btn bg-teal-500 hover:bg-teal-700 text-white border-none btn-sm px-5"
+                className="btn bg-teal-500 hover:bg-teal-700 text-white border-none btn-sm px-5"
               >
                 Assign
               </button>

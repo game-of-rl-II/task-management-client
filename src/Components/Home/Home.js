@@ -1,4 +1,5 @@
 import React from "react";
+import AboutUs from "../AboutUs/AboutUs";
 import About from "./About";
 import ContactUs from "./ContactUs";
 import FAQ from "./FAQ";
@@ -13,8 +14,9 @@ const Home = () => {
     <div className="">
       <HomeBanner />
       <Help/>
-      <Success/>
       <Feature/>
+      <Success/>
+      <AboutUs/>
       <ContactUs/>
       {/* <About /> */}
       {/* <FAQ /> */}

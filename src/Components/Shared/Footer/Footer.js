@@ -3,22 +3,22 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer
-      className="footer footer-rl p-10  bg-teal-500 text-white font-family"
+      className="footer footer-rl p-10 mt-20 bg-teal-500 text-white font-family"
       id="footer"
     >
       <div>
         <span className="footer-title">Legal</span>
-        <a className="link link-hover">Terms of use</a>
-        <a className="link link-hover">Privacy policy</a>
-        <a className="link link-hover">Cookie policy</a>
-        <a className="link link-hover">Advertisement</a>
+        <a className="link link-hover" >Terms of use</a>
+        <a className="link link-hover" >Privacy policy</a>
+        <a className="link link-hover" >Cookie policy</a>
+        <a className="link link-hover" >Advertisement</a>
       </div>
       <div>
-        <span className="footer-title">Apps</span>
-        <a className="link link-hover">Mac</a>
-        <a className="link link-hover">Windows</a>
-        <a className="link link-hover">iPhone</a>
-        <a className="link link-hover">Android</a>
+        <span className="footer-title" >Apps</span>
+        <a className="link link-hover" >Mac</a>
+        <a className="link link-hover" >Windows</a>
+        <a className="link link-hover" >iPhone</a>
+        <a className="link link-hover" >Android</a>
       </div>
       <div>
         <span className="footer-title">Social</span>

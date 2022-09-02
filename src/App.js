@@ -38,7 +38,7 @@ import AboutUs from "./Components/AboutUs/AboutUs";
 
 function App() {
   return (
-    <div className="rl-bg font-family">
+    <div className="rl-bg font-serif">
       <Navbar></Navbar>
       <Routes>
         <Route path="/home" element={<Home></Home>}></Route>
@@ -156,7 +156,7 @@ function App() {
           element={<EmployeeLogin></EmployeeLogin>}
         ></Route>
         <Route path="/adminLogin" element={<AdminLogin></AdminLogin>}></Route>
-        <Route path="/aboutus" element={<AboutUs></AboutUs>}></Route>
+        <Route path="/about-us" element={<AboutUs></AboutUs>}></Route>
         <Route
           path="/dashboard"
           element={

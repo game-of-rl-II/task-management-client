@@ -30,7 +30,7 @@ const Dashboard = () => {
       <div className="drawer drawer-mobile mt-5 ">
         <input id="my-drawer-member" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-          <label htmlFor="my-drawer-member" class="btn ml-5 bg-teal-500 drawer-button sm:mb-5 text-white lg:hidden">
+          <label htmlFor="my-drawer-member" className="btn ml-5 bg-teal-500 drawer-button sm:mb-5 text-white lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-white"

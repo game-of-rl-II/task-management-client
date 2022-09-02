@@ -41,7 +41,11 @@ const AssignedTasks = () => {
     <div>
       <h1 className=" bg-teal-500 w-28 mx-auto py-1 rounded  text-center text-white my-8 font-bold">My Tasks</h1>
 
-      <div className="mx-auto  lg:max-w-3xl xl:max-w-6xl p-6 rounded">
+      <div 
+       data-aos="zoom-in"
+       data-aos-easing="linear"
+       data-aos-duration="1000"
+       className="mx-auto  lg:max-w-3xl xl:max-w-5xl rounded">
         <DataTable columns={myTasksColumns} data={tasksData} pagination highlightOnHover fixedHeader fixedHeaderScrollHeight="550px"></DataTable>
       </div>
       {modalData && <TaskModal modalData={modalData} setModalData={setModalData} />}

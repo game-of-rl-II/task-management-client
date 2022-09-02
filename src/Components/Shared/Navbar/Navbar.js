@@ -41,10 +41,10 @@ const Navbar = () => {
       <div className="navbar relative p-5 flex flex-col md:flex-row gap-y-4 rl-bg">
         <div className="flex-1">
           <Link to="/" className="text-black">
-            <span className="p-2 rounded text-2xl font-bold hover:bg-teal-800 text-white bg-teal-500">
+            <span className="p-2 font-serif rounded text-2xl font-bold hover:bg-teal-800 text-white bg-teal-500">
               TMT
             </span>{" "}
-            <span className="logo text-teal-300 font-family font-bold">
+            <span className="logo text-teal-300 font-serif font-bold">
               Task Management Tool
             </span>
           </Link>
@@ -55,15 +55,15 @@ const Navbar = () => {
               <>
                 <li>
                   <Link
-                    className="nav-button hover:bg-teal-800 text-white font-bold mr-3 bg-teal-500"
-                    to="/aboutus"
+                    className="nav-button font-serif hover:bg-teal-800 text-white font-bold mr-3 bg-teal-500"
+                    to="/about-us"
                   >
                     About Us
                   </Link>
                 </li>
                 <li>
                   <Link
-                    className="nav-button hover:bg-teal-800 text-white font-bold mr-3 bg-teal-500"
+                    className="nav-button font-serif hover:bg-teal-800 text-white font-bold mr-3 bg-teal-500"
                     to="/adminLogin"
                   >
                     Admin Login
@@ -71,7 +71,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    className="nav-button text-white hover:bg-teal-800 font-bold mr-3 bg-teal-500"
+                    className="nav-button font-serif text-white hover:bg-teal-800 font-bold mr-3 bg-teal-500"
                     to="/employeeLogin"
                   >
                     Member Login

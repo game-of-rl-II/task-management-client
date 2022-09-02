@@ -93,7 +93,7 @@ const MyProfile = () => {
                       </p>
                     ) : (
                       <p>
-                        <strong>ID: {member?.id} </strong>
+                        <strong >ID: <span className="font-family">{member?.id}</span>  </strong>
                       </p>
                     )}
                     {

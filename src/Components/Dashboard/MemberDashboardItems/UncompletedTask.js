@@ -15,7 +15,11 @@ const UncompletedTask = () => {
   return (
     <div className="">
       <h1 className=" bg-teal-500 w-44 mx-auto py-1 rounded  text-center text-white my-8 font-bold">Uncompleted Task</h1>
-      <div className="mx-auto  lg:max-w-3xl xl:max-w-6xl lg:pl-6 rounded">
+      <div
+       data-aos="zoom-in"
+       data-aos-easing="linear"
+       data-aos-duration="1000"
+        className="mx-auto  lg:max-w-3xl xl:max-w-5xl rounded">
         <DataTable columns={unCompletedTasksColumns} data={unCompletedTasks}></DataTable>
       </div>
       {taskData && <UncompletedTaskModal taskData={taskData} setTaskData={setTaskData} />}

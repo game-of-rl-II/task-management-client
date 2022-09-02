@@ -6,7 +6,7 @@ const useManageMembers = ({ setAssignTaskMember, setDeleteMember }) => {
     },
     {
       name: <h2 className="text-black text-lg font-bold">Member ID</h2>,
-      selector: (member) => <h2 className="text-black text-md font-bold"> {member.id}</h2>,
+      selector: (member) => <h2 className="text-black font-family text-md font-bold"> {member.id}</h2>,
     },
     {
       name: <h2 className="text-black text-lg font-bold">Assign task</h2>,

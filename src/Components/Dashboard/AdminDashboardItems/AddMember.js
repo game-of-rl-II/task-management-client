@@ -108,7 +108,7 @@ const AddMember = () => {
                 required
                 type="number"
                 placeholder="ID"
-                className="input shadow input-bordered input-addMember-form"
+                className="input shadow input-bordered font-family input-addMember-form"
                 defaultValue={generatedID}
                 name="id"
               />
@@ -128,7 +128,7 @@ const AddMember = () => {
             <label className="label">
               <span className="text-white">Password</span>
             </label>
-            <input required type="text" placeholder="Password" className="input shadow input-bordered input-addMember-form" name="password" />
+            <input required type="text" placeholder="Password" className="input font-family shadow input-bordered input-addMember-form" name="password" />
           </div>
         </div>
         <div className="addMember-form-bottom">

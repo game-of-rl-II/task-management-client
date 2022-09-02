@@ -18,14 +18,14 @@ const CreateTeam = () => {
               data-aos="zoom-in"
               data-aos-easing="linear"
               data-aos-duration="1000"
-              for="my-modal" class="btn bg-teal-500 hover:bg-teal-800   modal-button mb-5 text-white">Create a team</label>
+              for="my-modal" className="btn bg-teal-500 hover:bg-teal-800   modal-button mb-5 text-white">Create a team</label>
           </div>
         </div>
       </div>
-      <input type="checkbox" id="my-modal" class="modal-toggle" />
+      <input type="checkbox" id="my-modal" className="modal-toggle" />
 
-      <div class="modal">
-        <div class="modal-box">
+      <div className="modal">
+        <div className="modal-box">
           <MyTeamsModal></MyTeamsModal>
         </div>
       </div>

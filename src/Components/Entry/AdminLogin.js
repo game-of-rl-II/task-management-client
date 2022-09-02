@@ -51,10 +51,10 @@ const AdminLogin = () => {
     navigate("/innerHome");
     toast.success("Signed In successfully");
   }
-  // if (error) {
+  if (error) {
 
-  //   setLoginError(error?.message)
-  // }
+    toast.error(error?.message)
+  }
 
   const handlePasswordReset = async () => {
     const requiredEmail = await Prompt("Input your email", {
@@ -116,6 +116,7 @@ const AdminLogin = () => {
                 <span className="label-text">Email</span>
               </label>
               <input
+              required
                 onChange={(e) => setEmail(e.target.value)}
                 type="text"
                 placeholder="email"
@@ -127,11 +128,11 @@ const AdminLogin = () => {
                 <span className="label-text">Password</span>
               </label>
               <div className="flex flex-between w-full ml-1">
-                <input
+                <input required
                   onChange={(e) => setPassword(e.target.value)}
                   type={passwordIcon ? "text" : "password"}
                   placeholder="password"
-                  className="input input-bordered shadow w-full"
+                  className="input font-family input-bordered shadow w-full"
                 />
                 <button className="btn-icon" onClick={toggleButton}>
                   {passwordIcon ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
@@ -139,7 +140,7 @@ const AdminLogin = () => {
               </div>
               <label className="label">
                 <button
-                  className="hover:text-teal-500"
+                  className="label-text-alt text-sm text-teal-500 link link-hover p-2"
                   onClick={handlePasswordReset}
                 >
                   Reset password

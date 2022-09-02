@@ -42,7 +42,7 @@ const EmployeeLogin = () => {
     <div className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse w-full rounded-xl">
         <div
-          data-aos="fade-left"
+          data-aos="zoom-in-left"
           data-aos-easing="linear"
           data-aos-duration="1000"
           className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-y-4 border-teal-500"
@@ -59,7 +59,7 @@ const EmployeeLogin = () => {
                 onChange={(e) => setId(e.target.value)}
                 type="text"
                 placeholder="ID"
-                className="input shadow input-bordered"
+                className="input shadow font-family input-bordered"
               />
             </div>
             <div className="form-control">
@@ -71,7 +71,7 @@ const EmployeeLogin = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   type={passwordIcon ? "text" : "password"}
                   placeholder="password"
-                  className="input input-bordered shadow w-full"
+                  className="input input-bordered font-family shadow w-full"
                 />
                 <button className="btn-icon" onClick={toggleButton}>
                   {passwordIcon ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
@@ -80,7 +80,7 @@ const EmployeeLogin = () => {
 
               <label
                 for="employeeResetModal"
-                class="label-text-alt text-teal-500 link link-hover p-2"
+                className="label-text-alt text-sm text-teal-500 link link-hover p-2"
               >
                 Forgot password?
               </label>
@@ -97,7 +97,7 @@ const EmployeeLogin = () => {
           </div>
         </div>
         <div
-          data-aos="fade-right"
+          data-aos="zoom-in-right"
           data-aos-easing="linear"
           data-aos-duration="1000"
           className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl border-y-4 border-teal-500 p-7"

@@ -59,21 +59,21 @@ const ForwordTaskModal = ({ taskForword, setTaskForword }) => {
   };
   return (
     <div>
-      <input type="checkbox" id="forword-task-modal" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
-          <h3 class="font-bold text-lg">Why are you forwarding?</h3>
+      <input type="checkbox" id="forword-task-modal" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">Why are you forwarding?</h3>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Issue</span>
             </label>
             <input type="text" onBlur={(e) => setIssue(e.target.value)} required placeholder="Issue" className="input input-bordered" name="issue" />
           </div>
-          <div class="modal-action">
-            <button type="button" onClick={() => handleForward({ ...taskForword, issue })} class="btn bg-teal-500 text-white">
+          <div className="modal-action">
+            <button type="button" onClick={() => handleForward({ ...taskForword, issue })} className="btn bg-teal-500 text-white">
               Submit
             </button>
-            <label for="forword-task-modal" class="btn btn-warning">
+            <label for="forword-task-modal" className="btn btn-warning">
               Cancel
             </label>
           </div>
