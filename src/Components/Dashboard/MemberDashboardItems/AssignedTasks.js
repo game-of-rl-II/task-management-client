@@ -23,7 +23,7 @@ const AssignedTasks = () => {
     const message = `${name} has updated his task status`;
     const success = "Successfully updated";
     const navLink = `/innerHome/${teamName}/employeeTask`
-    fetch(`https://warm-dawn-94442.herokuapp.com/task-member/${id}`, {
+    fetch(`https://tm-tool.onrender.com/task-member/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 
 const useNotifyAdmin = () => {
     const handleNotification = ({ message, adminEmail, success, navLink }) => {
-        fetch('https://warm-dawn-94442.herokuapp.com/notification-admin', {
+        fetch('https://tm-tool.onrender.com/notification-admin', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -22,7 +22,7 @@ const useNotifyAdmin = () => {
             });
     }
     const handleArchiveNotification = ({ message, adminEmail, success , navLink}) => {
-        fetch('https://warm-dawn-94442.herokuapp.com/notification-archive-admin', {
+        fetch('https://tm-tool.onrender.com/notification-archive-admin', {
             method: "POST",
             headers: {
                 "content-type": "application/json",

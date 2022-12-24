@@ -10,7 +10,7 @@ const Notification = () => {
   const email = admin?.email;
   useEffect(() => {
     if (email) {
-      fetch(`https://warm-dawn-94442.herokuapp.com/notification-admin/${email}`)
+      fetch(`https://tm-tool.onrender.com/notification-admin/${email}`)
         .then(res => res.json())
         .then(data => {
           setNewNotification(data)
@@ -20,7 +20,7 @@ const Notification = () => {
   }, [email, newNotification])
 
   const handleClearNotification = () => {
-    fetch(`https://warm-dawn-94442.herokuapp.com/notification-clear/${email}`, {
+    fetch(`https://tm-tool.onrender.com/notification-clear/${email}`, {
       method: 'DELETE',
     })
       .then(res => res.json())

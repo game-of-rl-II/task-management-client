@@ -18,13 +18,13 @@ const MyProfile = () => {
   const email = admin?.email;
 
   useEffect(() => {
-    fetch(`https://warm-dawn-94442.herokuapp.com/teams/${email}`)
+    fetch(`https://tm-tool.onrender.com/teams/${email}`)
       .then((res) => res.json())
       .then((data) => setTeams(data));
   }, [email, teams]);
 
   useEffect(() => {
-    fetch(`https://warm-dawn-94442.herokuapp.com/admin-profile/${email}`)
+    fetch(`https://tm-tool.onrender.com/admin-profile/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setAdminProfile(data);

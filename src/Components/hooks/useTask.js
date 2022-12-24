@@ -14,7 +14,7 @@ const useTask = () => {
 
 
   useEffect(() => {
-    fetch(`https://warm-dawn-94442.herokuapp.com/taskMember?id=${id}`)
+    fetch(`https://tm-tool.onrender.com/taskMember?id=${id}`)
       .then((res) => res.json())
       .then((data) => setTasks(data));
 

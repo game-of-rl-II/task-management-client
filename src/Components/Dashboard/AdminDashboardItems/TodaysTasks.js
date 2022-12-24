@@ -18,7 +18,7 @@ const TodaysTasks = () => {
   const todaysDate = newDate.props.children;
 
   const { data: tasks, isLoading } = useQuery(["teamName", teamName], () =>
-    fetch(`https://warm-dawn-94442.herokuapp.com/today-tasks?teamName=${teamName}&todaysDate=${todaysDate}`, {
+    fetch(`https://tm-tool.onrender.com/today-tasks?teamName=${teamName}&todaysDate=${todaysDate}`, {
       method: "GET",
     }).then((res) => res.json())
   );

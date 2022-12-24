@@ -5,7 +5,7 @@ const getAllNotification = (finder) => async (dispatch) => {
     console.log(finder)
     dispatch({ type: GET_NOTIFICATION });
     try {
-        const result = await axios.get(`https://warm-dawn-94442.herokuapp.com/all-notification/${finder}`);
+        const result = await axios.get(`https://tm-tool.onrender.com/all-notification/${finder}`);
         dispatch({ type: SUCCESS_NOTIFICATION, payload: result.data });
     } catch (error) {
         dispatch({ type: FAILED_NOTIFICATION, payload: error.message });

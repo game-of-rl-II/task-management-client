@@ -22,7 +22,7 @@ const ManageEmployee = () => {
     refetch,
     isLoading,
   } = useQuery(["owner", email], () =>
-    fetch(`https://warm-dawn-94442.herokuapp.com/members?email=${email}&teamName=${teamName}`, {
+    fetch(`https://tm-tool.onrender.com/members?email=${email}&teamName=${teamName}`, {
       method: "GET",
     }).then((res) => res.json())
   );

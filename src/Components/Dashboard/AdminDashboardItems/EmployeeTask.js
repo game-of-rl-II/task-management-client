@@ -17,7 +17,7 @@ const EmployeeTask = () => {
 
   useEffect(() => {
     if (teamName) {
-      fetch(`https://warm-dawn-94442.herokuapp.com/task/${teamName}`)
+      fetch(`https://tm-tool.onrender.com/task/${teamName}`)
         .then((res) => res.json())
         .then((data) => {
           setMemberTask(data);

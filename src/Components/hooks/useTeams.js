@@ -11,7 +11,7 @@ const useTeams = () => {
 
 
     if (teamName) {
-        fetch(`https://warm-dawn-94442.herokuapp.com/team-one/${teamName}`)
+        fetch(`https://tm-tool.onrender.com/team-one/${teamName}`)
             .then(res => res.json())
             .then(data => setTeam(data))
     }

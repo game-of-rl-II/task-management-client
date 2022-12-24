@@ -34,7 +34,7 @@ const AssignTaskModal = ({ assignTaskMember, setAssignTaskMember }) => {
     const message = 'A task has been added to you'
     const success = 'Task assigned successfully'
     const navLink ='/dashboard/assignedTasks'
-    const url = "https://warm-dawn-94442.herokuapp.com/assign-task";
+    const url = "https://tm-tool.onrender.com/assign-task";
     fetch(url, {
       method: "POST",
       headers: {

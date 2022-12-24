@@ -4,7 +4,7 @@ import axios from "axios";
 const getForwardedTasks = (teamName) => async (dispatch) => {
   dispatch({ type: GET_FORWARDED_TASKS });
   try {
-    const result = await axios.get(`https://warm-dawn-94442.herokuapp.com/forwarded-task/${teamName}`);
+    const result = await axios.get(`https://tm-tool.onrender.com/forwarded-task/${teamName}`);
 
     dispatch({ type: SUCCESS_FORWARDED_TASKS, payload: result.data });
   } catch (error) {

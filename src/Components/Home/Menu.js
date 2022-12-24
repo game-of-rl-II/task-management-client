@@ -22,7 +22,7 @@ const Menu = () => {
       });
       if (team === teamName) {
 
-        fetch(`https://warm-dawn-94442.herokuapp.com/delete-team/${teamName}`, {
+        fetch(`https://tm-tool.onrender.com/delete-team/${teamName}`, {
           method: 'DELETE',
 
         }).then(res => res.json())

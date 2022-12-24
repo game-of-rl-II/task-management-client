@@ -30,7 +30,7 @@ const AddMember = () => {
       password,
     };
     if (data) {
-      fetch("https://warm-dawn-94442.herokuapp.com/add-new-member", {
+      fetch("https://tm-tool.onrender.com/add-new-member", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -56,7 +56,7 @@ const AddMember = () => {
 
   // handle id check al alamin arif start
   const handleIdCheck = (randomId) => {
-    fetch(`https://warm-dawn-94442.herokuapp.com/random-id-check/${randomId}`)
+    fetch(`https://tm-tool.onrender.com/random-id-check/${randomId}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.message) {

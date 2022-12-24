@@ -19,7 +19,7 @@ const ReviewYourTeamMember = () => {
     const success = 'Your review has been added successfully'
     const navLink= '/dashboard'
 
-    const url = `https://warm-dawn-94442.herokuapp.com/add-review?memberId=${memberId}&adminEmail=${adminEmail}`;
+    const url = `https://tm-tool.onrender.com/add-review?memberId=${memberId}&adminEmail=${adminEmail}`;
     fetch(url, {
       method: "PUT",
       headers: {

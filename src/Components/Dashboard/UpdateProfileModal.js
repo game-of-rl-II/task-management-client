@@ -13,7 +13,7 @@ const UpdateProfileModal = ({ openUpdateModal, setOpenUpdateModal, refetch, admi
   const onSubmit = (data) => {
     if (email && data.name && data.number) {
       console.log(data);
-      const url = `https://warm-dawn-94442.herokuapp.com/update-admin/${email}`;
+      const url = `https://tm-tool.onrender.com/update-admin/${email}`;
       fetch(url, {
         method: "PUT",
         headers: {

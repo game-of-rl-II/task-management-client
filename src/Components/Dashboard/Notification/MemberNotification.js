@@ -10,7 +10,7 @@ const MemberNotification = () => {
     useEffect(() => {
         if (id) {
             
-            fetch(`https://warm-dawn-94442.herokuapp.com/notification-member/${id}`)
+            fetch(`https://tm-tool.onrender.com/notification-member/${id}`)
                 .then(res => res.json())
                 .then(data => {
                     setNewNotification(data)
@@ -20,7 +20,7 @@ const MemberNotification = () => {
     }, [id, newNotification])
 
     const handleClearNotification = () => {
-        fetch(`https://warm-dawn-94442.herokuapp.com/notification-clear-member/${id}`, {
+        fetch(`https://tm-tool.onrender.com/notification-clear-member/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

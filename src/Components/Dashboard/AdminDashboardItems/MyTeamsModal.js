@@ -23,7 +23,7 @@ const MyTeamsModal = () => {
     const project = e.target.project.value;
     const teamColor = color?.hex;
     const teamData = { owner, teamName, members, project, teamColor };
-    fetch("https://warm-dawn-94442.herokuapp.com/create-team", {
+    fetch("https://tm-tool.onrender.com/create-team", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(teamData),

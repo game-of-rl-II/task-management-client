@@ -30,7 +30,7 @@ const ForwordTaskModal = ({ taskForword, setTaskForword }) => {
     const navLink = `/innerHome/${teamName}/forwardedTask`
 
     if (taskInfo.teamName) {
-      fetch("https://warm-dawn-94442.herokuapp.com/forward-task-api", {
+      fetch("https://tm-tool.onrender.com/forward-task-api", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -46,7 +46,7 @@ const ForwordTaskModal = ({ taskForword, setTaskForword }) => {
         });
     }
     const handleRemoveUncompletedTask = (id) => {
-      fetch(`https://warm-dawn-94442.herokuapp.com/forward-task/${id}`, {
+      fetch(`https://tm-tool.onrender.com/forward-task/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

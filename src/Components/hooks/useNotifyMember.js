@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 
 const useNotifyMember = () => {
     const handleNotificationMember = ({ memberId, message, success, navLink }) => {
-        fetch('https://warm-dawn-94442.herokuapp.com/notification-member', {
+        fetch('https://tm-tool.onrender.com/notification-member', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -22,7 +22,7 @@ const useNotifyMember = () => {
             });
     }
     const handleArchiveNotificationMember = ({ memberId, message, success, navLink }) => {
-        fetch('https://warm-dawn-94442.herokuapp.com/notification-archive-member', {
+        fetch('https://tm-tool.onrender.com/notification-archive-member', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
